@@ -1,0 +1,38 @@
+#container {
+  background-color: red;
+}
+
+header {
+  background-color: aqua;
+}
+
+.container_list {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.container_list li {
+  list-style-type: none;
+  margin-left: 10px;
+}
+
+.container_list li a {
+  text-decoration: none;
+}
+
+#container_about {
+  text-align: center;
+}
+
+#container_about p {
+  column-count: 2;
+}
+
+#container_login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_form {
+}
