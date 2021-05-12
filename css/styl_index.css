@@ -33,7 +33,7 @@ header {
 }
 
 .container_list li a:hover {
-  color: #ffffff;
+  color: #e7e7e7;
 }
 
 .container_slide {
@@ -57,25 +57,83 @@ header {
 }
 
 #container_login {
-  width: 100%;
+  margin: auto;
+  width: 90%;
   height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: 5px 5px 5px black;
 }
 
 .login_form {
-  width: 50%;
+  width: 49%;
   height: 100%;
-  background-color: aqua;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.login_form > i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.login_header {
+  width: 60%;
+  text-align: center;
+}
+
+.img_account {
+  width: 100px;
+  height: 100px;
+  background-image: url("../img/user-3331257__340.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.login_data {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login_data input {
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.login_buttons {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login_buttons input {
+  width: 40%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(26, 154, 240);
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.login_buttons div {
+  align-self: center;
 }
 
 .login_image {
-  width: 50%;
+  width: 49%;
   height: 100%;
   background-color: rgb(255, 255, 255);
   background-image: url("../img/login@4x.png");
@@ -84,25 +142,73 @@ header {
 }
 
 #container_logon {
-  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  width: 90%;
   height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: 5px 5px 5px black;
 }
 
 .logon_form {
-  width: 50%;
+  width: 49%;
   height: 100%;
-  background-color: aqua;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.logon_form > i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.logon_header {
+  width: 60%;
+  text-align: center;
+}
+
+.logon_data {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.logon_data input {
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.logon_buttons {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logon_buttons input {
+  width: 40%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(26, 154, 240);
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.logon_buttons div {
+  align-self: center;
 }
 
 .logon_image {
-  width: 50%;
+  width: 49%;
   height: 100%;
   background-color: rgb(255, 255, 255);
   background-image: url("../img/logon.png");
