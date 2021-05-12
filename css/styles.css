@@ -59,12 +59,12 @@ header {
 #container_login {
   margin: auto;
   width: 90%;
-  height: 800px;
+  height: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 3px 3px 3px black;
 }
 
 .login_form {
@@ -123,7 +123,7 @@ header {
   width: 40%;
   padding: 10px;
   border-radius: 10px;
-  background-color: rgb(26, 154, 240);
+  background-color: #1a9af0;
   color: #ffffff;
   font-size: 20px;
 }
@@ -135,7 +135,7 @@ header {
 .login_image {
   width: 49%;
   height: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   background-image: url("../img/login@4x.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -145,12 +145,12 @@ header {
   margin: auto;
   margin-top: 20px;
   width: 90%;
-  height: 800px;
+  height: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 3px 3px 3px black;
 }
 
 .logon_form {
@@ -198,7 +198,7 @@ header {
   width: 40%;
   padding: 10px;
   border-radius: 10px;
-  background-color: rgb(26, 154, 240);
+  background-color: #1a9af0;
   color: #ffffff;
   font-size: 20px;
 }
@@ -210,14 +210,15 @@ header {
 .logon_image {
   width: 49%;
   height: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   background-image: url("../img/logon.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #footer {
-  background-color: rgba(0, 0, 255, 0.589);
+  margin-top: 20px;
+  background-color: rgba(2, 60, 248, 0.685);
 }
 
 .container_contact {
@@ -225,14 +226,37 @@ header {
   flex-direction: column;
 }
 
+.container_contact_info {
+  width: 70%;
+  margin: auto;
+  overflow: auto;
+}
+
 .contact_logo {
-  margin-left: 20px;
   float: left;
 }
 
+.contact_logo_img {
+  width: 60px;
+  height: 60px;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
 .contact_information {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
   float: right;
-  margin-right: 200px;
+}
+
+.contact_information ul {
+  margin-left: 40px;
+  list-style: none;
 }
 
 .contact_links {
@@ -244,6 +268,9 @@ header {
 }
 
 .contact_links div a i {
+  color: #ffffff;
   font-size: 45px;
   margin: 20px;
 }
+
+/*# sourceMappingURL=styles.css.map */
