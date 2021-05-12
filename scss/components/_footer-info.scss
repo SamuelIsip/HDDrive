@@ -1,0 +1,56 @@
+#footer {
+  margin-top: 20px;
+  background-color: rgba(2, 60, 248, 0.685);
+}
+
+.container_contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_contact_info {
+  width: 70%;
+  margin: auto;
+  overflow: auto;
+}
+
+.contact_logo {
+  float: left;
+}
+
+.contact_logo_img {
+  width: 60px;
+  height: 60px;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.contact_information {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  float: right;
+}
+
+.contact_information ul {
+  margin-left: 40px;
+  list-style: none;
+}
+
+.contact_links {
+  width: 100%;
+}
+
+.contact_links div {
+  text-align: center;
+}
+
+.contact_links div a i {
+  color: #ffffff;
+  font-size: 45px;
+  margin: 20px;
+}
