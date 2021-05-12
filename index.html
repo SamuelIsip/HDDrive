@@ -4,15 +4,178 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
+    <title>HDDrive</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
   </head>
   <body>
     <div id="container">
       <header id="header">
-        <nav></nav>
+        <nav>
+          <ul class="container_list">
+            <li><a href="#container_login">Login</a></li>
+            <li><a href="#container_logon">LogON</a></li>
+            <li><a href="#container_about">About</a></li>
+            <li><a href="#footer">Contact</a></li>
+          </ul>
+        </nav>
       </header>
-      <main>Prueba commit para merge</main>
-      <footer></footer>
+      <main>
+        <div class="container_slide"></div>
+        <div id="container_about">
+          <h2>About Title</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
+            fugiat earum commodi totam quo similique, hic expedita, doloremque
+            accusantium iusto error necessitatibus praesentium sequi ab modi.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+            quos natus voluptatibus vitae architecto sed nisi quas dicta soluta
+            beatae quasi harum dolor aliquid ut, laudantium, ea suscipit labore
+            quia officiis quo aliquam. Natus, provident ratione suscipit
+            expedita nostrum vitae corporis cupiditate maiores earum nisi
+            deleniti impedit amet quam aperiam. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Ipsum provident id nisi aut eum in
+            neque quo, laborum ducimus similique nobis modi, ad veritatis
+            officiis. Perferendis iure nihil culpa ducimus soluta fuga eius
+            dignissimos inventore quos, fugiat consequatur maiores rem
+            exercitationem. Sit accusamus commodi facere impedit minima
+            perspiciatis quis atque? Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Tempora quia sed, incidunt eveniet voluptate quo
+            deleniti obcaecati recusandae, reprehenderit maxime accusantium
+            facilis, doloremque maiores laborum quidem veniam enim. Blanditiis
+            qui excepturi tempore ipsam delectus similique commodi deleniti
+            necessitatibus recusandae. Nulla odio facilis magnam, repudiandae
+            inventore nisi fugit earum deleniti. Ducimus at eligendi deleniti
+            magnam ratione, rerum quibusdam reprehenderit quis voluptatibus,
+            veritatis, doloremque repellat cum ipsa fugit autem perspiciatis!
+            Facilis esse itaque a ipsa nostrum rem iste voluptate perspiciatis
+            modi soluta unde labore, qui nesciunt impedit consectetur eveniet
+            sed quidem repellat maiores ad officia quam. Vero ut obcaecati
+            soluta beatae id?
+          </p>
+        </div>
+        <div id="container_login">
+          <div class="login_form">
+            <i class="fas fa-database"> Data Storage System</i>
+            <div class="login_header">
+              <div>
+                <div class="img_account"></div>
+                <h2>ACCOUNT SERVICE</h2>
+              </div>
+            </div>
+            <div class="login_data">
+              <input
+                type="email"
+                name="login_email"
+                id="login_email"
+                placeholder="Email"
+              />
+              <input
+                type="password"
+                name="login_pass"
+                id="login_pass"
+                placeholder="Password"
+              />
+            </div>
+            <div class="login_buttons">
+              <input type="button" value="Login" />
+              <div><a href="#">Forgot Password?</a></div>
+            </div>
+          </div>
+          <div class="login_image"></div>
+        </div>
+        <div id="container_logon">
+          <div class="logon_form">
+            <i class="fas fa-database"> Data Storage System</i>
+            <div class="logon_header">
+              <div>
+                <div class="img_account"></div>
+                <h2>ACCOUNT SERVICE</h2>
+              </div>
+            </div>
+            <div class="logon_data">
+              <input type="text" name="name" id="name" placeholder="Name" />
+              <input
+                type="text"
+                name="name_user"
+                id="name_user"
+                placeholder="User Name"
+              />
+              <input type="number" name="tlf" id="tlf" placeholder="Phone" />
+              <input
+                type="email"
+                name="logon_email"
+                id="logon_email"
+                placeholder="Email"
+              />
+              <input
+                type="password"
+                name="logon_pass"
+                id="logon_pass"
+                placeholder="Password"
+              />
+            </div>
+            <div class="logon_buttons">
+              <input type="button" value="Login" />
+              <div><a href="#container_login">Already Account?</a></div>
+            </div>
+          </div>
+          <div class="logon_image"></div>
+        </div>
+      </main>
+      <footer id="footer">
+        <div class="container_contact">
+          <div class="container_contact_info">
+            <div class="contact_logo">
+              <h3>HDDrive</h3>
+              <div class="contact_logo_img"></div>
+            </div>
+            <div class="contact_information">
+              <ul>
+                <h3>Datos de contacto</h3>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+              </ul>
+              <ul>
+                <h3>Datos del centro</h3>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+              </ul>
+              <ul>
+                <h3>Información adicional</h3>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="contact_links">
+            <hr />
+            <div>
+              <a href="https://www.linkedin.com/in/samuelisip/" target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/SamuelIsip" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
