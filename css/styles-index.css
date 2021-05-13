@@ -1,61 +1,51 @@
 body {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 #container {
   background-color: #ffffff;
-  overflow: auto;
-}
+  overflow: auto; }
 
 header {
   background-color: #ffffffa8;
   position: fixed;
-  width: 100%;
-}
+  width: 100%; }
 
 .container_list {
   margin: 0;
   padding: 20px;
   display: flex;
-  flex-direction: row-reverse;
-}
+  flex-direction: row-reverse; }
 
 .container_list li {
   list-style-type: none;
-  margin-left: 55px;
-}
+  margin-left: 55px; }
 
 .container_list li a {
   text-decoration: none;
   font-size: large;
-  color: black;
-}
+  color: black; }
 
 .container_list li a:hover {
-  color: #e7e7e7;
-}
+  color: #e7e7e7; }
 
 .container_slide {
   height: 600px;
   background-image: url("../img/portada.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-}
+  background-size: cover; }
 
 #container_about {
-  text-align: center;
-}
+  text-align: center; }
 
 #container_about h2 {
-  font-size: 40px;
-}
+  font-size: 40px; }
 
 #container_about p {
-  column-count: 2;
-}
+  column-count: 2; }
 
+/*LOG IN*/
 #container_login {
   margin: auto;
   width: 90%;
@@ -64,8 +54,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  box-shadow: 3px 3px 3px black;
-}
+  box-shadow: 3px 3px 3px black; }
 
 .login_form {
   width: 49%;
@@ -74,19 +63,15 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-}
-
-.login_form > i {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
+  position: relative; }
+  .login_form > i {
+    position: absolute;
+    top: 10px;
+    left: 10px; }
 
 .login_header {
   width: 60%;
-  text-align: center;
-}
+  text-align: center; }
 
 .img_account {
   width: 100px;
@@ -96,50 +81,101 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
-  border-radius: 50%;
-}
+  border-radius: 50%; }
 
 .login_data {
   width: 60%;
   display: flex;
-  flex-direction: column;
-}
-
-.login_data input {
-  width: 70%;
-  margin: auto;
-  padding: 10px;
-  margin-bottom: 10px;
-}
+  flex-direction: column; }
+  .login_data input {
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 10px; }
 
 .login_buttons {
   width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
-
-.login_buttons input {
-  width: 40%;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #1a9af0;
-  color: #ffffff;
-  font-size: 20px;
-}
-
-.login_buttons div {
-  align-self: center;
-}
+  justify-content: space-between; }
+  .login_buttons input {
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1a9af0;
+    color: #ffffff;
+    font-size: 20px; }
+  .login_buttons div {
+    align-self: center; }
 
 .login_image {
   width: 49%;
   height: 100%;
   background-color: white;
-  background-image: url("../img/login@4x.png");
   background-repeat: no-repeat;
   background-size: cover;
-}
+  background-image: url("../img/login@4x.png"); }
+
+/*LOG ON*/
+#container_logon {
+  margin: auto;
+  width: 90%;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: 3px 3px 3px black; }
+
+.logon_form {
+  width: 49%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  .logon_form > i {
+    position: absolute;
+    top: 10px;
+    left: 10px; }
+
+.logon_header {
+  width: 60%;
+  text-align: center; }
+
+.logon_data {
+  width: 60%;
+  display: flex;
+  flex-direction: column; }
+  .logon_data input {
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 10px; }
+
+.logon_buttons {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .logon_buttons input {
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1a9af0;
+    color: #ffffff;
+    font-size: 20px; }
+  .logon_buttons div {
+    align-self: center; }
+
+.logon_image {
+  width: 49%;
+  height: 100%;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/logon.png"); }
 
 #container_logon {
   margin: auto;
@@ -150,8 +186,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  box-shadow: 3px 3px 3px black;
-}
+  box-shadow: 3px 3px 3px black; }
 
 .logon_form {
   width: 49%;
@@ -160,39 +195,33 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-}
+  position: relative; }
 
 .logon_form > i {
   position: absolute;
   top: 10px;
-  left: 10px;
-}
+  left: 10px; }
 
 .logon_header {
   width: 60%;
-  text-align: center;
-}
+  text-align: center; }
 
 .logon_data {
   width: 60%;
   display: flex;
-  flex-direction: column;
-}
+  flex-direction: column; }
 
 .logon_data input {
   width: 70%;
   margin: auto;
   padding: 10px;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 .logon_buttons {
   width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
+  justify-content: space-between; }
 
 .logon_buttons input {
   width: 40%;
@@ -200,12 +229,10 @@ header {
   border-radius: 10px;
   background-color: #1a9af0;
   color: #ffffff;
-  font-size: 20px;
-}
+  font-size: 20px; }
 
 .logon_buttons div {
-  align-self: center;
-}
+  align-self: center; }
 
 .logon_image {
   width: 49%;
@@ -213,28 +240,23 @@ header {
   background-color: white;
   background-image: url("../img/logon.png");
   background-repeat: no-repeat;
-  background-size: cover;
-}
+  background-size: cover; }
 
 #footer {
   margin-top: 20px;
-  background-color: rgba(2, 60, 248, 0.685);
-}
+  background-color: rgba(2, 60, 248, 0.685); }
 
 .container_contact {
   display: flex;
-  flex-direction: column;
-}
+  flex-direction: column; }
 
 .container_contact_info {
   width: 70%;
   margin: auto;
-  overflow: auto;
-}
+  overflow: auto; }
 
 .contact_logo {
-  float: left;
-}
+  float: left; }
 
 .contact_logo_img {
   width: 60px;
@@ -242,8 +264,7 @@ header {
   background-image: url("../img/logo.png");
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 50%;
-}
+  border-radius: 50%; }
 
 .contact_information {
   text-align: center;
@@ -251,26 +272,19 @@ header {
   flex-direction: row;
   justify-content: space-between;
   margin: auto;
-  float: right;
-}
+  float: right; }
 
 .contact_information ul {
   margin-left: 40px;
-  list-style: none;
-}
+  list-style: none; }
 
 .contact_links {
-  width: 100%;
-}
+  width: 100%; }
 
 .contact_links div {
-  text-align: center;
-}
+  text-align: center; }
 
 .contact_links div a i {
   color: #ffffff;
   font-size: 45px;
-  margin: 20px;
-}
-
-/*# sourceMappingURL=styles.css.map */
+  margin: 20px; }
