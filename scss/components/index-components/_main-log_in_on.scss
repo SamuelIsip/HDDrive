@@ -86,7 +86,7 @@
 .img_account {
   width: 100px;
   height: 100px;
-  background-image: url("../img/user-3331257__340.png");
+  background-image: url("../img/user-3331257__340-min.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -104,7 +104,7 @@
 
 .login_image {
   @include log_in_on_image;
-  background-image: url("../img/login@4x.png");
+  background-image: url("../img/login@4x-min.png");
 }
 
 /*LOG ON*/
@@ -131,5 +131,5 @@
 
 .logon_image {
   @include log_in_on_image;
-  background-image: url("../img/logon.png");
+  background-image: url("../img/logon-min.png");
 }
