@@ -1,4 +1,97 @@
 #container_docs {
   background-color: #4b4b4b;
   width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.docs_header {
+  background-color: rgb(94, 94, 94);
+  padding: 0;
+  margin: 0;
+  & ul {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    & li {
+      list-style: none;
+
+      & a::after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f054";
+        display: inline-block;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-weight: 900;
+        font-size: 20px;
+        color: #b6b6b6;
+      }
+
+      & a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #b6b6b6;
+      }
+
+      & a i {
+        font-size: 20px;
+        color: #b6b6b6;
+      }
+    }
+  }
+}
+
+.docs_main {
+  background-color: #b6b6b6;
+
+  & ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+    & div {
+      padding: 20px;
+      border: 1px solid white;
+      text-align: center;
+    }
+
+    @for $i from 1 to 5 {
+      & div:nth-child(#{$i}) {
+        @if $i == 1 {
+          text-align: left;
+          width: 65%;
+        } @else if $i == 2 {
+          width: 10%;
+        } @else if $i == 3 {
+          width: 20%;
+        } @else if $i == 4 {
+          width: 5%;
+        }
+      }
+    }
+  }
+}
+
+.docs_upload {
+  margin-top: auto;
+  align-self: center;
+  width: 400px;
+  height: 200px;
+  border: 2px dashed white;
+  border-radius: 10px;
+  background-color: #b6b6b6c4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & div i {
+    font-size: 70px;
+    color: white;
+  }
+}
+
+.docs_upload:hover {
+  cursor: pointer;
+  background-color: #d4d4d4c4;
 }

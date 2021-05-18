@@ -4,10 +4,7 @@ body {
 
 #container {
   margin: 0;
-  padding: 0;
-  background-color: red;
-  height: 800px;
-  overflow: auto; }
+  padding: 0; }
 
 header {
   background-color: #363636;
@@ -41,12 +38,11 @@ nav ul {
 main {
   display: flex;
   flex-direction: row;
-  background-color: #2c2cce; }
+  height: 100%; }
 
 #container_menu {
   background-color: #2e2e2e;
   width: 20%;
-  height: 600px;
   border-right: 1px solid white; }
   #container_menu ul {
     margin: 0;
@@ -96,4 +92,73 @@ main {
 
 #container_docs {
   background-color: #4b4b4b;
-  width: 80%; }
+  width: 80%;
+  display: flex;
+  flex-direction: column; }
+
+.docs_header {
+  background-color: #5e5e5e;
+  padding: 0;
+  margin: 0; }
+  .docs_header ul {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .docs_header ul li {
+      list-style: none; }
+      .docs_header ul li a::after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f054";
+        display: inline-block;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-weight: 900;
+        font-size: 20px;
+        color: #b6b6b6; }
+      .docs_header ul li a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #b6b6b6; }
+      .docs_header ul li a i {
+        font-size: 20px;
+        color: #b6b6b6; }
+
+.docs_main {
+  background-color: #b6b6b6; }
+  .docs_main ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: row; }
+    .docs_main ul li div {
+      padding: 20px;
+      border: 1px solid white;
+      text-align: center; }
+    .docs_main ul li div:nth-child(1) {
+      text-align: left;
+      width: 65%; }
+    .docs_main ul li div:nth-child(2) {
+      width: 10%; }
+    .docs_main ul li div:nth-child(3) {
+      width: 20%; }
+    .docs_main ul li div:nth-child(4) {
+      width: 5%; }
+
+.docs_upload {
+  margin-top: auto;
+  align-self: center;
+  width: 400px;
+  height: 200px;
+  border: 2px dashed white;
+  border-radius: 10px;
+  background-color: #b6b6b6c4;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .docs_upload div i {
+    font-size: 70px;
+    color: white; }
+
+.docs_upload:hover {
+  cursor: pointer;
+  background-color: #d4d4d4c4; }
