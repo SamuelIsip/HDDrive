@@ -2,6 +2,4 @@
 
     include "credentials.php";
 
-    echo $name;
-
 ?>
