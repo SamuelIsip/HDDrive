@@ -1,2 +1,4 @@
 phpmyadmin
 php_info.php
+node_modules/
+package-lock.json
