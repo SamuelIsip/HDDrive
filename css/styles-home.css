@@ -126,26 +126,28 @@ main {
 
 .docs_main {
   background-color: #b6b6b6; }
-  .docs_main ul {
-    margin-right: 30px;
-    height: 100%; }
-  .docs_main ul li {
-    list-style: none;
-    display: flex; }
-    .docs_main ul li > div {
-      padding: 20px;
-      border: 1px solid white;
-      text-align: center; }
-    .docs_main ul li div:nth-child(1) {
-      text-align: left;
-      width: 65%; }
-    .docs_main ul li div:nth-child(2) {
-      width: 10%; }
-    .docs_main ul li div:nth-child(3) {
-      width: 20%; }
-    .docs_main ul li div:nth-child(4) {
-      width: 5%;
-      position: relative; }
+  .docs_main table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px; }
+    .docs_main table td {
+      padding: 15px; }
+  .docs_main table,
+  .docs_main td,
+  .docs_main th {
+    border: 1px solid white;
+    text-align: center; }
+  .docs_main .files table td:nth-child(1) {
+    text-align: left;
+    width: 65%; }
+  .docs_main .files table td:nth-child(2) {
+    width: 10%; }
+  .docs_main .files table td:nth-child(3) {
+    width: 20%; }
+  .docs_main .files table td:nth-child(4) {
+    width: 5%;
+    position: relative; }
 
 .docs_upload {
   margin-top: auto;
@@ -183,3 +185,15 @@ main {
     #options ul li i {
       font-size: 18px;
       margin-bottom: 5px; }
+
+#container_images {
+  display: none; }
+
+#container_calendar {
+  display: none; }
+
+#container_bookmarks {
+  display: none; }
+
+#container_tasks {
+  display: none; }

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function menu_options_file() {
   var options_file = document.getElementsByClassName("options_file");
 
   for (let i = 0; i < options_file.length; i++) {
@@ -12,4 +12,4 @@ document.addEventListener("DOMContentLoaded", () => {
         options_file[i].offsetLeft - (options_file[i].clientWidth - 20) + "px";
     });
   }
-});
+}

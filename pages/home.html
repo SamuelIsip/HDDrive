@@ -11,9 +11,12 @@
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../js/dimensiones.js"></script>
-    <script src="../js/readDocuments.js"></script>
+
+    <script src="../js/dimensions.js"></script>
     <script src="../js/options_file.js"></script>
+    <script src="../js/readDocuments.js"></script>
+    <script src="../js/events_pages_home.js"></script>
+    <script src="../js/load_pages_home.js"></script>
   </head>
   <body>
     <div id="container">
@@ -21,19 +24,19 @@
         <nav>
           <ul>
             <li>
-              <a href="#"><i class="fas fa-folder"></i></a>
+              <a href="#" id="documents"><i class="fas fa-folder"></i></a>
             </li>
             <li>
-              <a href="#"><i class="fas fa-images"></i></a>
+              <a href="#" id="images"><i class="fas fa-images"></i></a>
             </li>
             <li>
-              <a href="#"><i class="fas fa-calendar-alt"></i></a>
+              <a href="#" id="calendar"><i class="fas fa-calendar-alt"></i></a>
             </li>
             <li>
-              <a href="#"><i class="fas fa-bookmark"></i></a>
+              <a href="#" id="bookmark"><i class="fas fa-bookmark"></i></a>
             </li>
             <li>
-              <a href="#"><i class="fas fa-tasks"></i></a>
+              <a href="#" id="task"><i class="fas fa-tasks"></i></a>
             </li>
           </ul>
         </nav>
@@ -74,7 +77,26 @@
               id.
             </p>
             <div class="files">
-              <ul>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>File Size</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="name_file">File1</td>
+                    <td class="size_file">12Kb</td>
+                    <td class="date_file">12/05/2020</td>
+                    <td class="options_file">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- <ul>
                 <li>
                   <div>Name</div>
                   <div>File Size</div>
@@ -95,8 +117,8 @@
                   <div class="date_file">12/05/2020</div>
                   <div class="options_file">
                     <i class="fas fa-ellipsis-v"></i>
-                  </div>
-                  <!-- <div id="options">
+                  </div> -->
+              <!-- <div id="options">
                     <ul>
                       <li><i class="fas fa-download"></i></li>
                       <li><i class="fas fa-edit"></i></li>
@@ -104,13 +126,25 @@
                     </ul>
                     <div class="arrow"></div>
                   </div> -->
-                </li>
-              </ul>
+              <!-- </li>
+              </ul> -->
             </div>
           </div>
           <div class="docs_upload">
             <div><i class="fas fa-cloud-upload-alt"></i></div>
           </div>
+        </div>
+        <div id="container_images">
+          <div><p>IMAGES</p></div>
+        </div>
+        <div id="container_calendar">
+          <div><p>CALENDAR</p></div>
+        </div>
+        <div id="container_bookmarks">
+          <div><p>BOOKMARKS</p></div>
+        </div>
+        <div id="container_tasks">
+          <div><p>TASKS</p></div>
         </div>
       </main>
     </div>

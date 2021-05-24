@@ -45,23 +45,27 @@
 .docs_main {
   background-color: #b6b6b6;
 
-  & ul {
-    margin-right: 30px;
-    height: 100%;
+  & table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+
+    & td {
+      padding: 15px;
+    }
   }
 
-  & ul li {
-    list-style: none;
-    display: flex;
+  & table,
+  td,
+  th {
+    border: 1px solid white;
+    text-align: center;
+  }
 
-    & > div {
-      padding: 20px;
-      border: 1px solid white;
-      text-align: center;
-    }
-
+  .files table {
     @for $i from 1 to 5 {
-      & div:nth-child(#{$i}) {
+      & td:nth-child(#{$i}) {
         @if $i == 1 {
           text-align: left;
           width: 65%;
