@@ -110,7 +110,7 @@
   background-color: beige;
 }
 
-.options {
+#options {
   background-color: white;
   position: absolute;
   & ul {
@@ -120,6 +120,7 @@
     align-items: center;
     margin: 0px;
     padding: 0px;
+    list-style-type: none;
     & li {
       & i {
         font-size: 18px;
