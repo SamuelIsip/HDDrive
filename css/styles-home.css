@@ -126,11 +126,13 @@ main {
 
 .docs_main {
   background-color: #b6b6b6; }
+  .docs_main ul {
+    margin-right: 30px;
+    height: 100%; }
   .docs_main ul li {
     list-style: none;
-    display: flex;
-    flex-direction: row; }
-    .docs_main ul li div {
+    display: flex; }
+    .docs_main ul li > div {
       padding: 20px;
       border: 1px solid white;
       text-align: center; }
@@ -142,7 +144,8 @@ main {
     .docs_main ul li div:nth-child(3) {
       width: 20%; }
     .docs_main ul li div:nth-child(4) {
-      width: 5%; }
+      width: 5%;
+      position: relative; }
 
 .docs_upload {
   margin-top: auto;
@@ -162,3 +165,21 @@ main {
 .docs_upload:hover {
   cursor: pointer;
   background-color: #d4d4d4c4; }
+
+.options_file:hover {
+  cursor: pointer;
+  background-color: beige; }
+
+#options {
+  background-color: white;
+  position: absolute; }
+  #options ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px; }
+    #options ul li i {
+      font-size: 18px;
+      margin-bottom: 5px; }

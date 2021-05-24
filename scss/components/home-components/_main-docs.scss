@@ -45,12 +45,16 @@
 .docs_main {
   background-color: #b6b6b6;
 
+  & ul {
+    margin-right: 30px;
+    height: 100%;
+  }
+
   & ul li {
     list-style: none;
     display: flex;
-    flex-direction: row;
 
-    & div {
+    & > div {
       padding: 20px;
       border: 1px solid white;
       text-align: center;
@@ -67,6 +71,7 @@
           width: 20%;
         } @else if $i == 4 {
           width: 5%;
+          position: relative;
         }
       }
     }
@@ -94,4 +99,28 @@
 .docs_upload:hover {
   cursor: pointer;
   background-color: #d4d4d4c4;
+}
+
+.options_file:hover {
+  cursor: pointer;
+  background-color: beige;
+}
+
+#options {
+  background-color: white;
+  position: absolute;
+  & ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    & li {
+      & i {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+    }
+  }
 }
