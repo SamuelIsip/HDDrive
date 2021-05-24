@@ -172,17 +172,18 @@ main {
   cursor: pointer;
   background-color: beige; }
 
-.options {
+#options {
   background-color: white;
   position: absolute; }
-  .options ul {
+  #options ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0px;
-    padding: 0px; }
-    .options ul li i {
+    padding: 0px;
+    list-style-type: none; }
+    #options ul li i {
       font-size: 18px;
       margin-bottom: 5px; }
 
