@@ -10,38 +10,101 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../js/dimensions.js"></script>
+    <script src="../js/options_file.js"></script>
+    <script src="../js/readDocuments.js"></script>
+    <script src="../js/events_pages_home.js"></script>
+    <script src="../js/load_pages_home.js"></script>
   </head>
   <body>
     <div id="container">
       <header>
         <nav>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              <a href="#" id="documents"><i class="fas fa-folder"></i></a>
+            </li>
+            <li>
+              <a href="#" id="images"><i class="fas fa-images"></i></a>
+            </li>
+            <li>
+              <a href="#" id="calendar"><i class="fas fa-calendar-alt"></i></a>
+            </li>
+            <li>
+              <a href="#" id="bookmark"><i class="fas fa-bookmark"></i></a>
+            </li>
+            <li>
+              <a href="#" id="task"><i class="fas fa-tasks"></i></a>
+            </li>
           </ul>
         </nav>
-        <div></div>
+        <div>
+          <div class="user_profile"></div>
+        </div>
       </header>
       <main>
         <div id="container_menu">
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li><a href="#">All files</a></li>
+            <li><a href="#">Recent</a></li>
+            <li><a href="#">Favorites</a></li>
+            <li><div>16 MP of 3GB used</div></li>
           </ul>
         </div>
         <div id="container_docs">
-          <div class="docs_header"></div>
+          <div class="docs_header">
+            <ul>
+              <li>
+                <a href="#"><i class="fas fa-home"></i></a>
+              </li>
+              <li>
+                <a href="#">Documents</a>
+              </li>
+            </ul>
+          </div>
           <div class="docs_main">
             <h2>Title Docs Main</h2>
-            <div class="files"></div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate omnis fuga eos modi dolore, iusto voluptatum nesciunt
+              labore quibusdam reprehenderit veritatis expedita odio perferendis
+              pariatur sapiente nihil impedit esse. Quo, at? Voluptatum
+              dignissimos sint voluptates quibusdam, rem officiis ex laudantium
+              ab, ea exercitationem quidem, omnis amet sed repellendus molestias
+              id.
+            </p>
+            <div class="files">
+              <div id="options" style="display: none">
+                <ul>
+                  <li><i class="fas fa-download"></i></li>
+                  <li><i class="fas fa-edit"></i></li>
+                  <li><i class="fas fa-trash"></i></li>
+                </ul>
+                <div class="arrow"></div>
+              </div>
+            </div>
           </div>
-          <div class="docs_upload"></div>
+          <div class="docs_upload">
+            <div><i class="fas fa-cloud-upload-alt"></i></div>
+          </div>
+        </div>
+        <div id="container_images">
+          <div><p>IMAGES</p></div>
+        </div>
+        <div id="container_calendar">
+          <div><p>CALENDAR</p></div>
+        </div>
+        <div id="container_bookmarks">
+          <div><p>BOOKMARKS</p></div>
+        </div>
+        <div id="container_tasks">
+          <div><p>TASKS</p></div>
         </div>
       </main>
     </div>
