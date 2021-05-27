@@ -1,3 +1,4 @@
+var ruta = "";
 function readDocuments() {
   var div_list = document.getElementsByClassName("files")[0],
     table = document.createElement("table");
@@ -12,17 +13,7 @@ function readDocuments() {
     },
   });
 
-  /*  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      var doc = JSON.parse(this.responseText);
-      createList(doc, div_list, ul);
-    }
-  };
-  xhttp.open("GET", "./../api/readDocs.php", true);
-  xhttp.send(); */
-
   function createList(doc, div_list, table) {
-    console.log(doc);
     var count = 0;
     //Head
     let thead = document.createElement("thead");
@@ -53,6 +44,30 @@ function readDocuments() {
       let td4 = document.createElement("td");
 
       //Añadir datos
+
+      if (nameDoc.isDirFile === "dir") {
+        let i1 = document.createElement("i");
+        i1.classList.add("fas");
+        i1.classList.add("fa-folder-open");
+        td1.appendChild(i1);
+        td1.addEventListener("click", () => {
+          //Añadir ruta a la linea superior
+          var docs_header = document.getElementsByClassName("docs_header")[0];
+          var li = document.createElement("li");
+          var a = document.createElement("a");
+          a.setAttribute("href", "#");
+          a.appendChild(document.createTextNode(nameDoc.name));
+          li.appendChild(a);
+          docs_header.childNodes[1].appendChild(li);
+          ruta += nameDoc.name + "/";
+          isDir(ruta);
+        });
+      } else if (nameDoc.isDirFile === "file") {
+        td1.addEventListener("click", () => {
+          isFile(ruta + nameDoc.name);
+        });
+      }
+
       td1.appendChild(document.createTextNode(nameDoc.name));
       td1.classList.add("name_file");
       td2.appendChild(document.createTextNode("18 KB"));
@@ -71,7 +86,6 @@ function readDocuments() {
       tr.appendChild(td2);
       tr.appendChild(td3);
       tr.appendChild(td4);
-      tr.appendChild(create_options(count));
 
       count++;
 
@@ -86,35 +100,25 @@ function readDocuments() {
     menu_options_file();
   }
 
-  function create_options(count) {
-    let div = document.createElement("div");
-    div.classList.add("options");
-    div.classList.add("option" + count);
-    let ul = document.createElement("ul"),
-      li1 = document.createElement("li"),
-      i1 = document.createElement("i");
-    i1.classList.add("fas");
-    i1.classList.add("fa-download");
-    li1.appendChild(i1);
-    let li2 = document.createElement("li"),
-      i2 = document.createElement("i");
-    i2.classList.add("fas");
-    i2.classList.add("fa-edit");
-    li2.appendChild(i2);
-    let li3 = document.createElement("li"),
-      i3 = document.createElement("i");
-    i3.classList.add("fas");
-    i3.classList.add("fa-trash");
-    li3.appendChild(i3);
+  function isDir(nameDoc) {
+    var div_list = document.getElementsByClassName("files")[0],
+      table = document.createElement("table");
+    if (div_list.hasChildNodes()) div_list.removeChild(div_list.lastChild);
+    $.ajax({
+      url: "./../api/readDocs.php",
+      type: "GET",
+      dataType: "json",
+      data: { nameDir: nameDoc },
+      async: true,
+      success: (doc) => {
+        createList(doc, div_list, table);
+      },
+    });
+  }
 
-    ul.appendChild(li1);
-    ul.appendChild(li2);
-    ul.appendChild(li3);
-
-    div.appendChild(ul);
-
-    div.style.display = "none";
-
-    return div;
+  function isFile(nameFile) {
+    window.location = encodeURI(
+      "./../api/downloadFile.php?nameFile=" + nameFile
+    );
   }
 }

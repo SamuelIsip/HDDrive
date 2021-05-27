@@ -1,7 +1,9 @@
 <?php
 
-
-    chdir("./..");
+    if(isset($_GET['nameDir'])){
+        chdir("./../".$_GET['nameDir']);
+    }else
+        chdir("./..");
 
     $docs = scandir(getcwd());
 
@@ -10,7 +12,10 @@
 
     foreach ($docs as $value) {
         $arr2=array(
-            "name"=>$value
+            "name"=>$value,
+            "size"=>filesize($value),
+            "modific"=>filemtime($value),
+            "isDirFile"=>is_dir($value) ? "dir" : "file" 
         );
 
         array_push($arr1["docs"], $arr2);

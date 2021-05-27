@@ -10,7 +10,11 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
 
     <script src="../js/dimensions.js"></script>
     <script src="../js/options_file.js"></script>
@@ -62,7 +66,6 @@
               <li>
                 <a href="#">Documents</a>
               </li>
-              ...
             </ul>
           </div>
           <div class="docs_main">
@@ -77,57 +80,14 @@
               id.
             </p>
             <div class="files">
-              <!--<table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>File Size</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="name_file">File1</td>
-                    <td class="size_file">12Kb</td>
-                    <td class="date_file">12/05/2020</td>
-                    <td class="options_file">
-                      <i class="fas fa-ellipsis-v"></i>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>-->
-              <!-- <ul>
-                <li>
-                  <div>Name</div>
-                  <div>File Size</div>
-                  <div>Date</div>
-                  <div></div>
-                </li>
-                <li>
-                  <div class="name_file">File1</div>
-                  <div class="size_file">12Kb</div>
-                  <div class="date_file">12/05/2020</div>
-                  <div class="options_file">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div>
-                </li>
-                <li>
-                  <div class="name_file">File2</div>
-                  <div class="size_file">12Kb</div>
-                  <div class="date_file">12/05/2020</div>
-                  <div class="options_file">
-                    <i class="fas fa-ellipsis-v"></i>
-                  </div> -->
-              <!-- <div id="options">
-                    <ul>
-                      <li><i class="fas fa-download"></i></li>
-                      <li><i class="fas fa-edit"></i></li>
-                      <li><i class="fas fa-trash"></i></li>
-                    </ul>
-                    <div class="arrow"></div>
-                  </div> -->
-              <!-- </li>
-              </ul> -->
+              <div id="options" style="display: none">
+                <ul>
+                  <li><i class="fas fa-download"></i></li>
+                  <li><i class="fas fa-edit"></i></li>
+                  <li><i class="fas fa-trash"></i></li>
+                </ul>
+                <div class="arrow"></div>
+              </div>
             </div>
           </div>
           <div class="docs_upload">
