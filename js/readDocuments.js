@@ -7,7 +7,6 @@ function readDocuments() {
     url: "./../api/readDocs.php",
     type: "GET",
     dataType: "json",
-    async: true,
     success: (doc) => {
       createList(doc, div_list, table);
     },
@@ -70,9 +69,9 @@ function readDocuments() {
 
       td1.appendChild(document.createTextNode(nameDoc.name));
       td1.classList.add("name_file");
-      td2.appendChild(document.createTextNode("18 KB"));
+      td2.appendChild(document.createTextNode(nameDoc.size));
       td2.classList.add("size_file");
-      td3.appendChild(document.createTextNode("24/05/2021"));
+      td3.appendChild(document.createTextNode(nameDoc.modific));
       td3.classList.add("date_file");
 
       td4.classList.add("options_file");
@@ -97,7 +96,7 @@ function readDocuments() {
 
     div_list.appendChild(table);
 
-    menu_options_file();
+    menu_options_file(ruta);
   }
 
   function isDir(nameDoc) {
