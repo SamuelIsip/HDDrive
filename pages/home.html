@@ -21,6 +21,7 @@
     <script src="../js/readDocuments.js"></script>
     <script src="../js/events_pages_home.js"></script>
     <script src="../js/load_pages_home.js"></script>
+    <script src="../js/add_select_files.js"></script>
   </head>
   <body>
     <div id="container">
@@ -80,6 +81,25 @@
               id.
             </p>
             <div class="files">
+              <div class="files__add__select">
+                <ul>
+                  <li>
+                    <input
+                      type="file"
+                      name="add_file"
+                      id="add_file"
+                      multiple
+                      hidden
+                    />
+                    <label for="add_file"
+                      ><i id="add_file" class="fas fa-plus"></i
+                    ></label>
+                  </li>
+                  <li>
+                    <i id="select_files" class="fas fa-check-square"></i>
+                  </li>
+                </ul>
+              </div>
               <div id="options" style="display: none">
                 <ul>
                   <li><i class="fas fa-download"></i></li>

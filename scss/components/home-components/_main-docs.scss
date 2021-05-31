@@ -5,6 +5,13 @@
   flex-direction: column;
 }
 
+ul {
+  list-style-type: none;
+  & li {
+    list-style: none;
+  }
+}
+
 .docs_header {
   background-color: rgb(94, 94, 94);
   padding: 0;
@@ -15,8 +22,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     & li {
-      list-style: none;
-
       & a::after {
         font-family: "Font Awesome 5 Free";
         content: "\f054";
@@ -39,6 +44,33 @@
         color: #b6b6b6;
       }
     }
+  }
+}
+
+.files__add__select {
+  background-color: brown;
+  width: auto;
+
+  & ul {
+    display: flex;
+    flex-direction: row;
+    & li {
+      font-size: 20px;
+      margin: 5px;
+    }
+
+    & li:hover {
+      cursor: pointer;
+    }
+  }
+
+  #add_file ~ label {
+    color: #00d100;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
   }
 }
 
@@ -99,13 +131,9 @@
   background-color: white;
   position: absolute;
   & ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 0px;
     padding: 0px;
-    list-style-type: none;
+
     & li {
       & i {
         font-size: 18px;
