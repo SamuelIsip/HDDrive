@@ -36,6 +36,16 @@ function add_event_options(options, ruta) {
   });
 
   op_delete.addEventListener("click", () => {
-    console.log("Delete");
+    console.log(ruta);
+    $.ajax({
+      type: "GET",
+      url: "./../api/deletefile.php",
+      data: { nameFile: ruta + name_file_doc },
+      dataType: "text",
+      async: false,
+      success: function () {
+        isDir(ruta);
+      },
+    });
   });
 }

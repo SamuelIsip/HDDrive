@@ -100,6 +100,11 @@ main {
   display: flex;
   flex-direction: column; }
 
+ul {
+  list-style-type: none; }
+  ul li {
+    list-style: none; }
+
 .docs_header {
   background-color: #5e5e5e;
   padding: 0;
@@ -109,24 +114,41 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; }
-    .docs_header ul li {
-      list-style: none; }
-      .docs_header ul li a::after {
-        font-family: "Font Awesome 5 Free";
-        content: "\f054";
-        display: inline-block;
-        padding-right: 10px;
-        padding-left: 10px;
-        font-weight: 900;
-        font-size: 20px;
-        color: #b6b6b6; }
-      .docs_header ul li a {
-        font-size: 20px;
-        text-decoration: none;
-        color: #b6b6b6; }
-      .docs_header ul li a i {
-        font-size: 20px;
-        color: #b6b6b6; }
+    .docs_header ul li a::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f054";
+      display: inline-block;
+      padding-right: 10px;
+      padding-left: 10px;
+      font-weight: 900;
+      font-size: 20px;
+      color: #b6b6b6; }
+    .docs_header ul li a {
+      font-size: 20px;
+      text-decoration: none;
+      color: #b6b6b6; }
+    .docs_header ul li a i {
+      font-size: 20px;
+      color: #b6b6b6; }
+
+.files__add__select {
+  background-color: brown;
+  width: auto; }
+  .files__add__select ul {
+    display: flex;
+    flex-direction: row; }
+    .files__add__select ul li {
+      font-size: 20px;
+      margin: 5px; }
+    .files__add__select ul li:hover {
+      cursor: pointer; }
+  .files__add__select #add_file ~ label {
+    color: #00d100;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem; }
 
 .docs_main {
   background-color: #b6b6b6;
@@ -167,13 +189,8 @@ main {
   background-color: white;
   position: absolute; }
   #options ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 0px;
-    padding: 0px;
-    list-style-type: none; }
+    padding: 0px; }
     #options ul li i {
       font-size: 18px;
       margin-bottom: 5px; }

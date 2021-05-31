@@ -5,12 +5,15 @@
     //Guardamos la ruta del fichero
     $filename = "./".$_GET['nameFile'];
 
+    //Si es un directorio, se recorren todo los ficheros recursivamente
+    //Y se comprimen en un único .zip
     if(is_dir($filename)){
         //incluimos las funciones necesarias para hacer el backup
         include_once("backup_inc.php");
 
         chdir($filename);
 
+        //Nombre de la carpeta
         $filenameZip = substr($filename,strrpos($filename, "/")+1,strlen($filename)).".zip";
 
         $archivos=array();
