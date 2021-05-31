@@ -103,6 +103,7 @@ function readDocuments() {
     var div_list = document.getElementsByClassName("files")[0],
       table = document.createElement("table");
     if (div_list.hasChildNodes()) div_list.removeChild(div_list.lastChild);
+    console.log(nameDoc);
     $.ajax({
       url: "./../api/readDocs.php",
       type: "GET",
@@ -116,6 +117,7 @@ function readDocuments() {
   }
 
   function isFile(nameFile) {
+    console.log(nameDoc);
     window.location = encodeURI(
       "./../api/downloadFile.php?nameFile=" + nameFile
     );
