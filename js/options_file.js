@@ -21,9 +21,8 @@ function add_event_options(options, ruta) {
   //Fila seleccionada
   var row = op_download.parentElement.parentElement.className;
 
-  var name_file_doc =
-    document.getElementsByTagName("table")[0].children[1].children[row]
-      .children[0].children[1].value;
+  var name_file_doc = document.getElementsByClassName("name_file" + row)[0]
+    .value;
 
   op_download.addEventListener("click", () => {
     window.location = encodeURI(
@@ -31,9 +30,12 @@ function add_event_options(options, ruta) {
     );
   });
 
-  op_edit.addEventListener("click", () => {
+  op_edit.addEventListener("click", (event) => {
     let input_name = document.getElementsByClassName("name_file" + row)[0];
     var name_file_dir = prompt("Please change the name", input_name.value);
+    if (name_file_dir === null) {
+      return;
+    }
     input_name.value = name_file_dir;
     $.ajax({
       type: "GET",
@@ -43,11 +45,10 @@ function add_event_options(options, ruta) {
         newNameFile: ruta + name_file_dir,
       },
       dataType: "text",
-      async: false,
-      success: function (log) {
-        console.log(log);
-      },
+      async: true,
+      success: function () {},
     });
+    event.stopPropagation();
   });
 
   op_delete.addEventListener("click", () => {

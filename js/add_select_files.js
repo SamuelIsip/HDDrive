@@ -43,6 +43,12 @@ function load_events_add_select() {
         arr.push($(this).next().val());
       });
 
-      //Descargar todos los ficheros seleccionados
+      var json_arr = JSON.stringify(arr);
+
+      //Formar JSON con rutas de todos los ficheros seleccionados
+      let ruta = getPath();
+      window.location = encodeURI(
+        "./../api/download_select.php?files=" + json_arr + "&folder=" + ruta
+      );
     });
 }
