@@ -12,6 +12,10 @@ ul {
   }
 }
 
+#download_files_selected {
+  display: none;
+}
+
 .docs_header {
   background-color: rgb(94, 94, 94);
   padding: 0;
@@ -101,6 +105,11 @@ ul {
   th {
     border: 1px solid white;
     text-align: center;
+  }
+
+  input {
+    color: black;
+    cursor: pointer;
   }
 
   .files table {
