@@ -105,6 +105,9 @@ ul {
   ul li {
     list-style: none; }
 
+#download_files_selected {
+  display: none; }
+
 .docs_header {
   background-color: #5e5e5e;
   padding: 0;
@@ -170,6 +173,9 @@ ul {
   .docs_main th {
     border: 1px solid white;
     text-align: center; }
+  .docs_main input {
+    color: black;
+    cursor: pointer; }
   .docs_main .files table td:nth-child(1) {
     text-align: left;
     width: 65%; }

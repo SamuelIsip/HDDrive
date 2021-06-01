@@ -7,6 +7,7 @@ function readDocuments() {
     url: "./../api/readDocs.php",
     type: "GET",
     dataType: "json",
+    async: false,
     success: (doc) => {
       createList(doc, div_list, table);
     },
@@ -47,6 +48,20 @@ function createList(doc, div_list, table) {
     let td3 = document.createElement("td");
     let td4 = document.createElement("td");
 
+    let check = document.createElement("input");
+    check.setAttribute("type", "checkbox");
+    check.classList.add("check_file");
+    check.style.display = "none";
+    check.setAttribute("name", "check_file");
+    td1.appendChild(check);
+
+    let input_name = document.createElement("input");
+    input_name.setAttribute("type", "text");
+    $(input_name).css({
+      "background-color": "transparent",
+      border: "none",
+    });
+
     //Añadir datos
 
     if (nameDoc.isDirFile === "dir") {
@@ -72,7 +87,10 @@ function createList(doc, div_list, table) {
       });
     }
 
-    td1.appendChild(document.createTextNode(nameDoc.name));
+    input_name.value = nameDoc.name;
+    input_name.setAttribute("readonly", "");
+    input_name.classList.add("name_file" + count);
+    td1.appendChild(input_name);
     td1.classList.add("name_file");
     td2.appendChild(document.createTextNode(nameDoc.size));
     td2.classList.add("size_file");
