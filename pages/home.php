@@ -24,7 +24,7 @@
     <script src="../js/add_select_files.js"></script>
   </head>
   <body>
-    <div id="container">
+    <div id="container2">
       <header>
         <nav>
           <ul>
@@ -118,13 +118,13 @@
           <div><p>IMAGES</p></div>
         </div>
         <div id="container_calendar">
-          <div><p>CALENDAR</p></div>
+          <div><iframe id="calendar" src="./../api/calendar.php" frameborder="0"></iframe></div>
         </div>
         <div id="container_bookmarks">
           <div><p>BOOKMARKS</p></div>
         </div>
         <div id="container_tasks">
-          <div><p>TASKS</p></div>
+          <div><iframe src="./tasks.html" frameborder="0"></iframe></div>
         </div>
       </main>
     </div>
