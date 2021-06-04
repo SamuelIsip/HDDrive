@@ -51,15 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
           "application/x-www-form-urlencoded"
         );
         xhr.send(
-          "task_calendar=" +
+          "task_text=" +
             tk_message +
             "&task_title=" +
             tk_title +
-            "&cal_day=" +
+            "&task_day=" +
             tk_day +
-            "&cal_month=" +
+            "&task_month=" +
             tk_month +
-            "&cal_year=" +
+            "&task_year=" +
             tk_year
         );
       }
