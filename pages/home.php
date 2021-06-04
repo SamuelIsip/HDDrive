@@ -22,9 +22,10 @@
     <script src="../js/events_pages_home.js"></script>
     <script src="../js/load_pages_home.js"></script>
     <script src="../js/add_select_files.js"></script>
+    <script src="../js/task_load_db.js"></script>
   </head>
   <body>
-    <div id="container2">
+    <div id="container">
       <header>
         <nav>
           <ul>
@@ -118,13 +119,13 @@
           <div><p>IMAGES</p></div>
         </div>
         <div id="container_calendar">
-          <div><iframe id="calendar" src="./../api/calendar.php" frameborder="0"></iframe></div>
+          <div><iframe id="calendar" src="./calendar.php" frameborder="0"></iframe></div>
         </div>
         <div id="container_bookmarks">
           <div><p>BOOKMARKS</p></div>
         </div>
         <div id="container_tasks">
-          <div><iframe src="./tasks.html" frameborder="0"></iframe></div>
+          <div><iframe id="tasks" src="./tasks.html" frameborder="0"></iframe></div>
         </div>
       </main>
     </div>

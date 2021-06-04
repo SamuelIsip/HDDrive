@@ -9,8 +9,8 @@
     //La funcion solo admite variables
     $id_user = 1 ;
     $name=$_POST['task_title'];
-    $text=$_POST['task_calendar'];
-    $date= $_POST['cal_day']."/".$_POST['cal_month']."/".$_POST['cal_year'];
+    $text=$_POST['task_text'];
+    $date= $_POST['task_day']."/".$_POST['task_month']."/".$_POST['task_year'];
     $modified=date("d/m/Y");
     mysqli_stmt_bind_param($stmt,"issss",$id_user,$name,$text,$date,$modified);
 
