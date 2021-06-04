@@ -5,6 +5,17 @@
   flex-direction: column;
 }
 
+ul {
+  list-style-type: none;
+  & li {
+    list-style: none;
+  }
+}
+
+#download_files_selected {
+  display: none;
+}
+
 .docs_header {
   background-color: rgb(94, 94, 94);
   padding: 0;
@@ -15,8 +26,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     & li {
-      list-style: none;
-
       & a::after {
         font-family: "Font Awesome 5 Free";
         content: "\f054";
@@ -42,17 +51,51 @@
   }
 }
 
+.files__add__select {
+  background-color: brown;
+  width: auto;
+
+  & ul {
+    display: flex;
+    flex-direction: row;
+    & li {
+      font-size: 20px;
+      margin: 5px;
+    }
+
+    & li:hover {
+      cursor: pointer;
+    }
+  }
+
+  #add_file ~ label {
+    color: #00d100;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+}
+
 .docs_main {
   background-color: #b6b6b6;
+  height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
 
   & table {
-    border-collapse: collapse;
     width: 90%;
     margin: auto;
     margin-bottom: 20px;
 
     & td {
       padding: 15px;
+    }
+
+    & td:nth-child(1):hover {
+      cursor: pointer;
+      background-color: aquamarine;
     }
   }
 
@@ -61,6 +104,12 @@
   th {
     border: 1px solid white;
     text-align: center;
+  }
+
+  input {
+    color: black;
+    cursor: pointer;
+    width: 100%;
   }
 
   .files table {
@@ -82,29 +131,6 @@
   }
 }
 
-.docs_upload {
-  margin-top: auto;
-  align-self: center;
-  width: 400px;
-  height: 200px;
-  border: 2px dashed white;
-  border-radius: 10px;
-  background-color: #b6b6b6c4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  & div i {
-    font-size: 70px;
-    color: white;
-  }
-}
-
-.docs_upload:hover {
-  cursor: pointer;
-  background-color: #d4d4d4c4;
-}
-
 .options_file:hover {
   cursor: pointer;
   background-color: beige;
@@ -114,18 +140,19 @@
   background-color: white;
   position: absolute;
   & ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 0px;
     padding: 0px;
-    list-style-type: none;
+
     & li {
       & i {
         font-size: 18px;
         margin-bottom: 5px;
       }
+    }
+
+    & li:hover {
+      cursor: pointer;
+      background-color: aquamarine;
     }
   }
 }

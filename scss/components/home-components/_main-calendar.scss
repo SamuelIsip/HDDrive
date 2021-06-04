@@ -1,3 +1,15 @@
 #container_calendar {
   display: none;
+  width: 100%;
+  height: 100%;
+
+  & div {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
 }

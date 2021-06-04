@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      #list_tasks {
+        background-color: aquamarine;
+        overflow: scroll;
+        overflow-x: hidden;
+        height: 500px;
+      }
+      #list_tasks .row {
+        margin-bottom: 5px;
+        background-color: blueviolet;
+      }
+    </style>
+    <script src="../js/tasks.js"></script>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <div class="row">
+        <div class="col-4" id="add_tasks">
+          <div class="row">
+            <div class="col-12">
+              <h2>Add new note</h2>
+              <div class="form-group">
+                <label for="title">Write a title:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  placeholder="Title"
+                />
+                <label for="date-input">Set date:</label>
+                <input class="form-control" type="date" id="date-input" />
+                <label for="note">Write a note:</label>
+                <textarea
+                  placeholder="Your note goes here..."
+                  ref="textarea"
+                  class="form-control"
+                  id="note"
+                  rows="3"
+                  style="resize: none"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-success" id="save_task">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-8" id="list_tasks"></div>
+      </div>
+    </div>
+  </body>
+</html>

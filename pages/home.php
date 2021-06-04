@@ -21,6 +21,8 @@
     <script src="../js/readDocuments.js"></script>
     <script src="../js/events_pages_home.js"></script>
     <script src="../js/load_pages_home.js"></script>
+    <script src="../js/add_select_files.js"></script>
+    <script src="../js/task_load_db.js"></script>
   </head>
   <body>
     <div id="container">
@@ -80,6 +82,28 @@
               id.
             </p>
             <div class="files">
+              <div class="files__add__select">
+                <ul>
+                  <li>
+                    <input
+                      type="file"
+                      name="add_file"
+                      id="add_file"
+                      multiple
+                      hidden
+                    />
+                    <label for="add_file"
+                      ><i id="add_file" class="fas fa-plus"></i
+                    ></label>
+                  </li>
+                  <li>
+                    <i id="select_files" class="fas fa-check-square"></i>
+                  </li>
+                  <li>
+                    <i id="download_files_selected" class="fas fa-download"></i>
+                  </li>
+                </ul>
+              </div>
               <div id="options" style="display: none">
                 <ul>
                   <li><i class="fas fa-download"></i></li>
@@ -90,21 +114,18 @@
               </div>
             </div>
           </div>
-          <div class="docs_upload">
-            <div><i class="fas fa-cloud-upload-alt"></i></div>
-          </div>
         </div>
         <div id="container_images">
           <div><p>IMAGES</p></div>
         </div>
         <div id="container_calendar">
-          <div><p>CALENDAR</p></div>
+          <div><iframe id="calendar" src="./calendar.php" frameborder="0"></iframe></div>
         </div>
         <div id="container_bookmarks">
           <div><p>BOOKMARKS</p></div>
         </div>
         <div id="container_tasks">
-          <div><p>TASKS</p></div>
+          <div><iframe id="tasks" src="./tasks.html" frameborder="0"></iframe></div>
         </div>
       </main>
     </div>
