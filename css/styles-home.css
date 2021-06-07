@@ -106,7 +106,7 @@ input {
       color: white; }
 
 #container_docs {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column; }
 
@@ -241,6 +241,7 @@ ul {
     border-radius: 5px; }
 
 #container_images {
+  width: 100%;
   display: none; }
 
 #container_calendar {
@@ -256,6 +257,7 @@ iframe {
   height: 100%; }
 
 #container_bookmarks {
+  width: 100%;
   display: none; }
 
 #container_tasks {
