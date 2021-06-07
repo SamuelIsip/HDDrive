@@ -43,6 +43,7 @@ function createList(doc, div_list, table) {
     //Body
 
     let tr = document.createElement("tr");
+    tr.classList.add(count);
     let td1 = document.createElement("td");
     let td2 = document.createElement("td");
     let td3 = document.createElement("td");
@@ -53,7 +54,7 @@ function createList(doc, div_list, table) {
     check.classList.add("check_file");
     check.style.display = "none";
     check.setAttribute("name", "check_file");
-    td1.appendChild(check);
+    tr.appendChild(check);
 
     let input_name = document.createElement("input");
     input_name.setAttribute("type", "text");
