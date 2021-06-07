@@ -71,16 +71,6 @@
             </ul>
           </div>
           <div class="docs_main">
-            <h2>Title Docs Main</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate omnis fuga eos modi dolore, iusto voluptatum nesciunt
-              labore quibusdam reprehenderit veritatis expedita odio perferendis
-              pariatur sapiente nihil impedit esse. Quo, at? Voluptatum
-              dignissimos sint voluptates quibusdam, rem officiis ex laudantium
-              ab, ea exercitationem quidem, omnis amet sed repellendus molestias
-              id.
-            </p>
             <div class="files">
               <div class="files__add__select">
                 <ul>
@@ -103,14 +93,6 @@
                     <i id="download_files_selected" class="fas fa-download"></i>
                   </li>
                 </ul>
-              </div>
-              <div id="options" style="display: none">
-                <ul>
-                  <li><i class="fas fa-download"></i></li>
-                  <li><i class="fas fa-edit"></i></li>
-                  <li><i class="fas fa-trash"></i></li>
-                </ul>
-                <div class="arrow"></div>
               </div>
             </div>
           </div>
