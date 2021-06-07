@@ -2,7 +2,7 @@ function menu_options_file(ruta) {
   var options_file = document.getElementsByClassName("options_file");
 
   for (let i = 0; i < options_file.length; i++) {
-    options_file[i].addEventListener("mouseover", () => {
+    options_file[i].addEventListener("click", () => {
       if (options_file[i].hasChildNodes())
         options_file[i].removeChild(options_file[i].lastChild);
 
@@ -35,7 +35,7 @@ function menu_options_file(ruta) {
 
       add_event_options(ul, ruta);
     });
-    options_file[i].addEventListener("mouseout", () => {
+    options_file[i].addEventListener("mouseleave", () => {
       if (options_file[i].hasChildNodes())
         options_file[i].removeChild(options_file[i].lastChild);
       let op = document.createElement("i");

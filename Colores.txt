@@ -1,6 +1,0 @@
-Botones -> rgb(4, 170, 109);
-Barras y fondos -> background-color: #282A35;
-Bordes -> border-left: 4px solid #04AA6D;
-
-font-family: "Times New Roman", Times, serif;
-  font-size: 17px;

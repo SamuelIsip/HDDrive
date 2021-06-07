@@ -40,7 +40,7 @@ function load_events_add_select() {
       var check1 = $("input[name=check_file]:checked");
       var arr = [];
       $.each(check1, function () {
-        arr.push($(this).next().val());
+        arr.push($(this).next().children().val());
       });
 
       var json_arr = JSON.stringify(arr);
