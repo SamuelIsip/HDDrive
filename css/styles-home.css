@@ -18,7 +18,8 @@ nav {
 
 nav ul {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  flex-wrap: wrap; }
   nav ul li {
     list-style: none;
     margin-left: 55px; }
@@ -236,7 +237,8 @@ ul {
     margin-bottom: 5px; }
   #options li:hover {
     cursor: pointer;
-    background-color: #04aa6d; }
+    background-color: #04aa6d;
+    border-radius: 5px; }
 
 #container_images {
   display: none; }
