@@ -32,37 +32,42 @@ document.addEventListener("DOMContentLoaded", () => {
           let p = document.createElement("p");
           p.innerHTML = t.text;
           text.appendChild(p);
-          let div_button = document.createElement("div");
-          div_button.classList.add("col-12");
+
+          let div_buttons = document.createElement("div");
+          div_buttons.classList.add("col-12");
+          div_buttons.classList.add("container-buttons");
+
           let button_warning = document.createElement("button");
           button_warning.classList.add("btn");
           button_warning.classList.add("btn-warning");
           button_warning.setAttribute("id", "edit_task" + i);
           button_warning.innerHTML = "Edit";
-          div_button.appendChild(button_warning);
-          //Evento
-          button_warning.addEventListener("click", () => {
-            edit_task(t.title, t.date, t.text);
-          });
-          let div_button2 = document.createElement("div");
-          div_button2.classList.add("col-12");
+          //div_button.appendChild(button_warning);
+          /* let div_button2 = document.createElement("div");
+          div_button2.classList.add("col-12"); */
           let button_danger = document.createElement("button");
           button_danger.classList.add("btn");
           button_danger.classList.add("btn-danger");
           button_danger.setAttribute("id", "delete_task" + i);
           button_danger.innerHTML = "Delete";
+
+          div_buttons.appendChild(button_warning);
+          div_buttons.appendChild(button_danger);
+
+          //Evento
+          button_warning.addEventListener("click", () => {
+            edit_task(t.title, t.date, t.text);
+          });
           //Evento
           button_danger.addEventListener("click", () => {
             delete_task(t.title, t.date);
           });
-          div_button2.appendChild(button_danger);
 
           //Añadimos al task los elementos de la BD
           row.appendChild(title);
           row.appendChild(date);
           row.appendChild(text);
-          row.appendChild(div_button);
-          row.appendChild(div_button2);
+          row.appendChild(div_buttons);
           list_tasks.appendChild(row);
           i++;
         });
