@@ -8,23 +8,40 @@
     <style>
       body{
         position: relative;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 17px;
+      }
+      form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap:wrap;
+      }
+      form > div{
+        margin-bottom:5px;
       }
       td:hover{
         cursor: pointer;
-        background-color:blue;
+        background-color:rgb(0, 134, 60);
+      }
+
+      #flechas{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
       }
 
       hr{
         width:100%;
       }
       #calendar__task__container{
-        width:200px;
-        height:200px;
-        background-color:green;
+        width:250px;
+        height:250px;
+        background-color:rgba(28, 196, 134, 0.801);
         position:absolute;
-        top:0;
-        left:0;
+        top:50%;
+        left:50%;
         padding:5px;
+        box-shadow: 2px 3px 5px black;
       }
       #calendar__task__container form {
         width:100%;
@@ -53,6 +70,65 @@
         visibility: hidden;
       }
 
+      input:hover{
+        cursor: pointer;
+      }
+
+      #anio{
+        width: 100px;
+        padding: 10px;
+      }
+
+      #mes{
+        width: 100px;
+        padding: 10px;
+      }
+
+      #flechas input[type="submit"]{
+        width: 50px;
+        height:50px;
+      }
+
+      #select_day{
+        margin:auto;
+        width:40%;
+        background-color:rgb(0, 134, 60);
+        padding: 10px;
+        font-weight: 700;
+        color: white;
+      }
+
+      #calendar_container_main{
+        display: flex;
+        flex-direction:column;
+        flex-wrap:wrap;
+        justify-content:center;
+        text-align:center;
+        padding: 10px;
+        box-shadow: 2px 3px 5px black;
+      }
+
+      #flecha1{
+        font-size:20px;
+        font-weight:700;
+        border: 1px solid rgb(0, 134, 60);
+        border-radius: 50px 0px 0px 50px;
+        box-shadow: 2px 3px 5px black;
+      }
+      #flecha2{
+        font-size:20px;
+        font-weight:700;
+        border: 1px solid rgb(0, 134, 60);
+        border-radius: 0px 50px 50px 0px;
+        box-shadow: 2px 3px 5px black;
+      }
+
+      #flecha1:hover{
+        background-color:rgb(0, 134, 60);
+      }
+      #flecha2:hover{
+        background-color:rgb(0, 134, 60);
+      }
     </style>
   </head>
   <body>
@@ -103,27 +179,33 @@
   <div id="calendar_container_main">
     <h1>Calendar</h1>
     <form action="calendar.php" method="GET">
-      <select name="mes" id="mes">
-        <option value="<?=$_GET['mes']?>">Mes</option>
-        <option value="1">Enero</option>
-        <option value="2">Febrero</option>
-        <option value="3">Marzo</option>
-        <option value="4">Abril</option>
-        <option value="5">Mayo</option>
-        <option value="6">Junio</option>
-        <option value="7">Julio</option>
-        <option value="8">Agosto</option>
-        <option value="9">Septiembre</option>
-        <option value="10">Octubre</option>
-        <option value="11">Noviembre</option>
-        <option value="12">Diciembre</option>
-      </select>
-      <input type="number" id="anio" name="anio" value="<?=$_GET['anio']?>" placeholder="Año" />
-      <br><br>
-      <input type="submit" name="btn" value="Crear" />
-      <br><br>
-      <input type="submit" name="ret" value='<'>
-      <input type="submit" name="avz" value='>'>
+      <div>
+        <label for="mes">Select Month</label>
+        <select name="mes" id="mes">
+          <option value="<?=$_GET['mes']?>">Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
+      <div>
+        <label for="anio">Enter the Year</label>
+        <input type="number" id="anio" name="anio" value="<?=$_GET['anio']?>" placeholder="Year" />
+      </div>
+      <input type="submit" id="select_day" name="btn" value="SELECT DAY" />
+      <div id="flechas">
+        <input type="submit" id="flecha1" name="ret" value='<'>
+        <input type="submit" id="flecha2" name="avz" value='>'>
+      </div>
       <input type="text" name="mes2" id="mes2" value="<?=$mes2?>" style="display:none">
       <input type="text" name="anio2" id="anio2" value="<?=$anio2?>" style="display:none">
     </form>
@@ -147,10 +229,10 @@
       function calendario($mes,$anio){
 
         if (($anio!=="") && ($mes!=="")) {
-          echo '<table style="margin: 10px;
+          echo '<table style="margin: 5px;
                               text-transform: uppercase;
                               text-align: center;
-                              font-size: 25px;">
+                              font-size: 17px;">
                   <caption>';
 
               setlocale(LC_TIME, "es");
@@ -198,7 +280,7 @@
                         }  
                         $num++; 
                       }
-          
+  
                     echo "</tr>";
                         
                   }
