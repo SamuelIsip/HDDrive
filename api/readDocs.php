@@ -16,7 +16,7 @@
     foreach ($docs as $value) {
         $arr2=array(
             "name"=>$value,
-            "size"=>get_size($value),
+            "size"=>is_dir($value) ? get_size($value) : convert_size(filesize($value)),
             "modific"=>date ("d/m/Y H:i", filemtime($value)),
             "isDirFile"=>is_dir($value) ? "dir" : "file" 
         );

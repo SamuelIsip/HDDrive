@@ -10,11 +10,7 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
 
     <script src="../js/dimensions.js"></script>
     <script src="../js/options_file.js"></script>
