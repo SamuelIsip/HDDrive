@@ -199,7 +199,7 @@
       </div>
       <div>
         <label for="anio">Enter the Year</label>
-        <input type="number" id="anio" name="anio" value="<?=$_GET['anio']?>" placeholder="Year" />
+        <input type="number" id="anio" name="anio" value="<?=($retr === "true" || ($avza ==="true")) ? $anio2 : $_GET['anio']?>" placeholder="Year" />
       </div>
       <input type="submit" id="select_day" name="btn" value="SELECT DAY" />
       <div id="flechas">
@@ -235,19 +235,19 @@
                               font-size: 17px;">
                   <caption>';
 
-              setlocale(LC_TIME, "es");
+              setlocale(LC_TIME, "en");
               echo strftime("%B %Y", mktime(0, 0, 0, $mes, 1, $anio));
 
             echo '</caption>
                   <thead>
                     <tr>
-                      <th style="border: 1px solid black">Lunes</th>
-                      <th style="border: 1px solid black">Martes</th>
-                      <th style="border: 1px solid black">Miércoles</th>
-                      <th style="border: 1px solid black">Jueves</th>
-                      <th style="border: 1px solid black">Viernes</th>
-                      <th style="border: 1px solid black">Sábado</th>
-                      <th style="color: red; border: 1px solid black">Domingo</th>
+                      <th style="border: 1px solid black">Monday</th>
+                      <th style="border: 1px solid black">Tuesday</th>
+                      <th style="border: 1px solid black">Wednesday</th>
+                      <th style="border: 1px solid black">Thursday</th>
+                      <th style="border: 1px solid black">Friday</th>
+                      <th style="border: 1px solid black">Saturday</th>
+                      <th style="color: red; border: 1px solid black">Sunday</th>
                     </tr>
                   </thead>
                   <tbody>';

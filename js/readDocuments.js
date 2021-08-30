@@ -17,6 +17,7 @@ function readDocuments() {
 function createList(doc, div_list, table) {
   var count = 0;
   //Head
+  table.classList.add("table_files");
   let thead = document.createElement("thead");
   let tr = document.createElement("tr");
   let th1 = document.createElement("th");
@@ -72,14 +73,12 @@ function createList(doc, div_list, table) {
       td1.appendChild(i1);
       td1.addEventListener("click", () => {
         //Añadir ruta a la linea superior
-        var docs_header = document.getElementsByClassName("docs_header")[0];
-        var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.setAttribute("href", "#");
-        a.appendChild(document.createTextNode(nameDoc.name));
-        li.appendChild(a);
-        docs_header.childNodes[1].appendChild(li);
+        addLinkHead(nameDoc);
+
         ruta += nameDoc.name + "/";
+
+        //Guardar ruta actual
+        window.localStorage.setItem("ruta", ruta);
         isDir(ruta);
       });
     } else if (nameDoc.isDirFile === "file") {
@@ -149,11 +148,31 @@ function getPath() {
 
   var li_list = ul.children;
 
-  var ruta = "/";
+  var rutaHeader = "/";
 
   for (let i = 2; i < li_list.length; i++) {
-    ruta = ruta + li_list[i].children[0].innerText + "/";
+    rutaHeader = rutaHeader + li_list[i].children[0].innerText + "/";
   }
 
+  ruta = rutaHeader;
+
   return ruta;
+}
+
+function addLinkHead(nameDoc) {
+  var docs_header = document.getElementsByClassName("docs_header")[0];
+  var li = document.createElement("li");
+  var a = document.createElement("a");
+  a.setAttribute("href", "#");
+  a.appendChild(document.createTextNode(nameDoc.name));
+  li.appendChild(a);
+  docs_header.childNodes[1].appendChild(li);
+}
+
+function resetLinkHead() {
+  ruta = "";
+  var docs_header =
+    document.getElementsByClassName("docs_header")[0].firstElementChild;
+  var lis = docs_header.children;
+  for (let i = lis.length - 1; i > 1; i--) docs_header.children[i].remove();
 }

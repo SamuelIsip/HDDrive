@@ -51,4 +51,12 @@ function load_events_add_select() {
         "./../api/download_select.php?files=" + json_arr + "&folder=" + ruta
       );
     });
+
+  document.getElementById("back_dir").addEventListener("click", () => {
+    document
+      .getElementsByClassName("docs_header")[0]
+      .firstElementChild.lastElementChild.remove();
+    var ruta = getPath();
+    isDir(ruta);
+  });
 }

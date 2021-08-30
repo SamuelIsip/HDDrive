@@ -3,9 +3,9 @@
     include_once("getSizeFile.php");
 
     if(isset($_GET['nameDir'])){
-        chdir("./../".$_GET['nameDir']);
+        chdir("./../../HDDRiveHome/".$_GET['nameDir']);
     }else
-        chdir("./..");
+        chdir("./../../HDDRiveHome");
 
 
     $docs = scandir(getcwd());

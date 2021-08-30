@@ -42,12 +42,12 @@ ul {
       & a {
         font-size: 20px;
         text-decoration: none;
-        color: rgb(4, 170, 109);
+        color: #495057;
       }
 
       & a i {
         font-size: 20px;
-        color: rgb(4, 170, 109);
+        color: #495057;
       }
     }
   }
@@ -72,7 +72,12 @@ ul {
 
     & li:hover {
       cursor: pointer;
+      color: #fff;
     }
+  }
+
+  #back_dir {
+    margin-right: 0.5rem;
   }
 
   #add_file ~ label {
@@ -81,6 +86,14 @@ ul {
     border-radius: 0.3rem;
     cursor: pointer;
     margin-top: 1rem;
+  }
+
+  #select_files {
+    margin-left: 0.5rem;
+  }
+
+  #download_files_selected {
+    margin-left: 0.9rem;
   }
 }
 
@@ -125,7 +138,7 @@ ul {
     }
 
     & tr:hover {
-      background-color: rgba(126, 126, 126, 0.349);
+      background-color: rgba(0, 90, 236, 0.349);
     }
     & td {
       padding: 15px;
@@ -136,6 +149,7 @@ ul {
     }
 
     & td:nth-child(2):hover {
+      border-radius: 0px 10px 10px 0px;
       cursor: pointer;
       background-image: linear-gradient(
         to bottom,
