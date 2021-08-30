@@ -182,7 +182,7 @@
       <div>
         <label for="mes">Select Month</label>
         <select name="mes" id="mes">
-          <option value="<?=$_GET['mes']?>">Month</option>
+          <option value="<?=($retr === "true" || ($avza ==="true")) ? $mes2 : $_GET['mes']?>">Month</option>
           <option value="1">January</option>
           <option value="2">February</option>
           <option value="3">March</option>
