@@ -52,7 +52,6 @@
             <li><a href="#">All files</a></li>
             <li><a href="#">Recent</a></li>
             <li><a href="#">Favorites</a></li>
-            <li><div>16 MP of 3GB used</div></li>
           </ul>
         </div>
         <div id="container_docs">
@@ -70,6 +69,9 @@
             <div class="files">
               <div class="files__add__select">
                 <ul>
+                <li>
+                  <i id="back_dir" class="fas fa-arrow-left"></i>
+                  </li>
                   <li>
                     <input
                       type="file"

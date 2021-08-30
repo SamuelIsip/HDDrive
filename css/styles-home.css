@@ -142,10 +142,10 @@ ul {
     .docs_header ul li a {
       font-size: 20px;
       text-decoration: none;
-      color: #04aa6d; }
+      color: #495057; }
     .docs_header ul li a i {
       font-size: 20px;
-      color: #04aa6d; }
+      color: #495057; }
 
 .files__add__select {
   width: fit-content; }
@@ -161,13 +161,20 @@ ul {
       font-size: 20px;
       margin: 5px; }
     .files__add__select ul li:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      color: #fff; }
+  .files__add__select #back_dir {
+    margin-right: 0.5rem; }
   .files__add__select #add_file ~ label {
     padding: 0.5rem;
     font-family: sans-serif;
     border-radius: 0.3rem;
     cursor: pointer;
     margin-top: 1rem; }
+  .files__add__select #select_files {
+    margin-left: 0.5rem; }
+  .files__add__select #download_files_selected {
+    margin-left: 0.9rem; }
 
 .docs_main {
   background-color: #fff;
@@ -198,12 +205,13 @@ ul {
         top: 0;
         left: 0; }
     .docs_main table tr:hover {
-      background-color: rgba(126, 126, 126, 0.349); }
+      background-color: rgba(0, 90, 236, 0.349); }
     .docs_main table td {
       padding: 15px; }
     .docs_main table .name_file {
       display: flex; }
     .docs_main table td:nth-child(2):hover {
+      border-radius: 0px 10px 10px 0px;
       cursor: pointer;
       background-image: linear-gradient(to bottom, rgba(126, 126, 126, 0.349), rgba(126, 126, 126, 0.699)); }
   .docs_main table,
