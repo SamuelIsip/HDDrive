@@ -61,9 +61,6 @@
       }
       .calendar_task_styles{
         visibility: visible;
-        z-index: 10;
-        top: 50%;
-        left: 50%;
       }
 
       .calendar_task_no_styles{
@@ -220,6 +217,8 @@
         if($avza === "true"){
           calendario($mes2,$anio2);
         }
+
+        calendario(1,2021);
 
       ?>
 
