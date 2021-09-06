@@ -1,5 +1,7 @@
 <?php
 
+    include_once("backup_inc.php")
+
     chdir("./../../HDDriveHome/");
 
     //Guardamos la ruta del fichero
