@@ -1,6 +1,6 @@
 <?php
 
-chdir("./../../HDDriveHome");
+    chdir("./../../HDDriveHome");
 
     //Guardamos la ruta del fichero
     $filename = "./".$_GET['nameFile'];
@@ -42,7 +42,7 @@ chdir("./../../HDDriveHome");
             exit;
         }
     }
-
+    
 
     function aniadir($fich,$filenameZip){
         $archivoBackup=new ZipArchive;
@@ -84,8 +84,6 @@ chdir("./../../HDDriveHome");
         }
     
     }
-
-    
 
 
 ?>
