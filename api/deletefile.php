@@ -1,6 +1,6 @@
 <?php
 
-    chdir("./..");
+    chdir("./../../HDDriveHome");
 
     //Guardamos la ruta del fichero
     $filename = $_GET['nameFile'];
