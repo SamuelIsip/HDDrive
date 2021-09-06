@@ -4,7 +4,7 @@
 
     $folder = $_GET['folder'];
 
-    chdir("./..".$folder);
+    chdir("./../../HDDriveHome".$folder);
 
     if($folder=="/"){
         $folder="/Documents";
