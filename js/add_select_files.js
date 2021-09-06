@@ -39,8 +39,15 @@ function load_events_add_select() {
     .addEventListener("click", () => {
       var check1 = $("input[name=check_file]:checked");
       var arr = [];
+      let i = 0;
       $.each(check1, function () {
-        arr.push($(this).next().children().val());
+        arr.push(
+          $(this)
+            .next()
+            .find(".name_file" + i)
+            .val()
+        );
+        i++;
       });
 
       var json_arr = JSON.stringify(arr);
