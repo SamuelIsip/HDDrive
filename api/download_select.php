@@ -16,18 +16,21 @@
     //Nombre de la carpeta
     $filenameZip = basename($folder).".zip";
 
-    $archivoBackup=new ZipArchive;
+    /* $archivoBackup=new ZipArchive;
     
-    $archivoBackup->open($filenameZip,ZipArchive::CREATE);
+    $archivoBackup->open($filenameZip,ZipArchive::CREATE); */
+    
+    directorios(".",$arr_files,$filenameZip);
 
-    for ($i=0; $i < count($arr_files); $i++) { 
+
+  /*   for ($i=0; $i < count($arr_files); $i++) { 
         if (is_dir($arr_files[$i])) 
             $archivoBackup->addFolder($arr_files[$i]);
         else
             $archivoBackup->addFile($arr_files[$i]);
     }
 
-    $archivoBackup->close();
+    $archivoBackup->close(); */
 
     header("content-type:application/zip");
     header("content-disposition:attachment;filename=".$filenameZip); 
