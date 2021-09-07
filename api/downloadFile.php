@@ -8,7 +8,7 @@
     //Si es un directorio, se recorren todo los ficheros recursivamente
     //Y se comprimen en un único .zip
     if(is_dir($filename)){
-        //incluimos las funciones necesarias para hacer el backup
+        //incluimos las funciones necesarias para hacer el backu
 
         include_once("backup_inc.php");
 
