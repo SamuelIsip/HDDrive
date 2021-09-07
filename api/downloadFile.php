@@ -10,7 +10,7 @@
     if(is_dir($filename)){
         //incluimos las funciones necesarias para hacer el backup
 
-        include_once("backup_inc.php")
+        include_once("backup_inc.php");
 
         chdir($filename);
 
