@@ -29,7 +29,7 @@
       #flechas{
         display:flex;
         flex-direction:row;
-        justify-content:space-between;
+        justify-content:space-around;
       }
 
       hr{
@@ -205,6 +205,9 @@
       }elseif(isset($_GET['btn'])){
         $mes2 = $_GET['mes'];
         $anio2 = $_GET['anio'];
+      }else{
+        $mes2 = 01;
+        $anio2 = 2021;
       }
 
   ?>
