@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
       dias_semana[i].addEventListener("click", () => {
         document.getElementById("calendar__task__container").className =
           "calendar_task_styles";
-        cargar_funcioanlidades_task(dias_semana[i].innerHTML);
+        await cargar_funcioanlidades_task(dias_semana[i].innerHTML);
       });
     }
   }
 
-  function cargar_funcioanlidades_task(dia_selec) {
+  async function cargar_funcioanlidades_task(dia_selec) {
     var dia = document.getElementById("cal_day");
     var mes = document.getElementById("cal_month");
     var anio = document.getElementById("cal_year");
