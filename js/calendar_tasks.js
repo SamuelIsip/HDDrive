@@ -68,7 +68,28 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("close_task_calendar")
     .addEventListener("click", () => {
-      document.getElementById("calendar__task__container").className =
-        "calendar_task_no_styles";
+      if (
+        document
+          .getElementById("calendar__task__container")
+          .classList.contains("calendar_task_no_styles")
+      ) {
+        document
+          .getElementById("calendar__task__container")
+          .classList.remove("calendar_task_no_styles");
+        document
+          .getElementById("calendar__task__container")
+          .classList.add("calendar_task_styles");
+      } else if (
+        document
+          .getElementById("calendar__task__container")
+          .classList.contains("calendar_task_styles")
+      ) {
+        document
+          .getElementById("calendar__task__container")
+          .classList.remove("calendar_task_styles");
+        document
+          .getElementById("calendar__task__container")
+          .classList.add("calendar_task_no_styles");
+      }
     });
 });
