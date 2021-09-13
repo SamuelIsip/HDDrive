@@ -22,13 +22,13 @@
       form > div{
         margin-bottom:5px;
       }
-      form:first-child{
+      #calendar_container_main > form:first-child{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
       }
-      form:nth-child(2){
+      #calendar_container_main > form:nth-child(2){
         display: flex;
         flex-direction: column;
         justify-content: center;
