@@ -15,13 +15,15 @@
         display: flex;
         flex-direction: column;
         flex-wrap:wrap;
+        border-radius: 5px;
+        background-color: #2bae88;
       }
       form > div{
         margin-bottom:5px;
       }
       td:hover{
         cursor: pointer;
-        background-color:rgb(0, 134, 60);
+        background-color: #2bae88;
       }
 
       #flechas{
@@ -132,6 +134,8 @@
         text-align:center;
         padding: 10px;
         box-shadow: 2px 3px 5px black;
+        border-radius:5px;
+        background-color: white;
       }
 
       #flecha1{
@@ -205,7 +209,6 @@
 
   ?>
   <div id="calendar_container_main">
-    <h1>Calendar</h1>
     <form action="calendar.php" method="GET">
       <div>
         <label for="mes">Select Month</label>
