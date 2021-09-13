@@ -89,7 +89,7 @@ function add_event_options(options, ruta) {
   op_delete.addEventListener("click", () => {
     console.log(ruta + name_file_doc);
     $.ajax({
-      type: "GET",
+      type: "POST",
       url: "./../api/deletefile.php",
       data: { nameFile: ruta + name_file_doc },
       dataType: "text",

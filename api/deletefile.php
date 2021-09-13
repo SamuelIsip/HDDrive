@@ -3,7 +3,7 @@
     chdir("./../../HDDriveHome");
 
     //Guardamos la ruta del fichero
-    $filename = $_GET['nameFile'];
+    $filename = $_POST['nameFile'];
 
     rrmdir($filename);
 
