@@ -205,7 +205,7 @@ ul {
         top: 0;
         left: 0; }
     .docs_main table tbody tr:hover {
-      background-color: #2bae88; }
+      background-color: rgba(28, 196, 134, 0.801); }
     .docs_main table td {
       padding: 15px; }
     .docs_main table .name_file {
