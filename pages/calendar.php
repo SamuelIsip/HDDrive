@@ -248,12 +248,16 @@
         if(isset($_GET['btn'])){
           calendario($_GET['mes'],$_GET['anio']);
         }
-        if($retr === "true"){
+        else if($retr === "true"){
           calendario($mes2,$anio2);
         }
-        if($avza === "true"){
+        else if($avza === "true"){
+          calendario($mes2,$anio2);
+        }else{
           calendario($mes2,$anio2);
         }
+
+
 
       ?>
 
