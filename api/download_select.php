@@ -1,4 +1,6 @@
 <?php
+
+    include_once("backup_inc.php");
     
     $folder = $_GET['folder'];
 
@@ -38,7 +40,7 @@
     unlink($filenameZip);
     
 
-    function aniadir($fich,$filenameZip){
+    /* function aniadir($fich,$filenameZip){
         $archivoBackup=new ZipArchive;
         $archivoBackup->open($filenameZip,ZipArchive::CREATE);
         $archivoBackup->addFile($fich);
@@ -77,6 +79,6 @@
     
         }
     
-    }
+    } */
 
 ?>
