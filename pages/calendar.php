@@ -94,7 +94,7 @@
         z-index: 10;
         top: 50%;
         left: 50%;
-        transition: visibility 0s, opacity 0.5s linear;
+        transition: visibility 0.5s;
       }
 
       .calendar_task_no_styles{
