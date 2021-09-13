@@ -17,9 +17,22 @@
         flex-wrap:wrap;
         border-radius: 5px;
         background-color: #2bae88;
+        box-shadow: 3px 3px 5px black;
       }
       form > div{
         margin-bottom:5px;
+      }
+      form:first-child{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      form:second-child{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
       td:hover{
         cursor: pointer;
@@ -120,10 +133,8 @@
       #select_day{
         margin:auto;
         width:40%;
-        background-color:rgb(0, 134, 60);
         padding: 10px;
         font-weight: 700;
-        color: white;
       }
 
       #calendar_container_main{
@@ -141,16 +152,14 @@
       #flecha1{
         font-size:20px;
         font-weight:700;
-        border: 1px solid rgb(0, 134, 60);
         border-radius: 50px 0px 0px 50px;
-        box-shadow: 2px 3px 5px black;
+        
       }
       #flecha2{
         font-size:20px;
         font-weight:700;
-        border: 1px solid rgb(0, 134, 60);
         border-radius: 0px 50px 50px 0px;
-        box-shadow: 2px 3px 5px black;
+        
       }
 
       #flecha1:hover{
