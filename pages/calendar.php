@@ -36,12 +36,13 @@
       #calendar__task__container{
         width:250px;
         height:250px;
-        background-color:rgba(28, 196, 134, 0.801);
+        background-color:rgba(28 196 134 / 92%);
         position:absolute;
         top:50%;
         left:50%;
         padding:5px;
         box-shadow: 2px 3px 5px black;
+        transform: translate(-50%,-50%);
       }
       #calendar__task__container form {
         width:100%;
@@ -54,10 +55,35 @@
         text-align:center;
       }
       #calendar__task__container form div p{
+        margin:0px;
+        font-size:25px;
         display: inline-block;
+      }
+      #task_title{
+        padding:5px;
+        border:1px solid black;
+        border-radius: 5px;
       }
       #task_calendar{
         resize:none;
+        padding:5px;
+        border:1px solid black;
+        border-radius: 5px;
+        margin-bottom:5px;
+      }
+      #calendar__task__container button{ç
+        border:1px solid black;
+        border-radius:5px;
+        padding:5px;
+      }
+      #calendar__task__container button:hover{
+        cursor: pointer;
+      }
+      #save_task_calendar{
+        background-color: #26f226;
+      }
+      #close_task_calendar{
+        background-color: #ff0000;
       }
       .calendar_task_styles{
         visibility: visible;
@@ -137,7 +163,9 @@
       <form action="#" method="post">
         <div>
           <p id="cal_day">01</p>
+          <p>&nbsp;/&nbsp;</p>
           <p id="cal_month">01</p>
+          <p>&nbsp;/&nbsp;</p>
           <p id="cal_year">2021</p>
         </div>
         <hr>
