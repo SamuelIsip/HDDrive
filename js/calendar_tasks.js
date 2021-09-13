@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       dias_semana[i].addEventListener("click", () => {
         document.getElementById("calendar__task__container").className =
           "calendar_task_styles";
-        await cargar_funcioanlidades_task(dias_semana[i].innerHTML);
+        cargar_funcioanlidades_task(dias_semana[i].innerHTML);
       });
     }
   }
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     anio.innerHTML = document.getElementById("anio").value;
   }
 
-  document
+  await document
     .getElementById("save_task_calendar")
     .addEventListener("click", (event) => {
       event.preventDefault();
