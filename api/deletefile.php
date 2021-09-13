@@ -3,9 +3,19 @@
     chdir("./../../HDDriveHome");
 
     //Guardamos la ruta del fichero
-    $filename = $_POST['nameFile'];
+    $filename = $_GET['nameFile'];
 
     rrmdir($filename);
+
+   if(is_dir($filename)){
+        rrmdir($filename);
+    }
+
+    if(is_file($filename)){
+        if(file_exists($filename)){
+            unlink($filename);
+        }
+    } 
 
     function rrmdir($dir) { 
         if (is_dir($dir)) { 
