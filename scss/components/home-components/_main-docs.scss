@@ -137,7 +137,7 @@ ul {
       }
     }
 
-    & tr:hover {
+    & tr:not(tr:first-child):hover {
       background-color: #2bae88;
     }
     & td {
