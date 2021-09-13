@@ -204,7 +204,7 @@ ul {
         position: absolute;
         top: 0;
         left: 0; }
-    .docs_main table tr:not(tr:first-child):hover {
+    .docs_main table tbody tr:hover {
       background-color: #2bae88; }
     .docs_main table td {
       padding: 15px; }
