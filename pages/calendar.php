@@ -148,7 +148,7 @@
       </form>
   </div>
 
-  <?
+  <?php
 
       if(isset($_GET['ret'])){
         $mes2 = --$_GET['mes2'];
@@ -210,7 +210,7 @@
       <input type="text" name="anio2" id="anio2" value="<?=$anio2?>" style="display:none">
     </form>
 
-      <?  
+      <?php 
         if(isset($_GET['btn'])){
           calendario($_GET['mes'],$_GET['anio']);
         }
@@ -223,7 +223,7 @@
 
       ?>
 
-    <?
+    <?php
      
 
       function calendario($mes,$anio){
