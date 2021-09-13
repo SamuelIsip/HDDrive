@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  async function cargar_funcioanlidades_task(dia_selec) {
+  function cargar_funcioanlidades_task(dia_selec) {
     var dia = document.getElementById("cal_day");
     var mes = document.getElementById("cal_month");
     var anio = document.getElementById("cal_year");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     anio.innerHTML = document.getElementById("anio").value;
   }
 
-  await document
+  document
     .getElementById("save_task_calendar")
     .addEventListener("click", (event) => {
       event.preventDefault();
