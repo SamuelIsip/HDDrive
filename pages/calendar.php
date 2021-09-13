@@ -90,15 +90,14 @@
         background-color: #ff0000;
       }
       .calendar_task_styles{
-        opacity: 1;
+        visibility: visible;
         z-index: 10;
         top: 50%;
         left: 50%;
-        transition: visibility 0.5s;
       }
 
       .calendar_task_no_styles{
-        opacity:0;
+        visibility: hidden;
       }
 
       input:hover{
