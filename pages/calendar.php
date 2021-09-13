@@ -28,7 +28,7 @@
         justify-content: center;
         align-items: center;
       }
-      form:second-child{
+      form:nth-child(2){
         display: flex;
         flex-direction: column;
         justify-content: center;
