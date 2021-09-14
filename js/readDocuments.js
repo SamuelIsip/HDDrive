@@ -89,7 +89,7 @@ function createList(doc, div_list, table) {
 
     input_name.value = nameDoc.name;
     input_name.setAttribute("readonly", "");
-    input_name.classList.add("name_file" + count);
+    input_name.classList.add("name_file_dir");
     td1.appendChild(input_name);
     td1.classList.add("name_file");
     td2.appendChild(document.createTextNode(nameDoc.size));

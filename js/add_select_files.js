@@ -1,4 +1,4 @@
-function load_events_add_select() {
+async function load_events_add_select() {
   document
     .getElementById("add_file")
     .parentElement.addEventListener("change", () => {
@@ -6,7 +6,7 @@ function load_events_add_select() {
       var form_data = new FormData();
       form_data.append("file", file_data);
       form_data.append("rutaDir", getPath());
-      $.ajax({
+      await $.ajax({
         url: "./../api/uploadfile.php",
         type: "POST",
         dataType: "text",
@@ -39,15 +39,8 @@ function load_events_add_select() {
     .addEventListener("click", () => {
       var check1 = $("input[name=check_file]:checked");
       var arr = [];
-      let i = 0;
       $.each(check1, function () {
-        arr.push(
-          $(this)
-            .next()
-            .find(".name_file" + i)
-            .val()
-        );
-        i++;
+        arr.push($(this).next().find(".name_file_dir").val());
       });
 
       var json_arr = JSON.stringify(arr);
