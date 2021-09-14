@@ -11,7 +11,7 @@
     }
 
 
-    $arr_files = json_decode($_GET['files']);
+    $arr_files = json_decode(urldecode($_GET['files']));
 
     //Nombre de la carpeta
     $filenameZip = basename($folder).".zip";
