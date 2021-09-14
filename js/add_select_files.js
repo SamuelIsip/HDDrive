@@ -6,7 +6,7 @@ function load_events_add_select() {
       var form_data = new FormData();
       form_data.append("file", file_data);
       form_data.append("rutaDir", getPath());
-      await $.ajax({
+      $.ajax({
         url: "./../api/uploadfile.php",
         type: "POST",
         dataType: "text",
