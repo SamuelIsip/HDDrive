@@ -1,4 +1,4 @@
-async function load_events_add_select() {
+function load_events_add_select() {
   document
     .getElementById("add_file")
     .parentElement.addEventListener("change", () => {
