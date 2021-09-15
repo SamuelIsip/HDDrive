@@ -3,8 +3,8 @@ function menu_options_file(ruta) {
 
   for (let i = 0; i < options_file.length; i++) {
     options_file[i].addEventListener("click", () => {
-      if (options_file[i].hasChildNodes())
-        options_file[i].removeChild(options_file[i].lastChild);
+      /*  if (options_file[i].hasChildNodes())
+        options_file[i].removeChild(options_file[i].lastChild); */
 
       let ul = document.createElement("ul");
       ul.setAttribute("id", "options");
