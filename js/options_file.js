@@ -92,7 +92,7 @@ function add_event_options(options, ruta) {
       url: "./../api/deletefile.php",
       data: { nameFile: ruta + name_file_doc },
       dataType: "text",
-      async: false,
+      async: true,
       success: function () {
         isDir(ruta);
       },

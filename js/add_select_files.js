@@ -14,6 +14,7 @@ function load_events_add_select() {
         contentType: false,
         processData: false,
         data: form_data,
+        async: true,
         success: function () {
           isDir(getPath());
         },
