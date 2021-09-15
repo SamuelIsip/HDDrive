@@ -63,6 +63,8 @@ function load_events_add_select() {
         .firstElementChild.lastElementChild.remove();
 
       isDir(ruta);
+    } else {
+      isDir("/");
     }
   });
 }
