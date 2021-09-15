@@ -49,7 +49,7 @@
       <main>
         <div id="container_menu">
           <ul>
-            <li><a href="#">All files</a></li>
+            <li><a id="documents_menu" href="#">All files</a></li>
             <li><a href="#">Recent</a></li>
             <li><a href="#">Favorites</a></li>
           </ul>

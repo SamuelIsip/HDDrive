@@ -34,4 +34,17 @@ function load_events_pages_menu() {
       "#container_docs, #container_images, #container_calendar, #container_bookmarks"
     ).css("display", "none");
   });
+
+  // Menu Lateral
+  $("#documents_menu").on("click", () => {
+    $("#container_docs").css("display", "flex");
+    $(
+      "#container_images, #container_calendar, #container_bookmarks, #container_tasks"
+    ).css("display", "none");
+
+    // Remove the table, to reload files of index
+    if ($(".table_files").children().length > 0) $(".table_files").remove();
+    readDocuments();
+    resetLinkHead();
+  });
 }
