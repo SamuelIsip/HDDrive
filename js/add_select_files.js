@@ -45,12 +45,12 @@ function load_events_add_select() {
 
       var json_arr = JSON.stringify(arr);
 
-      console.log(json_arr);
-
       //Formar JSON con rutas de todos los ficheros seleccionados
-      let ruta = getPath();
       window.location = encodeURI(
-        "./../api/download_select.php?files=" + json_arr + "&folder=" + ruta
+        "./../api/download_select.php?files=" +
+          json_arr +
+          "&folder=" +
+          getPath()
       );
     });
 
