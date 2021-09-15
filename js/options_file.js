@@ -50,11 +50,7 @@ function add_event_options(options, ruta) {
     op_favorite = options.children[1],
     op_delete = options.children[2];
 
-  //Fila seleccionada
-  var row = op_download.parentElement.parentElement.parentElement.className;
-
-  var name_file_doc = document.getElementsByClassName("name_file" + row)[0]
-    .value;
+  var name_file_doc = document.getElementsByClassName("name_file_dir")[0].value;
 
   op_download.addEventListener("click", () => {
     console.log(ruta + name_file_doc);
