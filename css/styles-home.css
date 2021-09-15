@@ -203,7 +203,9 @@ ul {
         width: fit-content;
         position: absolute;
         top: 0;
-        left: 0; }
+        left: 0;
+        width: 15px;
+        height: 15px; }
     .docs_main table tbody tr:hover {
       background-color: rgba(28, 196, 134, 0.801); }
     .docs_main table td {
