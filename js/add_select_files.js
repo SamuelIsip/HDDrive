@@ -54,11 +54,12 @@ function load_events_add_select() {
       );
     });
 
+  // Funcionalidad para volver atrás en la página
   document.getElementById("back_dir").addEventListener("click", () => {
     document
       .getElementsByClassName("docs_header")[0]
       .firstElementChild.lastElementChild.remove();
     var ruta = getPath();
-    isDir(ruta);
+    if (ruta !== "/") isDir(ruta);
   });
 }

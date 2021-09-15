@@ -63,16 +63,16 @@ function add_event_options(options, ruta) {
     );
   });
 
+  // TODO: complete this function
+
   op_favorite.addEventListener("click", () => {
-    let input_name = document.getElementsByClassName("name_file" + row)[0]
-      .value;
     let date = document.getElementsByClassName(row)[0].children[2].innerHTML;
     let size = document.getElementsByClassName(row)[0].children[1].innerHTML;
     $.ajax({
       type: "POST",
       url: "./../api/addfavorite.php",
       data: {
-        name: input_name,
+        name: name_file_doc,
         ruta: ruta + name_file_doc,
         date: date,
         size: size,

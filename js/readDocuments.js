@@ -154,9 +154,9 @@ function getPath() {
     rutaHeader = rutaHeader + li_list[i].children[0].innerText + "/";
   }
 
-  ruta = rutaHeader;
+  //ruta = rutaHeader;
 
-  return ruta;
+  return rutaHeader;
 }
 
 function addLinkHead(nameDoc) {
