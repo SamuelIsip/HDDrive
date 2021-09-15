@@ -56,7 +56,6 @@ function load_events_add_select() {
 
   // Funcionalidad para volver atrás en la página
   document.getElementById("back_dir").addEventListener("click", () => {
-    var ruta = getPath();
     console.log(ruta);
     document
       .getElementsByClassName("docs_header")[0]
