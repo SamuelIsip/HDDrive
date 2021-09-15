@@ -1,8 +1,8 @@
 <?php
-    move_uploaded_file($_FILES['file']['tmp_name'], "./../".$_POST['rutaDir'].$_FILES['file']['name']);
+    move_uploaded_file($_FILES['file']['tmp_name'], "./../../HDDriveHome/".$_POST['rutaDir'].$_FILES['file']['name']);
 
 
-    chdir("./../".$_POST['rutaDir']);
+    chdir("./../../HDDriveHome/".$_POST['rutaDir']);
 
     $value = $_FILES['file']['name'];
 

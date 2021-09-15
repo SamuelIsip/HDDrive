@@ -14,6 +14,7 @@ function load_events_add_select() {
         contentType: false,
         processData: false,
         data: form_data,
+        async: true,
         success: function () {
           isDir(getPath());
         },
@@ -40,15 +41,29 @@ function load_events_add_select() {
       var check1 = $("input[name=check_file]:checked");
       var arr = [];
       $.each(check1, function () {
-        arr.push($(this).next().val());
+        arr.push($(this).next().find(".name_file_dir").val());
       });
 
       var json_arr = JSON.stringify(arr);
 
       //Formar JSON con rutas de todos los ficheros seleccionados
-      let ruta = getPath();
       window.location = encodeURI(
-        "./../api/download_select.php?files=" + json_arr + "&folder=" + ruta
+        "./../api/download_select.php?files=" +
+          json_arr +
+          "&folder=" +
+          getPath()
       );
     });
+
+  // Funcionalidad para volver atrás en la página
+  document.getElementById("back_dir").addEventListener("click", () => {
+    let rutas = getPath();
+    if (rutas != "/") {
+      document
+        .getElementsByClassName("docs_header")[0]
+        .firstElementChild.lastElementChild.remove();
+
+      isDir(getPath());
+    }
+  });
 }

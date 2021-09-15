@@ -1,30 +1,36 @@
 <?php
-    
-    include_once("backup_inc.php");
 
+    include_once("backup_inc.php");
+    
     $folder = $_GET['folder'];
 
-    chdir("./..".$folder);
+    chdir("./../../HDDriveHome".$folder);
 
     if($folder=="/"){
         $folder="/Documents";
     }
 
 
-    $arr_files = json_decode($_GET['files']);
+    $arr_files = json_decode(urldecode($_GET['files']));
 
     //Nombre de la carpeta
     $filenameZip = basename($folder).".zip";
 
-    $archivoBackup=new ZipArchive;
+    /* $archivoBackup=new ZipArchive;
     
-    $archivoBackup->open($filenameZip,ZipArchive::CREATE);
+    $archivoBackup->open($filenameZip,ZipArchive::CREATE); */
+    
+    directorios(".",$arr_files,$filenameZip);
 
-    for ($i=0; $i < count($arr_files); $i++) { 
-        $archivoBackup->addFile($arr_files[$i]);
+
+  /*   for ($i=0; $i < count($arr_files); $i++) { 
+        if (is_dir($arr_files[$i])) 
+            $archivoBackup->addFolder($arr_files[$i]);
+        else
+            $archivoBackup->addFile($arr_files[$i]);
     }
 
-    $archivoBackup->close();
+    $archivoBackup->close(); */
 
     header("content-type:application/zip");
     header("content-disposition:attachment;filename=".$filenameZip); 
@@ -32,6 +38,8 @@
 
     //Eliminamos el archivo de nuestro servidor
     unlink($filenameZip);
+    
+
     
 
 ?>

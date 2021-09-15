@@ -1,7 +1,7 @@
 #container_menu {
-  background-color: #2e2e2e;
+  background-color: #2c2d3a;
   width: 20%;
-  border-right: 1px solid white;
+  border-right: 1px solid #04aa6d;
 
   & ul {
     margin: 0;
@@ -38,7 +38,7 @@
         }
       }
       & li:nth-child(#{$i}):hover {
-        background-color: #2280fa;
+        background-color: rgb(4, 170, 109);
       }
     }
     & li:last-child div {

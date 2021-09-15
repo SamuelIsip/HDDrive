@@ -8,23 +8,45 @@
     <style>
       body{
         position: relative;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 17px;
       }
+      #calendar_container_main form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap:wrap;
+        border-radius: 5px;
+        background-color: #2bae88;
+        box-shadow: 3px 3px 5px black;
+      }
+      form > div{
+        margin-bottom:5px;
+      }
+     
       td:hover{
         cursor: pointer;
-        background-color:blue;
+        background-color: #2bae88;
+      }
+
+      #flechas{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
       }
 
       hr{
         width:100%;
       }
       #calendar__task__container{
-        width:200px;
-        height:200px;
-        background-color:green;
+        width:250px;
+        height:250px;
+        background-color:rgba(28 196 134 / 92%);
         position:absolute;
-        top:0;
-        left:0;
+        top:50%;
+        left:50%;
         padding:5px;
+        box-shadow: 2px 3px 5px black;
+        transform: translate(-50%,-50%);
       }
       #calendar__task__container form {
         width:100%;
@@ -37,10 +59,35 @@
         text-align:center;
       }
       #calendar__task__container form div p{
+        margin:0px;
+        font-size:25px;
         display: inline-block;
+      }
+      #task_title{
+        padding:5px;
+        border:1px solid black;
+        border-radius: 5px;
       }
       #task_calendar{
         resize:none;
+        padding:5px;
+        border:1px solid black;
+        border-radius: 5px;
+        margin-bottom:5px;
+      }
+      #calendar__task__container button{ç
+        border:1px solid black;
+        border-radius:5px;
+        padding:5px;
+      }
+      #calendar__task__container button:hover{
+        cursor: pointer;
+      }
+      #save_task_calendar{
+        background-color: #26f226;
+      }
+      #close_task_calendar{
+        background-color: #ff0000;
       }
       .calendar_task_styles{
         visibility: visible;
@@ -53,6 +100,63 @@
         visibility: hidden;
       }
 
+      input:hover{
+        cursor: pointer;
+      }
+
+      #anio{
+        width: 100px;
+        padding: 10px;
+      }
+
+      #mes{
+        width: 100px;
+        padding: 10px;
+      }
+
+      #flechas input[type="submit"]{
+        width: 50px;
+        height:50px;
+      }
+
+      #select_day{
+        margin:auto;
+        width:40%;
+        padding: 10px;
+        font-weight: 700;
+      }
+
+      #calendar_container_main{
+        display: flex;
+        flex-direction:column;
+        flex-wrap:wrap;
+        justify-content:center;
+        text-align:center;
+        padding: 10px;
+        box-shadow: 2px 3px 5px black;
+        border-radius:5px;
+        background-color: white;
+      }
+
+      #flecha1{
+        font-size:20px;
+        font-weight:700;
+        border-radius: 50px 0px 0px 50px;
+        
+      }
+      #flecha2{
+        font-size:20px;
+        font-weight:700;
+        border-radius: 0px 50px 50px 0px;
+        
+      }
+
+      #flecha1:hover{
+        background-color:rgb(0, 134, 60);
+      }
+      #flecha2:hover{
+        background-color:rgb(0, 134, 60);
+      }
     </style>
   </head>
   <body>
@@ -61,7 +165,9 @@
       <form action="#" method="post">
         <div>
           <p id="cal_day">01</p>
+          <p>&nbsp;/&nbsp;</p>
           <p id="cal_month">01</p>
+          <p>&nbsp;/&nbsp;</p>
           <p id="cal_year">2021</p>
         </div>
         <hr>
@@ -72,7 +178,7 @@
       </form>
   </div>
 
-  <?
+  <?php
 
       if(isset($_GET['ret'])){
         $mes2 = --$_GET['mes2'];
@@ -97,75 +203,87 @@
       }elseif(isset($_GET['btn'])){
         $mes2 = $_GET['mes'];
         $anio2 = $_GET['anio'];
+      }else{
+        $mes2 = 01;
+        $anio2 = 2021;
       }
 
   ?>
   <div id="calendar_container_main">
-    <h1>Calendar</h1>
     <form action="calendar.php" method="GET">
-      <select name="mes" id="mes">
-        <option value="<?=$_GET['mes']?>">Mes</option>
-        <option value="1">Enero</option>
-        <option value="2">Febrero</option>
-        <option value="3">Marzo</option>
-        <option value="4">Abril</option>
-        <option value="5">Mayo</option>
-        <option value="6">Junio</option>
-        <option value="7">Julio</option>
-        <option value="8">Agosto</option>
-        <option value="9">Septiembre</option>
-        <option value="10">Octubre</option>
-        <option value="11">Noviembre</option>
-        <option value="12">Diciembre</option>
-      </select>
-      <input type="number" id="anio" name="anio" value="<?=$_GET['anio']?>" placeholder="Año" />
-      <br><br>
-      <input type="submit" name="btn" value="Crear" />
-      <br><br>
-      <input type="submit" name="ret" value='<'>
-      <input type="submit" name="avz" value='>'>
+      <div>
+        <label for="mes">Select Month</label>
+        <select name="mes" id="mes">
+          <option value="<?=($retr === "true" || ($avza ==="true")) ? $mes2 : $_GET['mes']?>">Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
+      <div>
+        <label for="anio">Enter the Year</label>
+        <input type="number" id="anio" name="anio" value="<?=($retr === "true" || ($avza ==="true")) ? $anio2 : $_GET['anio']?>" placeholder="Year" />
+      </div>
+      <input type="submit" id="select_day" name="btn" value="SELECT DAY" />
+      <div id="flechas">
+        <input type="submit" id="flecha1" name="ret" value='<'>
+        <input type="submit" id="flecha2" name="avz" value='>'>
+      </div>
       <input type="text" name="mes2" id="mes2" value="<?=$mes2?>" style="display:none">
       <input type="text" name="anio2" id="anio2" value="<?=$anio2?>" style="display:none">
     </form>
 
-      <?  
+      <?php 
         if(isset($_GET['btn'])){
           calendario($_GET['mes'],$_GET['anio']);
         }
-        if($retr === "true"){
+        else if($retr === "true"){
           calendario($mes2,$anio2);
         }
-        if($avza === "true"){
+        else if($avza === "true"){
+          calendario($mes2,$anio2);
+        }else{
           calendario($mes2,$anio2);
         }
+
+
 
       ?>
 
-    <?
+    <?php
      
 
       function calendario($mes,$anio){
 
         if (($anio!=="") && ($mes!=="")) {
-          echo '<table style="margin: 10px;
+          echo '<table style="margin: 5px;
                               text-transform: uppercase;
                               text-align: center;
-                              font-size: 25px;">
+                              font-size: 17px;">
                   <caption>';
 
-              setlocale(LC_TIME, "es");
+              setlocale(LC_TIME, "en");
               echo strftime("%B %Y", mktime(0, 0, 0, $mes, 1, $anio));
 
             echo '</caption>
                   <thead>
                     <tr>
-                      <th style="border: 1px solid black">Lunes</th>
-                      <th style="border: 1px solid black">Martes</th>
-                      <th style="border: 1px solid black">Miércoles</th>
-                      <th style="border: 1px solid black">Jueves</th>
-                      <th style="border: 1px solid black">Viernes</th>
-                      <th style="border: 1px solid black">Sábado</th>
-                      <th style="color: red; border: 1px solid black">Domingo</th>
+                      <th style="border: 1px solid black">Monday</th>
+                      <th style="border: 1px solid black">Tuesday</th>
+                      <th style="border: 1px solid black">Wednesday</th>
+                      <th style="border: 1px solid black">Thursday</th>
+                      <th style="border: 1px solid black">Friday</th>
+                      <th style="border: 1px solid black">Saturday</th>
+                      <th style="color: red; border: 1px solid black">Sunday</th>
                     </tr>
                   </thead>
                   <tbody>';
@@ -198,7 +316,7 @@
                         }  
                         $num++; 
                       }
-          
+  
                     echo "</tr>";
                         
                   }
