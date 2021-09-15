@@ -9,10 +9,11 @@ body {
 }
 
 header {
-  background-color: #363636;
+  background-color: #282a35;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: 1px solid #04aa6d;
 }
 
 nav {
@@ -22,6 +23,7 @@ nav {
 nav ul {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 
   & li {
     list-style: none;
@@ -30,6 +32,10 @@ nav ul {
     & a i {
       font-size: 25px;
       color: #ffff;
+
+      &:hover {
+        color: #04aa6d;
+      }
     }
   }
 }

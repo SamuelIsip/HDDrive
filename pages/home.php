@@ -10,17 +10,15 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
 
     <script src="../js/dimensions.js"></script>
     <script src="../js/options_file.js"></script>
     <script src="../js/readDocuments.js"></script>
     <script src="../js/events_pages_home.js"></script>
     <script src="../js/load_pages_home.js"></script>
+    <script src="../js/add_select_files.js"></script>
+    <script src="../js/task_load_db.js"></script>
   </head>
   <body>
     <div id="container">
@@ -51,10 +49,9 @@
       <main>
         <div id="container_menu">
           <ul>
-            <li><a href="#">All files</a></li>
+            <li><a id="documents_menu" href="#">All files</a></li>
             <li><a href="#">Recent</a></li>
             <li><a href="#">Favorites</a></li>
-            <li><div>16 MP of 3GB used</div></li>
           </ul>
         </div>
         <div id="container_docs">
@@ -69,42 +66,46 @@
             </ul>
           </div>
           <div class="docs_main">
-            <h2>Title Docs Main</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate omnis fuga eos modi dolore, iusto voluptatum nesciunt
-              labore quibusdam reprehenderit veritatis expedita odio perferendis
-              pariatur sapiente nihil impedit esse. Quo, at? Voluptatum
-              dignissimos sint voluptates quibusdam, rem officiis ex laudantium
-              ab, ea exercitationem quidem, omnis amet sed repellendus molestias
-              id.
-            </p>
             <div class="files">
-              <div id="options" style="display: none">
+              <div class="files__add__select">
                 <ul>
-                  <li><i class="fas fa-download"></i></li>
-                  <li><i class="fas fa-edit"></i></li>
-                  <li><i class="fas fa-trash"></i></li>
+                <li>
+                  <i id="back_dir" class="fas fa-arrow-left"></i>
+                  </li>
+                  <li>
+                    <input
+                      type="file"
+                      name="add_file"
+                      id="add_file"
+                      multiple
+                      hidden
+                    />
+                    <label for="add_file"
+                      ><i id="add_file" class="fas fa-plus"></i
+                    ></label>
+                  </li>
+                  <li>
+                    <i id="select_files" class="fas fa-check-square"></i>
+                  </li>
+                  <li>
+                    <i id="download_files_selected" class="fas fa-download"></i>
+                  </li>
                 </ul>
-                <div class="arrow"></div>
               </div>
             </div>
-          </div>
-          <div class="docs_upload">
-            <div><i class="fas fa-cloud-upload-alt"></i></div>
           </div>
         </div>
         <div id="container_images">
           <div><p>IMAGES</p></div>
         </div>
         <div id="container_calendar">
-          <div><p>CALENDAR</p></div>
+          <div><iframe id="calendar" src="./calendar.php" frameborder="0"></iframe></div>
         </div>
         <div id="container_bookmarks">
           <div><p>BOOKMARKS</p></div>
         </div>
         <div id="container_tasks">
-          <div><p>TASKS</p></div>
+          <div><iframe id="tasks" src="./tasks.html" frameborder="0"></iframe></div>
         </div>
       </main>
     </div>
