@@ -83,7 +83,7 @@ function createList(doc, div_list, table) {
       });
     } else if (nameDoc.isDirFile === "file") {
       td1.addEventListener("click", () => {
-        isFile(ruta + nameDoc.name);
+        isFile(getPath() + nameDoc.name);
       });
     }
 
