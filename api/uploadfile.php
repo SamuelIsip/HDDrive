@@ -17,7 +17,7 @@
         //La funcion solo admite variables
         $id_user = 1 ;
         $name=$value;
-        $date=date('Y-m-d H:i:s')
+        $date=date("d/m/Y");
         $modified=date ("d/m/Y", filemtime($value));
         $size = get_size($value);
         mysqli_stmt_bind_param($stmt,"isssd",$id_user,$name,$date,$modified,$size);
