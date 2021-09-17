@@ -11,7 +11,7 @@
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
     <script src="../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../node_modules/dropzone/src/dropzone.js"></script>
+    <script type="module" src="../node_modules/dropzone/src/dropzone.js"></script>
 
     <script src="../js/dimensions.js"></script>
     <script src="../js/options_file.js"></script>
@@ -20,7 +20,7 @@
     <script src="../js/load_pages_home.js"></script>
     <script src="../js/add_select_files.js"></script>
     <script src="../js/task_load_db.js"></script>
-    <script src="../js/dropzone_docs.js"></script>
+    <script type="module" src="../js/dropzone_docs.js"></script>
   </head>
   <body>
     <div id="container">
