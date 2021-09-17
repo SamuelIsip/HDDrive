@@ -11,9 +11,8 @@
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
     <script src="../node_modules/jquery/dist/jquery.js"></script>
-    <script type="module" src="../node_modules/dropzone/src/dropzone.js"></script>
 
-    <script src="../js/dimensions.js"></script>
+    <script src="../js/dimensions.js"></>
     <script src="../js/options_file.js"></script>
     <script src="../js/readDocuments.js"></script>
     <script src="../js/events_pages_home.js"></script>

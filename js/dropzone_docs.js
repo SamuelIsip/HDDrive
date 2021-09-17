@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  import Dropzone from "../node_modules/dropzone";
+  import Dropzone from "../node_modules/dropzone/src/dropzone.js";
 
   // Make sure Dropzone doesn't try to attach itself to the
   // element automatically.
