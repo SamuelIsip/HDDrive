@@ -19,6 +19,7 @@
     <script src="../js/load_pages_home.js"></script>
     <script src="../js/add_select_files.js"></script>
     <script src="../js/task_load_db.js"></script>
+    <script src="../js/dropzone_docs.js"></script>
   </head>
   <body>
     <div id="container">
@@ -95,7 +96,7 @@
             </div>
           </div>
           <div class="docs_drop_zone">
-            <form action="../api/uploadfile.php" class="dropzone"></form>
+            <form action="../api/uploadfile.php" id="my-form" class="dropzone"></form>
           </div>
         </div>
         <div id="container_images">
