@@ -11,7 +11,7 @@
 
     if(is_file($value)){
         //Insertamos datos de fichero a la BD
-        $stmt=mysqli_prepare($con, "REPLACE INTO folders (id_user,name,date,modified,size) VALUES(?,?,?,?,?)");
+        $stmt=mysqli_prepare($con, "INSERT INTO folders (id_user,name,date,modified,size) VALUES(?,?,?,?,?)");
 
         //Definimos parametros de la consulta
         //La funcion solo admite variables
