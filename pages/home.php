@@ -94,6 +94,9 @@
               </div>
             </div>
           </div>
+          <div class="docs_drop_zone">
+            <form action="/target" class="dropzone"></form>
+          </div>
         </div>
         <div id="container_images">
           <div><p>IMAGES</p></div>
