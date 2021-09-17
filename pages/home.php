@@ -11,6 +11,7 @@
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
     <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/dropzone/dist/dropzone.js"></script>
 
     <script src="../js/dimensions.js"></script>
     <script src="../js/options_file.js"></script>
