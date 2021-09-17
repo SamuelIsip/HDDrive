@@ -19,7 +19,7 @@
     <script src="../js/load_pages_home.js"></script>
     <script src="../js/add_select_files.js"></script>
     <script src="../js/task_load_db.js"></script>
-    <script type="module" src="../js/dropzone_docs.js"></script>
+    <script src="../js/dropzone_docs.js"></script>
   </head>
   <body>
     <div id="container">
