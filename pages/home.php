@@ -44,7 +44,9 @@
           </ul>
         </nav>
         <div>
-          <div class="user_profile"></div>
+          <div class="user_profile">
+            <img src="./../img/user-3331257__340-min.png" alt="">
+          </div>
         </div>
       </header>
       <main>
