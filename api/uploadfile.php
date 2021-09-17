@@ -20,7 +20,7 @@
         $date=date("d/m/Y");
         $modified=date ("d/m/Y", filemtime($value));
         $size = convert_size(filesize($value);
-        mysqli_stmt_bind_param($stmt,"isssd",$id_user,$name,$date,$modified,$size);
+        mysqli_stmt_bind_param($stmt,"issss",$id_user,$name,$date,$modified,$size);
 
         //Ejecutamos la consulta
         mysqli_stmt_execute($stmt);
