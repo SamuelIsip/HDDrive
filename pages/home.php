@@ -95,9 +95,6 @@
               </div>
             </div>
           </div>
-          <div class="docs_drop_zone">
-            <form action="../api/uploadfile.php" id="my-form" class="dropzone"></form>
-          </div>
         </div>
         <div id="container_images">
           <div><p>IMAGES</p></div>
