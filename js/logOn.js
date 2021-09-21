@@ -26,6 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     xhr.open("POST", "./../api/logOnUser.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send("json_user=" + JSON.stringify(user_data));
+    xhr.send(JSON.stringify(user_data));
   });
 });
