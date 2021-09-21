@@ -14,7 +14,7 @@
     $modified=date("d/m/Y");
     $size = $_POST['size'];
     $ruta = $_POST['ruta'];
-    mysqli_stmt_bind_param($stmt,"isssds",$id_user,$name,$date,$modified,$size,$ruta);
+    mysqli_stmt_bind_param($stmt,"isssss",$id_user,$name,$date,$modified,$size,$ruta);
 
     //Ejecutamos la consulta
     mysqli_stmt_execute($stmt);
