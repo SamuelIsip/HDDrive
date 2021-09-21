@@ -2,7 +2,9 @@
 
     include_once("connectDB.php");
 
-    $user_data = json_decode($_POST['json_user'],true);
+    $user_data = file_get_contents('php://input');
+
+    $user_data = json_decode(user_data,true);
 
     $arr_datos = array();
 
