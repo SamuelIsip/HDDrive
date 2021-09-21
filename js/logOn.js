@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    xhr.open("POST", "./../api/logOnUser.php", true);
+    xhr.open("POST", "./../HDDrive/api/logOnUser.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(user_data));
   });
