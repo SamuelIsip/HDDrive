@@ -1,12 +1,14 @@
 var ruta = "";
+const userName = sessionStorage.getItem("userName");
+
 function readDocuments() {
   var div_list = document.getElementsByClassName("files")[0],
     table = document.createElement("table");
-
   $.ajax({
     url: "./../api/readDocs.php",
     type: "GET",
     dataType: "json",
+    data: { userNameSession: userName },
     async: true,
     success: (doc) => {
       createList(doc, div_list, table);
@@ -123,7 +125,6 @@ function createList(doc, div_list, table) {
 }
 
 function isDir(nameDoc) {
-  let userName = sessionStorage.getItem("userName");
   var div_list = document.getElementsByClassName("files")[0],
     table = document.createElement("table");
   if (div_list.hasChildNodes()) div_list.removeChild(div_list.lastChild);
