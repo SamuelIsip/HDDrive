@@ -11,23 +11,27 @@
         font-family: "Times New Roman", Times, serif;
         font-size: 17px;
       }
-      form{
+      #calendar_container_main form{
         display: flex;
         flex-direction: column;
         flex-wrap:wrap;
+        border-radius: 5px;
+        background-color: #2bae88;
+        box-shadow: 3px 3px 5px black;
       }
       form > div{
         margin-bottom:5px;
       }
+     
       td:hover{
         cursor: pointer;
-        background-color:rgb(0, 134, 60);
+        background-color: #2bae88;
       }
 
       #flechas{
         display:flex;
         flex-direction:row;
-        justify-content:space-between;
+        justify-content:space-around;
       }
 
       hr{
@@ -36,12 +40,13 @@
       #calendar__task__container{
         width:250px;
         height:250px;
-        background-color:rgba(28, 196, 134, 0.801);
+        background-color:rgba(28 196 134 / 92%);
         position:absolute;
         top:50%;
         left:50%;
         padding:5px;
         box-shadow: 2px 3px 5px black;
+        transform: translate(-50%,-50%);
       }
       #calendar__task__container form {
         width:100%;
@@ -54,10 +59,35 @@
         text-align:center;
       }
       #calendar__task__container form div p{
+        margin:0px;
+        font-size:25px;
         display: inline-block;
+      }
+      #task_title{
+        padding:5px;
+        border:1px solid black;
+        border-radius: 5px;
       }
       #task_calendar{
         resize:none;
+        padding:5px;
+        border:1px solid black;
+        border-radius: 5px;
+        margin-bottom:5px;
+      }
+      #calendar__task__container button{ç
+        border:1px solid black;
+        border-radius:5px;
+        padding:5px;
+      }
+      #calendar__task__container button:hover{
+        cursor: pointer;
+      }
+      #save_task_calendar{
+        background-color: #26f226;
+      }
+      #close_task_calendar{
+        background-color: #ff0000;
       }
       .calendar_task_styles{
         visibility: visible;
@@ -89,10 +119,8 @@
       #select_day{
         margin:auto;
         width:40%;
-        background-color:rgb(0, 134, 60);
         padding: 10px;
         font-weight: 700;
-        color: white;
       }
 
       #calendar_container_main{
@@ -103,21 +131,21 @@
         text-align:center;
         padding: 10px;
         box-shadow: 2px 3px 5px black;
+        border-radius:5px;
+        background-color: white;
       }
 
       #flecha1{
         font-size:20px;
         font-weight:700;
-        border: 1px solid rgb(0, 134, 60);
         border-radius: 50px 0px 0px 50px;
-        box-shadow: 2px 3px 5px black;
+        
       }
       #flecha2{
         font-size:20px;
         font-weight:700;
-        border: 1px solid rgb(0, 134, 60);
         border-radius: 0px 50px 50px 0px;
-        box-shadow: 2px 3px 5px black;
+        
       }
 
       #flecha1:hover{
@@ -134,7 +162,9 @@
       <form action="#" method="post">
         <div>
           <p id="cal_day">01</p>
+          <p>&nbsp;/&nbsp;</p>
           <p id="cal_month">01</p>
+          <p>&nbsp;/&nbsp;</p>
           <p id="cal_year">2021</p>
         </div>
         <hr>
@@ -145,7 +175,7 @@
       </form>
   </div>
 
-  <?
+  <?php
 
       if(isset($_GET['ret'])){
         $mes2 = --$_GET['mes2'];
@@ -170,11 +200,13 @@
       }elseif(isset($_GET['btn'])){
         $mes2 = $_GET['mes'];
         $anio2 = $_GET['anio'];
+      }else{
+        $mes2 = 01;
+        $anio2 = 2021;
       }
 
   ?>
   <div id="calendar_container_main">
-    <h1>Calendar</h1>
     <form action="calendar.php" method="GET">
       <div>
         <label for="mes">Select Month</label>
@@ -207,22 +239,23 @@
       <input type="text" name="anio2" id="anio2" value="<?=$anio2?>" style="display:none">
     </form>
 
-      <?  
+      <?php 
         if(isset($_GET['btn'])){
           calendario($_GET['mes'],$_GET['anio']);
         }
-        if($retr === "true"){
+        else if($retr === "true"){
           calendario($mes2,$anio2);
         }
-        if($avza === "true"){
+        else if($avza === "true"){
+          calendario($mes2,$anio2);
+        }else{
           calendario($mes2,$anio2);
         }
 
-        calendario(1,2021);
 
       ?>
 
-    <?
+    <?php
      
 
       function calendario($mes,$anio){

@@ -51,27 +51,28 @@ function add_event_options(options, ruta) {
     op_delete = options.children[2];
 
   //Fila seleccionada
-  var row = op_download.parentElement.parentElement.parentElement.className;
-
-  var name_file_doc = document.getElementsByClassName("name_file" + row)[0]
-    .value;
+  var name_file_doc =
+    op_download.parentElement.parentElement.parentElement.querySelector(
+      ".name_file_dir"
+    ).value;
 
   op_download.addEventListener("click", () => {
+    console.log(ruta + name_file_doc);
     window.location = encodeURI(
-      "./../api/downloadFile.php?nameFile=" + ruta + name_file_doc
+      "./../api/downloadFile.php?nameFile=" + getPath() + name_file_doc
     );
   });
 
+  // TODO: complete this function
+
   op_favorite.addEventListener("click", () => {
-    let input_name = document.getElementsByClassName("name_file" + row)[0]
-      .value;
     let date = document.getElementsByClassName(row)[0].children[2].innerHTML;
     let size = document.getElementsByClassName(row)[0].children[1].innerHTML;
     $.ajax({
       type: "POST",
       url: "./../api/addfavorite.php",
       data: {
-        name: input_name,
+        name: name_file_doc,
         ruta: ruta + name_file_doc,
         date: date,
         size: size,
@@ -87,11 +88,11 @@ function add_event_options(options, ruta) {
 
   op_delete.addEventListener("click", () => {
     $.ajax({
-      type: "GET",
+      type: "POST",
       url: "./../api/deletefile.php",
       data: { nameFile: ruta + name_file_doc },
       dataType: "text",
-      async: false,
+      async: true,
       success: function () {
         isDir(ruta);
       },

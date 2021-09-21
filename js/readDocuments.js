@@ -7,7 +7,7 @@ function readDocuments() {
     url: "./../api/readDocs.php",
     type: "GET",
     dataType: "json",
-    async: false,
+    async: true,
     success: (doc) => {
       createList(doc, div_list, table);
     },
@@ -83,13 +83,13 @@ function createList(doc, div_list, table) {
       });
     } else if (nameDoc.isDirFile === "file") {
       td1.addEventListener("click", () => {
-        isFile(ruta + nameDoc.name);
+        isFile(getPath() + nameDoc.name);
       });
     }
 
     input_name.value = nameDoc.name;
     input_name.setAttribute("readonly", "");
-    input_name.classList.add("name_file" + count);
+    input_name.classList.add("name_file_dir");
     td1.appendChild(input_name);
     td1.classList.add("name_file");
     td2.appendChild(document.createTextNode(nameDoc.size));
@@ -131,7 +131,7 @@ function isDir(nameDoc) {
     type: "GET",
     dataType: "json",
     data: { nameDir: nameDoc },
-    async: false,
+    async: true,
     success: (doc) => {
       createList(doc, div_list, table);
     },
@@ -154,9 +154,9 @@ function getPath() {
     rutaHeader = rutaHeader + li_list[i].children[0].innerText + "/";
   }
 
-  ruta = rutaHeader;
+  //ruta = rutaHeader;
 
-  return ruta;
+  return rutaHeader;
 }
 
 function addLinkHead(nameDoc) {

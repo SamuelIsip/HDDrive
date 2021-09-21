@@ -19,6 +19,7 @@
     <script src="../js/load_pages_home.js"></script>
     <script src="../js/add_select_files.js"></script>
     <script src="../js/task_load_db.js"></script>
+   
   </head>
   <body>
     <div id="container">
@@ -43,13 +44,16 @@
           </ul>
         </nav>
         <div>
-          <div class="user_profile"></div>
+          <div class="user_profile">
+            <!-- <img src="./../img/user-3331257__340-min.png" alt=""> -->
+            <img src="https://avatars.dicebear.com/api/initials/:seed.svg" alt="No User">
+          </div>
         </div>
       </header>
       <main>
         <div id="container_menu">
           <ul>
-            <li><a href="#">All files</a></li>
+            <li><a id="documents_menu" href="#">All files</a></li>
             <li><a href="#">Recent</a></li>
             <li><a href="#">Favorites</a></li>
           </ul>

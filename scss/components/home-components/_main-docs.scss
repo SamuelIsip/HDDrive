@@ -134,11 +134,13 @@ ul {
         position: absolute;
         top: 0;
         left: 0;
+        width: 15px;
+        height: 15px;
       }
     }
 
-    & tr:hover {
-      background-color: rgba(0, 90, 236, 0.349);
+    & tbody tr:hover {
+      background-color: rgba(28, 196, 134, 0.801);
     }
     & td {
       padding: 15px;

@@ -1,4 +1,4 @@
-<?
+<?php
 
 function aniadir($fich,$filenameZip){
     $archivoBackup=new ZipArchive;
