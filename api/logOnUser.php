@@ -13,6 +13,6 @@
 
     http_response_code(200); 
    
-    echo json_encode($_POST['json_user']);
+    echo json_encode($user_data);
 
 ?>
