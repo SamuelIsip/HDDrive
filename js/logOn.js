@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        window.location = encodeURI("./../HDDrive/pages/home.php");
+        /*  window.location = encodeURI("./../HDDrive/pages/home.php"); */
+        console.log(this.responseText);
       } else if (this.readyState == 4 && this.status == 409) {
         alert("User already exist!");
       } else if (this.readyState == 4 && this.status == 500) {
