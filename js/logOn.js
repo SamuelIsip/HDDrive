@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
       password: document.getElementById("logon_pass").value,
     };
 
+    console.log(user_data);
+
     //Send data to server
 
     if (window.ActiveXObject) xhr = new ActiveXObject("Microsoft.XMLHTTP");
