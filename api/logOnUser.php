@@ -6,7 +6,7 @@
 
     //Consultar si ese usuario existe
 
-    $result = mysqli_query($conn, "SELECT email FROM User;");
+    $result = mysqli_query($con, "SELECT email FROM User;");
 
     for ($i=1; mysqli_num_rows($result) >= $i; $i++){
         $fila = mysqli_fetch_row($result);
