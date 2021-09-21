@@ -3,6 +3,8 @@
     include_once("getSizeFile.php");
 
     if(isset($_GET['userNameSession'])){
+        session_abort();
+        session_name("userSession");
         session_start();
         $_SESSION["userName"] = $_GET['userNameSession'];
     }

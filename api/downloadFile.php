@@ -2,6 +2,9 @@
 
     include_once("backup_inc.php");
 
+    session_name("userSession");
+    session_start();
+
     chdir("./../../HDDriveHome/".$_SESSION["userName"]);
 
     print_r($_SESSION["userName"]);

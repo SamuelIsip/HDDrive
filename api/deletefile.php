@@ -1,5 +1,8 @@
 <?php
 
+    session_name("userSession");
+    session_start();
+
     chdir("./../../HDDriveHome/".$_SESSION['userName']);
 
     //Guardamos la ruta del fichero
