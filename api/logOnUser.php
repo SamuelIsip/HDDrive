@@ -11,6 +11,6 @@
 
     http_response_code(200); 
    
-    echo json_encode($arr_datos);
+    echo json_encode($_POST['json_user']);
 
 ?>
