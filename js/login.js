@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         window.location = encodeURI("./../HDDrive/pages/home.php");
+      } else if (this.readyState == 4 && this.status == 404) {
+        alert("Account not found!");
       }
     };
 
