@@ -4,7 +4,7 @@
 
     $user_data = file_get_contents('php://input');
 
-    $user_data = json_decode(user_data,true);
+    $user_data = json_decode($user_data,true);
 
     $arr_datos = array();
 
