@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("logon_button").on("click", () => {
+  document.getElementById("logon_button").addEventListener("click", () => {
     //Data of user
     const user_data = {
       name: document.getElementById("name").value,
