@@ -4,6 +4,8 @@
 
     chdir("./../../HDDriveHome/".$_SESSION["userName"]);
 
+    print_r($_SESSION["userName"]);
+
     //Guardamos la ruta del fichero
     $filename = "./".$_GET['nameFile'];
 
