@@ -2,10 +2,17 @@
 
     include_once("getSizeFile.php");
 
+    if(isset($_GET['userNameSession'])){
+        session_start();
+        $_SESSION["userName"] = $_GET['userNameSession'];
+    }
+
+    $userSession = $_SESSION["userName"];
+
     if(isset($_GET['nameDir'])){
-        chdir("./../../HDDriveHome/".$_GET['nameDir']);
+        chdir("./../../HDDriveHome/".$userSession."/".$_GET['nameDir']);
     }else
-        chdir("./../../HDDriveHome");
+        chdir("./../../HDDriveHome/".$userSession);
 
 
     $docs = scandir(getcwd());
