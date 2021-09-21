@@ -2,7 +2,7 @@
 
     include_once("backup_inc.php");
 
-    chdir("./../../HDDriveHome");
+    chdir("./../../HDDriveHome/".$_SESSION["userName"]);
 
     //Guardamos la ruta del fichero
     $filename = "./".$_GET['nameFile'];
