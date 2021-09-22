@@ -6,12 +6,22 @@ body {
 #container {
   background-color: #ffffff;
   overflow: auto;
+  & .container_slide {
+    & #container_slide_title {
+      position: absolute;
+      top: 40%;
+      left: 20%;
+      font-size: 70px;
+      color: white;
+    }
+  }
 }
 
 header {
-  background-color: #ffffffa8;
+  background-color: #2bae88a8;
   position: fixed;
   width: 100%;
+  z-index: 10;
 }
 
 .container_list {
@@ -33,5 +43,5 @@ header {
 }
 
 .container_list li a:hover {
-  color: #e7e7e7;
+  color: white;
 }
