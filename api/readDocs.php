@@ -9,10 +9,21 @@
         session_start();
         $_SESSION["userName"] = $_GET['userNameSession'];
        
-        if($result = mysqli_query($con, "SELECT id_user FROM User WHERE nom_usr = ".$_SESSION["userName"].";")){
+        if($stmt = mysqli_prepare($con, "SELECT id_user FROM User WHERE nom_usr=?")){
 
-            $name = mysqli_fetch_row($result);
-            $_SESSION["userID"] = $name[0];
+            $usrName = $_SESSION["userName"];
+
+            mysqli_stmt_bind_param($stmt,"s",$usrName);
+
+            mysqli_stmt_execute($stmt);
+
+            mysqli_stmt_bind_result($stmt, $userID);
+
+            mysqli_stmt_fetch($stmt);
+
+            $_SESSION["userID"] = $userID;
+
+            mysqli_stmt_close($stmt);
 
         }
 
