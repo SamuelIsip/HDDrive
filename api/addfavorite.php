@@ -3,12 +3,15 @@
     include_once("connectDB.php");
     include_once("getSizeFile.php");
 
+    session_name("userSession");
+    session_start();
+
     //Insertamos datos de fichero a la BD
     $stmt=mysqli_prepare($con, "INSERT INTO favorites (id_user,name,date,modified,size,ruta) VALUES(?,?,?,?,?,?)");
 
     //Definimos parametros de la consulta
     //La funcion solo admite variables
-    $id_user = 1 ;
+    $id_user = $_SESSION["userID"];
     $name=$_POST['name'];
     $date= $_POST['date'];
     $modified=date("d/m/Y");

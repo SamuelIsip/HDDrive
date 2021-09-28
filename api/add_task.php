@@ -2,12 +2,15 @@
 
     include_once("connectDB.php");
 
+    session_name("userSession");
+    session_start();
+
     //Insertamos datos de fichero a la BD
     $stmt=mysqli_prepare($con, "INSERT INTO tasks (id_user,title,text,date,modified) VALUES(?,?,?,?,?)");
 
     //Definimos parametros de la consulta
     //La funcion solo admite variables
-    $id_user = 1 ;
+    $id_user = $_SESSION["userID"];
     $name=$_POST['task_title'];
     $text=$_POST['task_text'];
     $date= $_POST['task_day']."/".$_POST['task_month']."/".$_POST['task_year'];
