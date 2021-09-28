@@ -8,11 +8,7 @@
         session_name("userSession");
         session_start();
         $_SESSION["userName"] = $_GET['userNameSession'];
-        getIdUser($_SESSION["userName"]);
-    }
-
-    function getIdUser($userName){
-
+       
         if($result = mysqli_query($con, "SELECT id_user FROM User WHERE nom_usr = '$userName';")){
 
             $name = mysqli_fetch_row($result);
@@ -21,8 +17,8 @@
         }
 
         mysqli_close($con);
-
     }
+
 
     $userSession = $_SESSION["userName"];
 
