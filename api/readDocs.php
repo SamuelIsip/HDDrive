@@ -11,6 +11,19 @@
         getIdUser($_SESSION["userName"]);
     }
 
+    function getIdUser($userName){
+
+        if($result = mysqli_query($con, "SELECT id_user FROM User WHERE nom_usr = '$userName';")){
+
+            $name = mysqli_fetch_row($result);
+            $_SESSION["userID"] = $name[0];
+
+        }
+
+        mysqli_close($con);
+
+    }
+
     $userSession = $_SESSION["userName"];
 
     if(isset($_GET['nameDir'])){
@@ -40,17 +53,6 @@
     echo json_encode($arr1);
 
 
-    function getIdUser($userName){
-
-        if($result = mysqli_query($con, "SELECT id_user FROM User WHERE nom_usr = '$userName';")){
-
-            $name = mysqli_fetch_row($result);
-            $_SESSION["userID"] = $name[0];
-
-        }
-
-        mysqli_close($con);
-
-    }
+    
 
 ?>
