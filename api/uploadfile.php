@@ -17,7 +17,7 @@
 
         //Definimos parametros de la consulta
         //La funcion solo admite variables
-        $id_user = 1 ;
+        $id_user = $_SESSION["userID"];
         $name=$value;
         $date=date("d/m/Y");
         $modified=date ("d/m/Y", filemtime($value));

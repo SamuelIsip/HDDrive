@@ -8,11 +8,11 @@
 
     //Consultar si ese usuario existe
 
-    $result = mysqli_query($con, "SELECT email FROM User;");
+    $result = mysqli_query($con, "SELECT email, nom_usr FROM User;");
 
     for ($i=1; mysqli_num_rows($result) >= $i; $i++){
         $fila = mysqli_fetch_row($result);
-        if($fila[0] == $user_data["email"]){
+        if($fila[0] == $user_data["email"] || $fila[1] == $user_data["name_user"]){
             mysqli_close($con);
             http_response_code(409);
             exit;

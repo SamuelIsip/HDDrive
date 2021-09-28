@@ -48,12 +48,12 @@ function load_events_pages_menu() {
     resetLinkHead();
   });
 
+  const regex = /initials.+/;
+  const userName = sessionStorage.getItem("userName");
+
   // Foto de perfil
   document.getElementsByClassName("user_profile")[0].firstElementChild.src =
     document
       .getElementsByClassName("user_profile")[0]
-      .firstElementChild.src.replace(
-        /initials.+/,
-        "initials/" + sessionStorage.getItem("userName") + ".svg"
-      );
+      .firstElementChild.src.replace(regex, "initials/" + userName + ".svg");
 }

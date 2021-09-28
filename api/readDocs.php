@@ -1,12 +1,14 @@
 <?php
 
     include_once("getSizeFile.php");
+    include_once("connectDB.php");
 
     if(isset($_GET['userNameSession'])){
         session_abort();
         session_name("userSession");
         session_start();
         $_SESSION["userName"] = $_GET['userNameSession'];
+        getIdUser($_SESSION["userName"]);
     }
 
     $userSession = $_SESSION["userName"];
@@ -38,6 +40,17 @@
     echo json_encode($arr1);
 
 
-    
+    function getIdUser($userName){
+
+        if($result = mysqli_query($con, "SELECT id_user FROM User WHERE nom_usr = '$userName';")){
+
+            $name = mysqli_fetch_row($result);
+            $_SESSION["userID"] = $name[0];
+
+        }
+
+        mysqli_close($con);
+
+    }
 
 ?>
