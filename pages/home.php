@@ -45,7 +45,6 @@
         </nav>
         <div>
           <div class="user_profile">
-            <!-- <img src="./../img/user-3331257__340-min.png" alt=""> -->
             <img src="https://avatars.dicebear.com/api/initials/:seed.svg" alt="No User">
           </div>
         </div>

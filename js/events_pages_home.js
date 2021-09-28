@@ -47,4 +47,13 @@ function load_events_pages_menu() {
     readDocuments();
     resetLinkHead();
   });
+
+  // Foto de perfil
+  document.getElementsByClassName("user_profile")[0].firstElementChild.src =
+    document
+      .getElementsByClassName("user_profile")[0]
+      .firstElementChild.src.replace(
+        /initials.+/,
+        "initials/" + sessionStorage.getItem("userName") + ".svg"
+      );
 }
