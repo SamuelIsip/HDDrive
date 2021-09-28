@@ -17,6 +17,7 @@
             //Creamos la carpeta personal
             if(!is_dir("./../../HDDriveHome/".$fila['nom_usr'])){
                 mkdir("./../../HDDriveHome/".$fila['nom_usr'],0777);
+                mkdir("./../../HDDriveHome/".$fila['nom_usr']."/".$fila['nom_usr'],0777);
             }
             echo json_encode($fila);
             exit;
