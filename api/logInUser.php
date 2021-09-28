@@ -10,7 +10,7 @@
     $result = mysqli_query($con, "SELECT email, password, nom_usr, id_user FROM User;");
 
     for ($i=1; mysqli_num_rows($result) >= $i; $i++){
-        $fila = mysqli_fetch_assoc($result);
+        $fila = mysqli_fetch_array($result,MYSQLI_ASSOC);
         if($fila['email'] == $user_data["email"] && $fila['password'] == $user_data["password"]){
             mysqli_close($con);
             http_response_code(200);
