@@ -9,7 +9,7 @@
         session_start();
         $_SESSION["userName"] = $_GET['userNameSession'];
        
-        if($result = mysqli_query($con, "SELECT id_user FROM User WHERE nom_usr = '$userName';")){
+        if($result = mysqli_query($con, "SELECT id_user FROM User WHERE nom_usr = "+$userName+";")){
 
             $name = mysqli_fetch_row($result);
             $_SESSION["userID"] = $name[0];
