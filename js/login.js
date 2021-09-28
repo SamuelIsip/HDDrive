@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
+        console.log(this.responseText.id_user);
+        console.log(JSON.parse(this.responseText));
         const dataUsr = JSON.parse(this.responseText);
         sessionStorage.setItem("userName", dataUsr.nom_usr);
         sessionStorage.setItem("userID", dataUsr.id_user);
