@@ -11,7 +11,7 @@
 
     for ($i=1; mysqli_num_rows($result) >= $i; $i++){
         $fila = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        if($fila['email'] == $user_data["email"] && password_verify($fila['password'], $user_data["password"])){
+        if($fila['email'] == $user_data["email"] && password_verify($user_data["password"],$fila['password'])){
             mysqli_close($con);
             http_response_code(200);
             //Creamos la carpeta personal
