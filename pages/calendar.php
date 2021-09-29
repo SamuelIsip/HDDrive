@@ -31,6 +31,7 @@
         box-shadow: 2px 3px 5px black;
         cursor: pointer;
         background-color: #2bae88;
+        font-size: 19px;
       }
 
       #flechas{
