@@ -28,7 +28,7 @@
       }
      
       td:hover{
-        padding: 10px;
+        transform: rotateY(45deg);
         cursor: pointer;
         background-color: #2bae88;
       }
