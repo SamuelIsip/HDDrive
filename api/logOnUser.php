@@ -23,7 +23,7 @@
 
     $modified=date("d/m/Y");
 
-    mysqli_stmt_bind_param($stmt,"ssssss",$user_data["name"],$user_data["email"],$user_data["password"],$user_data["name_user"],$user_data["phone"],$modified);
+    mysqli_stmt_bind_param($stmt,"ssssss",$user_data["name"],$user_data["email"], password_hash($user_data["password"],PASSWORD_DEFAULT),$user_data["name_user"],$user_data["phone"],$modified);
 
     //Ejecutamos la consulta
     if(mysqli_stmt_execute($stmt))
