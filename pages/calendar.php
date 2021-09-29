@@ -16,7 +16,11 @@
         flex-direction: column;
         flex-wrap:wrap;
         border-radius: 5px;
-        background-color: #2bae88;
+        background: linear-gradient(
+          333deg,
+          rgb(44 45 58 / 93%) 0%,
+          rgba(43, 174, 136, 1) 37%
+        );
         box-shadow: 3px 3px 5px black;
       }
       form > div{
@@ -24,6 +28,7 @@
       }
      
       td:hover{
+        padding: 10px;
         cursor: pointer;
         background-color: #2bae88;
       }
