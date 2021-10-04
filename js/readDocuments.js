@@ -114,8 +114,9 @@ function createList(doc, div_list, table) {
     count++;
 
     tbody.appendChild(tr);
-    tr.setAttribute("id", "file_disappear");
-    tr.id = "file_appear";
+    tr.style.opacity = 0;
+    tr.style.transition = "opacity 1s linear";
+    tr.style.opacity = 1;
   });
 
   table.appendChild(thead);
