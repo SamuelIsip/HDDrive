@@ -197,7 +197,7 @@ ul {
     margin-bottom: 20px;
     border-collapse: collapse; }
     .docs_main table tr {
-      border-bottom: 1px solid #6d6d6d;
+      border-bottom: 0.5px solid #6d6d6dab;
       position: relative; }
       .docs_main table tr input.check_file {
         width: fit-content;
@@ -213,9 +213,8 @@ ul {
     .docs_main table .name_file {
       display: flex; }
     .docs_main table td:nth-child(2):hover {
-      border-radius: 0px 10px 10px 0px;
       cursor: pointer;
-      background-image: linear-gradient(to bottom, rgba(126, 126, 126, 0.349), rgba(126, 126, 126, 0.699)); }
+      background-image: linear-gradient(to left, rgba(126, 126, 126, 0), rgba(69, 69, 69, 0.25)); }
   .docs_main table,
   .docs_main td,
   .docs_main th {
