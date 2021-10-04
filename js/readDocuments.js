@@ -116,8 +116,13 @@ function createList(doc, div_list, table) {
     tbody.appendChild(tr);
     tr.style.opacity = 0;
     tr.style.transition = "opacity 1s linear";
-    tr.style.opacity = 1;
   });
+
+  if (tbody.hasChildNodes()) {
+    for (let i = 0; i < tbody.children.length; i++) {
+      tbody.children[i].style.opacity = 1;
+    }
+  }
 
   table.appendChild(thead);
   table.appendChild(tbody);
