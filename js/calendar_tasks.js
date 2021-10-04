@@ -67,7 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document
     .getElementById("close_task_calendar")
-    .addEventListener("click", () => {
+    .addEventListener("click", (event) => {
+      event.preventDefault();
       document.getElementById("calendar__task__container").className =
         "calendar_task_no_styles";
     });
