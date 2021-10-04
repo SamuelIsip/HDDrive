@@ -70,7 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
           row.appendChild(div_buttons);
           list_tasks.appendChild(row);
           i++;
-          setTimeout(() => {}, 500);
+          setTimeout(() => {
+            console.log(i);
+          }, 1000);
         });
       }
     };
