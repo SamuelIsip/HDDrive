@@ -118,16 +118,15 @@ function createList(doc, div_list, table) {
     tr.style.transition = "opacity 1s linear";
   });
 
+  table.appendChild(thead);
+  table.appendChild(tbody);
+
+  div_list.appendChild(table);
   if (tbody.hasChildNodes()) {
     for (let i = 0; i < tbody.children.length; i++) {
       tbody.children[i].style.opacity = 1;
     }
   }
-
-  table.appendChild(thead);
-  table.appendChild(tbody);
-
-  div_list.appendChild(table);
 
   menu_options_file(ruta);
 }
