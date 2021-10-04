@@ -68,10 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
           row.appendChild(date);
           row.appendChild(text);
           row.appendChild(div_buttons);
-          setTimeout(() => {
-            list_tasks.appendChild(row);
-          }, 500);
+          list_tasks.appendChild(row);
           i++;
+          setTimeout(() => {}, 200);
         });
       }
     };
