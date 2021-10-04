@@ -198,8 +198,7 @@ ul {
     border-collapse: collapse; }
     .docs_main table tr {
       border-bottom: 0.5px solid #6d6d6dab;
-      position: relative;
-      transition: 0s background-color; }
+      position: relative; }
       .docs_main table tr input.check_file {
         width: fit-content;
         position: absolute;
@@ -208,8 +207,7 @@ ul {
         width: 15px;
         height: 15px; }
     .docs_main table tbody tr:hover {
-      background-color: rgba(28, 196, 134, 0.801);
-      transition-delay: 0.5s; }
+      background-color: rgba(28, 196, 134, 0.801); }
     .docs_main table td {
       padding: 15px; }
     .docs_main table .name_file {
