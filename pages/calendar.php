@@ -90,7 +90,7 @@
         cursor: pointer;
       }
       #save_task_calendar{
-        background-color: #26f226;
+        background-color: #50ff00;;
       }
       #close_task_calendar{
         background-color: #ff0000;
