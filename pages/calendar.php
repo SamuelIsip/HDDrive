@@ -97,10 +97,13 @@
       }
       .calendar_task_styles{
         visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity 0.5s linear;
       }
 
       .calendar_task_no_styles{
         visibility: hidden;
+        opacity: 0;
       }
 
       input:hover{
