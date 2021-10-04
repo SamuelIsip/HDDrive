@@ -250,6 +250,13 @@ ul {
     background-color: #04aa6d;
     border-radius: 5px; }
 
+#file_appear {
+  opacity: 1;
+  transition: opacity 1s linear; }
+
+#file_disappear {
+  opacity: 0; }
+
 #container_images {
   width: 100%;
   display: none; }

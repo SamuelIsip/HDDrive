@@ -110,10 +110,12 @@ function createList(doc, div_list, table) {
     tr.appendChild(td2);
     tr.appendChild(td3);
     tr.appendChild(td4);
+    tr.setAttribute("id", "file_disappear");
 
     count++;
 
     tbody.appendChild(tr);
+    tr.id = "file_appear";
   });
 
   table.appendChild(thead);

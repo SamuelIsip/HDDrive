@@ -218,3 +218,11 @@ ul {
     border-radius: 5px;
   }
 }
+
+#file_appear {
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+#file_disappear {
+  opacity: 0;
+}
