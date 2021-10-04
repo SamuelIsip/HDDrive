@@ -128,6 +128,7 @@ ul {
     & tr {
       border-bottom: 0.5px solid #6d6d6dab;
       position: relative;
+      transition: 0s background-color;
 
       & input.check_file {
         width: fit-content;
@@ -141,6 +142,7 @@ ul {
 
     & tbody tr:hover {
       background-color: rgba(28, 196, 134, 0.801);
+      transition-delay: 0.5s;
     }
     & td {
       padding: 15px;
@@ -217,12 +219,4 @@ ul {
     background-color: #04aa6d;
     border-radius: 5px;
   }
-}
-
-#file_appear {
-  opacity: 1;
-  transition: opacity 1s linear;
-}
-#file_disappear {
-  opacity: 0;
 }

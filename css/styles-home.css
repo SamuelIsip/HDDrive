@@ -198,7 +198,8 @@ ul {
     border-collapse: collapse; }
     .docs_main table tr {
       border-bottom: 0.5px solid #6d6d6dab;
-      position: relative; }
+      position: relative;
+      transition: 0s background-color; }
       .docs_main table tr input.check_file {
         width: fit-content;
         position: absolute;
@@ -207,7 +208,8 @@ ul {
         width: 15px;
         height: 15px; }
     .docs_main table tbody tr:hover {
-      background-color: rgba(28, 196, 134, 0.801); }
+      background-color: rgba(28, 196, 134, 0.801);
+      transition-delay: 0.5s; }
     .docs_main table td {
       padding: 15px; }
     .docs_main table .name_file {
@@ -249,13 +251,6 @@ ul {
     cursor: pointer;
     background-color: #04aa6d;
     border-radius: 5px; }
-
-#file_appear {
-  opacity: 1;
-  transition: opacity 1s linear; }
-
-#file_disappear {
-  opacity: 0; }
 
 #container_images {
   width: 100%;
