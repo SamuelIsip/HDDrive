@@ -1,5 +1,6 @@
 var ruta = "";
 const userName = sessionStorage.getItem("userName");
+const userID = sessionStorage.getItem("userID");
 
 function readDocuments() {
   console.log(userName);
@@ -9,7 +10,7 @@ function readDocuments() {
     url: "./../api/readDocs.php",
     type: "GET",
     dataType: "json",
-    data: { userNameSession: userName },
+    data: { userNameSession: userName, userIDSession: userID },
     async: true,
     success: (doc) => {
       createList(doc, div_list, table);
@@ -133,7 +134,11 @@ function isDir(nameDoc) {
     url: "./../api/readDocs.php",
     type: "GET",
     dataType: "json",
-    data: { nameDir: nameDoc, userNameSession: userName },
+    data: {
+      nameDir: nameDoc,
+      userNameSession: userName,
+      userIDSession: userID,
+    },
     async: true,
     success: (doc) => {
       createList(doc, div_list, table);

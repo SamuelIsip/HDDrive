@@ -3,31 +3,13 @@
     include_once("getSizeFile.php");
     include_once("connectDB.php");
 
-    if(isset($_GET['userNameSession'])){
+    if(isset($_GET['userNameSession']) && $_GET['userIDSession']){
         session_abort();
         session_name("userSession");
         session_start();
         $_SESSION["userName"] = $_GET['userNameSession'];
+        $_SESSION["userID"] = $_GET['userIDSession'];
        
-        if($stmt = mysqli_prepare($con, "SELECT id_user FROM User WHERE nom_usr=?")){
-
-            $usrName = $_SESSION["userName"];
-
-            mysqli_stmt_bind_param($stmt,"s",$usrName);
-
-            mysqli_stmt_execute($stmt);
-
-            mysqli_stmt_bind_result($stmt, $userID);
-
-            mysqli_stmt_fetch($stmt);
-
-            $_SESSION["userID"] = $userID;
-
-            mysqli_stmt_close($stmt);
-
-        }
-
-        mysqli_close($con);
     }
 
 
