@@ -26,10 +26,10 @@
     mysqli_stmt_bind_param($stmt,"ssssss",$user_data["name"],$user_data["email"], password_hash($user_data["password"],PASSWORD_DEFAULT),$user_data["name_user"],$user_data["phone"],$modified);
 
     //Ejecutamos la consulta
-    if(mysqli_stmt_execute($stmt))
-        http_response_code(200); 
-    else
+    if(!mysqli_stmt_execute($stmt)){
         http_response_code(500); 
+        exit;
+    }
 
     //Liberamos recurso
     mysqli_stmt_close($stmt);
