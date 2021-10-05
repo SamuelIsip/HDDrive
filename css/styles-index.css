@@ -255,7 +255,11 @@ header {
   background-image: url("../img/logo.png");
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 50%; }
+  border-radius: 50%;
+  background-color: #ffffff40; }
+
+.contact_logo_img:hover {
+  cursor: pointer; }
 
 .contact_information {
   text-align: center;
