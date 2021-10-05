@@ -19,7 +19,7 @@ body {
 }
 
 header {
-  background-color: #2bae88a8;
+  background-color: #003454b0;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -40,9 +40,9 @@ header {
 .container_list li a {
   text-decoration: none;
   font-size: large;
-  color: black;
+  color: #fff;
 }
 
 .container_list li a:hover {
-  color: white;
+  color: rgba(255, 255, 255, 0.774);
 }
