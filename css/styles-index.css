@@ -2,13 +2,16 @@ body {
   margin: 0;
   padding: 0; }
 
+.logo_header {
+  opacity: 0.9; }
+
 #container {
   background-color: #ffffff;
   overflow: auto; }
   #container .container_slide #container_slide_title {
     position: absolute;
     top: 40%;
-    left: 20%;
+    left: 5%;
     font-size: 70px;
     color: white; }
 
