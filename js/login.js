@@ -14,10 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         const dataUsr = JSON.parse(this.responseText);
-        console.log(this.responseText);
         sessionStorage.setItem("userName", dataUsr.nom_usr);
         sessionStorage.setItem("userID", dataUsr.id_user);
-        //window.location = encodeURI("./../HDDrive/pages/home.php");
+        window.location = encodeURI("./../HDDrive/pages/home.php");
       } else if (this.readyState == 4 && this.status == 404) {
         alert("Account not found!");
       }

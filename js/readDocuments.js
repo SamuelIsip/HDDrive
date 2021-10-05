@@ -2,6 +2,7 @@ var ruta = "";
 const userName = sessionStorage.getItem("userName");
 
 function readDocuments() {
+  console.log(userName);
   var div_list = document.getElementsByClassName("files")[0],
     table = document.createElement("table");
   $.ajax({
