@@ -4,6 +4,7 @@ const userID = sessionStorage.getItem("userID");
 
 function readDocuments() {
   console.log(userName);
+  console.log(userID);
   var div_list = document.getElementsByClassName("files")[0],
     table = document.createElement("table");
   $.ajax({
