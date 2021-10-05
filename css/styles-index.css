@@ -61,6 +61,10 @@ header {
       border-color: #003454;
       color: #003454;
       border-radius: 5px; }
+    .container_slide #container_slide_info #container_slide_info_button:hover {
+      cursor: pointer;
+      background-color: #003454;
+      color: #fff; }
 
 #container_about {
   text-align: center; }

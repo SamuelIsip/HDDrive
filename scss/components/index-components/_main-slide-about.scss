@@ -26,6 +26,12 @@
       color: #003454;
       border-radius: 5px;
     }
+
+    & #container_slide_info_button:hover {
+      cursor: pointer;
+      background-color: #003454;
+      color: #fff;
+    }
   }
 }
 
