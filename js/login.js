@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(this.responseText);
         sessionStorage.setItem("userName", dataUsr.nom_usr);
         sessionStorage.setItem("userID", dataUsr.id_user);
-        window.location = encodeURI("./../HDDrive/pages/home.php");
+        //window.location = encodeURI("./../HDDrive/pages/home.php");
       } else if (this.readyState == 4 && this.status == 404) {
         alert("Account not found!");
       }
