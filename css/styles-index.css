@@ -121,7 +121,7 @@ header {
     width: 70%;
     margin: auto;
     padding: 10px;
-    border: 1px solid #2bae88;
+    border: 1px solid #003454;
     border-radius: 5px;
     margin-bottom: 10px; }
 
@@ -134,12 +134,13 @@ header {
     width: 40%;
     padding: 10px;
     border-radius: 10px;
-    background-color: #2bae88;
-    color: #ffffff;
+    background-color: transparent;
+    color: #003454;
     font-size: 20px; }
   .login_buttons input:hover {
     cursor: pointer;
-    background-color: #2fc298; }
+    background-color: #003454;
+    color: #ffffff; }
   .login_buttons div {
     align-self: center; }
 
@@ -187,7 +188,7 @@ header {
     width: 70%;
     margin: auto;
     padding: 10px;
-    border: 1px solid #2bae88;
+    border: 1px solid #003454;
     border-radius: 5px;
     margin-bottom: 10px; }
 
@@ -200,12 +201,13 @@ header {
     width: 40%;
     padding: 10px;
     border-radius: 10px;
-    background-color: #2bae88;
-    color: #ffffff;
+    background-color: transparent;
+    color: #003454;
     font-size: 20px; }
   .logon_buttons input:hover {
     cursor: pointer;
-    background-color: #2fc298; }
+    background-color: #003454;
+    color: #ffffff; }
   .logon_buttons div {
     align-self: center; }
 
@@ -218,8 +220,9 @@ header {
   background-image: url("../img/Mobile login-rafiki.svg"); }
 
 #footer {
+  color: #fff;
   margin-top: 20px;
-  background-color: #106950; }
+  background-color: #003454; }
 
 .container_contact {
   display: flex;
