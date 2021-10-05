@@ -78,8 +78,9 @@ header {
 /*LOG IN*/
 #container_login {
   margin: auto;
+  margin-top: 40px;
   width: 90%;
-  height: 600px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,8 +158,9 @@ header {
 /*LOG ON*/
 #container_logon {
   margin: auto;
+  margin-top: 40px;
   width: 90%;
-  height: 600px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
