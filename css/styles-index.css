@@ -73,7 +73,8 @@ header {
   font-size: 40px; }
 
 #container_about p {
-  column-count: 2; }
+  column-count: 2;
+  padding: 0 20px 0 20px; }
 
 /*LOG IN*/
 #container_login {

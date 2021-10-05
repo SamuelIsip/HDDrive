@@ -14,11 +14,6 @@
         if($fila['email'] == $user_data["email"] && password_verify($user_data["password"],$fila['password'])){
             mysqli_close($con);
             http_response_code(200);
-            //Creamos la carpeta personal
-            if(!is_dir("./../../HDDriveHome/".$fila['nom_usr'])){
-                mkdir("./../../HDDriveHome/".$fila['nom_usr'],0777);
-                mkdir("./../../HDDriveHome/".$fila['nom_usr']."/".$fila['nom_usr'],0777);
-            }
             echo json_encode($fila);
             exit;
         }
