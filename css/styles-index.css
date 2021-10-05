@@ -132,6 +132,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between; }
+  .login_buttons a {
+    color: #003454; }
   .login_buttons input {
     width: 40%;
     padding: 5px;
@@ -151,7 +153,7 @@ header {
 .login_image {
   width: 49%;
   height: 90%;
-  background-color: white;
+  background-color: #ffffff;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../img/Mobile login-bro.svg"); }
@@ -203,6 +205,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between; }
+  .logon_buttons a {
+    color: #003454; }
   .logon_buttons input {
     width: 40%;
     padding: 5px;
@@ -222,7 +226,7 @@ header {
 .logon_image {
   width: 49%;
   height: 90%;
-  background-color: white;
+  background-color: #ffffff;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../img/Mobile login-rafiki.svg"); }
