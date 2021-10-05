@@ -9,6 +9,24 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: center;
+
+  & #container_slide_info {
+    width: 400px;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & #container_slide_info_button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: transparent;
+      border-color: #003454;
+      color: #003454;
+      border-radius: 5px;
+    }
+  }
 }
 
 #container_about {
