@@ -135,11 +135,13 @@ header {
     padding: 5px;
     border-radius: 5px;
     background-color: transparent;
+    border: 2px solid #003454;
     color: #003454;
     font-size: 20px; }
   .login_buttons input:hover {
     cursor: pointer;
     background-color: #003454;
+    border-color: #fff;
     color: #ffffff; }
   .login_buttons div {
     align-self: center; }
@@ -202,11 +204,13 @@ header {
     padding: 5px;
     border-radius: 5px;
     background-color: transparent;
+    border: 2px solid #003454;
     color: #003454;
     font-size: 20px; }
   .logon_buttons input:hover {
     cursor: pointer;
     background-color: #003454;
+    border-color: #fff;
     color: #ffffff; }
   .logon_buttons div {
     align-self: center; }
