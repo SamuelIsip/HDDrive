@@ -94,7 +94,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  color: #003454; }
   .login_form > i {
     position: absolute;
     top: 10px;
@@ -174,7 +175,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  color: #003454; }
   .logon_form > i {
     position: absolute;
     top: 10px;
