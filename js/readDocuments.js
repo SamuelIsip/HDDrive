@@ -60,7 +60,7 @@ function createList(doc, div_list) {
         //Añadir ruta a la linea superior
         addLinkHead(nameDoc);
 
-        ruta += getPath() + nameDoc.name + "/";
+        ruta += getPath() + "/";
 
         //Guardar ruta actual
         window.localStorage.setItem("ruta", ruta);
