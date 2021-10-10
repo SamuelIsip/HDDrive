@@ -37,17 +37,19 @@
 
 
     //Consultar id usuario insertado
-    $stmt = mysqli_prepare($con, "SELECT id_user FROM User WHERE nom_usr = ? AND password = ?");
+    $stmt = mysqli_prepare($con, "SELECT id_user, password FROM User WHERE nom_usr = ?");
 
-    mysqli_stmt_bind_param($stmt,"ss", $user_data["name_user"], password_hash($user_data["password"],PASSWORD_DEFAULT));
+    mysqli_stmt_bind_param($stmt,"s", $user_data["name_user"]);
 
     //Ejecutamos la consulta
     if(mysqli_stmt_execute($stmt)){
 
-        mysqli_stmt_bind_result($stmt, $id_user);
+        mysqli_stmt_bind_result($stmt, $id_user, $pass);
 
         if(mysqli_stmt_fetch($stmt)){
-            $datos=["id_user" => $id_user, "name_user" => $user_data["name_user"]];
+            if(password_verify($user_data["password"], $pass)){
+                $datos=["id_user" => $id_user, "name_user" => $user_data["name_user"]];
+            }
         }
 
         if(!is_dir("./../../HDDriveHome/".$user_data["name_user"])){
