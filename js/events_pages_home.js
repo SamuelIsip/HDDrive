@@ -6,7 +6,7 @@ function load_events_pages_menu() {
     ).css("display", "none");
 
     // Remove the table, to reload files of index
-    if ($(".table_files").children().length > 0) $(".table_files").remove();
+    //if ($(".table_files").children().length > 0) $(".table_files").remove();
     readDocuments();
     resetLinkHead();
   });
