@@ -106,8 +106,7 @@ function createList(doc, div_list) {
 
 function isDir(nameDoc) {
   var div_list = document.getElementsByClassName("table_files")[0];
-  if (div_list.hasChildNodes() && div_list.childElementCount > 1)
-    div_list.removeChild(div_list.lastChild);
+  deleteFileRecursive();
   $.ajax({
     url: "./../api/readDocs.php",
     type: "GET",
@@ -161,4 +160,10 @@ function resetLinkHead() {
     document.getElementsByClassName("docs_header")[0].firstElementChild;
   var lis = docs_header.children;
   for (let i = lis.length - 1; i > 1; i--) docs_header.children[i].remove();
+}
+
+function deleteFileRecursive() {
+  var div_list = document.getElementsByClassName("table_files")[0];
+  if (div_list.hasChildNodes() && div_list.childElementCount > 1)
+    div_list.removeChild(div_list.lastChild);
 }
