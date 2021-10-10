@@ -60,11 +60,11 @@ function createList(doc, div_list) {
         //Añadir ruta a la linea superior
         addLinkHead(nameDoc);
 
-        ruta += getPath() + "/";
+        ruta += nameDoc.name + "/";
 
         //Guardar ruta actual
         window.localStorage.setItem("ruta", ruta);
-        isDir(ruta);
+        isDir(getPath() + "/");
       });
     } else if (nameDoc.isDirFile === "file") {
       td1.addEventListener("click", () => {
