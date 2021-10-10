@@ -37,9 +37,9 @@
 
 
     //Consultar id usuario insertado
-    $stmt = mysqli_prepare($con, "SELECT id_user FROM User WHERE nom_usr = ? AND password = ?");
+    $stmt = mysqli_prepare($con, "SELECT id_user FROM User WHERE nom_usr = ?");
 
-    mysqli_stmt_bind_param($stmt,"ss", $user_data["name_user"], password_hash($user_data["password"],PASSWORD_DEFAULT));
+    mysqli_stmt_bind_param($stmt,"ss", $user_data["name_user"]);
 
     //Ejecutamos la consulta
     if(mysqli_stmt_execute($stmt)){

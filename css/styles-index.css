@@ -156,7 +156,6 @@ header {
   height: 90%;
   background-color: #ffffff;
   background-repeat: no-repeat;
-  background-size: cover;
   background-image: url("../img/Mobile login-bro.svg"); }
 
 /*LOG ON*/
@@ -229,7 +228,6 @@ header {
   height: 90%;
   background-color: #ffffff;
   background-repeat: no-repeat;
-  background-size: cover;
   background-image: url("../img/Mobile login-rafiki.svg"); }
 
 #footer {
