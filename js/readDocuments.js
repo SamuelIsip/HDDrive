@@ -102,6 +102,8 @@ function createList(doc, div_list) {
 
   div_list.appendChild(tbody);
 
+  document.getElementsByClassName("table_files")[0].appendChild(div_list);
+
   menu_options_file(ruta);
 }
 
