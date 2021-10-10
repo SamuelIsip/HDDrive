@@ -3,8 +3,7 @@ const userName = sessionStorage.getItem("userName");
 const userID = sessionStorage.getItem("userID");
 
 function readDocuments() {
-  var div_list = document.getElementsByClassName("files")[0],
-    table = document.createElement("table");
+  var div_list = document.getElementsByClassName("table_files")[0];
   $.ajax({
     url: "./../api/readDocs.php",
     type: "GET",
@@ -12,7 +11,7 @@ function readDocuments() {
     data: { userNameSession: userName, userIDSession: userID },
     async: true,
     success: (doc) => {
-      createList(doc, div_list, table);
+      createList(doc, div_list);
     },
   });
 }
