@@ -7,6 +7,9 @@ function load_events_pages_menu() {
 
     // Remove the table, to reload files of index
     //if ($(".table_files").children().length > 0) $(".table_files").remove();
+    var div_list = document.getElementsByClassName("table_files")[0];
+    if (div_list.hasChildNodes() && div_list.childElementCount > 1)
+      div_list.removeChild(div_list.lastChild);
     readDocuments();
     resetLinkHead();
   });
