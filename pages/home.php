@@ -94,6 +94,7 @@
                     <i id="download_files_selected" class="fas fa-download"></i>
                   </li>
                 </ul>
+                <table class="table_files"><thead><tr><th>Name</th><th>File Size</th><th>Date</th></tr></thead></table>
               </div>
             </div>
           </div>
