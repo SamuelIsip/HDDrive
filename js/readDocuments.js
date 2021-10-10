@@ -99,7 +99,7 @@ function createList(doc, div_list) {
 
     tbody.appendChild(tr);
   });
-  div_list.append;
+
   div_list.appendChild(tbody);
 
   menu_options_file(ruta);
