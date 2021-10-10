@@ -99,18 +99,16 @@ function createList(doc, div_list) {
 
     tbody.appendChild(tr);
   });
-
+  div_list.append;
   div_list.appendChild(tbody);
-
-  document.getElementsByClassName("table_files")[0].appendChild(div_list);
 
   menu_options_file(ruta);
 }
 
 function isDir(nameDoc) {
-  var div_list =
-    document.getElementsByClassName("table_files")[0].lastElementChild;
-  if (div_list.hasChildNodes()) div_list.removeChild(div_list.lastChild);
+  var div_list = document.getElementsByClassName("table_files")[0];
+  if (div_list.hasChildNodes() && div_list.childElementCount > 1)
+    div_list.removeChild(div_list.lastChild);
   $.ajax({
     url: "./../api/readDocs.php",
     type: "GET",
