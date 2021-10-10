@@ -128,7 +128,8 @@ function createList(doc, div_list, table) {
 function isDir(nameDoc) {
   var div_list = document.getElementsByClassName("files")[0],
     table = document.createElement("table");
-  if (div_list.hasChildNodes()) div_list.removeChild(div_list.lastChild);
+  if (div_list.hasChildNodes() && div_list.childElementCount > 2)
+    div_list.removeChild(div_list.lastChild);
   $.ajax({
     url: "./../api/readDocs.php",
     type: "GET",
