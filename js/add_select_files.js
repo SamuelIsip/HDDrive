@@ -3,7 +3,6 @@ function load_events_add_select() {
     .getElementById("add_file")
     .parentElement.addEventListener("change", () => {
       var form_data = new FormData();
-      form_data.append("file", file_data);
       form_data.append("rutaDir", getPath());
       var ins = document.getElementById("add_file").files.length;
       for (var x = 0; x < ins; x++) {
