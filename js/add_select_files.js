@@ -2,10 +2,16 @@ function load_events_add_select() {
   document
     .getElementById("add_file")
     .parentElement.addEventListener("change", () => {
-      var file_data = document.getElementById("add_file").files;
       var form_data = new FormData();
       form_data.append("file", file_data);
       form_data.append("rutaDir", getPath());
+      var ins = document.getElementById("add_file").files.length;
+      for (var x = 0; x < ins; x++) {
+        form_data.append(
+          "file[]",
+          document.getElementById("add_file").files[x]
+        );
+      }
       $.ajax({
         url: "./../api/uploadfile.php",
         type: "POST",

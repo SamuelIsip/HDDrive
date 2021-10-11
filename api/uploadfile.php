@@ -2,15 +2,16 @@
     session_name("userSession");
     session_start();
 
-    echo $_FILES['file'];
 
-    foreach ($_FILES['file'] as $file){
+    $count = count($_FILES['file']['name']);
 
-        move_uploaded_file($file['tmp_name'], "./../../HDDriveHome/".$_SESSION['userName']."/".$_POST['rutaDir'].$file['name']);
+    for ($i = 0; $i < $count; $i++) {
+
+        move_uploaded_file($_FILES['file']['tmp_name'][$i], "./../../HDDriveHome/".$_SESSION['userName']."/".$_POST['rutaDir'].$_FILES['file']['name'][$i]);
 
         chdir("./../../HDDriveHome/".$_SESSION['userName']."/".$_POST['rutaDir']);
 
-        $value = $file['name'];
+        $value = $_FILES['file']['name'][$i];
 
         include_once("connectDB.php");
         include_once("getSizeFile.php");
