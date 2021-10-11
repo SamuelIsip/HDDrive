@@ -2,7 +2,7 @@
     session_name("userSession");
     session_start();
 
-    move_uploaded_file($_FILES['file']['tmp_name'], "./../../HDDriveHome/".$_SESSION['userName']."/".$_POST['rutaDir'].$_FILES['file']['name']);
+    move_uploaded_file($_FILES['add_file']['name'], "./../../HDDriveHome/".$_SESSION['userName']."/".$_POST['rutaDir'].$_FILES['add_file']['name']);
 
     chdir("./../../HDDriveHome/".$_SESSION['userName']."/".$_POST['rutaDir']);
 

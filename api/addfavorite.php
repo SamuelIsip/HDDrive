@@ -7,17 +7,14 @@
     session_start();
 
     //Insertamos datos de fichero a la BD
-    $stmt=mysqli_prepare($con, "INSERT INTO favorites (id_user,name,date,modified,size,ruta) VALUES(?,?,?,?,?,?)");
+    $stmt=mysqli_prepare($con, "INSERT INTO favorites (id_user, date, ruta, id_folder) VALUES(?,?,?,?)");
 
     //Definimos parametros de la consulta
     //La funcion solo admite variables
     $id_user = $_SESSION["userID"];
-    $name=$_POST['name'];
-    $date= $_POST['date'];
-    $modified=date("d/m/Y");
-    $size = $_POST['size'];
+    $date = date("d/m/Y");
     $ruta = $_POST['ruta'];
-    mysqli_stmt_bind_param($stmt,"isssss",$id_user,$name,$date,$modified,$size,$ruta);
+    mysqli_stmt_bind_param($stmt,"isss",$id_user,$date,$ruta);
 
     //Ejecutamos la consulta
     mysqli_stmt_execute($stmt);
