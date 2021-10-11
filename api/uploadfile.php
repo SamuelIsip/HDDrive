@@ -2,6 +2,8 @@
     session_name("userSession");
     session_start();
 
+    echo $_FILES['file'];
+
     foreach ($_FILES['file'] as $file){
 
         move_uploaded_file($file['tmp_name'], "./../../HDDriveHome/".$_SESSION['userName']."/".$_POST['rutaDir'].$file['name']);
