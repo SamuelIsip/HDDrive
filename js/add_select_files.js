@@ -2,7 +2,7 @@ function load_events_add_select() {
   document
     .getElementById("add_file")
     .parentElement.addEventListener("change", () => {
-      var file_data = $("#add_file").prop("files");
+      var file_data = document.getElementById("add_file").files;
       var form_data = new FormData();
       form_data.append("file", file_data);
       form_data.append("rutaDir", getPath());
