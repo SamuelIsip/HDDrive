@@ -73,7 +73,7 @@
               <div class="files__add__select">
                 <ul>
                 <li>
-                  <i id="back_dir" class="fas fa-arrow-left"></i>
+                  <i id="back_dir" class="fas fa-arrow-left"> Back</i>
                   </li>
                   <li>
                     <input
@@ -84,14 +84,14 @@
                       hidden
                     />
                     <label for="add_file"
-                      ><i id="add_file" class="fas fa-plus"></i
+                      ><i id="add_file" class="fas fa-plus"> Add File</i
                     ></label>
                   </li>
                   <li>
-                    <i id="select_files" class="fas fa-check-square"></i>
+                    <i id="select_files" class="fas fa-check-square"> Select Files</i>
                   </li>
                   <li>
-                    <i id="download_files_selected" class="fas fa-download"></i>
+                    <i id="download_files_selected" class="fas fa-download">Download</i>
                   </li>
                 </ul>
               </div>
