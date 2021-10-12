@@ -13,11 +13,17 @@
     />
     <style>
       body {
+        margin: 10px;
         font-family: "Times New Roman", Times, serif;
         font-size: 17px;
       }
       #add_tasks {
-        box-shadow: -4px 5px 5px black;
+        box-shadow: -2px 3px 5px black;
+        background: linear-gradient(
+          333deg,
+          rgb(44 45 58 / 93%) 0%,
+          rgba(43, 174, 136, 1) 37%
+        );
       }
       #list_tasks {
         padding-bottom: 100px;
@@ -26,9 +32,14 @@
       }
 
       #list_tasks .row {
-        box-shadow: 4px 2px 5px black;
+        box-shadow: -2px 3px 5px black;
         margin-bottom: 5px;
-        background-color: #2bae88;
+        margin-left: 10px;
+        background: linear-gradient(
+          333deg,
+          rgb(44 45 58 / 93%) 0%,
+          rgba(43, 174, 136, 1) 37%
+        );
         border-radius: 5px;
       }
       h3 {
@@ -60,9 +71,11 @@
       }
       #save_task {
         width: 100%;
-        background-color: #2bae88;
+        background-color: #fff;
+        color: #000;
       }
       #save_task:hover {
+        color: #fff;
         background-color: #259b79;
       }
     </style>
@@ -74,7 +87,7 @@
         <div class="col-4" id="add_tasks">
           <div class="row">
             <div class="col-12">
-              <h2>Add New Note</h2>
+              <h2>YOUR TASK</h2>
               <div class="form-group">
                 <label for="title">Write a title:</label>
                 <input

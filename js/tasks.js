@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     };
-    xhr.open("POST", "./../api/loadTasks.php", true);
+    xhr.open("POST", "./../api/loadTasks.php", false);
     xhr.send();
   };
 

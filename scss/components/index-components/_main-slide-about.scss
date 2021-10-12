@@ -1,9 +1,38 @@
 .container_slide {
   height: 800px;
-  background-image: url("../img/portada.jpg");
+  background-image: url(../img/portada.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: center;
+
+  & #container_slide_info {
+    width: 400px;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & #container_slide_info_button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: transparent;
+      border-color: #003454;
+      color: #003454;
+      border-radius: 5px;
+    }
+
+    & #container_slide_info_button:hover {
+      cursor: pointer;
+      background-color: #003454;
+      color: #fff;
+    }
+  }
 }
 
 #container_about {
@@ -16,4 +45,5 @@
 
 #container_about p {
   column-count: 2;
+  padding: 0 20px 0 20px;
 }

@@ -2,23 +2,35 @@
 
     include_once("connectDB.php");
 
-    //Seleccionamos datos de la BD
-    $result = mysqli_query($con, "SELECT * FROM tasks;");
+    session_name("userSession");
+    session_start();
 
+    //Seleccionamos datos de la BD
+    $result = mysqli_prepare($con, "SELECT * FROM tasks WHERE id_user=?");
+
+    $usrID = $_SESSION["userID"];
+
+    mysqli_stmt_bind_param($result,"i",$usrID);
+
+    mysqli_stmt_execute($result);
+
+    mysqli_stmt_bind_result($result, $id_task, $id_user, $title, $text, $date, $modified);
+   
     $arr1 = array();
     $arr1["tasks"]=array();
-    
-    for ($i=1; mysqli_num_rows($result) >= $i; $i++){
-        $fila=mysqli_fetch_row ($result);
+
+    while(mysqli_stmt_fetch($result)){
         $arr2=array(
-            "title" => $fila[2],
-            "text" => $fila[3],
-            "date" => $fila[4],
-            "modified" => $fila[5]
+            "title" => $title,
+            "text" => $text,
+            "date" => $date,
+            "modified" => $modified
         );
 
         array_push($arr1["tasks"], $arr2);
     }
+
+    mysqli_stmt_close($result);
 
     mysqli_close($con);
 

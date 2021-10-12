@@ -57,7 +57,6 @@ function add_event_options(options, ruta) {
     ).value;
 
   op_download.addEventListener("click", () => {
-    console.log(ruta + name_file_doc);
     window.location = encodeURI(
       "./../api/downloadFile.php?nameFile=" + getPath() + name_file_doc
     );

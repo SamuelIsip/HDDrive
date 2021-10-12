@@ -2,11 +2,14 @@
 
     include_once("connectDB.php");
 
+    session_name("userSession");
+    session_start();
+
     //Insertamos datos de fichero a la BD
     $stmt=mysqli_prepare($con, "UPDATE tasks SET id_user=?,title=?,text=?,date=?,modified=? WHERE title=? AND text=? AND date=?");
 
     //Nuevos datos
-    $id_user = 1 ;
+    $id_user = $_SESSION["userID"];
     $name=$_POST['task_title'];
     $text=$_POST['task_text'];
     $date= $_POST['task_day']."/".$_POST['task_month']."/".$_POST['task_year'];

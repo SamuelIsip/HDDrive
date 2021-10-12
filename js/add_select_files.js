@@ -2,10 +2,15 @@ function load_events_add_select() {
   document
     .getElementById("add_file")
     .parentElement.addEventListener("change", () => {
-      var file_data = $("#add_file").prop("files")[0];
       var form_data = new FormData();
-      form_data.append("file", file_data);
       form_data.append("rutaDir", getPath());
+      var ins = document.getElementById("add_file").files.length;
+      for (var x = 0; x < ins; x++) {
+        form_data.append(
+          "file[]",
+          document.getElementById("add_file").files[x]
+        );
+      }
       $.ajax({
         url: "./../api/uploadfile.php",
         type: "POST",
@@ -20,6 +25,30 @@ function load_events_add_select() {
         },
       });
     });
+
+  document.getElementById("add_folder").addEventListener("click", () => {
+    let nameFolder = prompt("Please enter the name of the folder", "Folder");
+
+    const folder = {
+      rutaDir: getPath(),
+      nameFolder: nameFolder,
+    };
+
+    if (window.ActiveXObject) xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    else xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        isDir(getPath());
+      } else if (this.readyState == 4 && this.status == 500) {
+        alert("Ups! This Folder can not be created successfully!");
+      }
+    };
+
+    xhr.open("POST", "./../api/add_folder.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(folder));
+  });
 
   document.getElementById("select_files").addEventListener("click", () => {
     //Mostrar todos los check

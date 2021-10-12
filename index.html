@@ -6,27 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HDDrive</title>
     <link rel="stylesheet" href="css/styles-index.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
+    <script src="js/login.js"></script>
+    <script src="js/logOn.js"></script>
   </head>
   <body>
     <div id="container">
       <header id="header">
         <nav>
+          <div
+            class="contact_logo"
+            onclick="document.querySelector('.container_slide').scrollIntoView();"
+          >
+            <div class="contact_logo_img logo_header"></div>
+          </div>
           <ul class="container_list">
             <li><a href="#container_login">Login</a></li>
-            <li><a href="#container_logon">LogON</a></li>
             <li><a href="#container_about">About</a></li>
             <li><a href="#footer">Contact</a></li>
           </ul>
         </nav>
       </header>
       <main>
-        <div class="container_slide"></div>
+        <div class="container_slide">
+          <div id="container_slide_title">
+            <h1>HDDrive</h1>
+          </div>
+          <div id="container_slide_info">
+            <div id="container_slide_info_title">
+              <h1>Boost productivity with HDDrive Busniess</h1>
+            </div>
+            <div>
+              The secure file sharing and storage solution that employees and IT
+              admins trust.
+            </div>
+            <div>
+              <button
+                id="container_slide_info_button"
+                onclick="document.getElementById('container_logon').scrollIntoView();"
+              >
+                Try HDDrive Business free
+              </button>
+            </div>
+          </div>
+        </div>
         <div id="container_about">
-          <h2>About Title</h2>
+          <h2>Get More With HDDrive</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
             fugiat earum commodi totam quo similique, hic expedita, doloremque
@@ -81,7 +110,7 @@
               />
             </div>
             <div class="login_buttons">
-              <input type="button" value="Login" />
+              <input type="button" value="Login" id="login_button" />
               <div><a href="#">Forgot Password?</a></div>
             </div>
           </div>
@@ -119,7 +148,7 @@
               />
             </div>
             <div class="logon_buttons">
-              <input type="button" value="Login" />
+              <input type="button" value="Create" id="logon_button" />
               <div><a href="#container_login">Already Account?</a></div>
             </div>
           </div>
@@ -135,7 +164,7 @@
             </div>
             <div class="contact_information">
               <ul>
-                <h3>Datos de contacto</h3>
+                <h3>Contact Information</h3>
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Lorem ipsum dolor sit amet.</li>
@@ -144,7 +173,7 @@
                 <li>Lorem ipsum dolor sit amet.</li>
               </ul>
               <ul>
-                <h3>Datos del centro</h3>
+                <h3>Help & FAQs</h3>
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Lorem ipsum dolor sit amet.</li>
@@ -153,7 +182,7 @@
                 <li>Lorem ipsum dolor sit amet.</li>
               </ul>
               <ul>
-                <h3>Información adicional</h3>
+                <h3>Community</h3>
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Lorem ipsum dolor sit amet.</li>
@@ -165,6 +194,7 @@
           </div>
           <div class="contact_links">
             <hr />
+            <p style="position: absolute">© 2021 HDDrive Corporation</p>
             <div>
               <a href="https://www.linkedin.com/in/samuelisip/" target="_blank"
                 ><i class="fab fa-linkedin"></i

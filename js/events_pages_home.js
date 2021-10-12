@@ -6,7 +6,7 @@ function load_events_pages_menu() {
     ).css("display", "none");
 
     // Remove the table, to reload files of index
-    if ($(".table_files").children().length > 0) $(".table_files").remove();
+    deleteFileRecursive();
     readDocuments();
     resetLinkHead();
   });
@@ -43,8 +43,17 @@ function load_events_pages_menu() {
     ).css("display", "none");
 
     // Remove the table, to reload files of index
-    if ($(".table_files").children().length > 0) $(".table_files").remove();
+    deleteFileRecursive();
     readDocuments();
     resetLinkHead();
   });
+
+  const regex = /initials.+/;
+  const userName = sessionStorage.getItem("userName");
+
+  // Foto de perfil
+  document.getElementsByClassName("user_profile")[0].firstElementChild.src =
+    document
+      .getElementsByClassName("user_profile")[0]
+      .firstElementChild.src.replace(regex, "initials/" + userName + ".svg");
 }
