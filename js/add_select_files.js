@@ -26,6 +26,30 @@ function load_events_add_select() {
       });
     });
 
+  document.getElementById("add_folder").addEventListener("click", () => {
+    let nameFolder = prompt("Please enter the name of the folder", "Folder");
+
+    const folder = {
+      rutaDir: getPath(),
+      nameFolder: nameFolder,
+    };
+
+    if (window.ActiveXObject) xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    else xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        isDir(getPath());
+      } else if (this.readyState == 4 && this.status == 500) {
+        alert("Ups! This Folder can not be created successfully!");
+      }
+    };
+
+    xhr.open("POST", "./../HDDrive/api/add_folder.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(folder));
+  });
+
   document.getElementById("select_files").addEventListener("click", () => {
     //Mostrar todos los check
     var check_list = document.getElementsByClassName("check_file");
