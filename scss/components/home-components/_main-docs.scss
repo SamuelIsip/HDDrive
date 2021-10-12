@@ -54,7 +54,7 @@ ul {
 }
 
 .files__add__select {
-  width: fit-content;
+  display: inline-block;
 
   & ul {
     background-color: rgb(0, 134, 60);

@@ -148,7 +148,7 @@ ul {
       color: #495057; }
 
 .files__add__select {
-  width: fit-content; }
+  display: inline-block; }
   .files__add__select ul {
     background-color: #00863c;
     display: flex;
