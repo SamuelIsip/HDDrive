@@ -19,6 +19,7 @@
     <script src="../js/load_pages_home.js"></script>
     <script src="../js/add_select_files.js"></script>
     <script src="../js/task_load_db.js"></script>
+   
   </head>
   <body>
     <div id="container">
@@ -43,7 +44,9 @@
           </ul>
         </nav>
         <div>
-          <div class="user_profile"></div>
+          <div class="user_profile">
+            <img src="https://avatars.dicebear.com/api/initials/:seed.svg" alt="No User">
+          </div>
         </div>
       </header>
       <main>
@@ -69,8 +72,8 @@
             <div class="files">
               <div class="files__add__select">
                 <ul>
-                <li>
-                  <i id="back_dir" class="fas fa-arrow-left"></i>
+                  <li>
+                    <i id="back_dir" class="fas fa-arrow-left"> Back</i>
                   </li>
                   <li>
                     <input
@@ -81,17 +84,21 @@
                       hidden
                     />
                     <label for="add_file"
-                      ><i id="add_file" class="fas fa-plus"></i
+                      ><i id="add_file" class="fas fa-file"> Add File</i
                     ></label>
                   </li>
                   <li>
-                    <i id="select_files" class="fas fa-check-square"></i>
+                    <i id="add_folder" class="fas fa-folder"> Add Folder</i>
                   </li>
                   <li>
-                    <i id="download_files_selected" class="fas fa-download"></i>
+                    <i id="select_files" class="fas fa-check-square"> Select Files</i>
+                  </li>
+                  <li>
+                    <i id="download_files_selected" class="fas fa-download"> Download</i>
                   </li>
                 </ul>
               </div>
+              <table class="table_files"><thead><tr><th>Name</th><th>File Size</th><th>Date</th></tr></thead></table>
             </div>
           </div>
         </div>

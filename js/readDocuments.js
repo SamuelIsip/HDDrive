@@ -1,38 +1,23 @@
 var ruta = "";
-function readDocuments() {
-  var div_list = document.getElementsByClassName("files")[0],
-    table = document.createElement("table");
+const userName = sessionStorage.getItem("userName");
+const userID = sessionStorage.getItem("userID");
 
+function readDocuments() {
+  var div_list = document.getElementsByClassName("table_files")[0];
   $.ajax({
     url: "./../api/readDocs.php",
     type: "GET",
     dataType: "json",
+    data: { userNameSession: userName, userIDSession: userID },
     async: true,
     success: (doc) => {
-      createList(doc, div_list, table);
+      createList(doc, div_list);
     },
   });
 }
 
-function createList(doc, div_list, table) {
+function createList(doc, div_list) {
   var count = 0;
-  //Head
-  table.classList.add("table_files");
-  let thead = document.createElement("thead");
-  let tr = document.createElement("tr");
-  let th1 = document.createElement("th");
-  let th2 = document.createElement("th");
-  let th3 = document.createElement("th");
-
-  th1.appendChild(document.createTextNode("Name"));
-  th2.appendChild(document.createTextNode("File Size"));
-  th3.appendChild(document.createTextNode("Date"));
-
-  tr.appendChild(th1);
-  tr.appendChild(th2);
-  tr.appendChild(th3);
-
-  thead.appendChild(tr);
 
   var tbody = document.createElement("tbody");
 
@@ -79,7 +64,7 @@ function createList(doc, div_list, table) {
 
         //Guardar ruta actual
         window.localStorage.setItem("ruta", ruta);
-        isDir(ruta);
+        isDir(getPath() + "/");
       });
     } else if (nameDoc.isDirFile === "file") {
       td1.addEventListener("click", () => {
@@ -114,26 +99,26 @@ function createList(doc, div_list, table) {
     tbody.appendChild(tr);
   });
 
-  table.appendChild(thead);
-  table.appendChild(tbody);
-
-  div_list.appendChild(table);
+  div_list.appendChild(tbody);
 
   menu_options_file(ruta);
 }
 
 function isDir(nameDoc) {
-  var div_list = document.getElementsByClassName("files")[0],
-    table = document.createElement("table");
-  if (div_list.hasChildNodes()) div_list.removeChild(div_list.lastChild);
+  var div_list = document.getElementsByClassName("table_files")[0];
+  deleteFileRecursive();
   $.ajax({
     url: "./../api/readDocs.php",
     type: "GET",
     dataType: "json",
-    data: { nameDir: nameDoc },
+    data: {
+      nameDir: nameDoc,
+      userNameSession: userName,
+      userIDSession: userID,
+    },
     async: true,
     success: (doc) => {
-      createList(doc, div_list, table);
+      createList(doc, div_list);
     },
   });
 }
@@ -175,4 +160,10 @@ function resetLinkHead() {
     document.getElementsByClassName("docs_header")[0].firstElementChild;
   var lis = docs_header.children;
   for (let i = lis.length - 1; i > 1; i--) docs_header.children[i].remove();
+}
+
+function deleteFileRecursive() {
+  var div_list = document.getElementsByClassName("table_files")[0];
+  if (div_list.hasChildNodes() && div_list.childElementCount > 1)
+    div_list.removeChild(div_list.lastChild);
 }

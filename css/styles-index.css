@@ -2,14 +2,22 @@ body {
   margin: 0;
   padding: 0; }
 
+.logo_header {
+  opacity: 0.9; }
+
 #container {
   background-color: #ffffff;
   overflow: auto; }
+  #container .container_slide #container_slide_title {
+    font-family: sans-serif;
+    font-size: 70px;
+    color: white; }
 
 header {
-  background-color: #ffffffa8;
+  background-color: #003454b0;
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 10; }
 
 .container_list {
   margin: 0;
@@ -24,17 +32,40 @@ header {
 .container_list li a {
   text-decoration: none;
   font-size: large;
-  color: black; }
+  color: #fff; }
 
 .container_list li a:hover {
-  color: #e7e7e7; }
+  color: rgba(255, 255, 255, 0.774); }
 
 .container_slide {
   height: 800px;
-  background-image: url("../img/portada.jpg");
+  background-image: url(../img/portada.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: center; }
+  .container_slide #container_slide_info {
+    width: 400px;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .container_slide #container_slide_info #container_slide_info_button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: transparent;
+      border-color: #003454;
+      color: #003454;
+      border-radius: 5px; }
+    .container_slide #container_slide_info #container_slide_info_button:hover {
+      cursor: pointer;
+      background-color: #003454;
+      color: #fff; }
 
 #container_about {
   text-align: center; }
@@ -43,13 +74,15 @@ header {
   font-size: 40px; }
 
 #container_about p {
-  column-count: 2; }
+  column-count: 2;
+  padding: 0 20px 0 20px; }
 
 /*LOG IN*/
 #container_login {
   margin: auto;
+  margin-top: 40px;
   width: 90%;
-  height: 900px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +96,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  color: #003454; }
   .login_form > i {
     position: absolute;
     top: 10px;
@@ -91,6 +125,8 @@ header {
     width: 70%;
     margin: auto;
     padding: 10px;
+    border: 1px solid #003454;
+    border-radius: 5px;
     margin-bottom: 10px; }
 
 .login_buttons {
@@ -98,29 +134,37 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between; }
+  .login_buttons a {
+    color: #003454; }
   .login_buttons input {
     width: 40%;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #1a9af0;
-    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid #003454;
+    color: #003454;
     font-size: 20px; }
+  .login_buttons input:hover {
+    cursor: pointer;
+    background-color: #003454;
+    border-color: #fff;
+    color: #ffffff; }
   .login_buttons div {
     align-self: center; }
 
 .login_image {
   width: 49%;
-  height: 100%;
-  background-color: white;
+  height: 90%;
+  background-color: #ffffff;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../img/login@4x-min.png"); }
+  background-image: url("../img/Mobile login-bro.svg"); }
 
 /*LOG ON*/
 #container_logon {
   margin: auto;
+  margin-top: 40px;
   width: 90%;
-  height: 900px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,7 +178,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  color: #003454; }
   .logon_form > i {
     position: absolute;
     top: 10px;
@@ -152,6 +197,8 @@ header {
     width: 70%;
     margin: auto;
     padding: 10px;
+    border: 1px solid #003454;
+    border-radius: 5px;
     margin-bottom: 10px; }
 
 .logon_buttons {
@@ -159,27 +206,35 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between; }
+  .logon_buttons a {
+    color: #003454; }
   .logon_buttons input {
     width: 40%;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #1a9af0;
-    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid #003454;
+    color: #003454;
     font-size: 20px; }
+  .logon_buttons input:hover {
+    cursor: pointer;
+    background-color: #003454;
+    border-color: #fff;
+    color: #ffffff; }
   .logon_buttons div {
     align-self: center; }
 
 .logon_image {
   width: 49%;
-  height: 100%;
-  background-color: white;
+  height: 90%;
+  background-color: #ffffff;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../img/logon-min.png"); }
+  background-image: url("../img/Mobile login-rafiki.svg"); }
 
 #footer {
+  color: #fff;
   margin-top: 20px;
-  background-color: rgba(2, 60, 248, 0.685); }
+  background-color: #003454; }
 
 .container_contact {
   display: flex;
@@ -194,12 +249,17 @@ header {
   float: left; }
 
 .contact_logo_img {
+  margin-left: 10px;
   width: 60px;
   height: 60px;
   background-image: url("../img/logo.png");
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 50%; }
+  border-radius: 50%;
+  background-color: #ffffff40; }
+
+.contact_logo_img:hover {
+  cursor: pointer; }
 
 .contact_information {
   text-align: center;

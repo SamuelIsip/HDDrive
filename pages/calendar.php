@@ -16,7 +16,11 @@
         flex-direction: column;
         flex-wrap:wrap;
         border-radius: 5px;
-        background-color: #2bae88;
+        background: linear-gradient(
+          333deg,
+          rgb(44 45 58 / 93%) 0%,
+          rgba(43, 174, 136, 1) 37%
+        );
         box-shadow: 3px 3px 5px black;
       }
       form > div{
@@ -24,8 +28,10 @@
       }
      
       td:hover{
+        box-shadow: 2px 3px 5px black;
         cursor: pointer;
         background-color: #2bae88;
+        transform: translate(3px, 1px);
       }
 
       #flechas{
@@ -84,20 +90,20 @@
         cursor: pointer;
       }
       #save_task_calendar{
-        background-color: #26f226;
+        background-color: #50ff00;;
       }
       #close_task_calendar{
         background-color: #ff0000;
       }
       .calendar_task_styles{
         visibility: visible;
-        z-index: 10;
-        top: 50%;
-        left: 50%;
+        opacity: 1;
+        transition: visibility 0s, opacity 0.5s linear;
       }
 
       .calendar_task_no_styles{
         visibility: hidden;
+        opacity: 0;
       }
 
       input:hover{
@@ -254,7 +260,6 @@
         }else{
           calendario($mes2,$anio2);
         }
-
 
 
       ?>

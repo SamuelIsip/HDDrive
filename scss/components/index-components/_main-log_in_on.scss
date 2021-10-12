@@ -1,7 +1,8 @@
 @mixin log_in_on_container {
   margin: auto;
+  margin-top: 40px;
   width: 90%;
-  height: 900px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,6 +18,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  color: #003454;
 
   & > i {
     position: absolute;
@@ -38,6 +40,8 @@
     width: 70%;
     margin: auto;
     padding: 10px;
+    border: 1px solid #003454;
+    border-radius: 5px;
     margin-bottom: 10px;
   }
 }
@@ -47,13 +51,25 @@
   flex-direction: row;
   justify-content: space-between;
 
+  & a {
+    color: #003454;
+  }
+
   & input {
     width: 40%;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(26, 154, 240);
-    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid #003454;
+    color: #003454;
     font-size: 20px;
+  }
+
+  & input:hover {
+    cursor: pointer;
+    background-color: #003454;
+    border-color: #fff;
+    color: #ffffff;
   }
 
   & div {
@@ -63,10 +79,9 @@
 
 @mixin log_in_on_image {
   width: 49%;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
+  height: 90%;
+  background-color: #ffffff;
   background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /*LOG IN*/
@@ -104,7 +119,7 @@
 
 .login_image {
   @include log_in_on_image;
-  background-image: url("../img/login@4x-min.png");
+  background-image: url("../img/Mobile login-bro.svg");
 }
 
 /*LOG ON*/
@@ -131,5 +146,5 @@
 
 .logon_image {
   @include log_in_on_image;
-  background-image: url("../img/logon-min.png");
+  background-image: url("../img/Mobile login-rafiki.svg");
 }

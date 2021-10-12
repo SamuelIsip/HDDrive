@@ -1,6 +1,7 @@
 #footer {
+  color: #fff;
   margin-top: 20px;
-  background-color: rgba(2, 60, 248, 0.685);
+  background-color: #003454;
 }
 
 .container_contact {
@@ -19,12 +20,18 @@
 }
 
 .contact_logo_img {
+  margin-left: 10px;
   width: 60px;
   height: 60px;
   background-image: url("../img/logo.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 50%;
+  background-color: #ffffff40;
+}
+
+.contact_logo_img:hover {
+  cursor: pointer;
 }
 
 .contact_information {
