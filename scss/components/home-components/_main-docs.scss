@@ -66,8 +66,9 @@ ul {
     box-shadow: 0.5px 1px 1px 0.5px black;
 
     & li {
-      font-size: 18px;
       margin: 5px;
+      text-decoration: none;
+      color: #282a35;
     }
 
     & li:hover {

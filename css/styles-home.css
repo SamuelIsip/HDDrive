@@ -158,8 +158,9 @@ ul {
     border-radius: 0px 20px 20px 0px;
     box-shadow: 0.5px 1px 1px 0.5px black; }
     .files__add__select ul li {
-      font-size: 18px;
-      margin: 5px; }
+      margin: 5px;
+      text-decoration: none;
+      color: #282a35; }
     .files__add__select ul li:hover {
       cursor: pointer;
       color: #fff; }
