@@ -45,7 +45,7 @@ function load_events_add_select() {
       }
     };
 
-    xhr.open("POST", "./../HDDrive/api/add_folder.php", true);
+    xhr.open("POST", "./../api/add_folder.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(folder));
   });
