@@ -1,5 +1,5 @@
 /** Variables **/
-$responsive-width: 600px;
+$responsive-width: 768px;
 $nav-color: #003454b0;
 $white: #fff;
 
@@ -29,6 +29,10 @@ header {
   position: fixed;
   width: 100%;
   z-index: 10;
+  & nav {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .container_list {
@@ -63,7 +67,11 @@ header {
     display: none;
   }
   .menu_icon {
-    float: right;
-    display: block;
+    display: flex;
+    align-self: center;
+    font-size: x-large;
+    & a {
+      color: $white;
+    }
   }
 }

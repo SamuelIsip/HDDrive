@@ -19,6 +19,9 @@ header {
   position: fixed;
   width: 100%;
   z-index: 10; }
+  header nav {
+    display: flex;
+    justify-content: space-between; }
 
 .container_list {
   margin: 0;
@@ -42,12 +45,15 @@ header {
   display: none; }
 
 /** Media Queries **/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .container_list {
     display: none; }
   .menu_icon {
-    float: right;
-    display: block; } }
+    display: flex;
+    align-self: center;
+    font-size: x-large; }
+    .menu_icon a {
+      color: #fff; } }
 
 .container_slide {
   height: 800px;
@@ -247,6 +253,8 @@ header {
   color: #fff;
   margin-top: 20px;
   background-color: #003454; }
+  #footer .contact_logo {
+    float: left; }
 
 .container_contact {
   display: flex;
@@ -256,9 +264,6 @@ header {
   width: 70%;
   margin: auto;
   overflow: auto; }
-
-.contact_logo {
-  float: left; }
 
 .contact_logo_img {
   margin-left: 10px;

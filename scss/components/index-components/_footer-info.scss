@@ -2,6 +2,9 @@
   color: #fff;
   margin-top: 20px;
   background-color: #003454;
+  & .contact_logo {
+    float: left;
+  }
 }
 
 .container_contact {
@@ -13,10 +16,6 @@
   width: 70%;
   margin: auto;
   overflow: auto;
-}
-
-.contact_logo {
-  float: left;
 }
 
 .contact_logo_img {
