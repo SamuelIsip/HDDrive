@@ -52,6 +52,7 @@
 }
 
 .contact_links div {
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -59,4 +60,10 @@
   color: #ffffff;
   font-size: 45px;
   margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact_information {
+    flex-direction: column;
+  }
 }

@@ -149,9 +149,6 @@
   background-image: url("../img/Mobile login-rafiki.svg");
 }
 
-@mixin log_in_on_form_responsive {
-}
-
 @media screen and (max-width: 768px) {
   .login_form {
     width: 100%;
@@ -189,10 +186,6 @@
     & .logon_header {
       width: 100%;
 
-      & .img_account {
-        width: 150px;
-        height: 150px;
-      }
       & h2 {
         font-size: 35px;
       }

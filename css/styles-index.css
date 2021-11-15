@@ -329,9 +329,6 @@ header {
     width: 100%; }
     .logon_form .logon_header {
       width: 100%; }
-      .logon_form .logon_header .img_account {
-        width: 150px;
-        height: 150px; }
       .logon_form .logon_header h2 {
         font-size: 35px; }
     .logon_form .logon_data {
@@ -395,9 +392,14 @@ header {
   width: 100%; }
 
 .contact_links div {
+  margin-top: 20px;
   text-align: center; }
 
 .contact_links div a i {
   color: #ffffff;
   font-size: 45px;
   margin: 20px; }
+
+@media screen and (max-width: 768px) {
+  .contact_information {
+    flex-direction: column; } }
