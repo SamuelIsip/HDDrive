@@ -136,9 +136,10 @@ header {
   text-align: center; }
 
 #container_about h2 {
-  font-size: 40px; }
+  font-size: 50px; }
 
 #container_about p {
+  font-size: 20px;
   column-count: 2;
   padding: 0 20px 0 20px; }
 
@@ -153,7 +154,7 @@ header {
   margin: auto;
   margin-top: 40px;
   width: 90%;
-  height: 700px;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,8 +180,8 @@ header {
   text-align: center; }
 
 .img_account {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-image: url("../img/user-3331257__340-min.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -195,7 +196,7 @@ header {
   .login_data input {
     width: 70%;
     margin: auto;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #003454;
     border-radius: 5px;
     margin-bottom: 10px; }
@@ -211,15 +212,15 @@ header {
     width: 40%;
     padding: 5px;
     border-radius: 5px;
-    background-color: transparent;
+    background-color: #003454;
     border: 2px solid #003454;
-    color: #003454;
+    color: white;
     font-size: 20px; }
   .login_buttons input:hover {
     cursor: pointer;
-    background-color: #003454;
-    border-color: #fff;
-    color: #ffffff; }
+    background-color: #fff;
+    border: 2px solid #003454;
+    color: #003454; }
   .login_buttons div {
     align-self: center; }
 
@@ -235,7 +236,7 @@ header {
   margin: auto;
   margin-top: 40px;
   width: 90%;
-  height: 700px;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -267,7 +268,7 @@ header {
   .logon_data input {
     width: 70%;
     margin: auto;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #003454;
     border-radius: 5px;
     margin-bottom: 10px; }
@@ -283,15 +284,15 @@ header {
     width: 40%;
     padding: 5px;
     border-radius: 5px;
-    background-color: transparent;
+    background-color: #003454;
     border: 2px solid #003454;
-    color: #003454;
+    color: white;
     font-size: 20px; }
   .logon_buttons input:hover {
     cursor: pointer;
-    background-color: #003454;
-    border-color: #fff;
-    color: #ffffff; }
+    background-color: #fff;
+    border: 2px solid #003454;
+    color: #003454; }
   .logon_buttons div {
     align-self: center; }
 
@@ -305,10 +306,47 @@ header {
 @media screen and (max-width: 768px) {
   .login_form {
     width: 100%; }
+    .login_form .login_header {
+      width: 100%; }
+      .login_form .login_header h2 {
+        font-size: 35px; }
+    .login_form .login_data {
+      width: 100%; }
+      .login_form .login_data > input {
+        font-size: 20px;
+        padding: 20px; }
+    .login_form .login_buttons {
+      width: 100%;
+      flex-direction: column;
+      align-items: center; }
+      .login_form .login_buttons > input {
+        padding: 15px; }
+      .login_form .login_buttons > div {
+        margin-top: 10px; }
   .login_image {
     display: none; }
   .logon_form {
     width: 100%; }
+    .logon_form .logon_header {
+      width: 100%; }
+      .logon_form .logon_header .img_account {
+        width: 150px;
+        height: 150px; }
+      .logon_form .logon_header h2 {
+        font-size: 35px; }
+    .logon_form .logon_data {
+      width: 100%; }
+      .logon_form .logon_data > input {
+        font-size: 20px;
+        padding: 20px; }
+    .logon_form .logon_buttons {
+      width: 100%;
+      flex-direction: column;
+      align-items: center; }
+      .logon_form .logon_buttons > input {
+        padding: 15px; }
+      .logon_form .logon_buttons > div {
+        margin-top: 10px; }
   .logon_image {
     display: none; } }
 
