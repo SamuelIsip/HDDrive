@@ -12,25 +12,31 @@
 
   & #container_slide_info {
     width: 400px;
-    font-size: 18px;
+    font-size: 25px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
+    & #container_slide_info_title {
+      text-shadow: 2px 2px black;
+      color: white;
+    }
+
     & #container_slide_info_button {
       margin-top: 15px;
-      padding: 10px;
-      background-color: transparent;
+      font-size: 20px;
+      padding: 15px;
+      background-color: #003454;
       border-color: #003454;
-      color: #003454;
+      color: white;
       border-radius: 5px;
     }
 
     & #container_slide_info_button:hover {
       cursor: pointer;
-      background-color: #003454;
-      color: #fff;
+      background-color: #fff;
+      color: #003454;
     }
   }
 }
@@ -46,4 +52,10 @@
 #container_about p {
   column-count: 2;
   padding: 0 20px 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #container_about p {
+    column-count: 1;
+  }
 }

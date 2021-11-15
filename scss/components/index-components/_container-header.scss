@@ -24,8 +24,12 @@ body {
   & .container_slide {
     & #container_slide_title {
       font-family: sans-serif;
-      font-size: 70px;
+      font-size: 5vw;
       color: $white;
+      & h1 {
+        text-shadow: 2px 2px black;
+        color: white;
+      }
     }
   }
 }
@@ -78,6 +82,13 @@ header {
 
 /** Media Queries **/
 @media screen and (max-width: $responsive-width) {
+  #container {
+    & .container_slide {
+      & #container_slide_title {
+        font-size: 10vw;
+      }
+    }
+  }
   .container_list {
     display: none;
   }
