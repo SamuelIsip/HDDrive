@@ -55,6 +55,11 @@
 }
 
 @media screen and (max-width: 768px) {
+  .container_slide {
+    & #container_slide_info {
+      width: 100%;
+    }
+  }
   #container_about p {
     column-count: 1;
   }

@@ -143,6 +143,8 @@ header {
   padding: 0 20px 0 20px; }
 
 @media screen and (max-width: 768px) {
+  .container_slide #container_slide_info {
+    width: 100%; }
   #container_about p {
     column-count: 1; } }
 
@@ -299,6 +301,16 @@ header {
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-image: url("../img/Mobile login-rafiki.svg"); }
+
+@media screen and (max-width: 768px) {
+  .login_form {
+    width: 100%; }
+  .login_image {
+    display: none; }
+  .logon_form {
+    width: 100%; }
+  .logon_image {
+    display: none; } }
 
 #footer {
   color: #fff;
