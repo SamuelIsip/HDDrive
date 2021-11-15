@@ -1,3 +1,8 @@
+/** Variables **/
+$responsive-width: 768px;
+$nav-color: #003454b0;
+$white: #fff;
+
 body {
   margin: 0;
   padding: 0;
@@ -8,19 +13,19 @@ body {
 }
 
 #container {
-  background-color: #ffffff;
+  background-color: $white;
   overflow: auto;
   & .container_slide {
     & #container_slide_title {
       font-family: sans-serif;
       font-size: 70px;
-      color: white;
+      color: $white;
     }
   }
 }
 
 header {
-  background-color: #003454b0;
+  background-color: $nav_color;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -41,9 +46,24 @@ header {
 .container_list li a {
   text-decoration: none;
   font-size: large;
-  color: #fff;
+  color: $white;
 }
 
 .container_list li a:hover {
   color: rgba(255, 255, 255, 0.774);
+}
+
+.menu_icon {
+  display: none;
+}
+
+/** Media Queries **/
+@media screen and (max-width: $responsive-width) {
+  .container_list {
+    display: none;
+  }
+  .menu_icon {
+    float: right;
+    display: block;
+  }
 }
