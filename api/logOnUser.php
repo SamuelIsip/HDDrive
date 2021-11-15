@@ -22,8 +22,14 @@
     $stmt = mysqli_prepare($con, "INSERT INTO User (name,email,password,nom_usr,tlf,date) VALUES(?,?,?,?,?,?)");
 
     $modified=date("d/m/Y");
+    
+    $user_name = $user_data["name"];
+    $user_email = $user_data["email"];
+    $user_pass = password_hash($user_data["password"],PASSWORD_DEFAULT);
+    $user_nameuser = $user_data["name_user"];
+    $user_phone = $user_data["phone"];
 
-    mysqli_stmt_bind_param($stmt,"ssssss",$user_data["name"],$user_data["email"], password_hash($user_data["password"],PASSWORD_DEFAULT),$user_data["name_user"],$user_data["phone"],$modified);
+    mysqli_stmt_bind_param($stmt,"ssssss", $user_name, $user_email, $user_pass, $user_nameuser, $user_phone, $modified);
 
     //Ejecutamos la consulta
     if(!mysqli_stmt_execute($stmt)){
@@ -39,7 +45,7 @@
     //Consultar id usuario insertado
     $stmt = mysqli_prepare($con, "SELECT id_user, password FROM User WHERE nom_usr = ?");
 
-    mysqli_stmt_bind_param($stmt,"s", $user_data["name_user"]);
+    mysqli_stmt_bind_param($stmt,"s", $user_name);
 
     //Ejecutamos la consulta
     if(mysqli_stmt_execute($stmt)){
