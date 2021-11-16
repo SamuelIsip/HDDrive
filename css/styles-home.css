@@ -111,6 +111,10 @@ input {
       padding: 15px;
       color: white; }
 
+@media screen and (max-width: 768px) {
+  #container_menu {
+    display: none; } }
+
 #container_docs {
   width: 100%;
   display: flex;
