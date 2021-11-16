@@ -18,7 +18,8 @@
         font-size: 17px;
       }
       #app {
-        width: 100%;
+        margin: auto;
+        width: 50%;
       }
       #add_tasks {
         box-shadow: -2px 3px 5px black;
@@ -32,6 +33,11 @@
       #add_tasks > div > div {
         padding: 20px 20px 0px;
       }
+
+      #add_tasks > div > div > div {
+        padding: 20px;
+      }
+
       #list_tasks {
         margin-top: 13px;
         padding-bottom: 100px;
@@ -89,7 +95,7 @@
     <script src="../js/tasks.js"></script>
   </head>
   <body>
-    <div class="container" id="app">
+    <div class="container__main" id="app">
       <div class="container__row">
         <div id="add_tasks">
           <div class="row">
