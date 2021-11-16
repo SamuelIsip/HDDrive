@@ -39,6 +39,12 @@ nav ul {
     border-radius: 10px;
     padding-right: 10px; }
 
+@media screen and (max-width: 768px) {
+  nav ul {
+    padding: 0px; }
+    nav ul li {
+      margin-left: 25px; } }
+
 html,
 body {
   height: 100vh;

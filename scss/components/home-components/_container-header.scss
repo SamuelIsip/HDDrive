@@ -52,3 +52,12 @@ nav ul {
     padding-right: 10px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    padding: 0px;
+    & li {
+      margin-left: 25px;
+    }
+  }
+}
