@@ -181,11 +181,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function tasksResponsive() {
     if (window.innerWidth <= 768) {
+      document.getElementById("app").lastElementChild.className = "column";
       document.getElementById("add_tasks").className = "col_12";
       document.getElementById("list_tasks").className = "col_12";
     } else {
-      document.getElementById("add_tasks").className = "col_8";
-      document.getElementById("list_tasks").className = "col_4";
+      document.getElementById("app").lastElementChild.className = "row";
+      document.getElementById("add_tasks").className = "col_4";
+      document.getElementById("list_tasks").className = "col_8";
     }
   }
 });
