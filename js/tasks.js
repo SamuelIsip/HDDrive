@@ -20,17 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
           let title = document.createElement("div");
           title.classList.add("col-12");
           let h3 = document.createElement("h3");
-          h3.innerHTML = t.title == undefined ? "Title" : t.title;
+          h3.innerHTML = t.title == "" ? "Title" : t.title;
           title.appendChild(h3);
           let date = document.createElement("div");
           date.classList.add("col-12");
           let h5 = document.createElement("h5");
-          h5.innerHTML = t.date == undefined ? "Date" : t.date;
+          h5.innerHTML = t.date == "" ? "Date" : t.date;
           date.appendChild(h5);
           let text = document.createElement("div");
           text.classList.add("col-12");
           let p = document.createElement("p");
-          p.innerHTML = t.text == undefined ? "Text" : t.text;
+          p.innerHTML = t.text == "" ? "Text" : t.text;
           text.appendChild(p);
 
           let div_buttons = document.createElement("div");
