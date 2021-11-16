@@ -57,6 +57,7 @@ function load_events_add_select() {
       if (check_list[i].style.display === "none") {
         check_list[i].style.display = "inline-block";
         $("#download_files_selected").css("display", "inline-block");
+        $("#download_files_selected").css("background-color", "#7bc89a8a");
       } else {
         check_list[i].style.display = "none";
         $("#download_files_selected").css("display", "none");

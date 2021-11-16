@@ -168,12 +168,16 @@ ul {
     border-radius: 0px 20px 20px 0px;
     box-shadow: 0.5px 1px 1px 0.5px black; }
     .files__add__select ul li {
+      border-radius: 5px;
+      padding: 3px;
       margin: 5px;
       text-decoration: none;
       color: #282a35; }
+    .files__add__select ul li:not(:last-child) {
+      background-color: #7bc89a8a; }
     .files__add__select ul li:hover {
-      cursor: pointer;
-      color: #fff; }
+      background-color: #7bc89a;
+      cursor: pointer; }
   .files__add__select #back_dir {
     margin-right: 0.5rem; }
   .files__add__select #add_file ~ label {
@@ -260,6 +264,14 @@ ul {
     cursor: pointer;
     background-color: #04aa6d;
     border-radius: 5px; }
+
+@media screen and (max-width: 768px) {
+  .files__add__select ul {
+    padding: 0px; }
+    .files__add__select ul li {
+      background-color: #7bc89a8a;
+      border-radius: 5px;
+      padding: 3px; } }
 
 #container_images {
   width: 100%;

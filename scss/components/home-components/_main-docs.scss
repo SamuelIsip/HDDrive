@@ -66,14 +66,20 @@ ul {
     box-shadow: 0.5px 1px 1px 0.5px black;
 
     & li {
+      border-radius: 5px;
+      padding: 3px;
       margin: 5px;
       text-decoration: none;
       color: #282a35;
     }
 
+    & li:not(:last-child) {
+      background-color: #7bc89a8a;
+    }
+
     & li:hover {
+      background-color: #7bc89a;
       cursor: pointer;
-      color: #fff;
     }
   }
 
@@ -217,5 +223,18 @@ ul {
     cursor: pointer;
     background-color: #04aa6d;
     border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .files__add__select {
+    & ul {
+      padding: 0px;
+      & li {
+        background-color: #7bc89a8a;
+        border-radius: 5px;
+        padding: 3px;
+      }
+    }
   }
 }
