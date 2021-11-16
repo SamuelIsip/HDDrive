@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  tasksResponsive();
   window.add_tasks = function () {
     var list_tasks = document.getElementById("list_tasks");
     var xhr;
@@ -178,16 +177,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("date-input").value = "";
     document.getElementById("note").value = "";
   });
-
-  function tasksResponsive() {
-    if (window.innerWidth <= 768) {
-      document.getElementById("app").lastElementChild.className = "column";
-      document.getElementById("add_tasks").className = "col_12";
-      document.getElementById("list_tasks").className = "col_12";
-    } else {
-      document.getElementById("app").lastElementChild.className = "row";
-      document.getElementById("add_tasks").className = "col_4";
-      document.getElementById("list_tasks").className = "col_8";
-    }
-  }
 });
