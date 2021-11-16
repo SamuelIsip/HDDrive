@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
           let date = document.createElement("div");
           date.classList.add("col-12");
           let h5 = document.createElement("h5");
-          h5.innerHTML = t.date == "" ? "Date" : t.date;
+          console.log(t.date);
+          h5.innerHTML = t.date == "//" ? "Date" : t.date;
           date.appendChild(h5);
           let text = document.createElement("div");
           text.classList.add("col-12");
