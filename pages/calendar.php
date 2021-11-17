@@ -116,6 +116,7 @@
                               text-transform: uppercase;
                               text-align: center;
                               font-size: 25px;
+                              background-color: white;
                               color: white">
                   <caption>';
 
