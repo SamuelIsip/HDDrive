@@ -20,6 +20,8 @@ nav ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; }
+  nav ul :last-child {
+    position: relative; }
   nav ul li {
     list-style: none;
     margin-left: 55px; }
@@ -38,6 +40,18 @@ nav ul {
     height: 100%;
     border-radius: 10px;
     padding-right: 10px; }
+
+.notification_off {
+  display: none; }
+
+.notification_on {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #15ff15;
+  border-radius: 50%;
+  top: -5px;
+  left: 100%; }
 
 @media screen and (max-width: 768px) {
   nav ul {
