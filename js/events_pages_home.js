@@ -29,7 +29,9 @@ function load_events_pages_menu() {
     ).css("display", "none");
   });
   $("#task").on("click", () => {
-    $("#notification").toggleClass("notification_on notification_off");
+    $("#notification")
+      .removeClass("notification_on")
+      .addClass("notification_off");
     $("#container_tasks").css("display", "flex");
     $(
       "#container_docs, #container_images, #container_calendar, #container_bookmarks"
