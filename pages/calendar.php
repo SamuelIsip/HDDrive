@@ -115,7 +115,8 @@
           echo '<table style="margin: 5px;
                               text-transform: uppercase;
                               text-align: center;
-                              font-size: 17px;">
+                              font-size: 25px;
+                              color: white">
                   <caption>';
 
               setlocale(LC_TIME, "en");
@@ -123,7 +124,7 @@
 
             echo '</caption>
                   <thead>
-                    <tr>
+                    <tr style="font-size:17px; color: black">
                       <th style="border: 1px solid black">Mon</th>
                       <th style="border: 1px solid black">Tues</th>
                       <th style="border: 1px solid black">Wed</th>
