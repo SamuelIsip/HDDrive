@@ -39,6 +39,7 @@
               <a href="#" id="bookmark"><i class="fas fa-bookmark"></i></a>
             </li>
             <li>
+              <div id="notification"></div>
               <a href="#" id="task"><i class="fas fa-tasks"></i></a>
             </li>
           </ul>
