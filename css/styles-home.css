@@ -289,6 +289,10 @@ ul {
       width: 70%;
       height: 100%; }
 
+@media screen and (max-width: 768px) {
+  #container_calendar div iframe {
+    width: 100%; } }
+
 #container_bookmarks {
   width: 100%;
   display: none; }

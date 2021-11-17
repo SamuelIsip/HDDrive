@@ -124,13 +124,13 @@
             echo '</caption>
                   <thead>
                     <tr>
-                      <th style="border: 1px solid black">Monday</th>
-                      <th style="border: 1px solid black">Tuesday</th>
-                      <th style="border: 1px solid black">Wednesday</th>
-                      <th style="border: 1px solid black">Thursday</th>
-                      <th style="border: 1px solid black">Friday</th>
-                      <th style="border: 1px solid black">Saturday</th>
-                      <th style="color: red; border: 1px solid black">Sunday</th>
+                      <th style="border: 1px solid black">Mon</th>
+                      <th style="border: 1px solid black">Tues</th>
+                      <th style="border: 1px solid black">Wed</th>
+                      <th style="border: 1px solid black">Thur</th>
+                      <th style="border: 1px solid black">Fri</th>
+                      <th style="border: 1px solid black">Sat</th>
+                      <th style="color: red; border: 1px solid black">Sun</th>
                     </tr>
                   </thead>
                   <tbody>';
