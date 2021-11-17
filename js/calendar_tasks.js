@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
       dia_cal = "01";
     }
 
-    if (mes_cal == null) {
+    console.log(anio_cal);
+    if (mes_cal == "0") {
       mes_cal = "01";
     }
 
