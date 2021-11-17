@@ -63,6 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
               "calendar_task_no_styles";
             window.parent.document.getElementById("notification").className =
               "notification_on";
+            // Clear inputs
+            tk_message.value = "";
+            tk_title.value = "";
           }
         };
         xhr.open("POST", "./../api/add_task.php", true);

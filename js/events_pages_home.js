@@ -29,6 +29,7 @@ function load_events_pages_menu() {
     ).css("display", "none");
   });
   $("#task").on("click", () => {
+    // Notifications after task is saved
     $("#notification")
       .removeClass("notification_on")
       .addClass("notification_off");
