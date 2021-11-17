@@ -75,17 +75,26 @@ hr {
   margin-bottom: 5px;
 }
 #calendar__task__container button {
+  font-style: bold;
   border: 1px solid black;
   border-radius: 5px;
   padding: 5px;
+  font-weight: bold;
+  margin-bottom: 2px;
 }
 #calendar__task__container button:hover {
   cursor: pointer;
 }
 #save_task_calendar {
-  background-color: #50ff00;
+  background-color: #4be903;
+}
+#save_task_calendar:hover {
+  background-color: #50ff01;
 }
 #close_task_calendar {
+  background-color: #e90000;
+}
+#close_task_calendar:hover {
   background-color: #ff0000;
 }
 .calendar_task_styles {
