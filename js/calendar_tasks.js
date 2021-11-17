@@ -11,16 +11,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function cargar_funcioanlidades_task(dia_selec) {
+    // Tasks data
     var dia = document.getElementById("cal_day");
     var mes = document.getElementById("cal_month");
     var anio = document.getElementById("cal_year");
 
-    dia.innerHTML = dia_selec < 10 ? "0" + dia_selec : dia_selec;
-    mes.innerHTML =
+    // Calendar data
+    var dia_cal = dia_selec < 10 ? "0" + dia_selec : dia_selec;
+    var mes_cal =
       document.getElementById("mes").children[0].getAttribute("value") < 10
         ? "0" + document.getElementById("mes").children[0].getAttribute("value")
         : document.getElementById("mes").children[0].getAttribute("value");
-    anio.innerHTML = document.getElementById("anio").value;
+    var anio_cal = document.getElementById("anio").value;
+
+    if (dia_cal == "0") {
+      dia_cal = "01";
+    }
+
+    if (mes_cal == null) {
+      mes_cal = "01";
+    }
+
+    if (anio_cal == null) {
+      anio_cal = "2021";
+    }
+
+    dia.innerHTML = dia_cal;
+    mes.innerHTML = mes_cal;
+    anio.innerHTML = anio_cal;
   }
 
   document
