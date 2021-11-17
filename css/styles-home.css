@@ -174,7 +174,7 @@ ul {
 .files__add__select {
   display: inline-block; }
   .files__add__select ul {
-    background-color: #00863c;
+    background-color: #04aa6d;
     display: flex;
     flex-direction: row;
     margin: 0px;
@@ -188,9 +188,9 @@ ul {
       text-decoration: none;
       color: #282a35; }
     .files__add__select ul li:not(:last-child) {
-      background-color: #7bc89a8a; }
+      background-color: #fdfdfd8a; }
     .files__add__select ul li:hover {
-      background-color: #7bc89a;
+      background-color: #fdfdfdcc;
       cursor: pointer; }
   .files__add__select #back_dir {
     margin-right: 0.5rem; }

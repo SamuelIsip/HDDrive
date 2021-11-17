@@ -57,7 +57,7 @@ ul {
   display: inline-block;
 
   & ul {
-    background-color: rgb(0, 134, 60);
+    background-color: #04aa6d;
     display: flex;
     flex-direction: row;
     margin: 0px;
@@ -74,11 +74,11 @@ ul {
     }
 
     & li:not(:last-child) {
-      background-color: #7bc89a8a;
+      background-color: #fdfdfd8a;
     }
 
     & li:hover {
-      background-color: #7bc89a;
+      background-color: #fdfdfdcc;
       cursor: pointer;
     }
   }
