@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
             window.parent.document.getElementById("notification").className =
               "notification_on";
             // Clear inputs
-            tk_message.value = "";
-            tk_title.value = "";
+            document.getElementById("task_calendar").value = "";
+            document.getElementById("task_title").value = "";
           }
         };
         xhr.open("POST", "./../api/add_task.php", true);
