@@ -186,8 +186,10 @@ input:hover {
 }
 
 #flecha1:hover {
-  background-color: rgb(0, 134, 60);
+  background-color: #29323f;
+  color: #fff;
 }
 #flecha2:hover {
-  background-color: rgb(0, 134, 60);
+  background-color: #29323f;
+  color: #fff;
 }
