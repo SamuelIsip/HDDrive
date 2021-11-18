@@ -61,7 +61,6 @@
     <form action="calendar.php" method="GET">
       <div id="calendar_container_main_select_day">
         <div>
-          <label for="mes">Select Month</label>
           <select name="mes" id="mes">
             <option value="<?=($retr === "true" || ($avza ==="true")) ? $mes2 : $_GET['mes']?>">Month</option>
             <option value="1">January</option>
@@ -79,7 +78,6 @@
           </select>
         </div>
         <div>
-          <label for="anio">Enter the Year</label>
           <input type="number" id="anio" name="anio" value="<?=($retr === "true" || ($avza ==="true")) ? $anio2 : $_GET['anio']?>" placeholder="Year" />
         </div>
       </div>
