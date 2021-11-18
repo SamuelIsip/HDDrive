@@ -133,7 +133,7 @@
                       <th style="width:50px; border: 1px solid black">Thur</th>
                       <th style="width:50px; border: 1px solid black">Fri</th>
                       <th style="width:50px; border: 1px solid black">Sat</th>
-                      <th style="color: red; border: 1px solid black">Sun</th>
+                      <th style="width:50px; color: red; border: 1px solid black">Sun</th>
                     </tr>
                   </thead>
                   <tbody>';
