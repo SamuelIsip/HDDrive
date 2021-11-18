@@ -59,31 +59,33 @@
   ?>
   <div id="calendar_container_main">
     <form action="calendar.php" method="GET">
-      <div>
-        <label for="mes">Select Month</label>
-        <select name="mes" id="mes">
-          <option value="<?=($retr === "true" || ($avza ==="true")) ? $mes2 : $_GET['mes']?>">Month</option>
-          <option value="1">January</option>
-          <option value="2">February</option>
-          <option value="3">March</option>
-          <option value="4">April</option>
-          <option value="5">May</option>
-          <option value="6">June</option>
-          <option value="7">July</option>
-          <option value="8">August</option>
-          <option value="9">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
-        </select>
+      <div id="calendar_container_main_select_day">
+        <div>
+          <label for="mes">Select Month</label>
+          <select name="mes" id="mes">
+            <option value="<?=($retr === "true" || ($avza ==="true")) ? $mes2 : $_GET['mes']?>">Month</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+        <div>
+          <label for="anio">Enter the Year</label>
+          <input type="number" id="anio" name="anio" value="<?=($retr === "true" || ($avza ==="true")) ? $anio2 : $_GET['anio']?>" placeholder="Year" />
+        </div>
       </div>
-      <div>
-        <label for="anio">Enter the Year</label>
-        <input type="number" id="anio" name="anio" value="<?=($retr === "true" || ($avza ==="true")) ? $anio2 : $_GET['anio']?>" placeholder="Year" />
-      </div>
-      <input type="submit" id="select_day" name="btn" value="SELECT DAY" />
       <div id="flechas">
         <input type="submit" id="flecha1" name="ret" value='<'>
+        <input type="submit" id="select_day" name="btn" value="SELECT DAY" />
         <input type="submit" id="flecha2" name="avz" value='>'>
       </div>
       <input type="text" name="mes2" id="mes2" value="<?=$mes2?>" style="display:none">
