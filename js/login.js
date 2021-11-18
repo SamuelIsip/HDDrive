@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
       password: document.getElementById("login_pass").value,
     };
 
-    //Send data to server
+    //Validate de data of LogIn
+    validateLogIn(user_data);
 
+    //Send data to server
     if (window.ActiveXObject) xhr = new ActiveXObject("Microsoft.XMLHTTP");
     else xhr = new XMLHttpRequest();
 
@@ -18,7 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.setItem("userID", dataUsr.id_user);
         window.location = encodeURI("./../HDDrive/pages/home.php");
       } else if (this.readyState == 4 && this.status == 404) {
-        alert("Account not found!");
+        document.getElementById("login_email").style.border =
+          "1px solid #ff0000";
+        document.getElementById("login_pass").style.border =
+          "1px solid #ff0000";
+        document.getElementById("login_error_info").className =
+          "login_error_info_on";
+        document.getElementById("login_error_info").innerHTML =
+          "Email/Password are incorrect!";
       }
     };
 
@@ -26,4 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(user_data));
   });
+
+  function validateLogIn(user_data) {
+    //^\S+@\S+\.\S+$/
+  }
 });

@@ -122,6 +122,17 @@
   background-image: url("../img/Mobile login-bro.svg");
 }
 
+.login_error_info_off {
+  display: none;
+}
+
+.login_error_info_on {
+  position: absolute;
+  left: 40px;
+  top: -35px;
+  color: red;
+}
+
 /*LOG ON*/
 
 #container_logon {
