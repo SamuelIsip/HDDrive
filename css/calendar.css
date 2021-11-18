@@ -121,13 +121,18 @@ input:hover {
 }
 
 #anio {
+  margin-left: 5px;
   width: 100px;
-  padding: 10px;
+  padding: 16px;
+  border: none;
+  border-radius: 5px;
 }
 
 #mes {
+  border-radius: 5px;
   width: 100px;
-  padding: 10px;
+  padding: 15px;
+  border: none;
 }
 
 #flechas {
@@ -137,15 +142,24 @@ input:hover {
 }
 
 #flechas input[type="submit"] {
+  border: none;
   width: 50px;
   height: 50px;
 }
 
 #select_day {
+  color: #fff;
+  background-color: #29323f;
   margin: auto;
   width: 50% !important;
   padding: 10px;
   font-weight: 700;
+  border-radius: 5px;
+}
+
+#select_day:hover {
+  background-color: #fff;
+  color: #000;
 }
 
 #calendar_container_main {

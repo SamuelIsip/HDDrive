@@ -112,7 +112,8 @@
       function calendario($mes,$anio){
 
         if (($anio!=="") && ($mes!=="")) {
-          echo '<table style="margin: 5px;
+          echo '<table style="height: 500px;
+                              margin: 5px;
                               text-transform: uppercase;
                               text-align: center;
                               font-size: 25px;
@@ -126,12 +127,12 @@
             echo '</caption>
                   <thead>
                     <tr style="font-size:17px; color: black">
-                      <th style="border: 1px solid black">Mon</th>
-                      <th style="border: 1px solid black">Tues</th>
-                      <th style="border: 1px solid black">Wed</th>
-                      <th style="border: 1px solid black">Thur</th>
-                      <th style="border: 1px solid black">Fri</th>
-                      <th style="border: 1px solid black">Sat</th>
+                      <th style="width:50px; border: 1px solid black">Mon</th>
+                      <th style="width:50px; border: 1px solid black">Tues</th>
+                      <th style="width:50px; border: 1px solid black">Wed</th>
+                      <th style="width:50px; border: 1px solid black">Thur</th>
+                      <th style="width:50px; border: 1px solid black">Fri</th>
+                      <th style="width:50px; border: 1px solid black">Sat</th>
                       <th style="color: red; border: 1px solid black">Sun</th>
                     </tr>
                   </thead>
