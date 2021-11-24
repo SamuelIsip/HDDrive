@@ -285,9 +285,9 @@ header .contact_logo_img {
 }
 
 .login_error_info_on {
-  position: absolute;
-  left: 40px;
-  top: -35px;
+  margin: auto;
+  text-align: center;
+  color: red;
   color: red;
 }
 
@@ -374,6 +374,16 @@ header .contact_logo_img {
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-image: url("../img/Mobile login-rafiki.svg");
+}
+
+.logon_error_info_off {
+  display: none;
+}
+
+.logon_error_info_on {
+  margin: auto;
+  text-align: center;
+  color: red;
 }
 
 @media screen and (max-width: 768px) {

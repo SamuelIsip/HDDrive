@@ -131,13 +131,16 @@
               </div>
             </div>
             <div class="logon_data">
+              <p id="logon_error_info" class="logon_error_info_off">
+                Enter your account information
+              </p>
               <input
                 type="text"
                 name="name"
                 id="name"
                 placeholder="Name"
                 minlength="1"
-                maxlength="20"
+                maxlength="30"
               />
               <input
                 type="text"
@@ -148,12 +151,12 @@
                 maxlength="20"
               />
               <input
-                type="number"
+                type="tel"
                 name="tlf"
                 id="tlf"
                 placeholder="Phone"
-                min="9"
-                max="12"
+                minlength="9"
+                maxlength="12"
               />
               <input
                 type="email"
@@ -167,7 +170,7 @@
                 type="password"
                 name="logon_pass"
                 id="logon_pass"
-                placeholder="Password"
+                placeholder="Password (min: 6)"
                 minlength="6"
                 maxlength="50"
               />
