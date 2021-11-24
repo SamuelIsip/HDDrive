@@ -8,6 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
         password: document.getElementById("login_pass").value,
       };
 
+      if (
+        document.getElementById("login_error_info").className ==
+        "login_error_info_on"
+      ) {
+        document.getElementById("login_error_info").className =
+          "login_error_info_off";
+        removeErrorColor();
+      }
+
       //Validate de data of LogIn
       if (validateLogIn(user_data) == false) {
         return false;
@@ -79,6 +88,14 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("login_error_info").innerHTML =
         "Wrong Password, try again.";
       return false;
+    }
+  }
+  function removeErrorColor() {
+    var logInInputsList =
+      document.getElementsByClassName("login_data")[0].children;
+    for (let i = 0; i < logInInputsList.length; i++) {
+      if (logInInputsList[i].style.border == "1px solid rgb(255, 0, 0)")
+        logInInputsList[i].style.border = "";
     }
   }
 });
