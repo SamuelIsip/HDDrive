@@ -6,6 +6,7 @@ body {
 #app {
   margin: auto;
   width: 50%;
+  margin-top: 10px;
 }
 #add_tasks {
   box-shadow: -2px 3px 5px black;

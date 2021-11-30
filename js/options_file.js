@@ -89,11 +89,11 @@ function add_event_options(options, ruta) {
     $.ajax({
       type: "POST",
       url: "./../api/deletefile.php",
-      data: { nameFile: ruta + name_file_doc },
+      data: { nameFile: getPath() + name_file_doc },
       dataType: "text",
       async: true,
       success: function () {
-        isDir(ruta);
+        isDir(getPath());
       },
     });
   });
