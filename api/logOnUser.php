@@ -53,7 +53,7 @@
         mysqli_stmt_bind_result($stmt, $id_user, $pass);
 
         if(mysqli_stmt_fetch($stmt)){
-            if(password_verify($user_pass, $pass)){
+            if(password_verify($user_data["password"], $pass)){
                 $datos=["id_user" => $id_user, "name_user" => $user_data["name_user"]];
             }
         }
