@@ -8,7 +8,7 @@
     //Guardamos la ruta del fichero
     $filename = $_POST['nameFile'];
 
-    rrmdir($filename);
+    //rrmdir($filename);
 
    if(is_dir($filename)){
         rrmdir($filename);

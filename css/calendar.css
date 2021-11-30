@@ -194,18 +194,17 @@ input:hover {
   color: #fff;
 }
 
-@media screen and (max-height: 825px) {
+#calendar__table {
+  height: 0px;
+}
+
+@media screen and (max-height: 1000px) and (min-height: 725px) {
   #calendar__table {
     height: 500px;
   }
 }
-@media screen and (max-height: 725px) {
+@media screen and (max-height: 725px) and (min-height: 625px) {
   #calendar__table {
     height: 300px;
-  }
-}
-@media screen and (max-height: 625px) {
-  #calendar__table {
-    height: 0px;
   }
 }
