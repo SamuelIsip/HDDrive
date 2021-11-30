@@ -112,7 +112,7 @@
       function calendario($mes,$anio){
 
         if (($anio!=="") && ($mes!=="")) {
-          echo '<table style="height: 500px;
+          echo '<table id="calendar__table" style="
                               margin: 5px;
                               text-transform: uppercase;
                               text-align: center;

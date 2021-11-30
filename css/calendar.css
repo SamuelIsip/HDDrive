@@ -193,3 +193,19 @@ input:hover {
   background-color: #29323f;
   color: #fff;
 }
+
+@media screen and (max-height: 825px) {
+  #calendar__table {
+    height: 500px;
+  }
+}
+@media screen and (max-height: 725px) {
+  #calendar__table {
+    height: 300px;
+  }
+}
+@media screen and (max-height: 625px) {
+  #calendar__table {
+    height: 0px;
+  }
+}
