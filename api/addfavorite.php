@@ -31,7 +31,7 @@
             mysqli_stmt_close($stmt);
             //Insertamos datos de fichero a la BD
             $stmt=mysqli_prepare($con, "INSERT INTO favorites (id_user, date, ruta, id_folder) VALUES(?,?,?,?)");
-                
+            
             mysqli_stmt_bind_param($stmt,"isssi",$id_user,$date,$ruta,$id_folder);
 
             //Ejecutamos la consulta

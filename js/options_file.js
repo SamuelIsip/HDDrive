@@ -68,15 +68,18 @@ function add_event_options(options) {
         ".date_file"
       ).innerText;
 
+    var userData = {
+      name: name_file_doc,
+      ruta: getPath() + name_file_doc,
+      date: date_file,
+    };
+
     $.ajax({
       type: "POST",
       url: "./../api/addfavorite.php",
-      data: {
-        name: name_file_doc,
-        ruta: getPath() + name_file_doc,
-        date: date_file,
-      },
+      data: JSON.stringify(userData),
       dataType: "json",
+      contentType: "application/json",
       async: true,
       success: function () {
         document.getElementById("notification_favourites").className =
