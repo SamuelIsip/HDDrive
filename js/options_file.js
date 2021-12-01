@@ -63,7 +63,7 @@ function add_event_options(options) {
   });
 
   op_favorite.addEventListener("click", () => {
-    var name_file_doc =
+    var date_file =
       op_favorite.parentElement.parentElement.parentElement.querySelector(
         ".date_file"
       ).value;
