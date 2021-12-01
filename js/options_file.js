@@ -64,7 +64,7 @@ function add_event_options(options) {
 
   op_favorite.addEventListener("click", () => {
     var date_file =
-      op_favorite.parentElement.parentElement.querySelector(
+      op_favorite.parentElement.parentElement.parentElement.querySelector(
         ".date_file"
       ).innerText;
     console.log(
