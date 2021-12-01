@@ -78,8 +78,6 @@ function add_event_options(options) {
       dataType: "text",
       async: true,
       success: function () {
-        document.getElementById("calendar__task__container").className =
-          "calendar_task_no_styles";
         document.getElementById("notification").className = "notification_on";
       },
     });
