@@ -82,6 +82,15 @@ function add_event_options(options) {
         document.getElementById("notification_favourites").className =
           "notification_on";
       },
+    }).fail((jqXHR, textStatus, errorThrown) => {
+      if (jqXHR.status === 0) {
+        alert("Not connect: Verify Network.");
+      } else if (jqXHR.status == 404) {
+        alert("Requested page not found [404]");
+      } else if (jqXHR.status == 500) {
+        alert("Internal Server Error [500].");
+      }
+      alert(errorThrown);
     });
   });
 
