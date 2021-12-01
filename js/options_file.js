@@ -33,7 +33,7 @@ function menu_options_file(ruta) {
 
       options_file[i].appendChild(ul);
 
-      add_event_options(ul, ruta);
+      add_event_options(ul);
     });
     options_file[i].addEventListener("mouseleave", () => {
       if (options_file[i].hasChildNodes())
@@ -45,7 +45,7 @@ function menu_options_file(ruta) {
     });
   }
 }
-function add_event_options(options, ruta) {
+function add_event_options(options) {
   var op_download = options.children[0],
     op_favorite = options.children[1],
     op_delete = options.children[2];
@@ -62,11 +62,11 @@ function add_event_options(options, ruta) {
     );
   });
 
-  // TODO: complete this function
-
   op_favorite.addEventListener("click", () => {
-    let date_file =
-      document.getElementsByClassName(row)[0].children[2].innerHTML;
+    var name_file_doc =
+      op_favorite.parentElement.parentElement.parentElement.querySelector(
+        ".date_file"
+      ).value;
     $.ajax({
       type: "POST",
       url: "./../api/addfavorite.php",
