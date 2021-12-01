@@ -45,7 +45,7 @@
                 http_response_code(500); 
         }
     }else
-        http_response_code(500); 
+        http_response_code(501); 
     
     //Liberamos recurso
     mysqli_stmt_close($stmt);
