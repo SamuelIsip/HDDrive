@@ -81,7 +81,8 @@ function add_event_options(options) {
       dataType: "json",
       contentType: "application/json",
       async: true,
-      success: function () {
+      success: function (data) {
+        console.log(data);
         document.getElementById("notification_favourites").className =
           "notification_on";
       },
