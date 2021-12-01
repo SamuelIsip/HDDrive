@@ -94,7 +94,7 @@ function add_event_options(options) {
       } else if (jqXHR.status == 500) {
         alert("Internal Server Error [500].");
       }
-      alert(errorThrown, textStatus);
+      alert(jqXHR.responseText);
     });
   });
 
