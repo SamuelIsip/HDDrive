@@ -78,7 +78,6 @@ function add_event_options(options) {
       type: "POST",
       url: "./../api/addfavorite.php",
       data: JSON.stringify(userData),
-      dataType: "json",
       contentType: "application/json",
       async: true,
       success: function () {
