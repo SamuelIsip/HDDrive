@@ -12,18 +12,20 @@
     //Definimos parametros de la consulta
     //La funcion solo admite variables
     $id_user = $_SESSION["userID"];
-    $date = date("d/m/Y");
+    $date = $_POST['date'];
     $ruta = $_POST['ruta'];
     mysqli_stmt_bind_param($stmt,"isss",$id_user,$date,$ruta);
 
     //Ejecutamos la consulta
-    mysqli_stmt_execute($stmt);
+    if(mysqli_stmt_execute($stmt)){
+        http_response_code(200); 
+    }else
+        http_response_code(500); 
 
     //Liberamos recurso
     mysqli_stmt_close($stmt);
 
     mysqli_close($con);
 
-    header("HTTP/1.1 200 OK");
 
 ?>

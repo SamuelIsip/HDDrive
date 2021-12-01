@@ -65,16 +65,15 @@ function add_event_options(options, ruta) {
   // TODO: complete this function
 
   op_favorite.addEventListener("click", () => {
-    let date = document.getElementsByClassName(row)[0].children[2].innerHTML;
-    let size = document.getElementsByClassName(row)[0].children[1].innerHTML;
+    let date_file =
+      document.getElementsByClassName(row)[0].children[2].innerHTML;
     $.ajax({
       type: "POST",
       url: "./../api/addfavorite.php",
       data: {
         name: name_file_doc,
-        ruta: ruta + name_file_doc,
-        date: date,
-        size: size,
+        ruta: getPath() + name_file_doc,
+        date: date_file,
       },
       dataType: "json",
       async: true,
