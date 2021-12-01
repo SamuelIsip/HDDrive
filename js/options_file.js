@@ -67,6 +67,13 @@ function add_event_options(options) {
       op_favorite.parentElement.parentElement.parentElement.querySelector(
         ".date_file"
       ).value;
+    console.log(
+      "Date File %s , Name File %s, Ruta %s, Date %s",
+      date_file,
+      name_file_doc,
+      getPath() + name_file_doc,
+      date_file
+    );
     $.ajax({
       type: "POST",
       url: "./../api/addfavorite.php",
