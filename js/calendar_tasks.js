@@ -61,8 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("calendar__task__container").className =
               "calendar_task_no_styles";
-            window.parent.document.getElementById("notification").className =
-              "notification_on";
+            window.parent.document.getElementById(
+              "notification_task"
+            ).className = "notification_on";
             // Clear inputs
             document.getElementById("task_calendar").value = "";
             document.getElementById("task_title").value = "";

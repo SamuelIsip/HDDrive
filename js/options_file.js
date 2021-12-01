@@ -67,13 +67,7 @@ function add_event_options(options) {
       op_favorite.parentElement.parentElement.parentElement.querySelector(
         ".date_file"
       ).innerText;
-    console.log(
-      "Date File %s , Name File %s, Ruta %s, Date %s",
-      date_file,
-      name_file_doc,
-      getPath() + name_file_doc,
-      date_file
-    );
+
     $.ajax({
       type: "POST",
       url: "./../api/addfavorite.php",
@@ -82,10 +76,11 @@ function add_event_options(options) {
         ruta: getPath() + name_file_doc,
         date: date_file,
       },
-      dataType: "text",
+      dataType: "json",
       async: true,
       success: function () {
-        document.getElementById("notification").className = "notification_on";
+        document.getElementById("notification_favourites").className =
+          "notification_on";
       },
     });
   });
