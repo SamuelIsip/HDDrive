@@ -25,13 +25,10 @@ nav ul {
   flex-direction: row;
   flex-wrap: wrap;
 
-  & :last-child {
-    position: relative;
-  }
-
   & li {
     list-style: none;
     margin-left: 55px;
+    position: relative;
 
     & a i {
       font-size: 25px;

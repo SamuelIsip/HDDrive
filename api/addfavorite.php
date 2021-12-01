@@ -52,6 +52,4 @@
 
     mysqli_close($con);
 
-    echo(mysqli_error($link));
-
 ?>

@@ -23,14 +23,18 @@ function load_events_pages_menu() {
     ).css("display", "none");
   });
   $("#bookmark").on("click", () => {
+    // Notifications after favorite files have been saved
+    $("#notification_favourites")
+      .removeClass("notification_on")
+      .addClass("notification_off");
     $("#container_bookmarks").css("display", "flex");
     $(
       "#container_docs, #container_images, #container_calendar, #container_tasks"
     ).css("display", "none");
   });
   $("#task").on("click", () => {
-    // Notifications after task is saved
-    $("#notification")
+    // Notifications after task has been saved
+    $("#notification_task")
       .removeClass("notification_on")
       .addClass("notification_off");
     $("#container_tasks").css("display", "flex");

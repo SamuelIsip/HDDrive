@@ -42,9 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
           button_warning.classList.add("btn-warning");
           button_warning.setAttribute("id", "edit_task" + i);
           button_warning.innerHTML = "Edit";
-          //div_button.appendChild(button_warning);
-          /* let div_button2 = document.createElement("div");
-          div_button2.classList.add("col-12"); */
+
           let button_danger = document.createElement("button");
           button_danger.classList.add("btn");
           button_danger.classList.add("btn-danger");
