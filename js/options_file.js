@@ -67,10 +67,6 @@ function add_event_options(options) {
       op_favorite.parentElement.parentElement.parentElement.querySelector(
         ".date_file"
       ).value;
-    var name_file =
-      op_favorite.parentElement.parentElement.parentElement.querySelector(
-        ".name_file"
-      ).lastChild.value;
     $.ajax({
       type: "POST",
       url: "./../api/addfavorite.php",
@@ -78,13 +74,13 @@ function add_event_options(options) {
         name: name_file_doc,
         ruta: getPath() + name_file_doc,
         date: date_file,
-        name: name_file,
       },
-      dataType: "json",
+      dataType: "text",
       async: true,
       success: function () {
-        document.getElementsByClassName("name_file" + row)[0].style =
-          "color:yellow";
+        document.getElementById("calendar__task__container").className =
+          "calendar_task_no_styles";
+        document.getElementById("notification").className = "notification_on";
       },
     });
   });
