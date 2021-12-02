@@ -9,6 +9,21 @@ body {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #282a35;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(219, 219, 219);
+  border-radius: 10px;
+  border: 1px solid rgb(48, 48, 48);
+}
+
 #container {
   margin: 0;
   padding: 0;
