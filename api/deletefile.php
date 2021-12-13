@@ -6,9 +6,9 @@
     chdir("./../../HDDriveHome/".$_SESSION['userName']);
 
     //Guardamos la ruta del fichero
-    $filename = $_POST['nameFile'];
+    $filename = "./".$_POST['nameFile'];
 
-    rrmdir($filename);
+    //rrmdir($filename);
 
    if(is_dir($filename)){
         rrmdir($filename);

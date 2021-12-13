@@ -1,41 +1,141 @@
+/** Variables **/
 body {
+  height: 100vh;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
-.logo_header {
-  opacity: 0.9; }
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #282a35;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dbdbdb;
+  border-radius: 10px;
+  border: 1px solid #303030;
+}
 
 #container {
-  background-color: #ffffff;
-  overflow: auto; }
-  #container .container_slide #container_slide_title {
-    font-family: sans-serif;
-    font-size: 70px;
-    color: white; }
+  margin: 0;
+  padding: 0;
+}
+
+.logo_header {
+  opacity: 0.9;
+}
+
+#container {
+  background-color: #fff;
+  overflow: auto;
+}
+#container .container_slide #container_slide_title {
+  font-family: sans-serif;
+  font-size: 5vw;
+  color: #fff;
+}
+#container .container_slide #container_slide_title h1 {
+  text-shadow: 2px 2px black;
+  color: white;
+}
 
 header {
+  height: 230px;
   background-color: #003454b0;
   position: fixed;
   width: 100%;
-  z-index: 10; }
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  transform: translateY(-170px);
+}
+header nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+header .contact_logo_img {
+  width: 60px;
+}
 
 .container_list {
   margin: 0;
   padding: 20px;
   display: flex;
-  flex-direction: row-reverse; }
+  flex-direction: row-reverse;
+}
 
 .container_list li {
   list-style-type: none;
-  margin-left: 55px; }
+  margin-left: 55px;
+}
 
 .container_list li a {
   text-decoration: none;
-  font-size: large;
-  color: #fff; }
+  font-size: 20px;
+  color: #fff;
+}
 
 .container_list li a:hover {
-  color: rgba(255, 255, 255, 0.774); }
+  color: rgba(255, 255, 255, 0.774);
+}
+
+.menu_icon {
+  display: none;
+}
+
+/** Media Queries **/
+@media screen and (max-width: 768px) {
+  #container .container_slide #container_slide_title {
+    font-size: 10vw;
+  }
+
+  .container_list {
+    display: none;
+  }
+
+  .menu_icon {
+    margin-right: 10px;
+    display: flex;
+    align-self: center;
+    font-size: x-large;
+  }
+  .menu_icon a {
+    color: #fff;
+  }
+}
+/** Design navbar when is mobile */
+.nav_responsive {
+  align-items: flex-start;
+  transition: transform 0.7s ease;
+  transform: translateY(0);
+}
+.nav_responsive .container_list {
+  width: 100%;
+  padding: 0px;
+  position: absolute;
+  top: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav_responsive .container_list li {
+  text-align: center;
+  padding: 10px;
+  margin: 0px;
+  list-style-type: none;
+  width: 100%;
+  margin-left: 0px;
+}
+.nav_responsive .container_list li align {
+  font-size: 23px;
+}
 
 .container_slide {
   height: 800px;
@@ -47,47 +147,70 @@ header {
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  align-content: center; }
-  .container_slide #container_slide_info {
-    width: 400px;
-    font-size: 18px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-    .container_slide #container_slide_info #container_slide_info_button {
-      margin-top: 15px;
-      padding: 10px;
-      background-color: transparent;
-      border-color: #003454;
-      color: #003454;
-      border-radius: 5px; }
-    .container_slide #container_slide_info #container_slide_info_button:hover {
-      cursor: pointer;
-      background-color: #003454;
-      color: #fff; }
+  align-content: center;
+}
+.container_slide #container_slide_info {
+  width: 400px;
+  font-size: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container_slide #container_slide_info #container_slide_info_title {
+  text-shadow: 2px 2px black;
+  color: white;
+}
+.container_slide #container_slide_info #container_slide_info_button {
+  margin-top: 15px;
+  font-size: 20px;
+  padding: 15px;
+  background-color: #003454;
+  border-color: #003454;
+  color: white;
+  border-radius: 5px;
+}
+.container_slide #container_slide_info #container_slide_info_button:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #003454;
+}
 
 #container_about {
-  text-align: center; }
+  text-align: center;
+}
 
 #container_about h2 {
-  font-size: 40px; }
+  font-size: 50px;
+}
 
 #container_about p {
+  font-size: 18px;
   column-count: 2;
-  padding: 0 20px 0 20px; }
+  padding: 0 20px 0 20px;
+}
 
+@media screen and (max-width: 768px) {
+  .container_slide #container_slide_info {
+    width: 100%;
+  }
+
+  #container_about p {
+    column-count: 1;
+  }
+}
 /*LOG IN*/
 #container_login {
   margin: auto;
   margin-top: 40px;
   width: 90%;
-  height: 700px;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  box-shadow: 3px 3px 3px black; }
+  box-shadow: 3px 3px 3px black;
+}
 
 .login_form {
   width: 49%;
@@ -97,79 +220,104 @@ header {
   justify-content: center;
   align-items: center;
   position: relative;
-  color: #003454; }
-  .login_form > i {
-    position: absolute;
-    top: 10px;
-    left: 10px; }
+  color: #003454;
+}
+.login_form > i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 
 .login_header {
   width: 60%;
-  text-align: center; }
+  text-align: center;
+}
 
 .img_account {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-image: url("../img/user-3331257__340-min.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
-  border-radius: 50%; }
+  border-radius: 50%;
+}
 
 .login_data {
+  position: relative;
   width: 60%;
   display: flex;
-  flex-direction: column; }
-  .login_data input {
-    width: 70%;
-    margin: auto;
-    padding: 10px;
-    border: 1px solid #003454;
-    border-radius: 5px;
-    margin-bottom: 10px; }
+  flex-direction: column;
+}
+.login_data input {
+  width: 70%;
+  margin: auto;
+  padding: 15px;
+  border: 1px solid #003454;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 
 .login_buttons {
   width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
-  .login_buttons a {
-    color: #003454; }
-  .login_buttons input {
-    width: 40%;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: transparent;
-    border: 2px solid #003454;
-    color: #003454;
-    font-size: 20px; }
-  .login_buttons input:hover {
-    cursor: pointer;
-    background-color: #003454;
-    border-color: #fff;
-    color: #ffffff; }
-  .login_buttons div {
-    align-self: center; }
+  justify-content: space-between;
+}
+.login_buttons a {
+  color: #003454;
+}
+.login_buttons input {
+  width: 40%;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #003454;
+  border: 2px solid #003454;
+  color: white;
+  font-size: 20px;
+}
+.login_buttons input:hover {
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #003454;
+  color: #003454;
+}
+.login_buttons div {
+  align-self: center;
+}
 
 .login_image {
   width: 49%;
   height: 90%;
   background-color: #ffffff;
   background-repeat: no-repeat;
-  background-image: url("../img/Mobile login-bro.svg"); }
+  background-image: url("../img/Mobile login-bro.svg");
+}
+
+.login_error_info_off {
+  display: none;
+}
+
+.login_error_info_on {
+  margin: auto;
+  text-align: center;
+  color: red;
+  color: red;
+}
 
 /*LOG ON*/
 #container_logon {
   margin: auto;
   margin-top: 40px;
   width: 90%;
-  height: 700px;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  box-shadow: 3px 3px 3px black; }
+  box-shadow: 3px 3px 3px black;
+}
 
 .logon_form {
   width: 49%;
@@ -179,74 +327,164 @@ header {
   justify-content: center;
   align-items: center;
   position: relative;
-  color: #003454; }
-  .logon_form > i {
-    position: absolute;
-    top: 10px;
-    left: 10px; }
+  color: #003454;
+}
+.logon_form > i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 
 .logon_header {
   width: 60%;
-  text-align: center; }
+  text-align: center;
+}
 
 .logon_data {
+  position: relative;
   width: 60%;
   display: flex;
-  flex-direction: column; }
-  .logon_data input {
-    width: 70%;
-    margin: auto;
-    padding: 10px;
-    border: 1px solid #003454;
-    border-radius: 5px;
-    margin-bottom: 10px; }
+  flex-direction: column;
+}
+.logon_data input {
+  width: 70%;
+  margin: auto;
+  padding: 15px;
+  border: 1px solid #003454;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 
 .logon_buttons {
   width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
-  .logon_buttons a {
-    color: #003454; }
-  .logon_buttons input {
-    width: 40%;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: transparent;
-    border: 2px solid #003454;
-    color: #003454;
-    font-size: 20px; }
-  .logon_buttons input:hover {
-    cursor: pointer;
-    background-color: #003454;
-    border-color: #fff;
-    color: #ffffff; }
-  .logon_buttons div {
-    align-self: center; }
+  justify-content: space-between;
+}
+.logon_buttons a {
+  color: #003454;
+}
+.logon_buttons input {
+  width: 40%;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #003454;
+  border: 2px solid #003454;
+  color: white;
+  font-size: 20px;
+}
+.logon_buttons input:hover {
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #003454;
+  color: #003454;
+}
+.logon_buttons div {
+  align-self: center;
+}
 
 .logon_image {
   width: 49%;
   height: 90%;
   background-color: #ffffff;
   background-repeat: no-repeat;
-  background-image: url("../img/Mobile login-rafiki.svg"); }
+  background-image: url("../img/Mobile login-rafiki.svg");
+}
 
+.logon_error_info_off {
+  display: none;
+}
+
+.logon_error_info_on {
+  margin: auto;
+  text-align: center;
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .login_form {
+    width: 100%;
+  }
+  .login_form .login_header {
+    width: 100%;
+  }
+  .login_form .login_header h2 {
+    font-size: 35px;
+  }
+  .login_form .login_data {
+    width: 100%;
+  }
+  .login_form .login_data > input {
+    font-size: 20px;
+    padding: 20px;
+  }
+  .login_form .login_buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .login_form .login_buttons > input {
+    padding: 15px;
+  }
+  .login_form .login_buttons > div {
+    margin-top: 10px;
+  }
+
+  .login_image {
+    display: none;
+  }
+
+  .logon_form {
+    width: 100%;
+  }
+  .logon_form .logon_header {
+    width: 100%;
+  }
+  .logon_form .logon_header h2 {
+    font-size: 35px;
+  }
+  .logon_form .logon_data {
+    width: 100%;
+  }
+  .logon_form .logon_data > input {
+    font-size: 20px;
+    padding: 20px;
+  }
+  .logon_form .logon_buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logon_form .logon_buttons > input {
+    padding: 15px;
+  }
+  .logon_form .logon_buttons > div {
+    margin-top: 10px;
+  }
+
+  .logon_image {
+    display: none;
+  }
+}
 #footer {
   color: #fff;
   margin-top: 20px;
-  background-color: #003454; }
+  background-color: #003454;
+}
+#footer .contact_logo {
+  float: left;
+}
 
 .container_contact {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .container_contact_info {
   width: 70%;
   margin: auto;
-  overflow: auto; }
-
-.contact_logo {
-  float: left; }
+  overflow: auto;
+}
 
 .contact_logo_img {
   margin-left: 10px;
@@ -256,10 +494,12 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 50%;
-  background-color: #ffffff40; }
+  background-color: #ffffff40;
+}
 
 .contact_logo_img:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .contact_information {
   text-align: center;
@@ -267,19 +507,31 @@ header {
   flex-direction: row;
   justify-content: space-between;
   margin: auto;
-  float: right; }
+  float: right;
+}
 
 .contact_information ul {
   margin-left: 40px;
-  list-style: none; }
+  list-style: none;
+}
 
 .contact_links {
-  width: 100%; }
+  width: 100%;
+}
 
 .contact_links div {
-  text-align: center; }
+  margin-top: 20px;
+  text-align: center;
+}
 
 .contact_links div a i {
   color: #ffffff;
   font-size: 45px;
-  margin: 20px; }
+  margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact_information {
+    flex-direction: column;
+  }
+}
