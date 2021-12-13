@@ -1,5 +1,5 @@
 //Importamos todos los componentes con el css de forma modularizada
-@import "components/index-components/container-header";
-@import "components/index-components/main-slide-about";
-@import "components/index-components/main-log_in_on";
-@import "components/index-components/footer-info";
+@forward "components/index-components/container-header";
+@forward "components/index-components/main-slide-about";
+@forward "components/index-components/main-log_in_on";
+@forward "components/index-components/footer-info";

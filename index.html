@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HDDrive</title>
     <link rel="stylesheet" href="css/styles-index.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
+    <script src="js/dimensions.js"></script>
+    <script src="js/navbar_events.js"></script>
     <script src="js/login.js"></script>
     <script src="js/logOn.js"></script>
   </head>
@@ -19,16 +20,19 @@
       <header id="header">
         <nav>
           <div
-            class="contact_logo"
+            class="contact_logo contact_logo_img logo_header"
             onclick="document.querySelector('.container_slide').scrollIntoView();"
-          >
-            <div class="contact_logo_img logo_header"></div>
-          </div>
+          ></div>
           <ul class="container_list">
             <li><a href="#container_login">Login</a></li>
             <li><a href="#container_about">About</a></li>
             <li><a href="#footer">Contact</a></li>
           </ul>
+          <div class="menu_icon">
+            <a href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
         </nav>
       </header>
       <main>
@@ -57,33 +61,27 @@
         <div id="container_about">
           <h2>Get More With HDDrive</h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
-            fugiat earum commodi totam quo similique, hic expedita, doloremque
-            accusantium iusto error necessitatibus praesentium sequi ab modi.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            quos natus voluptatibus vitae architecto sed nisi quas dicta soluta
-            beatae quasi harum dolor aliquid ut, laudantium, ea suscipit labore
-            quia officiis quo aliquam. Natus, provident ratione suscipit
-            expedita nostrum vitae corporis cupiditate maiores earum nisi
-            deleniti impedit amet quam aperiam. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Ipsum provident id nisi aut eum in
-            neque quo, laborum ducimus similique nobis modi, ad veritatis
-            officiis. Perferendis iure nihil culpa ducimus soluta fuga eius
-            dignissimos inventore quos, fugiat consequatur maiores rem
-            exercitationem. Sit accusamus commodi facere impedit minima
-            perspiciatis quis atque? Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Tempora quia sed, incidunt eveniet voluptate quo
-            deleniti obcaecati recusandae, reprehenderit maxime accusantium
-            facilis, doloremque maiores laborum quidem veniam enim. Blanditiis
-            qui excepturi tempore ipsam delectus similique commodi deleniti
-            necessitatibus recusandae. Nulla odio facilis magnam, repudiandae
-            inventore nisi fugit earum deleniti. Ducimus at eligendi deleniti
-            magnam ratione, rerum quibusdam reprehenderit quis voluptatibus,
-            veritatis, doloremque repellat cum ipsa fugit autem perspiciatis!
-            Facilis esse itaque a ipsa nostrum rem iste voluptate perspiciatis
-            modi soluta unde labore, qui nesciunt impedit consectetur eveniet
-            sed quidem repellat maiores ad officia quam. Vero ut obcaecati
-            soluta beatae id?
+            HDDrive brings files together in one central place by creating a
+            special folder on the user's computer. The contents of these folders
+            are synchronized to HDDrive's servers and to other computers and
+            devices where the user has installed HDDrive, keeping the same files
+            up-to-date on all devices. HDDrive uses a freemium business model,
+            where users are offered a free account with a set storage size, with
+            paid subscriptions available that offer more capacity and additional
+            features. Basic users are given two gigabytes of free storage space.
+            HDDrive Plus users are given two terabytes of storage space, as well
+            as additional features, including advanced sharing controls, remote
+            wipe, and an optional Extended Version History add-on. HDDrive
+            offers computer apps for Microsoft Windows, Apple macOS, and Linux
+            computers, and mobile apps for iOS, Android, and Windows Phone
+            smartphones and tablets. In March 2013, the company acquired
+            Mailbox, a popular email app, and in April 2014, the company
+            introduced HDDrive Carousel, a photo and video gallery app. Both
+            Mailbox and Carousel were shut down in December 2015, with key
+            features from both apps implemented into the regular HDDrive
+            service. In October 2015, it officially announced HDDrive Paper, its
+            collaborative document editor, in a reported effort to expand its
+            operations towards businesses.
           </p>
         </div>
         <div id="container_login">
@@ -96,17 +94,24 @@
               </div>
             </div>
             <div class="login_data">
+              <p id="login_error_info" class="login_error_info_off">
+                Enter your account information
+              </p>
               <input
                 type="email"
                 name="login_email"
                 id="login_email"
                 placeholder="Email"
+                minlength="5"
+                maxlength="50"
               />
               <input
                 type="password"
                 name="login_pass"
                 id="login_pass"
                 placeholder="Password"
+                minlength="6"
+                maxlength="50"
               />
             </div>
             <div class="login_buttons">
@@ -126,25 +131,48 @@
               </div>
             </div>
             <div class="logon_data">
-              <input type="text" name="name" id="name" placeholder="Name" />
+              <p id="logon_error_info" class="logon_error_info_off">
+                Enter your account information
+              </p>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Name"
+                minlength="1"
+                maxlength="30"
+              />
               <input
                 type="text"
                 name="name_user"
                 id="name_user"
                 placeholder="User Name"
+                minlength="1"
+                maxlength="20"
               />
-              <input type="number" name="tlf" id="tlf" placeholder="Phone" />
+              <input
+                type="tel"
+                name="tlf"
+                id="tlf"
+                placeholder="Phone"
+                minlength="9"
+                maxlength="12"
+              />
               <input
                 type="email"
                 name="logon_email"
                 id="logon_email"
                 placeholder="Email"
+                minlength="5"
+                maxlength="50"
               />
               <input
                 type="password"
                 name="logon_pass"
                 id="logon_pass"
-                placeholder="Password"
+                placeholder="Password (min: 6)"
+                minlength="6"
+                maxlength="50"
               />
             </div>
             <div class="logon_buttons">
@@ -165,30 +193,24 @@
             <div class="contact_information">
               <ul>
                 <h3>Contact Information</h3>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
+                <li>New York, NY 10012, US</li>
+                <li>info@hddrive.com</li>
+                <li>+01 234 567 88</li>
+                <li>+01 234 567 89</li>
               </ul>
               <ul>
                 <h3>Help & FAQs</h3>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Storage Information</li>
+                <li>Host</li>
+                <li>Customer Service</li>
+                <li>Price</li>
               </ul>
               <ul>
-                <h3>Community</h3>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
+                <h3>Useful Links</h3>
+                <li>Your Account</li>
+                <li>Become a Member</li>
+                <li>Shipping Rates</li>
+                <li>Help</li>
               </ul>
             </div>
           </div>

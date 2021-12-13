@@ -1,8 +1,8 @@
-@import "components/home-components/container-header";
-@import "components/home-components/container-main";
-@import "components/home-components/main-menu";
-@import "components/home-components/main-docs";
-@import "components/home-components/main-images";
-@import "components/home-components/main-calendar";
-@import "components/home-components/main-bookmarks";
-@import "components/home-components/main-tasks";
+@forward "components/home-components/container-header";
+@forward "components/home-components/container-main";
+@forward "components/home-components/main-menu";
+@forward "components/home-components/main-docs";
+@forward "components/home-components/main-images";
+@forward "components/home-components/main-calendar";
+@forward "components/home-components/main-bookmarks";
+@forward "components/home-components/main-tasks";

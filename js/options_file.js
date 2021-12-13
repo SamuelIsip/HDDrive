@@ -33,7 +33,7 @@ function menu_options_file(ruta) {
 
       options_file[i].appendChild(ul);
 
-      add_event_options(ul, ruta);
+      add_event_options(ul);
     });
     options_file[i].addEventListener("mouseleave", () => {
       if (options_file[i].hasChildNodes())
@@ -45,7 +45,7 @@ function menu_options_file(ruta) {
     });
   }
 }
-function add_event_options(options, ruta) {
+function add_event_options(options) {
   var op_download = options.children[0],
     op_favorite = options.children[1],
     op_delete = options.children[2];
@@ -62,25 +62,27 @@ function add_event_options(options, ruta) {
     );
   });
 
-  // TODO: complete this function
-
   op_favorite.addEventListener("click", () => {
-    let date = document.getElementsByClassName(row)[0].children[2].innerHTML;
-    let size = document.getElementsByClassName(row)[0].children[1].innerHTML;
+    var date_file =
+      op_favorite.parentElement.parentElement.parentElement.querySelector(
+        ".date_file"
+      ).innerText;
+
+    var userData = {
+      name: name_file_doc,
+      ruta: getPath() + name_file_doc,
+      date: date_file,
+    };
+
     $.ajax({
       type: "POST",
       url: "./../api/addfavorite.php",
-      data: {
-        name: name_file_doc,
-        ruta: ruta + name_file_doc,
-        date: date,
-        size: size,
-      },
-      dataType: "json",
+      data: JSON.stringify(userData),
+      contentType: "application/json",
       async: true,
       success: function () {
-        document.getElementsByClassName("name_file" + row)[0].style =
-          "color:yellow";
+        document.getElementById("notification_favourites").className =
+          "notification_on";
       },
     });
   });
@@ -89,11 +91,11 @@ function add_event_options(options, ruta) {
     $.ajax({
       type: "POST",
       url: "./../api/deletefile.php",
-      data: { nameFile: ruta + name_file_doc },
+      data: { nameFile: getPath() + name_file_doc },
       dataType: "text",
       async: true,
       success: function () {
-        isDir(ruta);
+        isDir(getPath());
       },
     });
   });

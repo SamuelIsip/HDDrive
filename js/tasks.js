@@ -20,17 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
           let title = document.createElement("div");
           title.classList.add("col-12");
           let h3 = document.createElement("h3");
-          h3.innerHTML = t.title;
+          h3.innerHTML = t.title == "" ? "Title" : t.title;
           title.appendChild(h3);
           let date = document.createElement("div");
           date.classList.add("col-12");
           let h5 = document.createElement("h5");
-          h5.innerHTML = t.date;
+          h5.innerHTML = t.date == "undefined/undefined/" ? "Date" : t.date;
           date.appendChild(h5);
           let text = document.createElement("div");
           text.classList.add("col-12");
           let p = document.createElement("p");
-          p.innerHTML = t.text;
+          p.innerHTML = t.text == "" ? "Text" : t.text;
           text.appendChild(p);
 
           let div_buttons = document.createElement("div");
@@ -42,9 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
           button_warning.classList.add("btn-warning");
           button_warning.setAttribute("id", "edit_task" + i);
           button_warning.innerHTML = "Edit";
-          //div_button.appendChild(button_warning);
-          /* let div_button2 = document.createElement("div");
-          div_button2.classList.add("col-12"); */
+
           let button_danger = document.createElement("button");
           button_danger.classList.add("btn");
           button_danger.classList.add("btn-danger");

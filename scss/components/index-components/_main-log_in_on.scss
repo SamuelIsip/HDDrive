@@ -2,7 +2,7 @@
   margin: auto;
   margin-top: 40px;
   width: 90%;
-  height: 700px;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,6 +32,7 @@
   text-align: center;
 }
 @mixin log_in_on_data {
+  position: relative;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -39,7 +40,7 @@
   & input {
     width: 70%;
     margin: auto;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #003454;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -59,17 +60,17 @@
     width: 40%;
     padding: 5px;
     border-radius: 5px;
-    background-color: transparent;
+    background-color: #003454;
     border: 2px solid #003454;
-    color: #003454;
+    color: white;
     font-size: 20px;
   }
 
   & input:hover {
     cursor: pointer;
-    background-color: #003454;
-    border-color: #fff;
-    color: #ffffff;
+    background-color: #fff;
+    border: 2px solid #003454;
+    color: #003454;
   }
 
   & div {
@@ -99,8 +100,8 @@
 }
 
 .img_account {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-image: url("../img/user-3331257__340-min.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -120,6 +121,17 @@
 .login_image {
   @include log_in_on_image;
   background-image: url("../img/Mobile login-bro.svg");
+}
+
+.login_error_info_off {
+  display: none;
+}
+
+.login_error_info_on {
+  margin: auto;
+  text-align: center;
+  color: red;
+  color: red;
 }
 
 /*LOG ON*/
@@ -147,4 +159,79 @@
 .logon_image {
   @include log_in_on_image;
   background-image: url("../img/Mobile login-rafiki.svg");
+}
+
+.logon_error_info_off {
+  display: none;
+}
+
+.logon_error_info_on {
+  margin: auto;
+  text-align: center;
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .login_form {
+    width: 100%;
+    & .login_header {
+      width: 100%;
+
+      & h2 {
+        font-size: 35px;
+      }
+    }
+    & .login_data {
+      width: 100%;
+      & > input {
+        font-size: 20px;
+        padding: 20px;
+      }
+    }
+    & .login_buttons {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      & > input {
+        padding: 15px;
+      }
+      & > div {
+        margin-top: 10px;
+      }
+    }
+  }
+  .login_image {
+    display: none;
+  }
+  .logon_form {
+    width: 100%;
+    & .logon_header {
+      width: 100%;
+
+      & h2 {
+        font-size: 35px;
+      }
+    }
+    & .logon_data {
+      width: 100%;
+      & > input {
+        font-size: 20px;
+        padding: 20px;
+      }
+    }
+    & .logon_buttons {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      & > input {
+        padding: 15px;
+      }
+      & > div {
+        margin-top: 10px;
+      }
+    }
+  }
+  .logon_image {
+    display: none;
+  }
 }

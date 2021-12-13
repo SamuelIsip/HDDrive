@@ -1,0 +1,27 @@
+{
+  "name": "hddrive",
+  "version": "1.0.0",
+  "description": "File management system\r Web page like Dropbox, Drive or OneDrive",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.43.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelIsip/HDDrive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamuelIsip/HDDrive/issues"
+  },
+  "homepage": "https://github.com/SamuelIsip/HDDrive#readme"
+}

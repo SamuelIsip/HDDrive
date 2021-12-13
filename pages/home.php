@@ -36,9 +36,11 @@
               <a href="#" id="calendar"><i class="fas fa-calendar-alt"></i></a>
             </li>
             <li>
+              <div id="notification_favourites"></div>
               <a href="#" id="bookmark"><i class="fas fa-bookmark"></i></a>
             </li>
             <li>
+              <div id="notification_task"></div>
               <a href="#" id="task"><i class="fas fa-tasks"></i></a>
             </li>
           </ul>

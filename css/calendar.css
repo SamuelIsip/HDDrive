@@ -1,0 +1,210 @@
+body {
+  position: relative;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+}
+#calendar_container_main form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  background: linear-gradient(
+    333deg,
+    rgb(44 45 58 / 93%) 0%,
+    rgba(43, 174, 136, 1) 37%
+  );
+  box-shadow: 3px 3px 5px black;
+}
+
+#calendar_container_main_select_day {
+  padding: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+form > div {
+  margin-bottom: 5px;
+}
+
+td:hover {
+  box-shadow: 2px 3px 5px black;
+  cursor: pointer;
+  background-color: #2bae88;
+  transform: translate(3px, 1px);
+}
+
+#flechas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+hr {
+  width: 100%;
+}
+#calendar__task__container {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(28 196 134 / 92%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 5px;
+  box-shadow: 2px 3px 5px black;
+  transform: translate(-50%, -50%);
+}
+#calendar__task__container form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#calendar__task__container form div {
+  text-align: center;
+}
+#calendar__task__container form div p {
+  margin: 0px;
+  font-size: 25px;
+  display: inline-block;
+}
+#task_title {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#task_calendar {
+  resize: none;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#calendar__task__container button {
+  font-style: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+#calendar__task__container button:hover {
+  cursor: pointer;
+}
+#save_task_calendar {
+  background-color: #4be903;
+}
+#save_task_calendar:hover {
+  background-color: #50ff01;
+}
+#close_task_calendar {
+  background-color: #e90000;
+}
+#close_task_calendar:hover {
+  background-color: #ff0000;
+}
+.calendar_task_styles {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.calendar_task_no_styles {
+  visibility: hidden;
+  opacity: 0;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+#anio {
+  margin-left: 5px;
+  width: 100px;
+  padding: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+#mes {
+  border-radius: 5px;
+  width: 100px;
+  padding: 15px;
+  border: none;
+}
+
+#flechas {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+#flechas input[type="submit"] {
+  border: none;
+  width: 50px;
+  height: 50px;
+}
+
+#select_day {
+  color: #fff;
+  background-color: #29323f;
+  margin: auto;
+  width: 50% !important;
+  padding: 10px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+#select_day:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+#calendar_container_main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 2px 3px 5px black;
+  border-radius: 5px;
+  background-color: #29323f;
+}
+
+#flecha1 {
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 50px 0px 0px 50px;
+}
+#flecha2 {
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 0px 50px 50px 0px;
+}
+
+#flecha1:hover {
+  background-color: #29323f;
+  color: #fff;
+}
+#flecha2:hover {
+  background-color: #29323f;
+  color: #fff;
+}
+
+#calendar__table {
+  height: 0px;
+}
+
+@media screen and (max-height: 1000px) and (min-height: 725px) {
+  #calendar__table {
+    height: 500px;
+  }
+}
+@media screen and (max-height: 725px) and (min-height: 625px) {
+  #calendar__table {
+    height: 300px;
+  }
+}

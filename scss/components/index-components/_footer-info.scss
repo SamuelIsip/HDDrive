@@ -2,6 +2,9 @@
   color: #fff;
   margin-top: 20px;
   background-color: #003454;
+  & .contact_logo {
+    float: left;
+  }
 }
 
 .container_contact {
@@ -13,10 +16,6 @@
   width: 70%;
   margin: auto;
   overflow: auto;
-}
-
-.contact_logo {
-  float: left;
 }
 
 .contact_logo_img {
@@ -53,6 +52,7 @@
 }
 
 .contact_links div {
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -60,4 +60,10 @@
   color: #ffffff;
   font-size: 45px;
   margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact_information {
+    flex-direction: column;
+  }
 }

@@ -1,4 +1,30 @@
+/** Variables **/
+$responsive-width: 768px;
+$nav-color: #003454b0;
+$white: #fff;
+
 body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #282a35;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(219, 219, 219);
+  border-radius: 10px;
+  border: 1px solid rgb(48, 48, 48);
+}
+
+#container {
   margin: 0;
   padding: 0;
 }
@@ -8,22 +34,39 @@ body {
 }
 
 #container {
-  background-color: #ffffff;
+  background-color: $white;
   overflow: auto;
   & .container_slide {
     & #container_slide_title {
       font-family: sans-serif;
-      font-size: 70px;
-      color: white;
+      font-size: 5vw;
+      color: $white;
+      & h1 {
+        text-shadow: 2px 2px black;
+        color: white;
+      }
     }
   }
 }
 
 header {
-  background-color: #003454b0;
+  height: 230px;
+  background-color: $nav_color;
   position: fixed;
   width: 100%;
   z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  transform: translateY(-170px);
+  & nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+  & .contact_logo_img {
+    width: 60px;
+  }
 }
 
 .container_list {
@@ -40,10 +83,67 @@ header {
 
 .container_list li a {
   text-decoration: none;
-  font-size: large;
-  color: #fff;
+  font-size: 20px;
+  color: $white;
 }
 
 .container_list li a:hover {
   color: rgba(255, 255, 255, 0.774);
+}
+
+.menu_icon {
+  display: none;
+}
+
+/** Media Queries **/
+@media screen and (max-width: $responsive-width) {
+  #container {
+    & .container_slide {
+      & #container_slide_title {
+        font-size: 10vw;
+      }
+    }
+  }
+  .container_list {
+    display: none;
+  }
+
+  .menu_icon {
+    margin-right: 10px;
+    display: flex;
+    align-self: center;
+    font-size: x-large;
+    & a {
+      color: $white;
+    }
+  }
+}
+
+/** Design navbar when is mobile */
+.nav_responsive {
+  align-items: flex-start;
+  transition: transform 0.7s ease;
+  transform: translateY(0);
+
+  & .container_list {
+    width: 100%;
+    padding: 0px;
+    position: absolute;
+    top: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    & li {
+      text-align: center;
+      padding: 10px;
+      margin: 0px;
+      list-style-type: none;
+      width: 100%;
+      margin-left: 0px;
+      & align {
+        font-size: 23px;
+      }
+    }
+  }
 }
