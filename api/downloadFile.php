@@ -37,10 +37,18 @@
         //Comprobamos si el fichero existe
         if(file_exists($filename)) {
             //Definimos la información del header
-            header("Cache-Control: public");
+         /*    header("Cache-Control: public");
             header("Content-Description: File Transfer");
             header('content-disposition: attachment;filename="'.basename($filename).'"');
-            header("Content-Transfer-Encoding: binary");    
+            header("Content-Transfer-Encoding: binary"); */   
+            
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename="'.basename($filename).'"');
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            header('Content-Length: ' . filesize($filename));
 
             //Leemos el fichero
             readfile($filename);
