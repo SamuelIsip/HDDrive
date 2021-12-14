@@ -37,7 +37,7 @@
             </li>
             <li>
               <div id="notification_favourites"></div>
-              <a href="#" id="bookmark"><i class="fas fa-bookmark"></i></a>
+              <a href="#" id="fav"><i class="fas fa-star"></i></a>
             </li>
             <li>
               <div id="notification_task"></div>
@@ -110,8 +110,8 @@
         <div id="container_calendar">
           <div><iframe id="calendar" src="./calendar.php" frameborder="0"></iframe></div>
         </div>
-        <div id="container_bookmarks">
-          <div><p>BOOKMARKS</p></div>
+        <div id="container_favourites">
+          <div><iframe id="favourites" src="./favourites.html" frameborder="0"></iframe></div>
         </div>
         <div id="container_tasks">
           <div><iframe id="tasks" src="./tasks.html" frameborder="0"></iframe></div>
