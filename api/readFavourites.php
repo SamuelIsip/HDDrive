@@ -1,31 +1,39 @@
 <?php
-    
     include_once("connectDB.php");
+    include_once("getSizeFile.php");
 
-    $userID =  $_SESSION["userID"];
+    session_name("userSession");
+    session_start();
 
-     //Consultar ficheros favoritos
-     $result = mysqli_query($con, "SELECT date, ruta FROM favorites;");
+    //Seleccionamos datos de la BD
+    $result = mysqli_prepare($con, "SELECT date, ruta FROM favorites WHERE id_user=?");
 
-     $arr1 = array();
-     $arr1["favs"]=array();
+    $usrID = $_SESSION["userID"];
 
-     for ($i=1; mysqli_num_rows($result) >= $i; $i++){
-        $fila = mysqli_fetch_row($result);
-        
+    mysqli_stmt_bind_param($result,"i",$usrID);
+
+    mysqli_stmt_execute($result);
+
+    mysqli_stmt_bind_result($result, $date, $ruta);
+   
+    $arr1 = array();
+    $arr1["favs"]=array();
+
+    while(mysqli_stmt_fetch($result)){
         $arr2=array(
-            "date"=>$fila[0],
-            "size"=>is_dir($fila[1]) ? get_size($fila[1]) : convert_size(filesize($fila[1])),
+            "date"=> $fila[0],
+            "size"=> is_dir($fila[1]) ? get_size($fila[1]) : convert_size(filesize($fila[1])),
             "ruta"=> $fila[1],
-            "isDirFile"=>is_dir($fila[1]) ? "dir" : "file" 
+            "isDirFile"=> is_dir($fila[1]) ? "dir" : "file" 
         );
 
         array_push($arr1["favs"], $arr2);
-
     }
 
+    mysqli_stmt_close($result);
+
     mysqli_close($con);
-    
+
     http_response_code(200);
 
     echo json_encode($arr1);

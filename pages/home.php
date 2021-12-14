@@ -18,6 +18,7 @@
     <script src="../js/events_pages_home.js"></script>
     <script src="../js/load_pages_home.js"></script>
     <script src="../js/add_select_files.js"></script>
+    <script src="../js/favourites_load_db.js"></script>
     <script src="../js/task_load_db.js"></script>
    
   </head>
