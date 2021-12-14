@@ -105,7 +105,7 @@
           <div><iframe id="calendar" src="./calendar.php" frameborder="0"></iframe></div>
         </div>
         <div id="container_favourites">
-          <div><iframe id="favourites" src="./favourites.html" frameborder="0"></iframe></div>
+          <div><iframe id="favourites" src="./favourites.php" frameborder="0"></iframe></div>
         </div>
         <div id="container_tasks">
           <div><iframe id="tasks" src="./tasks.html" frameborder="0"></iframe></div>
