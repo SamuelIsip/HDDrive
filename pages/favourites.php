@@ -11,6 +11,7 @@
     <?php
       
       include_once("connectDB.php");
+      include_once("getSizeFile.php");
 
       $userID = $_SESSION["userID"];
 
