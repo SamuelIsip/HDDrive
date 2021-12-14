@@ -13,5 +13,5 @@
         $database = env('DB_DATABASE', 'eu-cdbr-west-02.cleardb.net');
     }
     // Connect to DB
-    $con = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+    $con = mysqli_connect($host, $username, $password, $database);
 ?>
