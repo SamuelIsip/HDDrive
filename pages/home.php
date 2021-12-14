@@ -30,9 +30,6 @@
               <a href="#" id="documents"><i class="fas fa-folder"></i></a>
             </li>
             <li>
-              <a href="#" id="images"><i class="fas fa-images"></i></a>
-            </li>
-            <li>
               <a href="#" id="calendar"><i class="fas fa-calendar-alt"></i></a>
             </li>
             <li>
@@ -103,9 +100,6 @@
               <table class="table_files"><thead><tr><th>Name</th><th>File Size</th><th>Date</th></tr></thead></table>
             </div>
           </div>
-        </div>
-        <div id="container_images">
-          <div><p>IMAGES</p></div>
         </div>
         <div id="container_calendar">
           <div><iframe id="calendar" src="./calendar.php" frameborder="0"></iframe></div>
