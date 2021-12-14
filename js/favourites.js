@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
           let ruta = document.createElement("p");
           ruta.innerHTML = t.ruta == "" ? "Ruta" : t.ruta;
           let isDir = document.createElement("p");
-          isDir.innerHTML = t.isDir == "" ? "IsDir" : t.isDir;
+          isDir.innerHTML = t.isDirFile == "" ? "IsDir" : t.isDirFile;
 
           //Añadimos al task los elementos de la BD
-          list_tasks.appendChild(date);
-          list_tasks.appendChild(size);
-          list_tasks.appendChild(ruta);
-          list_tasks.appendChild(isDir);
+          list_fav.appendChild(date);
+          list_fav.appendChild(size);
+          list_fav.appendChild(ruta);
+          list_fav.appendChild(isDir);
           i++;
         });
       }
