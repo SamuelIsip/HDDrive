@@ -25,7 +25,7 @@
           
           $arr2=array(
               "date"=>$fila[0],
-              "ruta"=> fila[1],
+              "ruta"=> $fila[1],
               "isDirFile"=>is_dir($fila[1]) ? "dir" : "file" 
           );
 

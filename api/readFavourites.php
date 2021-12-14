@@ -16,7 +16,7 @@
         $arr2=array(
             "date"=>$fila[0],
             "size"=>is_dir($fila[1]) ? get_size($fila[1]) : convert_size(filesize($fila[1])),
-            "ruta"=> fila[1],
+            "ruta"=> $fila[1],
             "isDirFile"=>is_dir($fila[1]) ? "dir" : "file" 
         );
 
