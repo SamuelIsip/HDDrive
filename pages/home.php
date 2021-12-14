@@ -30,14 +30,11 @@
               <a href="#" id="documents"><i class="fas fa-folder"></i></a>
             </li>
             <li>
-              <a href="#" id="images"><i class="fas fa-images"></i></a>
-            </li>
-            <li>
               <a href="#" id="calendar"><i class="fas fa-calendar-alt"></i></a>
             </li>
             <li>
               <div id="notification_favourites"></div>
-              <a href="#" id="bookmark"><i class="fas fa-bookmark"></i></a>
+              <a href="#" id="favourite"><i class="fas fa-star"></i></a>
             </li>
             <li>
               <div id="notification_task"></div>
@@ -56,7 +53,7 @@
           <ul>
             <li><a id="documents_menu" href="#">All files</a></li>
             <li><a href="#">Recent</a></li>
-            <li><a href="#">Favorites</a></li>
+            <li><a href="#">Favourites</a></li>
           </ul>
         </div>
         <div id="container_docs">
@@ -104,14 +101,11 @@
             </div>
           </div>
         </div>
-        <div id="container_images">
-          <div><p>IMAGES</p></div>
-        </div>
         <div id="container_calendar">
           <div><iframe id="calendar" src="./calendar.php" frameborder="0"></iframe></div>
         </div>
-        <div id="container_bookmarks">
-          <div><p>BOOKMARKS</p></div>
+        <div id="container_favourites">
+          <div><p>favouriteS</p></div>
         </div>
         <div id="container_tasks">
           <div><iframe id="tasks" src="./tasks.html" frameborder="0"></iframe></div>
