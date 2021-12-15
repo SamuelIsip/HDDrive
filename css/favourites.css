@@ -63,14 +63,12 @@ input {
 }
 .docs_fav table td:nth-child(1) {
   text-align: left;
-  width: 10%;
+  width: 5%;
 }
 .docs_fav table td:nth-child(2) {
   width: 100%;
 }
-.docs_fav table td:nth-child(3) {
-  width: 30%;
-}
+
 .docs_fav table td:nth-child(4) {
   width: 20%;
 }

@@ -54,6 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
       td3.appendChild(document.createTextNode(t.date));
       td3.classList.add("date_file");
 
+      td1.addEventListener("click", () => {
+        window.location = encodeURI(
+          "./../api/downloadFile.php?nameFile=" + td1.firstElementChild.value
+        );
+      });
+
       tr.appendChild(star);
       tr.appendChild(td1);
       tr.appendChild(td2);
