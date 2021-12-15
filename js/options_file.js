@@ -72,9 +72,6 @@ function add_event_options(options) {
         ".date_file"
       ).innerText;
 
-    console.log(size_file);
-    console.log(size_file.innerText);
-
     var userData = {
       name: name_file_doc,
       ruta: getPath() + name_file_doc,
