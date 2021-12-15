@@ -63,9 +63,7 @@ function load_events_pages_menu() {
     );
 
     // Remove the table, to reload files of index
-    deleteFileRecursive();
-    readDocuments();
-    resetLinkHead();
+    document.getElementById("favourites").contentWindow.load_favourites();
   });
 
   const regex = /initials.+/;
