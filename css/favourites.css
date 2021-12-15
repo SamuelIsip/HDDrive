@@ -34,9 +34,7 @@ input {
   width: 15px;
   height: 15px;
 }
-.docs_fav table tbody tr:hover {
-  background-color: rgba(28, 196, 134, 0.801);
-}
+
 .docs_fav table td {
   padding: 15px;
 }
@@ -45,11 +43,6 @@ input {
 }
 .docs_fav table td:nth-child(2):hover {
   cursor: pointer;
-  background-image: linear-gradient(
-    to left,
-    rgba(126, 126, 126, 0),
-    rgba(69, 69, 69, 0.25)
-  );
 }
 .docs_fav table,
 .docs_fav td,
