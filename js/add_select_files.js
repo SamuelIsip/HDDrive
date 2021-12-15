@@ -68,17 +68,12 @@ function load_events_add_select() {
     .getElementById("download_files_selected")
     .addEventListener("click", () => {
       var check1 = $("input[name=check_file]:checked");
-      console.log(check1);
       var arr = [];
       $.each(check1, function () {
         arr.push($(this).next().find(".name_file_dir").val());
       });
 
-      console.log(arr);
-
       var json_arr = JSON.stringify(arr);
-
-      console.log(json_arr);
 
       //Formar JSON con rutas de todos los ficheros seleccionados
       window.location = encodeURI(
