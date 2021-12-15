@@ -24,14 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
     JSON.parse(responseText).favs.forEach((t) => {
       let tr = document.createElement("tr");
       tr.classList.add(count);
+      let star = document.createElement("td");
       let td1 = document.createElement("td");
       let td2 = document.createElement("td");
       let td3 = document.createElement("td");
 
+      let icon_star = document.createElement("i");
+      icon_star.classList.add("fas");
+      icon_star.classList.add("fa-star");
+      star.appendChild(icon_star);
+      star.classList.add("fav_star");
+
       let input_name = document.createElement("input");
       input_name.setAttribute("type", "text");
       input_name.style.cssText = `
-        backround-color: transparent;
+        background-color: transparent;
         border: none;
       `;
 
@@ -45,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       td3.appendChild(document.createTextNode(t.date));
       td3.classList.add("date_file");
 
+      tr.appendChild(star);
       tr.appendChild(td1);
       tr.appendChild(td2);
       tr.appendChild(td3);
