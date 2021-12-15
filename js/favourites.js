@@ -9,10 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         deleteFileRecursive();
-        var count = 0;
-
         var tbody = document.createElement("tbody");
-        createFavList(tbody, this.responseText, count);
+        createFavList(tbody, this.responseText);
         list_fav.appendChild(tbody);
       }
     };
@@ -20,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
     xhr.send();
   };
 
-  function createFavList(tbody, responseText, count) {
+  function createFavList(tbody, responseText) {
     JSON.parse(responseText).favs.forEach((t) => {
       let tr = document.createElement("tr");
-      tr.classList.add(count);
+      tr.classList.add(t.idFolder);
       let star = document.createElement("td");
       let td1 = document.createElement("td");
       let td2 = document.createElement("td");
@@ -61,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tr.appendChild(td2);
       tr.appendChild(td3);
 
-      count++;
       tbody.appendChild(tr);
     });
   }
@@ -73,7 +70,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function removeFavourite(star) {
-    console.log("STAR");
-    console.log(star);
+    let id_folder = star.parentElement.className;
+    var xhr;
+
+    if (window.ActiveXObject) xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    else xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        window.load_favourites();
+      }
+    };
+    xhr.open("POST", "./../api/removeFavourite.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("id_folder=" + id_folder);
   }
 });

@@ -6,7 +6,7 @@
     session_start();
 
     //Seleccionamos datos de la BD
-    $result = mysqli_prepare($con, "SELECT date, size, ruta FROM favorites WHERE id_user=?");
+    $result = mysqli_prepare($con, "SELECT date, size, ruta, id_folder FROM favorites WHERE id_user=?");
 
     $usrID = $_SESSION["userID"];
 
@@ -14,7 +14,7 @@
 
     mysqli_stmt_execute($result);
 
-    mysqli_stmt_bind_result($result, $date, $size, $ruta);
+    mysqli_stmt_bind_result($result, $date, $size, $ruta, $id_folder);
    
     $arr1 = array();
     $arr1["favs"]=array();
@@ -24,7 +24,7 @@
             "date"=> $date,
             "size"=> $size,
             "ruta"=> $ruta,
-            "isDirFile"=> is_dir($ruta) ? "dir" : "file" 
+            "idFolder"=> $id_folder
         );
 
         array_push($arr1["favs"], $arr2);
