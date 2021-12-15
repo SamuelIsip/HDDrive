@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+        deleteFileRecursive();
         var count = 0;
 
         var tbody = document.createElement("tbody");
@@ -26,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
       let td1 = document.createElement("td");
       let td2 = document.createElement("td");
       let td3 = document.createElement("td");
-      let td4 = document.createElement("td");
 
       let input_name = document.createElement("input");
       input_name.setAttribute("type", "text");
@@ -52,5 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
       count++;
       tbody.appendChild(tr);
     });
+  }
+  function deleteFileRecursive() {
+    var div_list = document.getElementsByClassName("table_files")[0];
+    if (div_list.hasChildNodes() && div_list.childElementCount > 1)
+      div_list.removeChild(div_list.lastChild);
   }
 });
