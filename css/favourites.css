@@ -1,5 +1,17 @@
+html,
 body {
-  margin: 10px;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+input {
   font-family: "Times New Roman", Times, serif;
   font-size: 17px;
 }
