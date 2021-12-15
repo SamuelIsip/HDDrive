@@ -74,7 +74,11 @@ function load_events_add_select() {
         arr.push($(this).next().find(".name_file_dir").val());
       });
 
+      console.log(arr);
+
       var json_arr = JSON.stringify(arr);
+
+      console.log(json_arr);
 
       //Formar JSON con rutas de todos los ficheros seleccionados
       window.location = encodeURI(
