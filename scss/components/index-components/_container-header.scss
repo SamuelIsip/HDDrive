@@ -141,11 +141,6 @@ header {
     transform: translateY(12px);
   }
 
-  .menu_icon.open {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-  }
-
   .menu_icon.open .menu {
     transform: translateX(-50px);
     background: transparent;
