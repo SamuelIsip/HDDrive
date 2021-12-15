@@ -35,7 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
       star.appendChild(icon_star);
       star.classList.add("fav_star");
 
-      star.addEventListener("click", removeFavourite());
+      star.addEventListener("click", function () {
+        removeFavourite();
+      });
 
       let input_name = document.createElement("input");
       input_name.setAttribute("type", "text");
