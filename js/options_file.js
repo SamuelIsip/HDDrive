@@ -63,6 +63,10 @@ function add_event_options(options) {
   });
 
   op_favorite.addEventListener("click", () => {
+    var size_file =
+      op_favorite.parentElement.parentElement.parentElement.querySelector(
+        ".size_file"
+      ).innerText;
     var date_file =
       op_favorite.parentElement.parentElement.parentElement.querySelector(
         ".date_file"
@@ -71,6 +75,7 @@ function add_event_options(options) {
     var userData = {
       name: name_file_doc,
       ruta: getPath() + name_file_doc,
+      size: size_file,
       date: date_file,
     };
 
