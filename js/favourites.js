@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
       star.appendChild(icon_star);
       star.classList.add("fav_star");
 
-      star.addEventListener("click", function () {
-        removeFavourite();
+      star.addEventListener("click", () => {
+        removeFavourite(star);
       });
 
       let input_name = document.createElement("input");
@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
       div_list.removeChild(div_list.lastChild);
   }
 
-  function removeFavourite() {
+  function removeFavourite(star) {
     console.log("STAR");
-    console.log(this);
+    console.log(star);
   }
 });
