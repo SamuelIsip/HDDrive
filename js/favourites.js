@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
       star.appendChild(icon_star);
       star.classList.add("fav_star");
 
+      star.addEventListener("click", removeFavourite());
+
       let input_name = document.createElement("input");
       input_name.setAttribute("type", "text");
       input_name.style.cssText = `
@@ -66,5 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
     var div_list = document.getElementsByClassName("table_favs")[0];
     if (div_list.hasChildNodes() && div_list.childElementCount > 1)
       div_list.removeChild(div_list.lastChild);
+  }
+
+  function removeFavourite() {
+    console.log("STAR");
+    console.log(this);
   }
 });
