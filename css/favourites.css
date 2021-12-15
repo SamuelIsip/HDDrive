@@ -75,3 +75,13 @@ input {
   width: 20%;
   position: relative;
 }
+
+.docs_fav .fav_star i {
+  color: #e5e510;
+  font-size: 20px;
+}
+
+.docs_fav .fav_star:hover i {
+  cursor: pointer;
+  color: #ff0000;
+}
