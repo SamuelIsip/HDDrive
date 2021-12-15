@@ -93,51 +93,6 @@ header {
 
 .menu_icon {
   display: none;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-.menu {
-  width: 40px;
-  height: 3px;
-  background: #000;
-  transition: all 0.3s ease;
-}
-.menu::before,
-.menu::after {
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 3px;
-  background: #000;
-  transition: all 0.3s ease;
-}
-.menu::before {
-  transform: translateY(-12px);
-}
-.menu::after {
-  transform: translateY(12px);
-}
-
-.menu-icon.open {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-}
-
-.menu_icon.open .menu {
-  transform: translateX(-50px);
-  background: transparent;
-}
-.menu_icon.open .menu::before {
-  transform: rotate(45deg) translate(35px, -35px);
-}
-.menu_icon.open .menu::after {
-  transform: rotate(-45deg) translate(35px, 35px);
 }
 
 /** Media Queries **/
@@ -154,13 +109,52 @@ header {
   }
 
   .menu_icon {
-    margin-right: 10px;
+    position: relative;
     display: flex;
-    align-self: center;
-    font-size: x-large;
-    & a {
-      color: $white;
-    }
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+
+  .menu {
+    width: 40px;
+    height: 3px;
+    background: #000;
+    transition: all 0.3s ease;
+  }
+  .menu::before,
+  .menu::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: #000;
+    transition: all 0.3s ease;
+  }
+  .menu::before {
+    transform: translateY(-12px);
+  }
+  .menu::after {
+    transform: translateY(12px);
+  }
+
+  .menu-icon.open {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+  }
+
+  .menu_icon.open .menu {
+    transform: translateX(-50px);
+    background: transparent;
+  }
+  .menu_icon.open .menu::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  .menu_icon.open .menu::after {
+    transform: rotate(-45deg) translate(35px, 35px);
   }
 }
 
