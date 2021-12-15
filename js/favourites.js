@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let input_name = document.createElement("input");
       input_name.setAttribute("type", "text");
-      $(input_name).css({
-        "background-color": "transparent",
-        border: "none",
-      });
+      input_name.style.cssText = `
+        backround-color: transparent;
+        border: none;
+      `;
 
       input_name.value = t.ruta;
       input_name.setAttribute("readonly", "");
