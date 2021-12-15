@@ -82,7 +82,7 @@ input {
 .docs_fav .fav_star:hover i {
   cursor: pointer;
   color: #c90707;
-  transform: rotate(360deg);
+  transform: rotate(180deg);
 }
 
 /* .docs_fav .fav_star::after {
