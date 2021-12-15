@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tbody.appendChild(tr);
     });
   }
+
   function deleteFileRecursive() {
     var div_list = document.getElementsByClassName("table_favs")[0];
     if (div_list.hasChildNodes() && div_list.childElementCount > 1)
