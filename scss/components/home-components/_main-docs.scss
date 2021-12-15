@@ -205,6 +205,9 @@ ul {
     rgba(126, 126, 126, 0),
     rgba(69, 69, 69, 0.25)
   );
+  & i {
+    transform: scale(1.2);
+  }
 }
 
 #options {
