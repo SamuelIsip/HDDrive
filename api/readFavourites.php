@@ -21,10 +21,10 @@
 
     while(mysqli_stmt_fetch($result)){
         $arr2=array(
-            "date"=> $fila[0],
-            "size"=> is_dir($fila[1]) ? get_size($fila[1]) : convert_size(filesize($fila[1])),
-            "ruta"=> $fila[1],
-            "isDirFile"=> is_dir($fila[1]) ? "dir" : "file" 
+            "date"=> $date,
+            "size"=> is_dir($ruta) ? get_size($ruta) : convert_size(filesize($ruta)),
+            "ruta"=> $ruta,
+            "isDirFile"=> is_dir($ruta) ? "dir" : "file" 
         );
 
         array_push($arr1["favs"], $arr2);
