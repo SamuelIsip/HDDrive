@@ -55,6 +55,19 @@ function load_events_pages_menu() {
     resetLinkHead();
   });
 
+  $("#favourites_menu").on("click", () => {
+    $("#container_favourites").css("display", "flex");
+    $("#container_calendar, #container_docs, #container_tasks").css(
+      "display",
+      "none"
+    );
+
+    // Remove the table, to reload files of index
+    deleteFileRecursive();
+    readDocuments();
+    resetLinkHead();
+  });
+
   const regex = /initials.+/;
   const userName = sessionStorage.getItem("userName");
 

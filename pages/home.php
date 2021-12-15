@@ -54,7 +54,7 @@
           <ul>
             <li><a id="documents_menu" href="#">All files</a></li>
             <li><a href="#">Recent</a></li>
-            <li><a href="#">Favorites</a></li>
+            <li><a id="favourites_menu" href="#">Favorites</a></li>
           </ul>
         </div>
         <div id="container_docs">
