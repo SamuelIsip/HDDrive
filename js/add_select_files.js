@@ -68,6 +68,7 @@ function load_events_add_select() {
     .getElementById("download_files_selected")
     .addEventListener("click", () => {
       var check1 = $("input[name=check_file]:checked");
+      console.log(check1);
       var arr = [];
       $.each(check1, function () {
         arr.push($(this).next().find(".name_file_dir").val());
