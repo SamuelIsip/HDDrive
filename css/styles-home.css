@@ -330,7 +330,8 @@ ul li {
   cursor: pointer;
   background-image: linear-gradient(to right, rgba(126, 126, 126, 0), rgba(69, 69, 69, 0.25));
 }
-.options_file:hover i {
+
+.options_file i:hover {
   transform: scale(1.2);
 }
 
