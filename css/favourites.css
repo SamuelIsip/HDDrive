@@ -76,11 +76,13 @@ input {
 .docs_fav .fav_star i {
   color: #e5e510;
   font-size: 20px;
+  transition: all 0.5s ease;
 }
 
 .docs_fav .fav_star:hover i {
   cursor: pointer;
-  color: #ff0000;
+  color: #c90707;
+  transform: rotate(360deg);
 }
 
 /* .docs_fav .fav_star::after {
