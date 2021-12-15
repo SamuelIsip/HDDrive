@@ -345,7 +345,7 @@ ul li {
 }
 #options li:hover {
   cursor: pointer;
-  color: #04aa6d;
+  color: #fff;
   transform: scale(1.3);
 }
 
