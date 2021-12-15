@@ -123,7 +123,7 @@ header {
     width: 40px;
     height: 3px;
     background: #000;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
   .menu::before,
   .menu::after {
@@ -132,7 +132,7 @@ header {
     width: 40px;
     height: 3px;
     background: #000;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
   .menu::before {
     transform: translateY(-12px);
