@@ -135,7 +135,7 @@ header .contact_logo_img {
     transform: translateY(12px);
   }
 
-  .menu-icon.open {
+  .menu_icon.open {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
   }
