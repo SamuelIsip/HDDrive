@@ -24,29 +24,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //Send data to server
-
-    if (window.ActiveXObject) xhr = new ActiveXObject("Microsoft.XMLHTTP");
-    else xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        const dataUsr = JSON.parse(this.responseText);
-        sessionStorage.setItem("userID", dataUsr.id_user);
-        sessionStorage.setItem("userName", dataUsr.name_user);
-        window.location = encodeURI("./../HDDrive/pages/home.php");
-      } else if (this.readyState == 4 && this.status == 409) {
-        document.getElementById("logon_error_info").innerHTML =
-          "User already exist!";
-      } else if (this.readyState == 4 && this.status == 500) {
-        document.getElementById("logon_error_info").innerHTML =
-          "Ups! Your User cannot be created!";
-      }
-    };
-
-    xhr.open("POST", "./../HDDrive/api/logOnUser.php", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(user_data));
+    fetchLogOn(user_data);
   });
+
+  async function fetchLogOn(user_data) {
+    const response = await fetch("./../HDDrive/api/logOnUser.php", {
+      method: "POST",
+      cache: "no-cache",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user_data),
+    });
+    if (response.ok) {
+      const dataUsr = await response.json();
+      sessionStorage.setItem("userID", dataUsr.id_user);
+      sessionStorage.setItem("userName", dataUsr.name_user);
+      window.location = encodeURI("./../HDDrive/pages/home.php");
+    } else if (response.status == 409) {
+      document.getElementById("logon_error_info").innerHTML =
+        "User already exist!";
+    } else {
+      document.getElementById("logon_error_info").innerHTML =
+        "Ups! Your User cannot be created!";
+    }
+  }
 
   /* Validación datos de creación de cuenta */
   function validateLogOn(user_data) {

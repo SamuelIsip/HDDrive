@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return false;
     }
 
+    //Send data to server
     fetchLogIn(user_data);
   }
 
