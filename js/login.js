@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return false;
     }
 
-    fetchLogIn();
+    fetchLogIn(user_data);
   }
 
-  async function fetchLogIn() {
+  async function fetchLogIn(user_data) {
     const response = await fetch("./../HDDrive/api/logInUser.php", {
       method: "POST",
       cache: "no-cache",
