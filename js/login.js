@@ -32,29 +32,29 @@ document.addEventListener("DOMContentLoaded", () => {
       return false;
     }
 
-    async () => {
-      const response = await fetch("./../HDDrive/api/logInUser.php", {
-        method: "POST",
-        cache: "no-cache",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user_data),
-      });
-      if (response.ok) {
-        const dataUsr = await response.json();
-        sessionStorage.setItem("userName", dataUsr.nom_usr);
-        sessionStorage.setItem("userID", dataUsr.id_user);
-        window.location = encodeURI("./../HDDrive/pages/home.php");
-      } else {
-        document.getElementById("login_email").style.border =
-          "1px solid #ff0000";
-        document.getElementById("login_pass").style.border =
-          "1px solid #ff0000";
-        document.getElementById("login_error_info").className =
-          "login_error_info_on";
-        document.getElementById("login_error_info").innerHTML =
-          "Email/Password are incorrect!";
-      }
-    };
+    fetchLogIn();
+  }
+
+  async function fetchLogIn() {
+    const response = await fetch("./../HDDrive/api/logInUser.php", {
+      method: "POST",
+      cache: "no-cache",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user_data),
+    });
+    if (response.ok) {
+      const dataUsr = await response.json();
+      sessionStorage.setItem("userName", dataUsr.nom_usr);
+      sessionStorage.setItem("userID", dataUsr.id_user);
+      window.location = encodeURI("./../HDDrive/pages/home.php");
+    } else {
+      document.getElementById("login_email").style.border = "1px solid #ff0000";
+      document.getElementById("login_pass").style.border = "1px solid #ff0000";
+      document.getElementById("login_error_info").className =
+        "login_error_info_on";
+      document.getElementById("login_error_info").innerHTML =
+        "Email/Password are incorrect!";
+    }
   }
 
   /* Validación del Email y Password */
