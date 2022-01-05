@@ -32,17 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return false;
     }
 
-    //Send data to server
-    if (window.ActiveXObject) xhr = new ActiveXObject("Microsoft.XMLHTTP");
-    else xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        const dataUsr = JSON.parse(this.responseText);
+    async () => {
+      const response = await fetch("./../HDDrive/api/logInUser.php", {
+        method: "POST",
+        cache: "no-cache",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user_data),
+      });
+      if (response.ok) {
+        const dataUsr = await response.json();
         sessionStorage.setItem("userName", dataUsr.nom_usr);
         sessionStorage.setItem("userID", dataUsr.id_user);
         window.location = encodeURI("./../HDDrive/pages/home.php");
-      } else if (this.readyState == 4 && this.status == 404) {
+      } else {
         document.getElementById("login_email").style.border =
           "1px solid #ff0000";
         document.getElementById("login_pass").style.border =
@@ -53,10 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
           "Email/Password are incorrect!";
       }
     };
-
-    xhr.open("POST", "./../HDDrive/api/logInUser.php", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(user_data));
   }
 
   /* Validación del Email y Password */
