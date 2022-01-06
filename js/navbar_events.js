@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-  const burgerBtn = document.querySelector(".menu_icon");
+  var burgerBtn = document.querySelector(".menu_icon");
   var menuOpen = false;
 
   document.querySelectorAll(".container_list li").forEach((link, index) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 768) {
-        document.getElementById("header").classList.toggle("nav_responsive");
         toglleBurger(menuOpen, burgerBtn);
+        document.getElementById("header").classList.toggle("nav_responsive");
       }
     });
   });
