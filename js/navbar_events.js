@@ -8,22 +8,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   const burgerBtn = document.querySelector(".menu_icon");
-  let menuOpen = false;
+  var menuOpen = false;
 
   document.querySelectorAll(".container_list li").forEach((link, index) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 768) {
         document.getElementById("header").classList.toggle("nav_responsive");
-        toglleBurger(menuOpen);
+        toglleBurger(menuOpen, burgerBtn);
       }
     });
   });
 
   burgerBtn.addEventListener("click", () => {
-    toglleBurger(menuOpen);
+    toglleBurger(menuOpen, burgerBtn);
   });
 
-  function toglleBurger(menuOpen) {
+  function toglleBurger(menuOpen, burgerBtn) {
     if (!menuOpen) {
       burgerBtn.classList.add("open");
       menuOpen = true;
