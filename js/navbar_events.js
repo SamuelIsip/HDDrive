@@ -6,17 +6,24 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("header").classList.toggle("nav_responsive");
       }
     });
+
+  const burgerBtn = document.querySelector(".menu_icon");
+  let menuOpen = false;
+
   document.querySelectorAll(".container_list li").forEach((link, index) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 768) {
         document.getElementById("header").classList.toggle("nav_responsive");
+        toglleBurger(menuOpen);
       }
     });
   });
-  const burgerBtn = document.querySelector(".menu_icon");
-  let menuOpen = false;
 
   burgerBtn.addEventListener("click", () => {
+    toglleBurger(menuOpen);
+  });
+
+  function toglleBurger(menuOpen) {
     if (!menuOpen) {
       burgerBtn.classList.add("open");
       menuOpen = true;
@@ -24,5 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
       burgerBtn.classList.remove("open");
       menuOpen = false;
     }
-  });
+  }
 });
