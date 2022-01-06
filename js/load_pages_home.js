@@ -1,24 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-  window.addEventListener(
-    "popstate",
-    function (event) {
-      var r = confirm("You pressed a Back button! Are you sure?!");
+  document.onmouseover = function () {
+    //User's mouse is inside the page.
+    window.innerDocClick = true;
+  };
 
-      if (r == true) {
-        $("#container_docs").css("display", "flex");
-        $("#container_calendar, #container_favourites, #container_tasks").css(
-          "display",
-          "none"
-        );
+  document.onmouseleave = function () {
+    //User's mouse has left the page.
+    window.innerDocClick = false;
+  };
 
-        // Remove the table, to reload files of index
-        deleteFileRecursive();
-        readDocuments();
-        resetLinkHead();
-      }
-    },
-    false
-  );
+  window.onhashchange = function () {
+    if (!window.innerDocClick) {
+      //Your own in-page mechanism triggered the hash change
+      $("#container_docs").css("display", "flex");
+      $("#container_calendar, #container_favourites, #container_tasks").css(
+        "display",
+        "none"
+      );
+
+      // Remove the table, to reload files of index
+      deleteFileRecursive();
+      readDocuments();
+      resetLinkHead();
+    }
+  };
+
   full_size_monitor();
   readDocuments();
   load_events_pages_menu();
