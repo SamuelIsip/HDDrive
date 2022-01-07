@@ -73,23 +73,22 @@ ul {
       margin: 5px;
       text-decoration: none;
     }
-  }
-
-  @for $i from 1 through 7 {
-    & ul:nth-child(#{$i}) {
-      @if $i < 5 {
-        color: #282a35;
-        /* &:hover {
-          background-color: #fdfdfdcc;
-          cursor: pointer;
-        } */
-      }
-      @if $i >= 5 {
-        color: #fff;
-        /* &:hover {
-          background-color: #0000008a;
-          cursor: pointer;
-        } */
+    @for $i from 1 through 7 {
+      & li:nth-child(#{$i}) {
+        @if $i < 5 {
+          color: #282a35;
+          /* &:hover {
+            background-color: #fdfdfdcc;
+            cursor: pointer;
+          } */
+        }
+        @if $i >= 5 {
+          color: #fff;
+          /* &:hover {
+            background-color: #0000008a;
+            cursor: pointer;
+          } */
+        }
       }
     }
   }

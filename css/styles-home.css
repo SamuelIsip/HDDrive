@@ -241,49 +241,49 @@ ul li {
   margin: 5px;
   text-decoration: none;
 }
-.files__add__select ul:nth-child(1) {
+.files__add__select ul li:nth-child(1) {
   color: #282a35;
   /* &:hover {
     background-color: #fdfdfdcc;
     cursor: pointer;
   } */
 }
-.files__add__select ul:nth-child(2) {
+.files__add__select ul li:nth-child(2) {
   color: #282a35;
   /* &:hover {
     background-color: #fdfdfdcc;
     cursor: pointer;
   } */
 }
-.files__add__select ul:nth-child(3) {
+.files__add__select ul li:nth-child(3) {
   color: #282a35;
   /* &:hover {
     background-color: #fdfdfdcc;
     cursor: pointer;
   } */
 }
-.files__add__select ul:nth-child(4) {
+.files__add__select ul li:nth-child(4) {
   color: #282a35;
   /* &:hover {
     background-color: #fdfdfdcc;
     cursor: pointer;
   } */
 }
-.files__add__select ul:nth-child(5) {
+.files__add__select ul li:nth-child(5) {
   color: #fff;
   /* &:hover {
     background-color: #0000008a;
     cursor: pointer;
   } */
 }
-.files__add__select ul:nth-child(6) {
+.files__add__select ul li:nth-child(6) {
   color: #fff;
   /* &:hover {
     background-color: #0000008a;
     cursor: pointer;
   } */
 }
-.files__add__select ul:nth-child(7) {
+.files__add__select ul li:nth-child(7) {
   color: #fff;
   /* &:hover {
     background-color: #0000008a;
