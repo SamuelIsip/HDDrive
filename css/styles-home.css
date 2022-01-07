@@ -235,17 +235,73 @@ ul li {
   border-radius: 0px 20px 20px 0px;
   box-shadow: 0.5px 1px 1px 0.5px black;
 }
-.files__add__select ul li {
+.files__add__select ul ul:nth-child(1) {
   border-radius: 5px;
   padding: 3px;
   margin: 5px;
   text-decoration: none;
   color: #282a35;
 }
-.files__add__select ul li:not(:last-child) {
-  background-color: #fdfdfd8a;
+.files__add__select ul ul:nth-child(1) :hover {
+  background-color: #fdfdfdcc;
+  cursor: pointer;
 }
-.files__add__select ul li:hover {
+.files__add__select ul ul:nth-child(2) {
+  border-radius: 5px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+  color: #282a35;
+}
+.files__add__select ul ul:nth-child(2) :hover {
+  background-color: #fdfdfdcc;
+  cursor: pointer;
+}
+.files__add__select ul ul:nth-child(3) {
+  border-radius: 5px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+  color: #282a35;
+}
+.files__add__select ul ul:nth-child(3) :hover {
+  background-color: #fdfdfdcc;
+  cursor: pointer;
+}
+.files__add__select ul ul:nth-child(4) {
+  border-radius: 5px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+  color: #282a35;
+}
+.files__add__select ul ul:nth-child(4) :hover {
+  background-color: #fdfdfdcc;
+  cursor: pointer;
+}
+.files__add__select ul ul:nth-child(5) {
+  border-radius: 5px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+  color: #282a35;
+  background-color: #0000008a;
+  color: #fff;
+}
+.files__add__select ul ul:nth-child(5) :hover {
+  background-color: #fdfdfdcc;
+  cursor: pointer;
+}
+.files__add__select ul ul:nth-child(6) {
+  border-radius: 5px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+  color: #282a35;
+  background-color: #0000008a;
+  color: #fff;
+}
+.files__add__select ul ul:nth-child(6) :hover {
   background-color: #fdfdfdcc;
   cursor: pointer;
 }
@@ -261,11 +317,6 @@ ul li {
 }
 .files__add__select #select_files {
   margin-left: 0.5rem;
-}
-.files__add__select #download_files_selected,
-.files__add__select #favourite_files_selected,
-.files__add__select #delete_files_selected {
-  margin-left: 0.9rem;
 }
 
 .docs_main {

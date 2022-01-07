@@ -67,21 +67,22 @@ ul {
     border-radius: 0px 20px 20px 0px;
     box-shadow: 0.5px 1px 1px 0.5px black;
 
-    & li {
-      border-radius: 5px;
-      padding: 3px;
-      margin: 5px;
-      text-decoration: none;
-      color: #282a35;
-    }
-
-    & li:not(:last-child) {
-      background-color: #fdfdfd8a;
-    }
-
-    & li:hover {
-      background-color: #fdfdfdcc;
-      cursor: pointer;
+    @for $i from 1 to 7 {
+      & ul:nth-child(#{$i}) {
+        border-radius: 5px;
+        padding: 3px;
+        margin: 5px;
+        text-decoration: none;
+        color: #282a35;
+        :hover {
+          background-color: #fdfdfdcc;
+          cursor: pointer;
+        }
+        @if $i >= 5 {
+          background-color: #0000008a;
+          color: #fff;
+        }
+      }
     }
   }
 
@@ -99,12 +100,6 @@ ul {
 
   #select_files {
     margin-left: 0.5rem;
-  }
-
-  #download_files_selected,
-  #favourite_files_selected,
-  #delete_files_selected {
-    margin-left: 0.9rem;
   }
 }
 
