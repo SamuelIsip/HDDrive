@@ -38,6 +38,10 @@ nav ul li a i:hover {
   color: #04aa6d;
 }
 
+#container_logout_profile {
+  display: flex;
+  flex-direction: row;
+}
 #container_logout_profile .user_log_out {
   color: white;
   font-size: 30px;
