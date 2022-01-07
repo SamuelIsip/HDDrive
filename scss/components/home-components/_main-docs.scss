@@ -11,7 +11,9 @@ ul {
   }
 }
 
-#download_files_selected {
+#download_files_selected,
+#favourite_files_selected,
+#delete_files_selected {
   display: none;
 }
 
@@ -99,7 +101,9 @@ ul {
     margin-left: 0.5rem;
   }
 
-  #download_files_selected {
+  #download_files_selected,
+  #favourite_files_selected,
+  #delete_files_selected {
     margin-left: 0.9rem;
   }
 }

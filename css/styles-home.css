@@ -183,7 +183,9 @@ ul li {
   list-style: none;
 }
 
-#download_files_selected {
+#download_files_selected,
+#favourite_files_selected,
+#delete_files_selected {
   display: none;
 }
 
@@ -260,7 +262,9 @@ ul li {
 .files__add__select #select_files {
   margin-left: 0.5rem;
 }
-.files__add__select #download_files_selected {
+.files__add__select #download_files_selected,
+.files__add__select #favourite_files_selected,
+.files__add__select #delete_files_selected {
   margin-left: 0.9rem;
 }
 

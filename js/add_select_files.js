@@ -57,13 +57,60 @@ function load_events_add_select() {
       if (check_list[i].style.display === "none") {
         check_list[i].style.display = "inline-block";
         $("#download_files_selected").css("display", "inline-block");
+        $("#favourite_files_selected").css("display", "inline-block");
+        $("#delete_files_selected").css("display", "inline-block");
       } else {
         check_list[i].style.display = "none";
         $("#download_files_selected").css("display", "none");
+        $("#favourite_files_selected").css("display", "none");
+        $("#delete_files_selected").css("display", "none");
       }
     }
   });
 
+  // DOWNLOAD SELECTED FILES
+  document
+    .getElementById("download_files_selected")
+    .addEventListener("click", () => {
+      var check1 = $("input[name=check_file]:checked");
+      var arr = [];
+      $.each(check1, function () {
+        arr.push($(this).next().find(".name_file_dir").val());
+      });
+
+      var json_arr = JSON.stringify(arr);
+
+      //Formar JSON con rutas de todos los ficheros seleccionados
+      window.location = encodeURI(
+        "./../api/download_select.php?files=" +
+          json_arr +
+          "&folder=" +
+          getPath()
+      );
+    });
+
+  // ADD SELECTED FILES TO FAVOURITE SELECT
+  document
+    .getElementById("favourite_files_selected")
+    .addEventListener("click", () => {
+      var check1 = $("input[name=check_file]:checked");
+      var arr = [];
+      $.each(check1, function () {
+        arr.push($(this).next().find(".name_file_dir").val());
+      });
+
+      var json_arr = JSON.stringify(arr);
+
+      //Formar JSON con rutas de todos los ficheros seleccionados
+      window.location = encodeURI(
+        "./../api/download_select.php?files=" +
+          json_arr +
+          "&folder=" +
+          getPath()
+      );
+    });
+
+  // DELETE SELECTED FILES
   document
     .getElementById("download_files_selected")
     .addEventListener("click", () => {

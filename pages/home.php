@@ -99,6 +99,12 @@
                   <li>
                     <i id="download_files_selected" class="fas fa-download"> Download</i>
                   </li>
+                  <li>
+                    <i id="favourite_files_selected" class="fas fa-star"> Favourite</i>
+                  </li>
+                  <li>
+                    <i id="delete_files_selected" class="fas fa-trash"> Delete</i>
+                  </li>
                 </ul>
               </div>
               <table class="table_files"><thead><tr><th>Name</th><th>File Size</th><th>Date</th></tr></thead></table>
