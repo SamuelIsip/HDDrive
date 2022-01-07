@@ -69,14 +69,16 @@ ul {
 
     @for $i from 0 to 6 {
       & li:nth-child(#{$i}) {
-        border-radius: 5px;
-        padding: 3px;
-        margin: 5px;
-        text-decoration: none;
-        color: #282a35;
-        :hover {
-          background-color: #fdfdfdcc;
-          cursor: pointer;
+        @if $i < 5 {
+          border-radius: 5px;
+          padding: 3px;
+          margin: 5px;
+          text-decoration: none;
+          color: #282a35;
+          :hover {
+            background-color: #fdfdfdcc;
+            cursor: pointer;
+          }
         }
         @if $i >= 5 {
           background-color: #0000008a;

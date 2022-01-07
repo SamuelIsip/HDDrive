@@ -291,17 +291,8 @@ ul li {
   cursor: pointer;
 }
 .files__add__select ul li:nth-child(5) {
-  border-radius: 5px;
-  padding: 3px;
-  margin: 5px;
-  text-decoration: none;
-  color: #282a35;
   background-color: #0000008a;
   color: #fff;
-}
-.files__add__select ul li:nth-child(5) :hover {
-  background-color: #fdfdfdcc;
-  cursor: pointer;
 }
 .files__add__select #back_dir {
   margin-right: 0.5rem;
