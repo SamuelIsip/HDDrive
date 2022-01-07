@@ -44,6 +44,8 @@ function menu_options_file(ruta) {
       options_file[i].appendChild(op);
     });
   }
+
+  addLogOutEvent();
 }
 function add_event_options(options) {
   var op_download = options.children[0],
@@ -104,4 +106,12 @@ function add_event_options(options) {
       },
     });
   });
+}
+
+function addLogOutEvent() {
+  document
+    .getElementsByClassName("user_log_out")[0]
+    .addEventListener("click", () => {
+      window.location = encodeURI("./../");
+    });
 }
