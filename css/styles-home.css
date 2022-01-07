@@ -50,6 +50,7 @@ nav ul li a i:hover {
 }
 #container_logout_profile .user_log_out:hover {
   cursor: pointer;
+  color: red;
 }
 #container_logout_profile .user_profile {
   width: 50px;
