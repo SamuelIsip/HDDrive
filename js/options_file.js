@@ -109,6 +109,7 @@ function add_event_options(options) {
 }
 
 function addLogOutEvent() {
+  sessionStorage.clear();
   document
     .getElementsByClassName("user_log_out")[0]
     .addEventListener("click", () => {
