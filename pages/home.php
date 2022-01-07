@@ -43,7 +43,10 @@
             </li>
           </ul>
         </nav>
-        <div>
+        <div id="container_logout_profile">
+          <div class="user_log_out">
+            <i class="fas fa-sign-out-alt"></i>
+          </div>
           <div class="user_profile">
             <img src="https://avatars.dicebear.com/api/initials/:seed.svg" alt="No User">
           </div>
