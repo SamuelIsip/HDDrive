@@ -235,69 +235,69 @@ ul li {
   border-radius: 0px 20px 20px 0px;
   box-shadow: 0.5px 1px 1px 0.5px black;
 }
-.files__add__select ul li:nth-child(1) {
+.files__add__select ul:nth-child(1) {
   border-radius: 5px;
   padding: 3px;
   margin: 5px;
   text-decoration: none;
   color: #282a35;
 }
-.files__add__select ul li:nth-child(1) :hover {
+.files__add__select ul:nth-child(1) :hover {
   background-color: #fdfdfdcc;
   cursor: pointer;
 }
-.files__add__select ul li:nth-child(2) {
+.files__add__select ul:nth-child(2) {
   border-radius: 5px;
   padding: 3px;
   margin: 5px;
   text-decoration: none;
   color: #282a35;
 }
-.files__add__select ul li:nth-child(2) :hover {
+.files__add__select ul:nth-child(2) :hover {
   background-color: #fdfdfdcc;
   cursor: pointer;
 }
-.files__add__select ul li:nth-child(3) {
+.files__add__select ul:nth-child(3) {
   border-radius: 5px;
   padding: 3px;
   margin: 5px;
   text-decoration: none;
   color: #282a35;
 }
-.files__add__select ul li:nth-child(3) :hover {
+.files__add__select ul:nth-child(3) :hover {
   background-color: #fdfdfdcc;
   cursor: pointer;
 }
-.files__add__select ul li:nth-child(4) {
+.files__add__select ul:nth-child(4) {
   border-radius: 5px;
   padding: 3px;
   margin: 5px;
   text-decoration: none;
   color: #282a35;
 }
-.files__add__select ul li:nth-child(4) :hover {
+.files__add__select ul:nth-child(4) :hover {
   background-color: #fdfdfdcc;
   cursor: pointer;
 }
-.files__add__select ul li:nth-child(5) {
+.files__add__select ul:nth-child(5) {
   border-radius: 5px;
   padding: 3px;
   margin: 5px;
   text-decoration: none;
   color: #fff;
 }
-.files__add__select ul li:nth-child(5) :hover {
+.files__add__select ul:nth-child(5) :hover {
   background-color: #0000008a;
   cursor: pointer;
 }
-.files__add__select ul li:nth-child(6) {
+.files__add__select ul:nth-child(6) {
   border-radius: 5px;
   padding: 3px;
   margin: 5px;
   text-decoration: none;
   color: #fff;
 }
-.files__add__select ul li:nth-child(6) :hover {
+.files__add__select ul:nth-child(6) :hover {
   background-color: #0000008a;
   cursor: pointer;
 }
