@@ -66,27 +66,30 @@ ul {
     border-right: 1px solid black;
     border-radius: 0px 20px 20px 0px;
     box-shadow: 0.5px 1px 1px 0.5px black;
-  }
 
-  @for $i from 1 to 7 {
-    & ul:nth-child(#{$i}) {
+    & li {
       border-radius: 5px;
       padding: 3px;
       margin: 5px;
       text-decoration: none;
+    }
+  }
+
+  @for $i from 1 through 7 {
+    & ul:nth-child(#{$i}) {
       @if $i < 5 {
         color: #282a35;
-        :hover {
+        /* &:hover {
           background-color: #fdfdfdcc;
           cursor: pointer;
-        }
+        } */
       }
       @if $i >= 5 {
         color: #fff;
-        :hover {
+        /* &:hover {
           background-color: #0000008a;
           cursor: pointer;
-        }
+        } */
       }
     }
   }
