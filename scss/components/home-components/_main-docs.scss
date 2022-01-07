@@ -77,17 +77,17 @@ ul {
       & li:nth-child(#{$i}) {
         @if $i < 5 {
           color: #282a35;
-          /* &:hover {
+          &:hover {
             background-color: #fdfdfdcc;
             cursor: pointer;
-          } */
+          }
         }
         @if $i >= 5 {
           color: #fff;
-          /* &:hover {
+          &:hover {
             background-color: #0000008a;
             cursor: pointer;
-          } */
+          }
         }
       }
     }

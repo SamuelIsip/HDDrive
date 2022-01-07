@@ -243,52 +243,52 @@ ul li {
 }
 .files__add__select ul li:nth-child(1) {
   color: #282a35;
-  /* &:hover {
-    background-color: #fdfdfdcc;
-    cursor: pointer;
-  } */
+}
+.files__add__select ul li:nth-child(1):hover {
+  background-color: #fdfdfdcc;
+  cursor: pointer;
 }
 .files__add__select ul li:nth-child(2) {
   color: #282a35;
-  /* &:hover {
-    background-color: #fdfdfdcc;
-    cursor: pointer;
-  } */
+}
+.files__add__select ul li:nth-child(2):hover {
+  background-color: #fdfdfdcc;
+  cursor: pointer;
 }
 .files__add__select ul li:nth-child(3) {
   color: #282a35;
-  /* &:hover {
-    background-color: #fdfdfdcc;
-    cursor: pointer;
-  } */
+}
+.files__add__select ul li:nth-child(3):hover {
+  background-color: #fdfdfdcc;
+  cursor: pointer;
 }
 .files__add__select ul li:nth-child(4) {
   color: #282a35;
-  /* &:hover {
-    background-color: #fdfdfdcc;
-    cursor: pointer;
-  } */
+}
+.files__add__select ul li:nth-child(4):hover {
+  background-color: #fdfdfdcc;
+  cursor: pointer;
 }
 .files__add__select ul li:nth-child(5) {
   color: #fff;
-  /* &:hover {
-    background-color: #0000008a;
-    cursor: pointer;
-  } */
+}
+.files__add__select ul li:nth-child(5):hover {
+  background-color: #0000008a;
+  cursor: pointer;
 }
 .files__add__select ul li:nth-child(6) {
   color: #fff;
-  /* &:hover {
-    background-color: #0000008a;
-    cursor: pointer;
-  } */
+}
+.files__add__select ul li:nth-child(6):hover {
+  background-color: #0000008a;
+  cursor: pointer;
 }
 .files__add__select ul li:nth-child(7) {
   color: #fff;
-  /* &:hover {
-    background-color: #0000008a;
-    cursor: pointer;
-  } */
+}
+.files__add__select ul li:nth-child(7):hover {
+  background-color: #0000008a;
+  cursor: pointer;
 }
 .files__add__select #back_dir {
   margin-right: 0.5rem;
