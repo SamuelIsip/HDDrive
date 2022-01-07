@@ -56,14 +56,23 @@ function load_events_add_select() {
     for (let i = 0; i < check_list.length; i++) {
       if (check_list[i].style.display === "none") {
         check_list[i].style.display = "inline-block";
-        $("#download_files_selected").css("display", "inline-block");
-        $("#favourite_files_selected").css("display", "inline-block");
-        $("#delete_files_selected").css("display", "inline-block");
+        $(".files__add__select ul li:nth-child(5)").css(
+          "display",
+          "inline-block"
+        );
+        $(".files__add__select ul li:nth-child(6)").css(
+          "display",
+          "inline-block"
+        );
+        $(".files__add__select ul li:nth-child(7)").css(
+          "display",
+          "inline-block"
+        );
       } else {
         check_list[i].style.display = "none";
-        $("#download_files_selected").css("display", "none");
-        $("#favourite_files_selected").css("display", "none");
-        $("#delete_files_selected").css("display", "none");
+        $(".files__add__select ul li:nth-child(5)").css("display", "none");
+        $(".files__add__select ul li:nth-child(6)").css("display", "none");
+        $(".files__add__select ul li:nth-child(7)").css("display", "none");
       }
     }
   });

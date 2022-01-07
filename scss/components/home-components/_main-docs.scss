@@ -11,12 +11,6 @@ ul {
   }
 }
 
-#download_files_selected,
-#favourite_files_selected,
-#delete_files_selected {
-  display: none;
-}
-
 .docs_header {
   background-color: #e7e9eb;
   padding: 0;
@@ -50,6 +44,18 @@ ul {
       & a i {
         font-size: 20px;
         color: #495057;
+      }
+    }
+  }
+}
+
+.files__add__select {
+  & ul {
+    @for $i from 1 through 7 {
+      & li:nth-child(#{$i}) {
+        @if $i >= 5 {
+          display: none;
+        }
       }
     }
   }
