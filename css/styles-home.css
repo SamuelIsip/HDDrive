@@ -235,17 +235,6 @@ ul li {
   border-radius: 0px 20px 20px 0px;
   box-shadow: 0.5px 1px 1px 0.5px black;
 }
-.files__add__select ul li:nth-child(0) {
-  border-radius: 5px;
-  padding: 3px;
-  margin: 5px;
-  text-decoration: none;
-  color: #282a35;
-}
-.files__add__select ul li:nth-child(0) :hover {
-  background-color: #fdfdfdcc;
-  cursor: pointer;
-}
 .files__add__select ul li:nth-child(1) {
   border-radius: 5px;
   padding: 3px;
@@ -291,8 +280,26 @@ ul li {
   cursor: pointer;
 }
 .files__add__select ul li:nth-child(5) {
-  background-color: #0000008a;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
   color: #fff;
+}
+.files__add__select ul li:nth-child(5) :hover {
+  background-color: #0000008a;
+  cursor: pointer;
+}
+.files__add__select ul li:nth-child(6) {
+  border-radius: 5px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+  color: #fff;
+}
+.files__add__select ul li:nth-child(6) :hover {
+  background-color: #0000008a;
+  cursor: pointer;
 }
 .files__add__select #back_dir {
   margin-right: 0.5rem;
