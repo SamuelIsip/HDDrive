@@ -8,19 +8,29 @@
     //Guardamos la ruta del fichero
     $filename = "./".$_POST['nameFile'];
 
-    //rrmdir($filename);
-
-   if(is_dir($filename)){
-        rrmdir($filename);
+    if(isset($_GET['files'])){
+      $arr_files = json_decode(urldecode($_GET['files']));
+      foreach ($arr_files as $file) { 
+        dropFilesAndDirectory($file);
+      }
+    }else{
+      dropFilesAndDirectory($filename);
     }
 
-    if(is_file($filename)){
+    function dropFilesAndDirectory($filename){
+      //rrmdir($filename);
+
+      if(is_dir($filename)){
+        rrmdir($filename);
+      }
+
+      if(is_file($filename)){
         if(file_exists($filename)){
             unlink($filename);
         }
-    } 
+      } 
 
-    function rrmdir($dir) { 
+      function rrmdir($dir) { 
         if (is_dir($dir)) { 
           $objects = scandir($dir);
           foreach ($objects as $object) { 
@@ -33,6 +43,7 @@
           }
           rmdir($dir); 
         } 
+      }
     }
 
 ?>
