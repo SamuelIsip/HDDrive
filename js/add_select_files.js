@@ -137,13 +137,12 @@ function load_events_add_select() {
       ); */
 
       const files_data = {
-        files = arr,
-        nameFile = getPath()
+        files: arr,
+        nameFile: getPath(),
       };
 
       console.log(JSON.stringify(files_data));
       deleteSelectFile(files_data);
-      
     });
 
   async function deleteSelectFile(files_data) {
