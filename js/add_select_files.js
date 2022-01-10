@@ -121,7 +121,7 @@ function load_events_add_select() {
 
   // DELETE SELECTED FILES
   document
-    .getElementById("download_files_selected")
+    .getElementById("delete_files_selected")
     .addEventListener("click", () => {
       var check1 = $("input[name=check_file]:checked");
       var arr = [];
