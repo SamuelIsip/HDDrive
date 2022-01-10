@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     if (response.ok) {
       const dataUsr = await response.json();
-      sessionStorage.setItem("userID", dataUsr.id_user);
-      sessionStorage.setItem("userName", dataUsr.name_user);
+      localStorage.setItem("userID", dataUsr.id_user);
+      localStorage.setItem("userName", dataUsr.name_user);
       window.location = encodeURI("./../HDDrive/pages/home.php");
     } else if (response.status == 409) {
       document.getElementById("logon_error_info").innerHTML =

@@ -67,7 +67,7 @@ function load_events_pages_menu() {
   });
 
   const regex = /initials.+/;
-  const userName = sessionStorage.getItem("userName");
+  const userName = localStorage.getItem("userName");
 
   // Foto de perfil
   document.getElementsByClassName("user_profile")[0].firstElementChild.src =

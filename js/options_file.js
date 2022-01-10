@@ -112,7 +112,8 @@ function addLogOutEvent() {
   document
     .getElementsByClassName("user_log_out")[0]
     .addEventListener("click", () => {
-      sessionStorage.clear();
+      localStorage.removeItem("userName");
+      localStorage.removeItem("userID");
       window.location = encodeURI("./../");
     });
 }

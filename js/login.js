@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     if (response.ok) {
       const dataUsr = await response.json();
-      sessionStorage.setItem("userName", dataUsr.nom_usr);
-      sessionStorage.setItem("userID", dataUsr.id_user);
+      localStorage.setItem("userName", dataUsr.nom_usr);
+      localStorage.setItem("userID", dataUsr.id_user);
       window.location = encodeURI("./../HDDrive/pages/home.php");
     } else {
       document.getElementById("login_email").style.border = "1px solid #ff0000";

@@ -1,6 +1,6 @@
 var ruta = "";
-const userName = sessionStorage.getItem("userName");
-const userID = sessionStorage.getItem("userID");
+const userName = localStorage.getItem("userName");
+const userID = localStorage.getItem("userID");
 
 function readDocuments() {
   var div_list = document.getElementsByClassName("table_files")[0];
