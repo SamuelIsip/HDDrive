@@ -12,14 +12,14 @@
     //Guardamos la ruta del fichero
     $filename = "./".$files_data['nameFile'];
 
-    if(isset($files_data['files'])){
-      $arr_files = json_decode(urldecode($files_data['files']));
+    //if(isset($files_data['files'])){
+      $arr_files = $files_data['files']);
       foreach ($arr_files as $file) { 
         dropFilesAndDirectory($file);
       }
-    }else{
+   /*  }else{
       dropFilesAndDirectory($filename);
-    }
+    } */
 
     function dropFilesAndDirectory($filename){
       //rrmdir($filename);
