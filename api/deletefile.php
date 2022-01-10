@@ -5,11 +5,15 @@
 
     chdir("./../../HDDriveHome/".$_SESSION['userName']);
 
-    //Guardamos la ruta del fichero
-    $filename = "./".$_POST['nameFile'];
+    $files_data = file_get_contents('php://input');
 
-    if(isset($_GET['files'])){
-      $arr_files = json_decode(urldecode($_GET['files']));
+    $files_data = json_decode($files_data,true);
+
+    //Guardamos la ruta del fichero
+    $filename = "./".$files_data['nameFile'];
+
+    if(isset($files_data['files'])){
+      $arr_files = json_decode(urldecode($files_data['files']));
       foreach ($arr_files as $file) { 
         dropFilesAndDirectory($file);
       }
@@ -46,4 +50,6 @@
         rmdir($dir); 
       } 
     }
+
+    exit;
 ?>

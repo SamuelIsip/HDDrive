@@ -129,13 +129,36 @@ function load_events_add_select() {
         arr.push($(this).next().find(".name_file_dir").val());
       });
 
-      var json_arr = JSON.stringify(arr);
+      /* var json_arr = JSON.stringify(arr); */
 
       //Formar JSON con rutas de todos los ficheros seleccionados
-      window.location = encodeURI(
+      /* window.location = encodeURI(
         "./../api/deletefile.php?files=" + json_arr + "&folder=" + getPath()
-      );
+      ); */
+
+      const files_data = {
+        files = arr,
+        nameFile = getPath()
+      };
+
+      console.log(JSON.stringify(files_data));
+      deleteSelectFile(files_data);
+      
     });
+
+  async function deleteSelectFile(files_data) {
+    const response = await fetch("./../api/deletefile.php", {
+      method: "POST",
+      cache: "no-cache",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(files_data),
+    });
+    if (response.ok) {
+      isDir(getPath());
+    } else {
+      console.log("Files cannot be deleted");
+    }
+  }
 
   // Funcionalidad para volver atrás en la página
   document.getElementById("back_dir").addEventListener("click", () => {
