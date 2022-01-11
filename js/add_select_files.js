@@ -116,7 +116,7 @@ function load_events_add_select() {
           ruta: getPath() + nameFolder,
         };
 
-        arrFiles.push(fileData);
+        arrFiles.push(JSON.stringify(fileData));
       });
 
       var json_arr = JSON.stringify(arrFiles);
