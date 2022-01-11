@@ -13,8 +13,7 @@
 
     foreach ($file_data as $file) { 
         $user_data = json_decode($file,true);
-        print_r($user_data);
-        //addToFavourite($user_data);
+        addToFavourite($user_data);
     }
 
     function addToFavourite($user_data){
