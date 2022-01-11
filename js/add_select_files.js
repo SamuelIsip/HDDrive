@@ -98,26 +98,48 @@ function load_events_add_select() {
       );
     });
 
-  // ADD SELECTED FILES TO FAVOURITE SELECT
+  // ADD SELECTED FILES TO FAVOURITE
   document
     .getElementById("favourite_files_selected")
     .addEventListener("click", () => {
       var check1 = $("input[name=check_file]:checked");
-      var arr = [];
+      var arrFiles = [];
       $.each(check1, function () {
-        arr.push($(this).next().find(".name_file_dir").val());
+        let nameFolder = $(this).next().find(".name_file_dir").val();
+        let size = $(this).next().find(".size_file").val();
+        let date = $(this).next().find(".date_file").val();
+
+        const fileData = {
+          name: nameFolder,
+          date: date,
+          size: size,
+          ruta: getPath() + nameFolder,
+        };
+
+        arrFiles.push(fileData);
       });
 
       var json_arr = JSON.stringify(arr);
 
-      //Formar JSON con rutas de todos los ficheros seleccionados
-      window.location = encodeURI(
-        "./../api/download_select.php?files=" +
-          json_arr +
-          "&folder=" +
-          getPath()
-      );
+      console.log(json_arr);
+
+      addToFavouriteFiles(json_arr);
     });
+
+  async function addToFavouriteFiles(json_arr) {
+    const response = await fetch("./../api/addfavorite.php", {
+      method: "POST",
+      cache: "no-cache",
+      headers: { "Content-Type": "application/json" },
+      body: json_arr,
+    });
+    if (response.ok) {
+      document.getElementById("notification_favourites").className =
+        "notification_on";
+    } else {
+      alert("Files cannot be added to favorites");
+    }
+  }
 
   // DELETE SELECTED FILES
   document
@@ -147,7 +169,7 @@ function load_events_add_select() {
     if (response.ok) {
       isDir(getPath());
     } else {
-      console.log("Files cannot be deleted");
+      alert("Files cannot be deleted");
     }
   }
 
