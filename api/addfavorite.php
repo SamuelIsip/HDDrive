@@ -13,10 +13,10 @@
 
     foreach ($file_data as $file) { 
         $user_data = json_decode($file,true);
-        addToFavourite($user_data);
+        addToFavourite($con,$user_data);
     }
 
-    function addToFavourite($user_data){
+    function addToFavourite($con,$user_data){
         //Definimos parametros de la consulta
         //La funcion solo admite variables
         $id_user = $_SESSION["userID"];
