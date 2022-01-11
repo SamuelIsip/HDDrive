@@ -119,7 +119,7 @@ function load_events_add_select() {
         arrFiles.push(fileData);
       });
 
-      var json_arr = JSON.stringify(arr);
+      var json_arr = JSON.stringify(arrFiles);
 
       console.log(json_arr);
 
