@@ -383,6 +383,9 @@ ul li {
   width: 20%;
   position: relative;
 }
+.docs_main .files table .fa-folder {
+  font-size: 26px;
+}
 
 .options_file:hover {
   cursor: pointer;

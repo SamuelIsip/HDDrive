@@ -54,7 +54,10 @@ function createList(doc, div_list) {
     if (nameDoc.isDirFile === "dir") {
       let i1 = document.createElement("i");
       i1.classList.add("fas");
-      i1.classList.add("fa-folder-open");
+      i1.classList.add("fa-folder");
+      i1.addEventListener("mouseover", () => {
+        i1.classList.toggle("fa-folder-open");
+      });
       td1.appendChild(i1);
       td1.addEventListener("click", () => {
         //Añadir ruta a la linea superior
