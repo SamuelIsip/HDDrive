@@ -95,10 +95,13 @@ function add_event_options(options) {
   });
 
   op_delete.addEventListener("click", () => {
+    var fileData = {
+      nameFile: getPath() + name_file_doc,
+    };
     $.ajax({
       type: "POST",
       url: "./../api/deletefile.php",
-      data: { nameFile: getPath() + name_file_doc },
+      data: JSON.stringify(fileData),
       dataType: "text",
       async: true,
       success: function () {

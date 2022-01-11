@@ -129,19 +129,11 @@ function load_events_add_select() {
         arr.push($(this).next().find(".name_file_dir").val());
       });
 
-      /* var json_arr = JSON.stringify(arr); */
-
-      //Formar JSON con rutas de todos los ficheros seleccionados
-      /* window.location = encodeURI(
-        "./../api/deletefile.php?files=" + json_arr + "&folder=" + getPath()
-      ); */
-
       const files_data = {
         files: arr,
         nameFile: getPath(),
       };
 
-      console.log(JSON.stringify(files_data));
       deleteSelectFile(files_data);
     });
 
