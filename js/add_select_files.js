@@ -106,8 +106,8 @@ function load_events_add_select() {
       var arrFiles = [];
       $.each(check1, function () {
         let nameFolder = $(this).next().find(".name_file_dir").val();
-        let size = $(this).next().find(".size_file").val();
-        let date = $(this).next().find(".date_file").val();
+        let size = $(this).next().find(".size_file").text();
+        let date = $(this).next().find(".date_file").text();
 
         const fileData = {
           name: nameFolder,
