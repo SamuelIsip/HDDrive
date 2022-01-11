@@ -55,7 +55,10 @@ function createList(doc, div_list) {
       let i1 = document.createElement("i");
       i1.classList.add("fas");
       i1.classList.add("fa-folder");
-      i1.addEventListener("mouseover", () => {
+      i1.addEventListener("mouseenter", () => {
+        i1.classList.toggle("fa-folder-open");
+      });
+      i1.addEventListener("mouseleave", () => {
         i1.classList.toggle("fa-folder-open");
       });
       td1.appendChild(i1);
