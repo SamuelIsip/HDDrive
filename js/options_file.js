@@ -81,9 +81,9 @@ function add_event_options(options) {
       date: date_file,
     };
 
-    var arrFiles = [];
-
-    arrFiles.push(JSON.stringify(userData));
+    // Array y json para compatibilidad con funciones de
+    // de selección múltiple de favoritos
+    var arrFiles = [JSON.stringify(userData)];
 
     var json_arr = JSON.stringify(arrFiles);
 
