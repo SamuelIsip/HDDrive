@@ -5,7 +5,7 @@
     session_name("userSession");
     session_start();
 
-    $file_data = json_decode($_POST["files"]);
+    $file_data = json_decode($_GET["files"]);
 
     $user_data = array();
 

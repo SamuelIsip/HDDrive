@@ -123,7 +123,9 @@ function load_events_add_select() {
 
       console.log(json_arr);
 
-      addToFavouriteFiles(json_arr);
+      window.location = encodeURI("./../api/addfavorite.php?files=" + json_arr);
+
+      //addToFavouriteFiles(json_arr);
     });
 
   async function addToFavouriteFiles(json_arr) {
