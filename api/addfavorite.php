@@ -12,8 +12,7 @@
         $user_data = json_decode($file,true);
         addToFavourite($con,$user_data);
     }
-
-    mysqli_close($con);
+    
 
     function addToFavourite($con,$user_data){
         //Definimos parametros de la consulta
@@ -46,9 +45,7 @@
                 if(mysqli_stmt_execute($stmt)){
                     //Liberamos recurso
                     mysqli_stmt_close($stmt);
-                    mysqli_close($con);
-                    http_response_code(200); 
-                    exit;
+                    
                 }else
                     http_response_code(500); 
             }
@@ -60,5 +57,9 @@
 
         
     }
+
+    mysqli_close($con);
+    http_response_code(200); 
+    exit;
 
 ?>
