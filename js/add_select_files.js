@@ -134,6 +134,8 @@ function load_events_add_select() {
       body: { files: json_arr },
     });
     if (response.ok) {
+      let resp = await response.json();
+      console.log(resp);
       document.getElementById("notification_favourites").className =
         "notification_on";
     } else {
