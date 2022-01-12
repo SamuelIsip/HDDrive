@@ -5,7 +5,7 @@
     session_name("userSession");
     session_start();
 
-    $file_data = json_decode($_GET["files"]);
+    $file_data = json_decode(file_get_contents('php://input'));
 
     
     foreach ($file_data as $file) { 

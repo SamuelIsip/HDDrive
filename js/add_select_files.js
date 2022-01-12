@@ -133,7 +133,7 @@ function load_events_add_select() {
       method: "POST",
       cache: "no-cache",
       headers: { "Content-Type": "application/json" },
-      body: { files: json_arr },
+      body: json_arr,
     });
     if (response.ok) {
       let resp = await response.json();
