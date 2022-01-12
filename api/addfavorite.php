@@ -13,6 +13,8 @@
         addToFavourite($con,$user_data);
     }
 
+    mysqli_close($con);
+
     function addToFavourite($con,$user_data){
         //Definimos parametros de la consulta
         //La funcion solo admite variables
@@ -56,7 +58,7 @@
         //Liberamos recurso
         mysqli_stmt_close($stmt);
 
-        mysqli_close($con);
+        
     }
 
 ?>
