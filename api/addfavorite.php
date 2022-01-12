@@ -7,7 +7,6 @@
 
     $file_data = json_decode(file_get_contents('php://input'));
 
-    
     foreach ($file_data as $file) { 
         $user_data = array();
         $user_data = json_decode($file,true);

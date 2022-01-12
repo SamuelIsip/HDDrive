@@ -121,10 +121,6 @@ function load_events_add_select() {
 
       var json_arr = JSON.stringify(arrFiles);
 
-      console.log(json_arr);
-
-      /* window.location = encodeURI("./../api/addfavorite.php?files=" + json_arr); */
-
       addToFavouriteFiles(json_arr);
     });
 
@@ -136,8 +132,6 @@ function load_events_add_select() {
       body: json_arr,
     });
     if (response.ok) {
-      let resp = await response.json();
-      console.log(resp);
       document.getElementById("notification_favourites").className =
         "notification_on";
     } else {
