@@ -7,9 +7,8 @@
 
     $file_data = json_decode($_GET["files"]);
 
-    $user_data = array();
-
     foreach ($file_data as $file) { 
+        $user_data = array();
         $user_data = json_decode($file,true);
         addToFavourite($con,$user_data);
     }
