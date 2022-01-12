@@ -7,12 +7,12 @@
 
     $file_data = json_decode($_GET["files"]);
 
+    
     foreach ($file_data as $file) { 
         $user_data = array();
         $user_data = json_decode($file,true);
         addToFavourite($con,$user_data);
     }
-    
 
     function addToFavourite($con,$user_data){
         //Definimos parametros de la consulta
@@ -45,21 +45,21 @@
                 if(mysqli_stmt_execute($stmt)){
                     //Liberamos recurso
                     mysqli_stmt_close($stmt);
-                    
-                }else
-                    http_response_code(500); 
+                }else{
+                    http_response_code(500);
+                     //Liberamos recurso
+                    mysqli_stmt_close($stmt);
+                }
             }
-        }else
+        }else{
             http_response_code(501); 
-        
-        //Liberamos recurso
-        mysqli_stmt_close($stmt);
+            //Liberamos recurso
+            mysqli_stmt_close($stmt);
+        }
 
-        
     }
-
+    
     mysqli_close($con);
     http_response_code(200); 
     exit;
-
 ?>
