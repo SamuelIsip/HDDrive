@@ -81,10 +81,16 @@ function add_event_options(options) {
       date: date_file,
     };
 
+    var arrFiles = [];
+
+    arrFiles.push(JSON.stringify(userData));
+
+    var json_arr = JSON.stringify(arrFiles);
+
     $.ajax({
       type: "POST",
       url: "./../api/addfavorite.php",
-      data: JSON.stringify(userData),
+      data: json_arr,
       contentType: "application/json",
       async: true,
       success: function () {
