@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   let email = document.getElementById("restoreEmail").value;
 
-  sendCode(email);
+  document.getElementById("btnSendCode").addEventListener(() => {
+    sendCode(email);
+  });
 
   async function sendCode(email) {
     const response = await fetch("./../HDDrive/api/sendRestoreCode.php", {
