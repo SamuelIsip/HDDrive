@@ -11,7 +11,7 @@
 
     $email = json_decode(file_get_contents('php://input'), true);
 
-    enviarEmail($email['emailJSON'], randomVerificationCode(10));
+    enviarEmail($email['emailJSON'], randomVerificationCode(10), $localHost, $localUsername, $localPassword, $localSMTPSecure, $localPort);
 
     // Función para enviar el mail con el código de confirmación
     function enviarEmail($email, $verificationCode, $localHost, $localUsername, $localPassword, $localSMTPSecure, $localPort){
