@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     var newConfirmationPass = document.getElementById(
       "restoreNewPasswordConfirmation"
     ).value;
+    var restorePassCodeByUser = document.getElementById("restoreCode").value;
+    //Comprobar si codigos son iguales
     sendDataToCheckAndRestorePass(restorePassCode, newPass, email);
   });
 
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     if (response.ok) {
       var code = await response.text();
-      console.log(resp);
+      console.log(code);
       document.getElementById("restoreCode").disabled = false;
       document.getElementById("restoreNewPassword").disabled = false;
       document.getElementById(
