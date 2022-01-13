@@ -1,5 +1,7 @@
 <?php
 
+    include_once("mailCredentials.php");
+
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
@@ -9,45 +11,45 @@
 
     $email = json_decode(file_get_contents('php://input'), true);
 
-    enviarEmail($email['emailJSON']);
+    enviarEmail($email['emailJSON'], randomVerificationCode(10));
 
-    function enviarEmail($email){
+    // Función para enviar el mail con el código de confirmación
+    function enviarEmail($email, $verificationCode){
 
-        //Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true);
 
         try {
             //Server settings
-            $mail->SMTPDebug = 2;                      //Enable verbose debug output
-            $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'samuel.isip62@gmail.com';                     //SMTP username
-            $mail->Password   = 'SecureMan2*112_S';                               //SMTP password
-            $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-            $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTP>
+            $mail->SMTPDebug = 2;                      
+            $mail->isSMTP();                                            
+            $mail->Host       = $localHost;                     
+            $mail->SMTPAuth   = true;                                   
+            $mail->Username   = $localUsername;                     
+            $mail->Password   = $localPassword;                               
+            $mail->SMTPSecure = $localSMTPSecure;            
+            $mail->Port       = $localPort;           
+            
             //Recipients
-            $mail->setFrom('samuel.isip62@gmail.com', 'Mailer');
-            $mail->addAddress($email, 'Mailer');     //Add a recipient
-            //$mail->addAddress('ellen@example.com');               //Name is optional
-            //$mail->addReplyTo('info@example.com', 'Information');
-            // $mail->addCC('cc@example.com');
-            // $mail->addBCC('bcc@example.com');
-
-            //Attachments
-            // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-            // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+            $mail->setFrom($localUsername, 'HDDriveSupport');
+            $mail->addAddress($email, 'HDDriveUser');     //mail que recibira el correo
 
             //Content
-            $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Prueba de correo desde php';
-            $mail->Body    = 'Soy Samuel. This is the HTML message body <b>in bold!</b>';
-            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+            $mail->isHTML(true);                                  
+            $mail->Subject = 'Password change code';
+            $mail->Body    = '<p>You are about to change your password.</p>
+            <p>Your <b>verification code</b> is: <b>'.$verificationCode.'</b></p>
+            <p>Please, insert this code in the password recovery page.</p>';
+            $mail->AltBody = 'You are about to change your password. Your *verification code* is: > '.$verificationCode.' < Please, insert this code in the password recovery page.';
 
             $mail->send();
-            echo 'Message has been sent';                                                                                       
+            
         } catch (Exception $e) {                  
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
+
+    function randomVerificationCode($stringLength) {
+        return substr(sha1(time()), 0, $stringLength);
+    }
+
 ?>
