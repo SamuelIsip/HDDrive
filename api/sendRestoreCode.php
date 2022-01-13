@@ -7,9 +7,9 @@
     require 'phpmailer/phpmailer/src/PHPMailer.php';
     require 'phpmailer/phpmailer/src/SMTP.php';
 
-    $email = json_decode(file_get_contents('php://input'));
-    echo $email;
-    //enviarEmail($email);
+    $email = json_decode(file_get_contents('php://input'), true);
+
+    enviarEmail($email['emailJSON']);
 
     function enviarEmail($email){
 
