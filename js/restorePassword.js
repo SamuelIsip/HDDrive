@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let email = document.getElementById("restoreEmail").value;
-
   document.getElementById("btnSendCode").addEventListener("click", () => {
-    sendCode(email);
+    var email = document.getElementById("restoreEmail").value;
+    const emailJson = { emailJSON: email };
+    sendCode(emailJson);
   });
 
-  async function sendCode(email) {
+  async function sendCode(emailJson) {
     const response = await fetch("./../api/sendRestoreCode.php", {
       method: "POST",
       cache: "no-cache",
       headers: { "Content-Type": "application/json" },
-      body: { emailUser: email },
+      body: JSON.stringify(emailJson),
     });
     if (response.ok) {
       let resp = await response.text();

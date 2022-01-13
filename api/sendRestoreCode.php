@@ -7,9 +7,9 @@
     require 'phpmailer/phpmailer/src/PHPMailer.php';
     require 'phpmailer/phpmailer/src/SMTP.php';
 
-    $email = $_POST['emailUser'];
-
-    enviarEmail($email);
+    $email = json_decode(file_get_contents('php://input'));
+    echo $email;
+    //enviarEmail($email);
 
     function enviarEmail($email){
 
@@ -46,7 +46,7 @@
 
             $mail->send();
             echo 'Message has been sent';                                                                                       
-        } catch (Exception $e) {                                                                                                    
+        } catch (Exception $e) {                  
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
