@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btnSendCode").addEventListener("click", () => {
     var email = document.getElementById("restoreEmail").value;
     const emailJson = { emailJSON: email };
-    sendCode(emailJson);
+    var code = await sendCode(emailJson);
+    console.log(code);
   });
 
   async function sendCode(emailJson) {
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify(emailJson),
     });
     if (response.ok) {
-      let resp = await response.text();
+      var resp = await response.text();
       console.log(resp);
       document.getElementById("restoreCode").disabled = false;
       document.getElementById("restoreNewPassword").disabled = false;
@@ -21,8 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "restoreNewPasswordConfirmation"
       ).disabled = false;
       document.getElementById("btnChangePass").disabled = false;
+      return code;
     } else {
       alert("The code could not be sent");
+      return 0;
     }
   }
 });

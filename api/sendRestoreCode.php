@@ -11,7 +11,11 @@
 
     $email = json_decode(file_get_contents('php://input'), true);
 
-    enviarEmail($email['emailJSON'], randomVerificationCode(10), $localHost, $localUsername, $localPassword, $localSMTPSecure, $localPort);
+    $code = randomVerificationCode(10);
+
+    enviarEmail($email['emailJSON'], $code, $localHost, $localUsername, $localPassword, $localSMTPSecure, $localPort);
+
+    echo $code;
 
     // Función para enviar el mail con el código de confirmación
     function enviarEmail($email, $verificationCode, $localHost, $localUsername, $localPassword, $localSMTPSecure, $localPort){
@@ -20,7 +24,7 @@
 
         try {
             //Server settings
-            $mail->SMTPDebug = 2;                      
+            $mail->SMTPDebug = 0;                      
             $mail->isSMTP();                                            
             $mail->Host       = $localHost;                     
             $mail->SMTPAuth   = true;                                   
@@ -48,6 +52,7 @@
         }
     }
 
+    //Función que genera el código random de verificación
     function randomVerificationCode($stringLength) {
         return substr(sha1(time()), 0, $stringLength);
     }
