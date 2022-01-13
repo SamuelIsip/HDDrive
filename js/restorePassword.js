@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btnSendCode").addEventListener("click", () => {
     var email = document.getElementById("restoreEmail").value;
     const emailJson = { emailJSON: email };
-    var code = await sendCode(emailJson);
+    var code = sendCode(emailJson);
     console.log(code);
   });
 
