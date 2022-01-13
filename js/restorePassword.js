@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   async function sendCode(email) {
-    const response = await fetch("./../HDDrive/api/sendRestoreCode.php", {
+    const response = await fetch("./../api/sendRestoreCode.php", {
       method: "POST",
       cache: "no-cache",
       headers: { "Content-Type": "application/json" },
