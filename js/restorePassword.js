@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let email = document.getElementById("restoreEmail").value;
 
-  document.getElementById("btnSendCode").addEventListener(() => {
+  document.getElementById("btnSendCode").addEventListener("click", () => {
     sendCode(email);
   });
 
