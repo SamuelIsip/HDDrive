@@ -58,8 +58,10 @@
         <div id="container_menu">
           <ul>
             <li><a id="documents_menu" href="#">All files</a></li>
-            <li><a href="#">Recent</a></li>
+            <li><a href="calendar_menu" href="#">Calendar</a></li>
+            <li><a href="images_menu" href="#">Images</a></li>
             <li><a id="favourites_menu" href="#">Favorites</a></li>
+            <li><a id="tasks_menu" href="#">Tasks</a></li>
           </ul>
         </div>
         <div id="container_docs">

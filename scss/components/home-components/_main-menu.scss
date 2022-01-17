@@ -21,7 +21,7 @@
       }
     }
 
-    @for $i from 1 to 4 {
+    @for $i from 1 to 6 {
       & li:nth-child(#{$i}) a::before {
         font-family: "Font Awesome 5 Free";
         display: inline-block;
@@ -32,9 +32,13 @@
         @if $i == 1 {
           content: "\f07b";
         } @else if $i == 2 {
-          content: "\f017";
+          content: "\f073";
         } @else if $i == 3 {
+          content: "\f302";
+        } @else if $i == 4 {
           content: "\f005";
+        } @else if $i == 5 {
+          content: "\f0ae";
         }
       }
       & li:nth-child(#{$i}):hover {

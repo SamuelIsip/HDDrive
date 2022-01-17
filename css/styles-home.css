@@ -144,7 +144,7 @@ input {
   padding-right: 10px;
   font-weight: 900;
   font-size: 20px;
-  content: "\f017";
+  content: "\f073";
 }
 #container_menu ul li:nth-child(2):hover {
   background-color: #04aa6d;
@@ -155,9 +155,31 @@ input {
   padding-right: 10px;
   font-weight: 900;
   font-size: 20px;
-  content: "\f005";
+  content: "\f302";
 }
 #container_menu ul li:nth-child(3):hover {
+  background-color: #04aa6d;
+}
+#container_menu ul li:nth-child(4) a::before {
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  padding-right: 10px;
+  font-weight: 900;
+  font-size: 20px;
+  content: "\f005";
+}
+#container_menu ul li:nth-child(4):hover {
+  background-color: #04aa6d;
+}
+#container_menu ul li:nth-child(5) a::before {
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  padding-right: 10px;
+  font-weight: 900;
+  font-size: 20px;
+  content: "\f0ae";
+}
+#container_menu ul li:nth-child(5):hover {
   background-color: #04aa6d;
 }
 #container_menu ul li:last-child div {
