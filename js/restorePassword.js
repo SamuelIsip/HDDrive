@@ -69,6 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify(dataUser),
     });
     if (response.ok) {
+      document.getElementById("restoreNewPassword").value = "";
+      document.getElementById("restoreNewPasswordConfirmation").value = "";
+      document.getElementById("restoreCode").value = "";
+      document.getElementById("restoreEmail").value = "";
     } else {
       alert("The password could not be changed");
     }
