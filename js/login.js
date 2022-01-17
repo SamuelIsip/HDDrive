@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function fetchLogIn(user_data) {
-    const response = await fetch("./../api/logInUser.php", {
+    const response = await fetch("./../HDDrive/api/logInUser.php", {
       method: "POST",
       cache: "no-cache",
       headers: { "Content-Type": "application/json" },

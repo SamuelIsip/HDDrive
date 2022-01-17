@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const d = new Date();
     d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
     let expires = "expires=" + d.toUTCString();
-    document.cookie = "userName=" + dataUsr.nom_usr + ";" + expires;
+    document.cookie = "userName=" + dataUsr.name_user + ";" + expires;
     document.cookie = "userID=" + dataUsr.id_user + ";" + expires;
   }
 
