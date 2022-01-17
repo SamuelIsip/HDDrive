@@ -1,6 +1,6 @@
 var ruta = "";
-const userName = localStorage.getItem("userName");
-const userID = localStorage.getItem("userID");
+var userName = localStorage.getItem("userName");
+var userID = localStorage.getItem("userID");
 
 if (userName == null || userID == null) {
   userName = getCookie("userName");
@@ -196,5 +196,5 @@ function getCookie(cname) {
       return c.substring(name.length, c.length);
     }
   }
-  return "";
+  return null;
 }
