@@ -106,6 +106,9 @@ input {
 }
 
 #container_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #2c2d3a;
   width: 20%;
   border-right: 1px solid #04aa6d;
@@ -186,6 +189,22 @@ input {
   margin-top: 90%;
   padding: 15px;
   color: white;
+}
+#container_menu #menu_footer {
+  color: white;
+  margin-bottom: 100 px;
+}
+#container_menu #menu_footer #menu_total_storage #storage_info {
+  text-align: center;
+}
+#container_menu #menu_footer #menu_logo #menu_logo_img {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  background-color: #ffffff40;
 }
 
 @media screen and (max-width: 768px) {

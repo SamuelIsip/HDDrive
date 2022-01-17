@@ -68,7 +68,9 @@
               <div id="storage_bar">-----------</div>
               <div id="storage_info"><p id="storage_number"></p> used of 32GB</div>
             </div>
-            <div id="menu_logo"><p>LOGO</p></div>
+            <div id="menu_logo">
+            <div id="menu_logo_img"></div>  
+            <p>HDDrive</p></div>
           </div>
         </div>
         <div id="container_docs">
