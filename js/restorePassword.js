@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   var restorePassCode = 0;
   var email = "";
 
-  document.getElementById("btnSendCode").addEventListener("click", () => {
+  document.getElementById("btnSendCode").addEventListener("click", async () => {
     email = document.getElementById("restoreEmail").value;
     const emailJson = { emailJSON: email };
-    restorePassCode = sendCode(emailJson);
+    restorePassCode = await sendCode(emailJson);
   });
 
   document.getElementById("btnChangePass").addEventListener("click", () => {
