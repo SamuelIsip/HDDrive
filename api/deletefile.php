@@ -1,5 +1,7 @@
 <?php
 
+    include_once("connectDB.php");
+
     session_name("userSession");
     session_start();
 
@@ -22,7 +24,6 @@
     } 
 
     function dropFilesAndDirectory($filename){
-      //rrmdir($filename);
 
       if(is_dir($filename)){
         rrmdir($filename);
@@ -31,6 +32,7 @@
       if(is_file($filename)){
         if(file_exists($filename)){
             unlink($filename);
+            dropFilesFromDB($filename);
         }
       } 
 
@@ -41,14 +43,34 @@
         $objects = scandir($dir);
         foreach ($objects as $object) { 
           if ($object != "." && $object != "..") { 
-            if (is_dir($dir. DIRECTORY_SEPARATOR .$object) && !is_link($dir."/".$object))
+            if (is_dir($dir. DIRECTORY_SEPARATOR .$object) && !is_link($dir."/".$object)){
               rrmdir($dir. DIRECTORY_SEPARATOR .$object);
-            else
+            }else{
               unlink($dir. DIRECTORY_SEPARATOR .$object); 
+              dropFilesFromDB($object);
+            }
           } 
         }
         rmdir($dir); 
       } 
+    }
+
+    function dropFilesFromDB($filename){
+      
+      $stmt = mysqli_prepare($con, "DELETE FROM folders WHERE name = ?");
+
+      mysqli_stmt_bind_param($stmt, "s", $filename);
+
+      if(mysqli_stmt_execute($stmt)){
+          
+          mysqli_stmt_store_result($stmt);
+
+          if(mysqli_stmt_affected_rows($stmt) == 1){
+              //Liberamos recurso
+              mysqli_stmt_close($stmt);
+              mysqli_close($con);
+          }
+      }
     }
 
     exit;

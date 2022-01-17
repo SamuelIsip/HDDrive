@@ -203,10 +203,11 @@ input {
   width: 100%;
   height: 5px;
   border: 1px solid #ffffff;
+  background-color: #fff;
 }
 #container_menu #menu_footer #menu_total_storage #storage_bar_container #storage_bar #storage_bar_fill {
   width: 40%;
-  background-color: #00ff00;
+  background-color: #04aa6d;
 }
 #container_menu #menu_footer #menu_total_storage #storage_info {
   text-align: center;
