@@ -44,7 +44,7 @@
         foreach ($objects as $object) { 
           if ($object != "." && $object != "..") { 
             if (is_dir($dir. DIRECTORY_SEPARATOR .$object) && !is_link($dir."/".$object)){
-              rrmdir($dir. DIRECTORY_SEPARATOR .$object);
+              rrmdir($dir. DIRECTORY_SEPARATOR .$object, $con);
             }else{
               unlink($dir. DIRECTORY_SEPARATOR .$object); 
               dropFilesFromDB($object, $con);
@@ -60,17 +60,10 @@
 
       $stmt = mysqli_prepare($con, "DELETE FROM folders WHERE name = ? AND id_user = ?");
 
-      mysqli_stmt_bind_param($stmt, "ss", $filename, $userId);
+      mysqli_stmt_bind_param($stmt, "si", $filename, $userId);
 
       if(mysqli_stmt_execute($stmt)){
-          
-          mysqli_stmt_store_result($stmt);
-
-          if(mysqli_stmt_affected_rows($stmt) == 1){
-              //Liberamos recurso
-              mysqli_stmt_close($stmt);
-          }
-      }
+        mysqli_stmt_close($stmt);
     }
 
     if($con)mysqli_close($con);
