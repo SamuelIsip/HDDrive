@@ -24,8 +24,10 @@
     } 
 
     function dropFilesAndDirectory($filename, $con){
+      echo $filename;
+      echo substr($filename, 2);
 
-      if(is_dir($filename)){
+      /* if(is_dir($filename)){
         rrmdir($filename, $con);
       }
 
@@ -34,7 +36,7 @@
             unlink($filename);
             dropFilesFromDB(substr($filename, 2), $con);
         }
-      } 
+      }  */
 
     }
     
@@ -68,5 +70,5 @@
 
     if($con)mysqli_close($con);
     
-    exit;
+   /*  exit; */
 ?>
