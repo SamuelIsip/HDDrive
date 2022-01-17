@@ -27,10 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
       removeErrorColor();
     }
 
-    //Validate de data of LogIn
+    //Validate data of LogIn
     if (validateLogIn(user_data) == false) {
       return false;
     }
+
+    console.log(user_data);
 
     //Send data to server
     fetchLogIn(user_data);
@@ -49,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("userName", dataUsr.nom_usr);
       localStorage.setItem("userID", dataUsr.id_user);
       //Cookies
-      setCookie();
+      setCookie(dataUsr);
       window.location = encodeURI("./../pages/home.php");
     } else {
       document.getElementById("login_email").style.border = "1px solid #ff0000";
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function setCookie() {
+  function setCookie(dataUsr) {
     const d = new Date();
     d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
     let expires = "expires=" + d.toUTCString();

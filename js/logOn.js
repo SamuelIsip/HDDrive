@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("userID", dataUsr.id_user);
       localStorage.setItem("userName", dataUsr.name_user);
       //Cookies
-      setCookie();
+      setCookie(dataUsr);
       window.location = encodeURI("./../HDDrive/pages/home.php");
     } else if (response.status == 409) {
       document.getElementById("logon_error_info").innerHTML =
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function setCookie() {
+  function setCookie(dataUsr) {
     const d = new Date();
     d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
     let expires = "expires=" + d.toUTCString();
