@@ -14,7 +14,7 @@
 
     mysqli_stmt_bind_param($stmt, "s", $email);
 
-    if(mysqli_stmt_execute($stmt)){
+    if(mysqli_stmt_execute($stmt) && (mysqli_stmt_affected_rows($stmt) == 1)){
         $stmt = mysqli_prepare($con, "UPDATE User SET password = ? WHERE email = ?");
         mysqli_stmt_bind_param($stmt, "ss", $newPass, $email);
         if(mysqli_stmt_execute($stmt)){
