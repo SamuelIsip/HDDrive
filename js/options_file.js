@@ -123,6 +123,12 @@ function addLogOutEvent() {
     .addEventListener("click", () => {
       localStorage.removeItem("userName");
       localStorage.removeItem("userID");
+      delete_cookie("userName");
+      delete_cookie("userID");
       window.location = encodeURI("./../");
     });
+}
+
+function delete_cookie(name) {
+  document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
