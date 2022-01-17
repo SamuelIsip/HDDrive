@@ -66,7 +66,7 @@
           <div id="menu_footer">
             <div id="menu_total_storage">
               <div id="storage_bar_container"><div id="storage_bar">
-                <div class="storage_bar_fill"></div>
+                <div id="storage_bar_fill"></div>
               </div></div>
               <div id="storage_info"><p id="storage_number"></p> used of 32GB</div>
             </div>
