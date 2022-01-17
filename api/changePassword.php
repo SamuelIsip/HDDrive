@@ -2,9 +2,7 @@
 
     include_once("connectDB.php");
 
-    $user_data = file_get_contents('php://input');
-
-    $user_data = json_decode($user_data,true);
+    $user_data = json_decode(file_get_contents('php://input'),true);
 
     $email = $user_data['email'];
     $newPass = password_hash($user_data['newPass'],PASSWORD_DEFAULT);

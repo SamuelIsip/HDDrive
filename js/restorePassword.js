@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   var restorePassCode = 0;
   var email = "";
 
   document.getElementById("btnSendCode").addEventListener("click", async () => {
-    email = document.getElementById("restoreEmail").value;
+    email = await document.getElementById("restoreEmail").value;
     const emailJson = { emailJSON: email };
     restorePassCode = await sendCode(emailJson);
   });
@@ -25,15 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    console.log(restorePassCodeByUser);
-    console.log(restorePassCode);
-
     //Comprobar si codigos son iguales
     if (restorePassCodeByUser != restorePassCode) {
       document.getElementById("restoreCode").style.border = "1px solid #ff0000";
       alert("The code is invalid!");
       return;
     }
+
+    console.log(email);
 
     sendDataToCheckAndRestorePass(newPass, email);
   });
@@ -47,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     if (response.ok) {
       var code = await response.text();
-      console.log(code);
       document.getElementById("restoreCode").disabled = false;
       document.getElementById("restoreNewPassword").disabled = false;
       document.getElementById(
@@ -66,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       newPass: newPass,
       email: email,
     };
+    console.log(email);
     const response = await fetch("./../api/changePassword.php", {
       method: "POST",
       cache: "no-cache",
