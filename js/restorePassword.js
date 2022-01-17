@@ -14,8 +14,25 @@ document.addEventListener("DOMContentLoaded", () => {
       "restoreNewPasswordConfirmation"
     ).value;
     var restorePassCodeByUser = document.getElementById("restoreCode").value;
+
+    //Comprobamos si pass son iguales
+    if (newPass != newConfirmationPass) {
+      document.getElementById("restoreNewPassword").style.border =
+        "1px solid #ff0000";
+      document.getElementById("restoreNewPasswordConfirmation").style.border =
+        "1px solid #ff0000";
+      alert("Passwords dont match!");
+      return;
+    }
+
     //Comprobar si codigos son iguales
-    sendDataToCheckAndRestorePass(restorePassCode, newPass, email);
+    if (restorePassCodeByUser != restorePassCode) {
+      document.getElementById("restoreCode").style.border = "1px solid #ff0000";
+      alert("The code is invalid!");
+      return;
+    }
+
+    sendDataToCheckAndRestorePass(newPass, email);
   });
 
   async function sendCode(emailJson) {
@@ -41,13 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  async function sendDataToCheckAndRestorePass(
-    restorePassCode,
-    newPass,
-    email
-  ) {
+  async function sendDataToCheckAndRestorePass(newPass, email) {
     const dataUser = {
-      restorePassCode: restorePassCode,
       newPass: newPass,
       email: email,
     };
