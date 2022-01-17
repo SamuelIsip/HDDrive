@@ -33,6 +33,9 @@
               <a href="#" id="calendar"><i class="fas fa-calendar-alt"></i></a>
             </li>
             <li>
+              <a href="#" id="images"><i class="far fa-images"></i></a>
+            </li>
+            <li>
               <div id="notification_favourites"></div>
               <a href="#" id="fav"><i class="fas fa-star"></i></a>
             </li>
