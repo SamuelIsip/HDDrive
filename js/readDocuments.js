@@ -2,6 +2,11 @@ var ruta = "";
 const userName = localStorage.getItem("userName");
 const userID = localStorage.getItem("userID");
 
+if (userName == null || userID == null) {
+  userName = document.getCookie("userName");
+  userID = document.getCookie("userID");
+}
+
 function readDocuments() {
   var div_list = document.getElementsByClassName("table_files")[0];
   $.ajax({
@@ -172,4 +177,20 @@ function deleteFileRecursive() {
   var div_list = document.getElementsByClassName("table_files")[0];
   if (div_list.hasChildNodes() && div_list.childElementCount > 1)
     div_list.removeChild(div_list.lastChild);
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
