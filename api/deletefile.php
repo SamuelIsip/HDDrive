@@ -1,7 +1,5 @@
 <?php
 
-    include_once("connectDB.php");
-
     session_name("userSession");
     session_start();
 
@@ -12,43 +10,40 @@
     $files_data = json_decode($files_data,true);
 
     //Guardamos la ruta del fichero
-    $fileDB = $files_data['nameFile'];
     $filename = "./".$files_data['nameFile'];
 
     if(isset($files_data['files'])){
       $arr_files = $files_data['files'];
       foreach ($arr_files as $file) { 
-        dropFilesAndDirectory($file, $con, $fileDB);
+        dropFilesAndDirectory($file);
       }
     }else{
-        dropFilesAndDirectory($filename, $con, $fileDB);
+      dropFilesAndDirectory($filename);
     } 
 
-    function dropFilesAndDirectory($filename, $con, $fileDB){
+    function dropFilesAndDirectory($filename){
 
       if(is_dir($filename)){
-        rrmdir($filename, $con);
+        rrmdir($filename);
       }
 
       if(is_file($filename)){
         if(file_exists($filename)){
             unlink($filename);
-            dropFilesFromDB($fileDB, $con);
         }
       } 
 
     }
     
-    function rrmdir($dir, $con) { 
+    function rrmdir($dir) { 
       if (is_dir($dir)) { 
         $objects = scandir($dir);
         foreach ($objects as $object) { 
           if ($object != "." && $object != "..") { 
             if (is_dir($dir. DIRECTORY_SEPARATOR .$object) && !is_link($dir."/".$object)){
-              rrmdir($dir. DIRECTORY_SEPARATOR .$object, $con);
+              rrmdir($dir. DIRECTORY_SEPARATOR .$object);
             }else{
               unlink($dir. DIRECTORY_SEPARATOR .$object); 
-              dropFilesFromDB($object, $con);
             }
           } 
         }
@@ -56,18 +51,5 @@
       } 
     }
 
-    function dropFilesFromDB($filename, $con){
-      $userId = $_SESSION["userID"];
-
-      $stmt = mysqli_prepare($con, "DELETE FROM folders WHERE name = ? AND id_user = ?");
-
-      mysqli_stmt_bind_param($stmt, "si", $filename, $userId);
-
-      if(mysqli_stmt_execute($stmt))
-        mysqli_stmt_close($stmt);
-    }
-
-    if($con)mysqli_close($con);
-    
     exit;
 ?>
