@@ -57,20 +57,30 @@
 
   & #menu_footer {
     color: white;
-    margin-bottom: 100 px;
+    margin-bottom: 100px;
 
     & #menu_total_storage #storage_info {
       text-align: center;
     }
 
-    & #menu_logo #menu_logo_img {
-      width: 40px;
-      height: 40px;
-      background-image: url("../img/logo.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-radius: 50%;
-      background-color: #ffffff40;
+    & #menu_logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      & #menu_logo_img {
+        width: 40px;
+        height: 40px;
+        background-image: url("../img/logo.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        background-color: #ffffff40;
+      }
+
+      & p {
+        font-size: 30px;
+        margin-left: 10 px;
+      }
     }
   }
 }

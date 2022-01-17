@@ -192,10 +192,15 @@ input {
 }
 #container_menu #menu_footer {
   color: white;
-  margin-bottom: 100 px;
+  margin-bottom: 100px;
 }
 #container_menu #menu_footer #menu_total_storage #storage_info {
   text-align: center;
+}
+#container_menu #menu_footer #menu_logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 #container_menu #menu_footer #menu_logo #menu_logo_img {
   width: 40px;
@@ -205,6 +210,10 @@ input {
   background-size: cover;
   border-radius: 50%;
   background-color: #ffffff40;
+}
+#container_menu #menu_footer #menu_logo p {
+  font-size: 30px;
+  margin-left: 10 px;
 }
 
 @media screen and (max-width: 768px) {
