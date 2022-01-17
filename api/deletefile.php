@@ -17,28 +17,28 @@
     if(isset($files_data['files'])){
       $arr_files = $files_data['files'];
       foreach ($arr_files as $file) { 
-        dropFilesAndDirectory($file);
+        dropFilesAndDirectory($file, $con);
       }
    }else{
-      dropFilesAndDirectory($filename);
+      dropFilesAndDirectory($filename, $con);
     } 
 
-    function dropFilesAndDirectory($filename){
+    function dropFilesAndDirectory($filename, $con){
 
       if(is_dir($filename)){
-        rrmdir($filename);
+        rrmdir($filename, $con);
       }
 
       if(is_file($filename)){
         if(file_exists($filename)){
             unlink($filename);
-            dropFilesFromDB($filename);
+            dropFilesFromDB($filename, $con);
         }
       } 
 
     }
     
-    function rrmdir($dir) { 
+    function rrmdir($dir, $con) { 
       if (is_dir($dir)) { 
         $objects = scandir($dir);
         foreach ($objects as $object) { 
@@ -47,7 +47,7 @@
               rrmdir($dir. DIRECTORY_SEPARATOR .$object);
             }else{
               unlink($dir. DIRECTORY_SEPARATOR .$object); 
-              dropFilesFromDB($object);
+              dropFilesFromDB($object, $con);
             }
           } 
         }
@@ -55,11 +55,12 @@
       } 
     }
 
-    function dropFilesFromDB($filename){
-      
-      $stmt = mysqli_prepare($con, "DELETE FROM folders WHERE name = ?");
+    function dropFilesFromDB($filename, $con){
+      $userId = $_SESSION["userID"];
 
-      mysqli_stmt_bind_param($stmt, "s", $filename);
+      $stmt = mysqli_prepare($con, "DELETE FROM folders WHERE name = ? AND id_user = ?");
+
+      mysqli_stmt_bind_param($stmt, "ss", $filename, $userId);
 
       if(mysqli_stmt_execute($stmt)){
           
@@ -68,10 +69,11 @@
           if(mysqli_stmt_affected_rows($stmt) == 1){
               //Liberamos recurso
               mysqli_stmt_close($stmt);
-              mysqli_close($con);
           }
       }
     }
 
+    if($con)mysqli_close($con);
+    
     exit;
 ?>

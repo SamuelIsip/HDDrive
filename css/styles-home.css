@@ -206,6 +206,7 @@ input {
   background-color: #fff;
 }
 #container_menu #menu_footer #menu_total_storage #storage_bar_container #storage_bar #storage_bar_fill {
+  height: 5px;
   width: 40%;
   background-color: #04aa6d;
 }
