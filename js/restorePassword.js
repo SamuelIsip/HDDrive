@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
   var restorePassCode = 0;
   var email = "";
 
   document.getElementById("btnSendCode").addEventListener("click", async () => {
-    email = await document.getElementById("restoreEmail").value;
+    email = document.getElementById("restoreEmail").value;
     const emailJson = { emailJSON: email };
     restorePassCode = await sendCode(emailJson);
   });
