@@ -24,19 +24,17 @@
     } 
 
     function dropFilesAndDirectory($filename, $con){
-      
-      echo $filename."--".substr($filename, 2);
 
-      /* if(is_dir($filename)){
+      if(is_dir($filename)){
         rrmdir($filename, $con);
       }
 
       if(is_file($filename)){
         if(file_exists($filename)){
             unlink($filename);
-            dropFilesFromDB(substr($filename, 2), $con);
+            dropFilesFromDB(substr($filename, 3), $con);
         }
-      }  */
+      } 
 
     }
     
@@ -70,5 +68,5 @@
 
     if($con)mysqli_close($con);
     
-   /*  exit; */
+    exit;
 ?>

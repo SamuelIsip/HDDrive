@@ -110,8 +110,8 @@ function add_event_options(options) {
       data: JSON.stringify(fileData),
       dataType: "text",
       async: true,
-      success: function (eco) {
-        console.log(eco);
+      success: function () {
+        isDir(getPath());
       },
     });
   });
