@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    console.log(restorePassCodeByUser);
+    console.log(restorePassCode);
+
     //Comprobar si codigos son iguales
     if (restorePassCodeByUser != restorePassCode) {
       document.getElementById("restoreCode").style.border = "1px solid #ff0000";
