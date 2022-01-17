@@ -189,25 +189,24 @@ input {
 #container_menu ul li:last-child div {
   margin-top: 90%;
   padding: 15px;
-  color: white;
+  color: #ffffff;
 }
 #container_menu #menu_footer {
-  color: white;
+  color: #ffffff;
   margin-bottom: 100px;
 }
 #container_menu #menu_footer #menu_total_storage #storage_bar_container {
-  width: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
+  width: 90%;
+  margin: auto;
 }
 #container_menu #menu_footer #menu_total_storage #storage_bar_container #storage_bar {
   width: 100%;
   height: 5px;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
 }
 #container_menu #menu_footer #menu_total_storage #storage_bar_container #storage_bar #storage_bar_fill {
   width: 40%;
-  background-color: red;
+  background-color: #00ff00;
 }
 #container_menu #menu_footer #menu_total_storage #storage_info {
   text-align: center;
