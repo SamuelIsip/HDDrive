@@ -4,15 +4,22 @@
 
     //$user_data = file_get_contents('php://input');
 
-//$user_data = json_decode($user_data,true);
+    //$user_data = json_decode($user_data,true);
 
     //Consultar si ese usuario existe
-    $result = mysqli_query($con, "SELECT email FROM User WHERE email = '$user_data['email']'");
+    $email = $_GET[['email'];
+    $newPass = password_hash($_GET['newPass'],PASSWORD_DEFAULT);
 
-    if(mysqli_num_rows($result) == 1){
-        $newPass = password_hash($_GET['newPass'],PASSWORD_DEFAULT);
-        $result = mysqli_query($con, "UPDATE User SET password = '$newPass' WHERE email = '$_GET['email']'");
-        if(mysqli_num_rows($result) == 1){
+    $stmt = mysqli_prepare($con, "SELECT email FROM User WHERE email = ?");
+
+    mysqli_stmt_bind_param($stmt, "s", $email);
+
+    if(mysqli_stmt_execute($stmt)){
+        $stmt = mysqli_prepare($con, "UPDATE User SET password = ? WHERE email = ?");
+        mysqli_stmt_bind_param($stmt, "ss", $newPass, $email);
+        if(mysqli_stmt_execute($stmt)){
+            //Liberamos recurso
+            mysqli_stmt_close($stmt);
             mysqli_close($con);
             http_response_code(200);
             echo "Updated password successfully!";
@@ -21,6 +28,8 @@
         echo "User does not exist!";
     }
 
+    //Liberamos recurso
+    mysqli_stmt_close($stmt);
     mysqli_close($con);
     http_response_code(500);
 
