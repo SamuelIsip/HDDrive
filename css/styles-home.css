@@ -213,7 +213,7 @@ input {
 }
 #container_menu #menu_footer #menu_logo p {
   font-size: 30px;
-  margin-left: 10 px;
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 768px) {
