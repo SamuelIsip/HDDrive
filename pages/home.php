@@ -63,6 +63,13 @@
             <li><a id="favourites_menu" href="#">Favorites</a></li>
             <li><a id="tasks_menu" href="#">Tasks</a></li>
           </ul>
+          <div id="menu_footer">
+            <div id="menu_total_storage">
+              <div id="storage_bar">-----------</div>
+              <div id="storage_info"><p id="storage_number"></p> used of 32GB</div>
+            </div>
+            <div id="menu_logo"><p>LOGO</p></div>
+          </div>
         </div>
         <div id="container_docs">
           <div class="docs_header">
