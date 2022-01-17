@@ -2,14 +2,16 @@ var ruta = "";
 var userName = localStorage.getItem("userName");
 var userID = localStorage.getItem("userID");
 
-if (userName == null || userID == null) {
+if (userName === null || userID === null) {
   userName = getCookie("userName");
   userID = getCookie("userID");
-  localStorage.setItem("userName", userName);
-  localStorage.setItem("userID", userID);
+  if (userName !== null || userID !== null) {
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("userID", userID);
+  }
 }
 
-if (userName == null || userID == null) {
+if (userName === null || userID === null) {
   window.location = encodeURI("./../");
 }
 
