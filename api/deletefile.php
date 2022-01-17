@@ -12,18 +12,19 @@
     $files_data = json_decode($files_data,true);
 
     //Guardamos la ruta del fichero
+    $fileDB = $files_data['nameFile'];
     $filename = "./".$files_data['nameFile'];
 
     if(isset($files_data['files'])){
       $arr_files = $files_data['files'];
       foreach ($arr_files as $file) { 
-        dropFilesAndDirectory($file, $con);
+        dropFilesAndDirectory($file, $con, $fileDB);
       }
-   }else{
-      dropFilesAndDirectory($filename, $con);
+    }else{
+        dropFilesAndDirectory($filename, $con, $fileDB);
     } 
 
-    function dropFilesAndDirectory($filename, $con){
+    function dropFilesAndDirectory($filename, $con, $fileDB){
 
       if(is_dir($filename)){
         rrmdir($filename, $con);
@@ -32,7 +33,7 @@
       if(is_file($filename)){
         if(file_exists($filename)){
             unlink($filename);
-            dropFilesFromDB($filename, $con);
+            dropFilesFromDB($fileDB, $con);
         }
       } 
 
