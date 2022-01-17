@@ -44,10 +44,9 @@ function load_events_pages_menu() {
   // Menu Lateral
   $("#documents_menu").on("click", () => {
     $("#container_docs").css("display", "flex");
-    $("#container_calendar, #container_favourites, #container_tasks").css(
-      "display",
-      "none"
-    );
+    $(
+      "#container_calendar, #container_favourites, #container_tasks, #container_images"
+    ).css("display", "none");
 
     // Remove the table, to reload files of index
     deleteFileRecursive();
@@ -55,15 +54,39 @@ function load_events_pages_menu() {
     resetLinkHead();
   });
 
+  $("#calendar_menu").on("click", () => {
+    $("#container_calendar").css("display", "flex");
+    $(
+      "#container_docs, #container_favourites, #container_tasks, #container_images"
+    ).css("display", "none");
+  });
+
+  $("#images_menu").on("click", () => {
+    $("#container_images").css("display", "flex");
+    $(
+      "#container_docs, #container_favourites, #container_tasks, #container_calendar"
+    ).css("display", "none");
+  });
+
   $("#favourites_menu").on("click", () => {
     $("#container_favourites").css("display", "flex");
-    $("#container_calendar, #container_docs, #container_tasks").css(
-      "display",
-      "none"
-    );
+    $(
+      "#container_images, #container_calendar, #container_docs, #container_tasks"
+    ).css("display", "none");
 
     // Remove the table, to reload files of index
     document.getElementById("favourites").contentWindow.load_favourites();
+  });
+
+  $("#tasks_menu").on("click", () => {
+    // Notifications after task has been saved
+    $("#notification_task")
+      .removeClass("notification_on")
+      .addClass("notification_off");
+    $("#container_tasks").css("display", "flex");
+    $(
+      "#container_docs, #container_calendar, #container_images, #container_favourites"
+    ).css("display", "none");
   });
 
   const regex = /initials.+/;

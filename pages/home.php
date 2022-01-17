@@ -118,6 +118,9 @@
         <div id="container_calendar">
           <div><iframe id="calendar" src="./calendar.php" frameborder="0"></iframe></div>
         </div>
+        <div id="container_images">
+          <div><iframe id="images" src="./images.html" frameborder="0"></iframe></div>
+        </div>
         <div id="container_favourites">
           <div><iframe id="favourites" src="./favourites.html" frameborder="0"></iframe></div>
         </div>
