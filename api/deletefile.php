@@ -24,8 +24,8 @@
     } 
 
     function dropFilesAndDirectory($filename, $con){
-      echo $filename;
-      echo substr($filename, 2);
+      
+      echo $filename."--".substr($filename, 2);
 
       /* if(is_dir($filename)){
         rrmdir($filename, $con);
