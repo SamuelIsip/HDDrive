@@ -62,7 +62,7 @@
 
       mysqli_stmt_bind_param($stmt, "si", $filename, $userId);
 
-      if(mysqli_stmt_execute($stmt)){
+      if(mysqli_stmt_execute($stmt))
         mysqli_stmt_close($stmt);
     }
 
