@@ -12,23 +12,28 @@
 
     mysqli_stmt_bind_param($stmt, "s", $email);
 
-    mysqli_stmt_store_result($stmt);
-
-    if(mysqli_stmt_execute($stmt) && (mysqli_stmt_affected_rows($stmt) == 1)){
-        //Liberamos recurso
-        mysqli_stmt_close($stmt);
+    
+    if(mysqli_stmt_execute($stmt)){
         
-        //Actualizar contraseña
-        $stmt = mysqli_prepare($con, "UPDATE User SET password = ? WHERE email = ?");
-        mysqli_stmt_bind_param($stmt, "ss", $newPass, $email);
+        mysqli_stmt_store_result($stmt);
 
-        if(mysqli_stmt_execute($stmt)){
-            http_response_code(200);
-            cerrarConexiones($con, $stmt);
-        }else{
-            http_response_code(500); //Error al actualizar
-            cerrarConexiones($con, $stmt);
+        if(mysqli_stmt_affected_rows($stmt) == 1){
+            //Liberamos recurso
+            mysqli_stmt_close($stmt);
+                    
+            //Actualizar contraseña
+            $stmt = mysqli_prepare($con, "UPDATE User SET password = ? WHERE email = ?");
+            mysqli_stmt_bind_param($stmt, "ss", $newPass, $email);
+
+            if(mysqli_stmt_execute($stmt)){
+                http_response_code(200);
+                cerrarConexiones($con, $stmt);
+            }else{
+                http_response_code(500); //Error al actualizar
+                cerrarConexiones($con, $stmt);
+            }
         }
+        
     }else{
         http_response_code(404); //Email no encontrado
         cerrarConexiones($con, $stmt);

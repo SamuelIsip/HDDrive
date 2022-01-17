@@ -32,8 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    console.log(email);
-
     sendDataToCheckAndRestorePass(newPass, email);
   });
 
@@ -64,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
       newPass: newPass,
       email: email,
     };
-    console.log(email);
     const response = await fetch("./../api/changePassword.php", {
       method: "POST",
       cache: "no-cache",
