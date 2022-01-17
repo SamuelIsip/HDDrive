@@ -3,8 +3,12 @@ const userName = localStorage.getItem("userName");
 const userID = localStorage.getItem("userID");
 
 if (userName == null || userID == null) {
-  userName = document.getCookie("userName");
-  userID = document.getCookie("userID");
+  userName = getCookie("userName");
+  userID = getCookie("userID");
+}
+
+if (userName == null || userID == null) {
+  window.location = encodeURI("./../");
 }
 
 function readDocuments() {

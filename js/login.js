@@ -32,8 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return false;
     }
 
-    console.log(user_data);
-
     //Send data to server
     fetchLogIn(user_data);
   }
