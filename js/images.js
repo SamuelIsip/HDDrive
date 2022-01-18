@@ -86,6 +86,7 @@ $(function () {
       dataType: "json",
       async: true,
       success: (images) => {
+        console.log(images);
         createGalleryDOMelements(images);
       },
     });
