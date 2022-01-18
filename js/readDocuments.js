@@ -202,3 +202,17 @@ function getCookie(cname) {
   }
   return null;
 }
+
+function calculateTotalStorage() {
+  $.ajax({
+    url: "./../api/getAllStorage.php",
+    type: "GET",
+    dataType: "json",
+    async: true,
+    success: (responseText) => {
+      JSON.parse(responseText).storage.forEach((t) => {
+        console.log(t.size);
+      });
+    },
+  });
+}
