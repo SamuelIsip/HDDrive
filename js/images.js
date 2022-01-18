@@ -5,7 +5,6 @@ $(function () {
     .getElementById("add_image")
     .parentElement.addEventListener("change", () => {
       var form_data = new FormData();
-      form_data.append("rutaDir", getPath());
       var ins = document.getElementById("add_image").files.length;
       for (var x = 0; x < ins; x++) {
         form_data.append(
