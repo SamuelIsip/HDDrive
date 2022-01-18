@@ -1,6 +1,6 @@
 let modalId = document.querySelector("#image-gallery");
 
-document.querySelector(document).ready(function () {
+document.addEventListener("DOMContentLoaded", () => {
   loadGallery(true, "a.thumbnail");
 
   //This function disables buttons when needed
@@ -62,8 +62,8 @@ document.querySelector(document).ready(function () {
 });
 
 // build key actions
-document.querySelector(document).keydown(function (e) {
-  switch (e.which) {
+document.addEventListener("keydown", function (e) {
+  switch (e.key) {
     case 37: // left
       if (
         (modalId.data("bs.modal") || {})._isShown &&
