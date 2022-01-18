@@ -68,7 +68,7 @@
               <div id="storage_bar_container"><div id="storage_bar">
                 <div id="storage_bar_fill"></div>
               </div></div>
-              <div id="storage_info"><p id="storage_number"></p> used of 32GB</div>
+              <div id="storage_info"><p id="storage_number"></p> used of 5GB</div>
             </div>
             <div id="menu_logo">
             <div id="menu_logo_img"></div>  
