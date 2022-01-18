@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (setIDs == true) {
-      document.querySelector("[data-image-id]").each(function () {
+      document.querySelector("[data-image-id]").forEach(function () {
         counter++;
         document.querySelector(this).attr("data-image-id", counter);
       });
