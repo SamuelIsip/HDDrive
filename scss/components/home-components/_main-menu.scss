@@ -90,6 +90,7 @@
     & #menu_logo {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       & #menu_logo_img {

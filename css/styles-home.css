@@ -219,6 +219,7 @@ input {
 #container_menu #menu_footer #menu_logo {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
