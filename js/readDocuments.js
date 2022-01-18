@@ -214,7 +214,7 @@ function calculateTotalStorage() {
       responseText.storage.forEach((t) => {
         let size_string = t.size;
         let position = size_string.search(" ");
-        let tipo = size_string.substr(position, size_string.length);
+        let tipo = size_string.substr(position, size_string.length).trim();
         let number = parseInt(size_string.substr(0, position));
         if (tipo == "bytes") {
           number_size += number / 1048000;
