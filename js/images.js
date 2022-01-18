@@ -1,6 +1,6 @@
 let modalId = $("#image-gallery");
 
-jQuery(function () {
+$(document).ready(function () {
   loadGallery(true, "a.thumbnail");
 
   //This function disables buttons when needed
@@ -56,7 +56,7 @@ jQuery(function () {
 });
 
 // build key actions
-$(document).on("keydown", function (e) {
+$(document).keydown(function (e) {
   switch (e.which) {
     case 37: // left
       if (
