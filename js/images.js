@@ -3,7 +3,7 @@ let modalId = $("#image-gallery");
 $(function () {
   loadImagesFromDB();
 
-  loadGallery(false, "a.thumbnail");
+  loadGallery(true, "a.thumbnail");
 
   //This function disables buttons when needed
   function disableButtons(counter_max, counter_current) {
@@ -98,7 +98,7 @@ $(function () {
       var $a = $("<a>", {
         href: "#",
         class: "thumbnail",
-        "data-image-id": image.idPhoto,
+        "data-image-id": "",
         "data-toggle": "modal",
         "data-title": image.name,
         "data-image":
