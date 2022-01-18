@@ -25,12 +25,12 @@ function readDocuments() {
     async: true,
     success: (doc) => {
       createList(doc, div_list);
-      calculateTotalStorage();
     },
   });
 }
 
 function createList(doc, div_list) {
+  calculateTotalStorage();
   var count = 0;
 
   var tbody = document.createElement("tbody");
