@@ -1,25 +1,30 @@
 let modalId = $("#image-gallery");
 
 $(function () {
-  $("#add_file").parent.on("change", () => {
-    var form_data = new FormData();
-    form_data.append("rutaDir", getPath());
-    var ins = $("#add_file").files.length;
-    for (var x = 0; x < ins; x++) {
-      form_data.append("file[]", $("#add_file").files[x]);
-    }
-    $.ajax({
-      url: "./../api/uploadImage.php",
-      type: "POST",
-      dataType: "text",
-      cache: false,
-      contentType: false,
-      processData: false,
-      data: form_data,
-      async: true,
-      success: function () {},
+  document
+    .getElementById("add_image")
+    .parentElement.addEventListener("change", () => {
+      var form_data = new FormData();
+      form_data.append("rutaDir", getPath());
+      var ins = document.getElementById("add_image").files.length;
+      for (var x = 0; x < ins; x++) {
+        form_data.append(
+          "file[]",
+          document.getElementById("add_image").files[x]
+        );
+      }
+      $.ajax({
+        url: "./../api/uploadImage.php",
+        type: "POST",
+        dataType: "text",
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        async: true,
+        success: function () {},
+      });
     });
-  });
 
   loadGallery(true, "a.thumbnail");
 
