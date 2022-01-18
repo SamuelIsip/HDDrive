@@ -83,6 +83,7 @@ $(function () {
     $.ajax({
       url: "./../api/readImages.php",
       type: "GET",
+      dataType: "json",
       async: true,
       success: (images) => {
         createGalleryDOMelements(images);
