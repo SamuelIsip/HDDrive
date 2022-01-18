@@ -61,7 +61,7 @@
         if(!is_dir("./../../HDDriveHome/".$user_data["name_user"])){
             mkdir("./../../HDDriveHome/".$user_data["name_user"],0777);
             mkdir("./../../HDDriveHome/".$user_data["name_user"]."/".$user_data["name_user"],0777);
-            mkdir("./../../HDDriveHome/UserImage/".$user_data["name_user"],0777);
+            mkdir("./../../HDDriveHome/UserImages/".$user_data["name_user"],0777);
         }
          //Liberamos recurso
         mysqli_stmt_close($stmt);

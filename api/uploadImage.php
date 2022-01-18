@@ -7,9 +7,9 @@
 
     for ($i = 0; $i < $count; $i++) {
 
-        move_uploaded_file($_FILES['file']['tmp_name'][$i], "./../../HDDriveHome/UserImage/".$_SESSION['userName']."/".$_FILES['file']['name'][$i]);
+        move_uploaded_file($_FILES['file']['tmp_name'][$i], "./../../HDDriveHome/UserImages/".$_SESSION['userName']."/".$_FILES['file']['name'][$i]);
 
-        chdir("./../../HDDriveHome/UserImage/".$_SESSION['userName']);
+        chdir("./../../HDDriveHome/UserImages/".$_SESSION['userName']);
 
         $value = $_FILES['file']['name'][$i];
 
