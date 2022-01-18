@@ -495,8 +495,18 @@ ul li {
   }
 }
 #container_images {
-  width: 100%;
   display: none;
+  width: 100%;
+  height: 100%;
+}
+#container_images div {
+  width: 100%;
+  height: 100%;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
 }
 
 #container_calendar {
