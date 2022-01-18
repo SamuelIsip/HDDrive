@@ -5,7 +5,7 @@
     session_start();
 
     //Seleccionamos datos de la BD
-    $result = mysqli_prepare($con, "SELECT id_photo, name, path, size, date FROM favorites WHERE id_user=?");
+    $result = mysqli_prepare($con, "SELECT id_photo, name, path, size, date FROM photos WHERE id_user=?");
 
     $usrID = $_SESSION["userID"];
 
