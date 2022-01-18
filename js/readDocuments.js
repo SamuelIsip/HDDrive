@@ -210,9 +210,10 @@ function calculateTotalStorage() {
     dataType: "json",
     async: true,
     success: (responseText) => {
-      JSON.parse(responseText).storage.forEach((t) => {
+      console.log(JSON.parse(responseText));
+      /* JSON.parse(responseText).storage.forEach((t) => {
         console.log(t.size);
-      });
+      }); */
     },
   });
 }
