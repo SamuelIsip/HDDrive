@@ -13,14 +13,14 @@
 
     mysqli_stmt_execute($result);
 
-    mysqli_stmt_bind_result($result, $id_user, $name, $path, $size, $date);
+    mysqli_stmt_bind_result($result, $id_photo, $name, $path, $size, $date);
    
     $arr1 = array();
     $arr1["images"]=array();
 
     while(mysqli_stmt_fetch($result)){
         $arr2=array(
-            "idUser"=> $id_user,
+            "idPhoto"=> $id_photo,
             "name"=> $name,
             "path"=> $path,
             "size"=> $size,

@@ -98,9 +98,9 @@ $(function () {
       var $a = $("<a>", {
         href: "#",
         class: "thumbnail",
-        "data-image-id": "",
+        "data-image-id": image.idPhoto,
         "data-toggle": "modal",
-        "data-title": "",
+        "data-title": image.name,
         "data-image":
           "./../../HDDriveHome/UserImages/" +
           image.path +
