@@ -210,10 +210,24 @@ function calculateTotalStorage() {
     dataType: "json",
     async: true,
     success: (responseText) => {
-      console.log(JSON.parse(responseText));
-      /* JSON.parse(responseText).storage.forEach((t) => {
-        console.log(t.size);
-      }); */
+      var number_size = 0;
+      responseText.storage.forEach((t) => {
+        let size_string = t.size;
+        let position = size_string.search(" ");
+        let tipo = size_string.substr(position, size_string.length);
+        let number = parseInt(size_string.substr(0, position));
+        if (tipo == "bytes") {
+          number_size += number / 1048000;
+        } else if (tipo == "KB") {
+          number_size += number / 1024;
+        } else if (tipo == "MB") {
+          number_size += number;
+        }
+      });
+      document.getElementById("storage_number").value = number_size;
+      document.getElementById("storage_bar_fill").style.width =
+        (number_size * 100) / 32768 + "%";
+      console.log((number_size * 100) / 32768);
     },
   });
 }
