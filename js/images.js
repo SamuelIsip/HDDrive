@@ -3,8 +3,6 @@ let modalId = $("#image-gallery");
 $(function () {
   loadImagesFromDB();
 
-  loadGallery(true, "a.thumbnail");
-
   //This function disables buttons when needed
   function disableButtons(counter_max, counter_current) {
     $("#show-previous-image, #show-next-image").show();
@@ -75,7 +73,12 @@ $(function () {
         processData: false,
         data: form_data,
         async: true,
-        success: function () {},
+        success: function () {
+          var div_list = document.getElementById("images_container");
+          if (div_list.hasChildNodes() && div_list.childElementCount > 1)
+            div_list.removeChild(div_list.lastChild);
+          loadImagesFromDB();
+        },
       });
     });
 
@@ -86,8 +89,8 @@ $(function () {
       dataType: "json",
       async: true,
       success: (images) => {
-        console.log(images);
         createGalleryDOMelements(images);
+        loadGallery(true, "a.thumbnail");
       },
     });
   }
