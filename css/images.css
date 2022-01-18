@@ -1,9 +1,9 @@
-.close {
+/* .close {
   font-size: 1.5rem;
 }
 
 .col-12 img {
-  opacity: 0.7;
+  opacity: 0.8;
   cursor: pointer;
   margin: 2rem;
   width: 100%;
@@ -12,4 +12,21 @@
 .col-12 img:hover {
   opacity: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} */
+
+.btn:focus,
+.btn:active,
+button:focus,
+button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#image-gallery .modal-footer {
+  display: block;
+}
+
+.thumb {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
