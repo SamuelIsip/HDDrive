@@ -1,31 +1,9 @@
 let modalId = $("#image-gallery");
 
 $(function () {
-  document
-    .getElementById("add_image")
-    .parentElement.addEventListener("change", () => {
-      var form_data = new FormData();
-      var ins = document.getElementById("add_image").files.length;
-      for (var x = 0; x < ins; x++) {
-        form_data.append(
-          "file[]",
-          document.getElementById("add_image").files[x]
-        );
-      }
-      $.ajax({
-        url: "./../api/uploadImage.php",
-        type: "POST",
-        dataType: "text",
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: form_data,
-        async: true,
-        success: function () {},
-      });
-    });
+  loadImagesFromDB();
 
-  loadGallery(true, "a.thumbnail");
+  loadGallery(false, "a.thumbnail");
 
   //This function disables buttons when needed
   function disableButtons(counter_max, counter_current) {
@@ -75,6 +53,69 @@ $(function () {
     }
     $(setClickAttr).on("click", function () {
       updateGallery($(this));
+    });
+  }
+  document
+    .getElementById("add_image")
+    .parentElement.addEventListener("change", () => {
+      var form_data = new FormData();
+      var ins = document.getElementById("add_image").files.length;
+      for (var x = 0; x < ins; x++) {
+        form_data.append(
+          "file[]",
+          document.getElementById("add_image").files[x]
+        );
+      }
+      $.ajax({
+        url: "./../api/uploadImage.php",
+        type: "POST",
+        dataType: "text",
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        async: true,
+        success: function () {},
+      });
+    });
+
+  function loadImagesFromDB() {
+    $.ajax({
+      url: "./../api/readImages.php",
+      type: "GET",
+      async: true,
+      success: (images) => {
+        createGalleryDOMelements(images);
+      },
+    });
+  }
+
+  function createGalleryDOMelements(images) {
+    images.forEach((image) => {
+      var $div = $("<div>", { class: "col-lg-3 col-md-4 col-xs-6 thumb" });
+      var $a = $("<a>", {
+        href: "#",
+        class: "thumbnail",
+        "data-image-id": "",
+        "data-toggle": "modal",
+        "data-title": "",
+        "data-image":
+          "./../../HDDriveHome/UserImages/" +
+          image.path +
+          "?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "data-target": "#image-gallery",
+      });
+      var $img = $("<img>", {
+        src:
+          "./../../HDDriveHome/UserImages/" +
+          image.path +
+          "?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        class: "img-thumbnail",
+        alt: "Image",
+      });
+      $a.append($img);
+      $div.append($a);
+      $("#images_container").append($div);
     });
   }
 });
