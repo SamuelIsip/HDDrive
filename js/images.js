@@ -93,7 +93,7 @@ $(function () {
   }
 
   function createGalleryDOMelements(images) {
-    images.forEach((image) => {
+    images.images.forEach((image) => {
       var $div = $("<div>", { class: "col-lg-3 col-md-4 col-xs-6 thumb" });
       var $a = $("<a>", {
         href: "#",
