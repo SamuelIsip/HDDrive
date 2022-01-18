@@ -26,9 +26,11 @@ $(function () {
         data: form_data,
         async: true,
         success: function () {
+          // Borrar elementos antes de cargar nuevos
           var div_list = document.getElementById("images_container");
-          while (div_list.hasChildNodes() && div_list.childElementCount > 1)
+          while (div_list.hasChildNodes())
             div_list.removeChild(div_list.lastChild);
+          //Cargar imagenes de neuvo
           loadImagesFromDB();
         },
       });
@@ -47,6 +49,7 @@ $(function () {
     });
   }
 
+  //Crear elementos en el DOM
   function createGalleryDOMelements(images) {
     images.images.forEach((image) => {
       var $div = $("<div>", { class: "col-lg-3 col-md-4 col-xs-6 thumb" });
@@ -76,7 +79,7 @@ $(function () {
     });
   }
 
-  //This function disables buttons when needed
+  //Desactivar botones cuando es necesario
   function disableButtons(counter_max, counter_current) {
     $("#show-previous-image, #show-next-image").show();
     if (counter_max === counter_current) {
@@ -88,16 +91,15 @@ $(function () {
 
   /**
    *
-   * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
-   * @param setClickAttr  Sets the attribute for the click handler.
+   * @param setIDs        Settear los id de las imagenes
+   * @param setClickAttr  Settear los atributos del click handler
    */
-
   function loadGallery(setIDs, setClickAttr) {
     let current_image,
       selector,
       counter = 0;
 
-    $("#show-next-image, #show-previous-image").click(function () {
+    $("#show-next-image, #show-previous-image").on("click", function () {
       if ($(this).attr("id") === "show-previous-image") {
         current_image--;
       } else {
@@ -128,7 +130,7 @@ $(function () {
   }
 });
 
-// build key actions
+/* // build key actions
 $(document).on("keydown", function (e) {
   switch (e.key) {
     case 37: // left
@@ -153,4 +155,4 @@ $(document).on("keydown", function (e) {
       return; // exit this handler for other keys
   }
   e.preventDefault(); // prevent the default action (scroll / move caret)
-});
+}); */
