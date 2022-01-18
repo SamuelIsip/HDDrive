@@ -18,6 +18,12 @@ function load_events_pages_menu() {
       "none"
     );
   });
+  $("#images").on("click", () => {
+    $("#container_images").css("display", "flex");
+    $(
+      "#container_docs, #container_favourites, #container_tasks, #container_calendar"
+    ).css("display", "none");
+  });
   $("#fav").on("click", () => {
     // Notifications after favorite files have been saved
     $("#notification_favourites")

@@ -130,11 +130,7 @@
           <div><iframe id="calendar" src="./calendar.php" frameborder="0"></iframe></div>
         </div>
         <div id="container_images">
-          <div><iframe id="images" height="300" style="width: 100%;" scrolling="no" title="Lightbox gallery with Bootstrap " src="https://codepen.io/nikki-peel/embed/oNLbzBZ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/nikki-peel/pen/oNLbzBZ">
-  Lightbox gallery with Bootstrap </a> by Nikki Peel (<a href="https://codepen.io/nikki-peel">@nikki-peel</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe></div>
+          <div><iframe id="image" src="./images.html" frameborder="0"></iframe></div>
         </div>
         <div id="container_favourites">
           <div><iframe id="favourites" src="./favourites.html" frameborder="0"></iframe></div>
