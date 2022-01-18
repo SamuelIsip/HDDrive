@@ -25,6 +25,7 @@ function readDocuments() {
     async: true,
     success: (doc) => {
       createList(doc, div_list);
+      calculateTotalStorage();
     },
   });
 }

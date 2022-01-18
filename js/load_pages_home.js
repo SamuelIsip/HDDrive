@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   full_size_monitor();
   readDocuments();
-  calculateTotalStorage();
   load_events_pages_menu();
   load_events_add_select();
 });
