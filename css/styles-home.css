@@ -211,7 +211,11 @@ input {
   background-color: #04aa6d;
 }
 #container_menu #menu_footer #menu_total_storage #storage_info {
+  padding-top: 5px;
   text-align: center;
+}
+#container_menu #menu_footer #menu_total_storage #storage_info #storage_number {
+  display: inline;
 }
 #container_menu #menu_footer #menu_logo {
   display: flex;

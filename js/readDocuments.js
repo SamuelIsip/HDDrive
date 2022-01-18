@@ -224,7 +224,7 @@ function calculateTotalStorage() {
           number_size += number;
         }
       });
-      document.getElementById("storage_number").value = number_size;
+      document.getElementById("storage_number").innerText = number_size + " MB";
       document.getElementById("storage_bar_fill").style.width =
         (number_size * 100) / 32768 + "%";
       console.log((number_size * 100) / 32768);

@@ -79,7 +79,12 @@
         }
       }
       & #storage_info {
+        padding-top: 5px;
         text-align: center;
+
+        & #storage_number {
+          display: inline;
+        }
       }
     }
 
