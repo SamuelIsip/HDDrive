@@ -1,7 +1,80 @@
 let modalId = $("#image-gallery");
 
 $(function () {
+  // Carga de imágenes
   loadImagesFromDB();
+
+  // Listener para subir imagen
+  document
+    .getElementById("add_image")
+    .parentElement.addEventListener("change", () => {
+      var form_data = new FormData();
+      var ins = document.getElementById("add_image").files.length;
+      for (var x = 0; x < ins; x++) {
+        form_data.append(
+          "file[]",
+          document.getElementById("add_image").files[x]
+        );
+      }
+      $.ajax({
+        url: "./../api/uploadImage.php",
+        type: "POST",
+        dataType: "text",
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        async: true,
+        success: function () {
+          var div_list = document.getElementById("images_container");
+          while (div_list.hasChildNodes() && div_list.childElementCount > 1)
+            div_list.removeChild(div_list.lastChild);
+          loadImagesFromDB();
+        },
+      });
+    });
+
+  function loadImagesFromDB() {
+    $.ajax({
+      url: "./../api/readImages.php",
+      type: "GET",
+      dataType: "json",
+      async: true,
+      success: (images) => {
+        createGalleryDOMelements(images);
+        loadGallery(true, "a.thumbnail");
+      },
+    });
+  }
+
+  function createGalleryDOMelements(images) {
+    images.images.forEach((image) => {
+      var $div = $("<div>", { class: "col-lg-3 col-md-4 col-xs-6 thumb" });
+      var $a = $("<a>", {
+        href: "#",
+        class: "thumbnail",
+        "data-image-id": "",
+        "data-toggle": "modal",
+        "data-title": image.name,
+        "data-image":
+          "./../../HDDriveHome/UserImages/" +
+          image.path +
+          "?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "data-target": "#image-gallery",
+      });
+      var $img = $("<img>", {
+        src:
+          "./../../HDDriveHome/UserImages/" +
+          image.path +
+          "?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        class: "img-thumbnail",
+        alt: "Image",
+      });
+      $a.append($img);
+      $div.append($a);
+      $("#images_container").append($div);
+    });
+  }
 
   //This function disables buttons when needed
   function disableButtons(counter_max, counter_current) {
@@ -51,76 +124,6 @@ $(function () {
     }
     $(setClickAttr).on("click", function () {
       updateGallery($(this));
-    });
-  }
-  document
-    .getElementById("add_image")
-    .parentElement.addEventListener("change", () => {
-      var form_data = new FormData();
-      var ins = document.getElementById("add_image").files.length;
-      for (var x = 0; x < ins; x++) {
-        form_data.append(
-          "file[]",
-          document.getElementById("add_image").files[x]
-        );
-      }
-      $.ajax({
-        url: "./../api/uploadImage.php",
-        type: "POST",
-        dataType: "text",
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: form_data,
-        async: true,
-        success: function () {
-          var div_list = document.getElementById("images_container");
-          if (div_list.hasChildNodes() && div_list.childElementCount > 1)
-            div_list.removeChild(div_list.lastChild);
-          loadImagesFromDB();
-        },
-      });
-    });
-
-  function loadImagesFromDB() {
-    $.ajax({
-      url: "./../api/readImages.php",
-      type: "GET",
-      dataType: "json",
-      async: true,
-      success: (images) => {
-        createGalleryDOMelements(images);
-        loadGallery(true, "a.thumbnail");
-      },
-    });
-  }
-
-  function createGalleryDOMelements(images) {
-    images.images.forEach((image) => {
-      var $div = $("<div>", { class: "col-lg-3 col-md-4 col-xs-6 thumb" });
-      var $a = $("<a>", {
-        href: "#",
-        class: "thumbnail",
-        "data-image-id": "",
-        "data-toggle": "modal",
-        "data-title": image.name,
-        "data-image":
-          "./../../HDDriveHome/UserImages/" +
-          image.path +
-          "?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        "data-target": "#image-gallery",
-      });
-      var $img = $("<img>", {
-        src:
-          "./../../HDDriveHome/UserImages/" +
-          image.path +
-          "?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        class: "img-thumbnail",
-        alt: "Image",
-      });
-      $a.append($img);
-      $div.append($a);
-      $("#images_container").append($div);
     });
   }
 });
