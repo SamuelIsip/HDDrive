@@ -99,18 +99,6 @@ button:active {
   max-height: 100%;
 }
 
-.modal-footer {
-  position: realtive;
-}
-
-.modal-footer div {
-  display: inline-block;
-  width: 100px;
-  text-align: center;
-  position: absolute;
-  left: calc(50%-50px);
-}
-
 @media screen and (max-height: 768px) {
   .modal-body {
     height: 400px;
