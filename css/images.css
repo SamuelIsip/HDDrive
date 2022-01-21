@@ -14,12 +14,31 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 } */
 
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #282a35;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(219, 219, 219);
+  border-radius: 10px;
+  border: 1px solid rgb(48, 48, 48);
+}
+
 .btn:focus,
 .btn:active,
 button:focus,
 button:active {
   outline: none !important;
   box-shadow: none !important;
+}
+
+#images_container {
+  padding-bottom: 100px;
 }
 
 #image-gallery .modal-footer {
@@ -29,6 +48,8 @@ button:active {
 .thumb {
   margin-top: 15px;
   margin-bottom: 15px;
+  width: 300px;
+  height: 300px;
 }
 
 .img-thumbnail {
@@ -36,6 +57,8 @@ button:active {
   border: 0px;
   opacity: 0.8;
   cursor: pointer;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .img-thumbnail:hover {
@@ -65,4 +88,19 @@ button:active {
 
 #add_image_plus {
   margin: auto;
+}
+
+.modal-body {
+  height: 500px;
+  align-self: center;
+}
+
+.modal-body img {
+  max-height: 100%;
+}
+
+@media screen and (max-height: 768px) {
+  .modal-body {
+    height: 400px;
+  }
 }
