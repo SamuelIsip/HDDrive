@@ -91,7 +91,7 @@ button:active {
 }
 
 .modal-body {
-  height: 350px;
+  height: 400px;
   align-self: center;
 }
 
@@ -101,6 +101,6 @@ button:active {
 
 @media screen and (max-height: 768px) {
   .modal-body {
-    height: 400px;
+    height: 350px;
   }
 }
