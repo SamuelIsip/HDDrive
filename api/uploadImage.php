@@ -1,4 +1,8 @@
 <?php
+
+    include_once("connectDB.php");
+    include_once("getSizeFile.php");
+
     session_name("userSession");
     session_start();
 
@@ -13,10 +17,6 @@
 
         $value = $_FILES['file']['name'][$i];
 
-        include_once("connectDB.php");
-        include_once("getSizeFile.php");
-
-      
         //Insertamos datos de fichero a la BD
         $stmt=mysqli_prepare($con, "INSERT INTO photos (id_user,name,path,size,date) VALUES(?,?,?,?,?)");
 

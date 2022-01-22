@@ -7,6 +7,10 @@
 
     chdir("./../../HDDriveHome/".$_SESSION["userName"]);
 
+    if(isset($_GET["isImage"])){
+        chdir("./../UserImages/".$_SESSION["userName"]);
+    }
+
     //Guardamos la ruta del fichero
     $filename = "./".$_GET['nameFile'];
 

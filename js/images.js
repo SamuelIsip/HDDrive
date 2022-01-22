@@ -138,13 +138,19 @@ $(function () {
         data: JSON.stringify(fileData),
         dataType: "text",
         async: true,
-        success: function (response) {
+        success: function () {
           updateImagesAfterModification();
         },
       });
     });
 
-    $("#download-actual-image").on("click", function () {});
+    $("#download-actual-image").on("click", function () {
+      let nameFile = $("#image-gallery-title").text();
+
+      window.location = encodeURI(
+        "./../api/downloadFile.php?nameFile=" + nameFile + "&isImage=true"
+      );
+    });
   }
 
   function updateImagesAfterModification() {
