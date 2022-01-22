@@ -4,6 +4,9 @@ $(function () {
   // Carga de imágenes
   loadImagesFromDB();
 
+  // Descarga y borrado
+  dropAndDownloadListener();
+
   // Listener para subir imagen
   document
     .getElementById("add_image")
@@ -26,12 +29,7 @@ $(function () {
         data: form_data,
         async: true,
         success: function () {
-          // Borrar elementos antes de cargar nuevos
-          var div_list = document.getElementById("images_container");
-          while (div_list.hasChildNodes())
-            div_list.removeChild(div_list.lastChild);
-          //Cargar imagenes de neuvo
-          loadImagesFromDB();
+          updateImagesAfterModification();
         },
       });
     });
@@ -127,6 +125,35 @@ $(function () {
     $(setClickAttr).on("click", function () {
       updateGallery($(this));
     });
+  }
+
+  function dropAndDownloadListener() {
+    $("#drop-actual-image").on("click", function () {
+      var fileData = {
+        nameFile: $("#image-gallery-title").val(),
+      };
+      console.log(fileData.nameFile);
+      $.ajax({
+        type: "POST",
+        url: "./../api/deleteImage.php",
+        data: JSON.stringify(fileData),
+        dataType: "text",
+        async: true,
+        success: function () {
+          updateImagesAfterModification();
+        },
+      });
+    });
+
+    $("#download-actual-image").on("click", function () {});
+  }
+
+  function updateImagesAfterModification() {
+    // Borrar elementos antes de cargar nuevos
+    var div_list = document.getElementById("images_container");
+    while (div_list.hasChildNodes()) div_list.removeChild(div_list.lastChild);
+    //Cargar imagenes de neuvo
+    loadImagesFromDB();
   }
 });
 
