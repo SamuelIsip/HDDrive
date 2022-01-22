@@ -130,9 +130,9 @@ $(function () {
   function dropAndDownloadListener() {
     $("#drop-actual-image").on("click", function () {
       var fileData = {
-        nameFile: $("#image-gallery-title").val(),
+        nameFile: $("#image-gallery-title").text(),
       };
-      console.log(fileData.nameFile);
+      console.log(fileData);
       $.ajax({
         type: "POST",
         url: "./../api/deleteImage.php",
