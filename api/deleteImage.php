@@ -12,11 +12,13 @@
     //Guardamos la ruta del fichero
     $filename = $files_data['nameFile'];
 
-    if(is_file($filename)){
+    echo $filename;
+
+    /* if(is_file($filename)){
         if(file_exists($filename)){
             unlink($filename);
         }
-    } 
+    }  */
 
     exit;
 

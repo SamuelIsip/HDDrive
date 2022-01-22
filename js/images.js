@@ -132,15 +132,15 @@ $(function () {
       var fileData = {
         nameFile: $("#image-gallery-title").text(),
       };
-      console.log(fileData);
       $.ajax({
         type: "POST",
         url: "./../api/deleteImage.php",
         data: JSON.stringify(fileData),
         dataType: "text",
         async: true,
-        success: function () {
-          updateImagesAfterModification();
+        success: function (response) {
+          console.log(response);
+          //updateImagesAfterModification();
         },
       });
     });
