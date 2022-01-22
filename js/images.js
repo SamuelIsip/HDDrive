@@ -139,8 +139,7 @@ $(function () {
         dataType: "text",
         async: true,
         success: function (response) {
-          console.log(response);
-          //updateImagesAfterModification();
+          updateImagesAfterModification();
         },
       });
     });
