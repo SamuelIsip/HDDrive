@@ -188,8 +188,10 @@ function deleteFileRecursive() {
     div_list.removeChild(div_list.lastChild);
 }
 
-function getCookie(cname) {
-  let name = cname + "=";
+function getCookie(name) {
+  var match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+  return match ? match[2] : null;
+  /* let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(";");
   for (let i = 0; i < ca.length; i++) {
@@ -201,7 +203,7 @@ function getCookie(cname) {
       return c.substring(name.length, c.length);
     }
   }
-  return null;
+  return null; */
 }
 
 function calculateTotalStorage() {
