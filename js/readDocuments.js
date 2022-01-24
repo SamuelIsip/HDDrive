@@ -96,7 +96,6 @@ function createList(doc, div_list) {
     input_name.setAttribute("readonly", "");
     input_name.classList.add("name_file_dir");
 
-    console.log("Is Favorite: " + nameDoc.isFavorite);
     //Favorite icon
     if (nameDoc.isDirFile === "file" && nameDoc.isFavorite === 1) {
       let i = document.createElement("i");

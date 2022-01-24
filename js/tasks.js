@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     old_task["text"] = task_text;
 
     document.getElementById("save_task").innerHTML = "Update";
+    document.querySelector(".container__row").scrollIntoView();
   }
 
   function delete_task(title, task_date) {
