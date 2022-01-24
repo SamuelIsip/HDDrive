@@ -13,6 +13,7 @@
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../js/dimensions.js"></script>
     <script src="../js/options_file.js"></script>
+    <script src="../js/cookies.js"></script>
     <script src="../js/readDocuments.js"></script>
     <script src="../js/events_pages_home.js"></script>
     <script src="../js/load_pages_home.js"></script>
