@@ -86,6 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
       date[2] + "-" + date[1] + "-" + date[0];
     document.getElementById("note").value = task_text;
 
+    document.getElementById("title").style.border = "2px dotted black";
+    document.getElementById("date-input").style.border = "2px dotted black";
+    document.getElementById("note").style.border = "2px dotted black";
+
     update = true;
     old_task["title"] = title;
     old_task["date"] = task_date;
@@ -153,6 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
           old_task["text"]
       );
       update = false;
+      document.getElementById("title").style.border = "1px solid #ced4da";
+      document.getElementById("date-input").style.border = "1px solid #ced4da";
+      document.getElementById("note").style.border = "1px solid #ced4da";
       document.getElementById("save_task").innerHTML = "Save";
     } else {
       //Hacemos insert con los nuevos datos
