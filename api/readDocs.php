@@ -15,11 +15,14 @@
 
     $userSession = $_SESSION["userName"];
 
+    $ruta = "/";
+
     if(isset($_GET['nameDir'])){
         chdir("./../../HDDriveHome/".$userSession."/".$_GET['nameDir']);
-    }else
+        $ruta = $ruta.$_GET['nameDir']."/";
+    }else{
         chdir("./../../HDDriveHome/".$userSession);
-
+    }
 
     $docs = scandir(getcwd());
 
@@ -27,11 +30,34 @@
     $arr1["docs"]=array();
 
     foreach ($docs as $value) {
+
+        // Comprobar si es favorito
+        $ruta = $ruta.$value
+        $stmt = mysqli_prepare($con, "SELECT id_fav FROM favorites WHERE id_user=? AND ruta=?");
+        $usrID = $_SESSION["userID"];
+
+        mysqli_stmt_bind_param($stmt,"is",$usrID,$ruta);
+
+        $isFavorite = 0;
+
+        if(mysqli_stmt_execute($stmt)){
+        
+            mysqli_stmt_store_result($stmt);
+    
+            if(mysqli_stmt_affected_rows($stmt) == 1)
+                $isFavorite = 1;
+            
+        }
+
+        mysqli_stmt_close($stmt);
+        mysqli_close($con);
+
         $arr2=array(
             "name"=>$value,
             "size"=>is_dir($value) ? get_size($value) : convert_size(filesize($value)),
             "modific"=>date ("d/m/Y H:i", filemtime($value)),
-            "isDirFile"=>is_dir($value) ? "dir" : "file" 
+            "isDirFile"=>is_dir($value) ? "dir" : "file",
+            "isFavorite"=> $isFavorite
         );
 
         array_push($arr1["docs"], $arr2);

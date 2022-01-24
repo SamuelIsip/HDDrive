@@ -95,6 +95,17 @@ function createList(doc, div_list) {
     input_name.value = nameDoc.name;
     input_name.setAttribute("readonly", "");
     input_name.classList.add("name_file_dir");
+
+    console.log("Is Favorite: " + nameDoc.isFavorite);
+    //Favorite icon
+    if (nameDoc.isDirFile === "file" && nameDoc.isFavorite === 1) {
+      let i = document.createElement("i");
+      i.classList.add("fas");
+      i.classList.add("fa-star");
+      i.style.cssText = "color:#ffff00; font-size:15px";
+      td1.appendChild(input_name);
+    }
+
     td1.appendChild(input_name);
     td1.classList.add("name_file");
     td2.appendChild(document.createTextNode(nameDoc.size));
