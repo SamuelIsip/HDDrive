@@ -98,12 +98,12 @@ function createList(doc, div_list) {
 
     console.log("Is Favorite: " + nameDoc.isFavorite);
     //Favorite icon
-    if (nameDoc.isDirFile === "file" && nameDoc.isFavorite == 1) {
+    if (nameDoc.isDirFile === "file" && nameDoc.isFavorite === 1) {
       let i = document.createElement("i");
       i.classList.add("fas");
       i.classList.add("fa-star");
       i.style.cssText = "color:#ffff00; font-size:15px";
-      td1.appendChild(input_name);
+      td1.appendChild(i);
     }
 
     td1.appendChild(input_name);
