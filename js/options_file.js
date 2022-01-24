@@ -125,6 +125,7 @@ function addLogOutEvent() {
       localStorage.removeItem("userID");
       delete_cookie("userName");
       delete_cookie("userID");
+      delete_cookie("cookieEnabled");
       window.location = encodeURI("./../");
     });
 }
