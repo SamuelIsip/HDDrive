@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const dataUsr = await response.json();
       //Cache
       localStorage.setItem("userID", dataUsr.id_user);
-      localStorage.setItem("userName", dataUsr.name_user);
+      localStorage.setItem("userName", dataUsr.nom_usr);
       //Cookies
       setCookie(dataUsr);
       window.location = encodeURI("./../HDDrive/pages/home.php");
@@ -49,15 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("logon_error_info").innerHTML =
         "Ups! Your User cannot be created!";
     }
-  }
-
-  function setCookie(dataUsr) {
-    const d = new Date();
-    d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
-    let expires = "expires=" + d.toUTCString();
-    document.cookie =
-      "userName=" + dataUsr.name_user + ";" + expires + "; Path=/;";
-    document.cookie = "userID=" + dataUsr.id_user + ";" + expires + "; Path=/;";
   }
 
   /* Validación datos de creación de cuenta */

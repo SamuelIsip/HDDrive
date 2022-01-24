@@ -54,7 +54,7 @@
 
         if(mysqli_stmt_fetch($stmt)){
             if(password_verify($user_data["password"], $pass)){
-                $datos=["id_user" => $id_user, "name_user" => $user_data["name_user"]];
+                $datos=["id_user" => $id_user, "nom_usr" => $user_data["name_user"]];
             }
         }
 

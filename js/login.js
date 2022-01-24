@@ -61,15 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function setCookie(dataUsr) {
-    const d = new Date();
-    d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
-    let expires = "expires=" + d.toUTCString();
-    document.cookie =
-      "userName=" + dataUsr.nom_usr + ";" + expires + "; Path=/;";
-    document.cookie = "userID=" + dataUsr.id_user + ";" + expires + "; Path=/;";
-  }
-
   /* Validación del Email y Password */
   function validateLogIn(user_data) {
     // Email
