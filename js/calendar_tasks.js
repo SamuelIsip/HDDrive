@@ -97,4 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("calendar__task__container").className =
         "calendar_task_no_styles";
     });
+
+  document.getElementById("anio").addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("select_day").click();
+    }
+  });
 });
