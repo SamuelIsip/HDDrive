@@ -32,11 +32,11 @@
     foreach ($docs as $value) {
 
         // Comprobar si es favorito
-        $ruta = $ruta.$value;
+        $ruta2 = $ruta.$value;
         $stmt = mysqli_prepare($con, "SELECT id_fav FROM favorites WHERE id_user=? AND ruta=?");
         $usrID = $_SESSION["userID"];
 
-        mysqli_stmt_bind_param($stmt,"is",$usrID,$ruta);
+        mysqli_stmt_bind_param($stmt,"is",$usrID,$ruta2);
 
         $isFavorite = 0;
 
@@ -44,7 +44,7 @@
         
             mysqli_stmt_store_result($stmt);
     
-            if(mysqli_stmt_affected_rows($stmt) == 1)
+            if(mysqli_stmt_num_rows($stmt) == 1)
                 $isFavorite = 1;
             
         }
