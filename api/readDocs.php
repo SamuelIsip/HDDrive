@@ -32,7 +32,7 @@
     foreach ($docs as $value) {
 
         // Comprobar si es favorito
-        $ruta = $ruta.$value
+        $ruta = $ruta.$value;
         $stmt = mysqli_prepare($con, "SELECT id_fav FROM favorites WHERE id_user=? AND ruta=?");
         $usrID = $_SESSION["userID"];
 
