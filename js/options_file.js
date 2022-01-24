@@ -96,6 +96,7 @@ function add_event_options(options) {
       success: function () {
         document.getElementById("notification_favourites").className =
           "notification_on";
+        isDir(getPath());
       },
     });
   });
