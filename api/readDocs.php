@@ -50,7 +50,7 @@
         }
 
         mysqli_stmt_close($stmt);
-        mysqli_close($con);
+        
 
         $arr2=array(
             "name"=>$value,
@@ -62,6 +62,8 @@
 
         array_push($arr1["docs"], $arr2);
     }
+
+    mysqli_close($con);
 
     http_response_code(200);
 
