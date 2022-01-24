@@ -134,6 +134,10 @@ function load_events_add_select() {
     if (response.ok) {
       document.getElementById("notification_favourites").className =
         "notification_on";
+      // Remove the table, to reload files of index
+      deleteFileRecursive();
+      readDocuments();
+      resetLinkHead();
     } else {
       alert("Files cannot be added to favorites");
     }
