@@ -53,7 +53,7 @@
         $anio2 = $_GET['anio'];
       }else{
         $mes2 = 01;
-        $anio2 = 2021;
+        $anio2 = date("Y");
       }
 
   ?>
