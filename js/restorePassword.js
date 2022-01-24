@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   var restorePassCode = 0;
   var email = "";
 
+  document.getElementById("btn-pass-success").addEventListener("click", () => {
+    window.location = encodeURI("./../");
+  });
+
   document.getElementById("btnSendCode").addEventListener("click", async () => {
     email = document.getElementById("restoreEmail").value;
     const emailJson = { emailJSON: email };
@@ -73,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("restoreNewPasswordConfirmation").value = "";
       document.getElementById("restoreCode").value = "";
       document.getElementById("restoreEmail").value = "";
+      document.getElementById("success-password").style.visibility = "visible";
     } else {
       alert("The password could not be changed");
     }
