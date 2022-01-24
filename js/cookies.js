@@ -26,10 +26,14 @@ function getCookie(name) {
 
 document.addEventListener("DOMContentLoaded", () => {
   loadCookie();
-  quitCookie();
+  acceptCookie();
 
-  function quitCookie() {
+  function acceptCookie() {
     document.getElementById("button_cookie").addEventListener("click", () => {
+      const d = new Date();
+      d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
+      let expires = "expires=" + d.toUTCString();
+      document.cookie = "cookieEnabled=true;" + expires + "; Path=/;";
       document.getElementById("container_cookie").style.display = "none";
     });
   }
