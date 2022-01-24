@@ -96,7 +96,13 @@ function add_event_options(options) {
       success: function () {
         document.getElementById("notification_favourites").className =
           "notification_on";
-        isDir(getPath());
+        let i = document.createElement("i");
+        i.classList.add("fas");
+        i.classList.add("fa-star");
+        i.style.cssText = "color:#ffff00; font-size:15px";
+        op_favorite.parentElement.parentElement.parentElement
+          .querySelector(".name_file")
+          .appendChild(i);
       },
     });
   });
