@@ -1,9 +1,12 @@
 function setCookie(dataUsr) {
-  const d = new Date();
-  d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
-  let expires = "expires=" + d.toUTCString();
-  document.cookie = "userName=" + dataUsr.nom_usr + ";" + expires + "; Path=/;";
-  document.cookie = "userID=" + dataUsr.id_user + ";" + expires + "; Path=/;";
+  if (getCookie("cookieEnabled") !== null) {
+    const d = new Date();
+    d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
+    let expires = "expires=" + d.toUTCString();
+    document.cookie =
+      "userName=" + dataUsr.nom_usr + ";" + expires + "; Path=/;";
+    document.cookie = "userID=" + dataUsr.id_user + ";" + expires + "; Path=/;";
+  }
 }
 
 function getCookie(name) {
