@@ -11,7 +11,9 @@
     $filename = "./".$_GET['nameFolder'];
 
     if($_GET['nameFolder']=="/"){
-        $folder="/Documents";
+        $folder="Documents";
+    }else{
+        $folder=$_GET['nameFolder'];
     }
 
     //Si es un directorio, se recorren todo los ficheros recursivamente
@@ -22,7 +24,7 @@
         chdir($filename);
 
         //Nombre de la carpeta
-        $filenameZip = "Prueba.zip";
+        $filenameZip = $folder.".zip";
 
         $archivos=array();
 
@@ -30,7 +32,7 @@
         directorios(".", $archivos, $filenameZip, $files_selected);
 
         header("content-type:application/zip");
-        header("content-disposition:attachment;filename=Prueba.zip");
+        header("content-disposition:attachment;filename=".$folder.".zip");
         readfile($filenameZip);
 
         //Eliminamos el archivo de nuestro servidor
