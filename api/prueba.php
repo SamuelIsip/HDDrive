@@ -13,7 +13,7 @@
     if($_GET['nameFolder']=="/"){
         $folder="Documents";
     }else{
-        $folder=$_GET['nameFolder'];
+        $folder=substr($_GET['nameFolder'],strrpos($_GET['nameFolder'], "/")+1,strlen($_GET['nameFolder']));
     }
 
     //Si es un directorio, se recorren todo los ficheros recursivamente
