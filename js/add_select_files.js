@@ -89,12 +89,10 @@ function load_events_add_select() {
 
       var json_arr = JSON.stringify(arr);
 
-      alert("Esta funcionalidad está en revisión! Disculpe las molestias.");
-
       //Formar JSON con rutas de todos los ficheros seleccionados
-      /* window.location = encodeURI(
-        "./../api/prueba.php?files=" + json_arr + "&folder=" + getPath()
-      ); */
+      window.location = encodeURI(
+        "./../api/prueba.php?files=" + json_arr + "&nameFolder=" + getPath()
+      );
     });
 
   // ADD SELECTED FILES TO FAVOURITE

@@ -1,16 +1,16 @@
 <?php
 
-//    include_once("backup_inc.php");
+    include_once("backup_inc.php");
 
-//    session_name("userSession");
-  //  session_start();
+    session_name("userSession");
+    session_start();
 
-    chdir("./../../HDDriveHome/Pruebas");
+    chdir("./../../HDDriveHome/".$_SESSION["userName"]);
 
     $files_selected = json_decode($_GET["files"]);
 
     //Guardamos la ruta del fichero
-    $filename = ".//";
+    $filename = "./".$_GET['nameFolder'];
 
     //Si es un directorio, se recorren todo los ficheros recursivamente
     //Y se comprimen en un único .zip
@@ -20,7 +20,7 @@
         chdir($filename);
 
         //Nombre de la carpeta
-        $filenameZip = "Pruebas.zip";
+        $filenameZip = $_GET['nameFolder'].".zip";
 
         $archivos=array();
 
@@ -28,7 +28,7 @@
         directorios(".",$archivos,$filenameZip, $files_selected);
 
         header("content-type:application/zip");
-        header("content-disposition:attachment;filename=Pruebas.zip");
+        header("content-disposition:attachment;filename=".$_GET['nameFolder'].".zip");
         readfile($filenameZip);
 
         //Eliminamos el archivo de nuestro servidor
@@ -44,18 +44,15 @@
     
     function directorios($directorio,$archivos,$filenameZip, $files_selected){ //directorio actual y array con rutas
 
-	if($directorio=="."){
-        
-		$sub_dir = $files_selected; //guardamos todos los elementos del directorio en un array
- 		
-
-	}else{
-		$sub_dir = scandir($directorio);
-		//eliminamos a . y ..
-	        array_shift($sub_dir);
-        	array_shift($sub_dir);
-
-	}   
+        if($directorio=="."){
+            $sub_dir = $files_selected; //guardamos todos los elementos del directorio en un array
+        }else{
+            $sub_dir = scandir($directorio);
+            
+            //eliminamos a . y ..
+            array_shift($sub_dir);
+            array_shift($sub_dir);
+        }   
 
     
         //recorremos cada elemento
@@ -67,14 +64,13 @@
     
         $aux = true;
     
-	//print_r($archivos);
 
        while ($aux) {
             
             //Vamos eliminando los elmentos del array y comprobamos si es directorio o archivo
             $directorio_archivo = array_shift($archivos);
 
-	   if($directorio_archivo != NULL)
+	        if($directorio_archivo != NULL)
                 if(is_dir($directorio_archivo)) //si es un directorio, se vuelve a hacer el mismo proceso recursivamente
                     directorios($directorio_archivo."/", $archivos,$filenameZip, $files_selected);
                 else
