@@ -2,14 +2,20 @@
 
 function get_size($directory){
     $size = 0;
-    $files = glob($directory.'/*');
-    foreach($files as $path){
-        if(is_file($path))
-            $size += filesize($path);
-        if(is_dir($path))
-          $size += get_size($path);
 
+    get_size2($size, $directory);
+
+    function get_size2($size, $directory){
+        $files = glob($directory.'/*');
+        foreach($files as $path){
+            if(is_file($path))
+                $size += filesize($path);
+            if(is_dir($path))
+              $size += get_size2($size, $path);
+    
+        }
     }
+
     return convert_size($size);
 } 
 
