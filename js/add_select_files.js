@@ -91,10 +91,7 @@ function load_events_add_select() {
 
       //Formar JSON con rutas de todos los ficheros seleccionados
       window.location = encodeURI(
-        "./../api/download_select.php?files=" +
-          json_arr +
-          "&folder=" +
-          getPath()
+        "./../api/pruebas.php?files=" + json_arr + "&folder=" + getPath()
       );
     });
 
