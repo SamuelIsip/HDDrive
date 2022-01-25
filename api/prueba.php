@@ -1,7 +1,5 @@
 <?php
 
-    include_once("backup_inc.php");
-
     session_name("userSession");
     session_start();
 
