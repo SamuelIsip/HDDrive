@@ -10,6 +10,10 @@
     //Guardamos la ruta del fichero
     $filename = "./".$_GET['nameFolder'];
 
+    if($_GET['nameFolder']=="/"){
+        $folder="/Documents";
+    }
+
     //Si es un directorio, se recorren todo los ficheros recursivamente
     //Y se comprimen en un único .zip
     if(is_dir($filename)){
@@ -18,15 +22,15 @@
         chdir($filename);
 
         //Nombre de la carpeta
-        $filenameZip = $_GET['nameFolder'].".zip";
+        $filenameZip = $folder.".zip";
 
         $archivos=array();
 
         //Llamada a la función que recorre cada directorio
-        directorios(".",$archivos,$filenameZip, $files_selected);
+        directorios(".", $archivos, $filenameZip, $files_selected);
 
         header("content-type:application/zip");
-        header("content-disposition:attachment;filename=".$_GET['nameFolder'].".zip");
+        header("content-disposition:attachment;filename=".$folder.".zip");
         readfile($filenameZip);
 
         //Eliminamos el archivo de nuestro servidor
