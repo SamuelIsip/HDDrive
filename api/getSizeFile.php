@@ -3,7 +3,7 @@
 function get_size($directory){
     $size = 0;
 
-    get_size2($size, $directory);
+    $size = get_size2($size, $directory);
 
     function get_size2($size, $directory){
         $files = glob($directory.'/*');
@@ -14,6 +14,8 @@ function get_size($directory){
               $size += get_size2($size, $path);
     
         }
+
+        return $size;
     }
 
     return convert_size($size);
