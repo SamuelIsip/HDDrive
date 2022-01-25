@@ -13,7 +13,7 @@
     if($_GET['nameFolder']=="/"){
         $folder="Documents";
     }else{
-        $folder=basename($_GET['nameFolder']));
+        $folder=basename($_GET['nameFolder']);
     }
 
     //Si es un directorio, se recorren todo los ficheros recursivamente
