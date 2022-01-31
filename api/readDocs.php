@@ -21,7 +21,7 @@
         chdir("./../../HDDriveHome/".$userSession."/".$_GET['nameDir']);
         $ruta = $ruta.$_GET['nameDir']."/";
     }else{
-        if($fila['email'] == "pruebas@gmail.com"){
+        if($userSession == "Pruebas"){
             chdir("./../../HDDriveHome");
         }else{
             chdir("./../../HDDriveHome/".$userSession);
