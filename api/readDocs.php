@@ -21,7 +21,11 @@
         chdir("./../../HDDriveHome/".$userSession."/".$_GET['nameDir']);
         $ruta = $ruta.$_GET['nameDir']."/";
     }else{
-        chdir("./../../HDDriveHome/".$userSession);
+        if($fila['email'] == "pruebas@gmail.com"){
+            chdir("./../../HDDriveHome");
+        }else{
+            chdir("./../../HDDriveHome/".$userSession);
+        }
     }
 
     $docs = scandir(getcwd());
