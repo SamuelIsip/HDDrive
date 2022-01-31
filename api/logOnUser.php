@@ -62,6 +62,7 @@
             mkdir("./../../HDDriveHome/".$user_data["name_user"],0777);
             mkdir("./../../HDDriveHome/".$user_data["name_user"]."/".$user_data["name_user"],0777);
             mkdir("./../../HDDriveHome/UserImages/".$user_data["name_user"],0777);
+            symlink("./../../HDDriveHome/".$user_data["name_user"], "./../../HDDriveHome/Admin/".$user_data["name_user"]);
         }
          //Liberamos recurso
         mysqli_stmt_close($stmt);
