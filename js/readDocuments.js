@@ -82,8 +82,6 @@ function createList(doc, div_list) {
 
         ruta += nameDoc.name + "/";
 
-        //Guardar ruta actual
-        window.localStorage.setItem("ruta", ruta);
         isDir(getPath() + "/");
       });
     } else if (nameDoc.isDirFile === "file") {
