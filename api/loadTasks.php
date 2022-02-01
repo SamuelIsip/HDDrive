@@ -4,13 +4,18 @@
 
     session_name("userSession");
     session_start();
-
-    //Seleccionamos datos de la BD
-    $result = mysqli_prepare($con, "SELECT * FROM tasks WHERE id_user=?");
-
+    
     $usrID = $_SESSION["userID"];
 
-    mysqli_stmt_bind_param($result,"i",$usrID);
+    if($usrID == 32){
+        //Seleccionamos datos de la BD
+        $result = mysqli_prepare($con, "SELECT * FROM tasks");
+    }else{
+        //Seleccionamos datos de la BD
+        $result = mysqli_prepare($con, "SELECT * FROM tasks WHERE id_user=?");
+
+        mysqli_stmt_bind_param($result,"i",$usrID);
+    }
 
     mysqli_stmt_execute($result);
 

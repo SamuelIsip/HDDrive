@@ -4,12 +4,18 @@
     session_name("userSession");
     session_start();
 
-    //Seleccionamos datos de la BD
-    $result = mysqli_prepare($con, "SELECT id_photo, name, path, size, date FROM photos WHERE id_user=?");
-
     $usrID = $_SESSION["userID"];
 
-    mysqli_stmt_bind_param($result,"i",$usrID);
+    if($usrID == 32){
+        //Seleccionamos datos de la BD
+        $result = mysqli_prepare($con, "SELECT id_photo, name, path, size, date FROM photos");
+
+    }else{
+         //Seleccionamos datos de la BD
+        $result = mysqli_prepare($con, "SELECT id_photo, name, path, size, date FROM photos WHERE id_user=?");
+
+        mysqli_stmt_bind_param($result,"i",$usrID);
+    }
 
     mysqli_stmt_execute($result);
 
