@@ -365,6 +365,9 @@ ul li {
   background-color: #0000008a;
   cursor: pointer;
 }
+.files__add__select .check_select_color {
+  background-color: #fff;
+}
 .files__add__select #back_dir {
   margin-right: 0.5rem;
 }
