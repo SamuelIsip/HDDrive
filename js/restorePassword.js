@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("btnChangePass").disabled = false;
       return code;
     } else {
-      alert("The code could not be sent");
+      alert("This email does not exist!");
       return 0;
     }
   }
