@@ -127,6 +127,7 @@ function load_events_add_select() {
       var json_arr = JSON.stringify(arrFiles);
 
       addToFavouriteFiles(json_arr);
+      toggleCheckOptions();
     });
 
   async function addToFavouriteFiles(json_arr) {
@@ -143,7 +144,6 @@ function load_events_add_select() {
       deleteFileRecursive();
       readDocuments();
       resetLinkHead();
-      toggleCheckOptions();
     } else {
       alert("Files cannot be added to favorites");
     }
@@ -165,6 +165,7 @@ function load_events_add_select() {
       };
 
       deleteSelectFile(files_data);
+      toggleCheckOptions();
     });
 
   async function deleteSelectFile(files_data) {
@@ -176,7 +177,6 @@ function load_events_add_select() {
     });
     if (response.ok) {
       isDir(getPath());
-      toggleCheckOptions();
     } else {
       alert("Files cannot be deleted");
     }
