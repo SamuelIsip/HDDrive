@@ -32,10 +32,13 @@
                 http_response_code(500); //Error al actualizar
                 cerrarConexiones($con, $stmt);
             }
+        }else{
+            http_response_code(404); //Email no encontrado
+            cerrarConexiones($con, $stmt);
         }
         
     }else{
-        http_response_code(404); //Email no encontrado
+        http_response_code(500);
         cerrarConexiones($con, $stmt);
     }
 
