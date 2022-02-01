@@ -51,7 +51,11 @@ function load_events_add_select() {
   });
 
   document.getElementById("select_files").addEventListener("click", () => {
-    //Mostrar todos los check
+    //Mostrar todas las opciones de check
+    toggleCheckOptions();
+  });
+
+  function toggleCheckOptions() {
     var check_list = document.getElementsByClassName("check_file");
     for (let i = 0; i < check_list.length; i++) {
       if (check_list[i].style.display === "none") {
@@ -75,7 +79,7 @@ function load_events_add_select() {
         $(".files__add__select ul li:nth-child(7)").css("display", "none");
       }
     }
-  });
+  }
 
   // DOWNLOAD SELECTED FILES
   document
@@ -96,6 +100,7 @@ function load_events_add_select() {
           "&nameFolder=" +
           getPath()
       );
+      toggleCheckOptions();
     });
 
   // ADD SELECTED FILES TO FAVOURITE
@@ -138,6 +143,7 @@ function load_events_add_select() {
       deleteFileRecursive();
       readDocuments();
       resetLinkHead();
+      toggleCheckOptions();
     } else {
       alert("Files cannot be added to favorites");
     }
@@ -170,6 +176,7 @@ function load_events_add_select() {
     });
     if (response.ok) {
       isDir(getPath());
+      toggleCheckOptions();
     } else {
       alert("Files cannot be deleted");
     }
