@@ -1,7 +1,6 @@
 <?php
 
     include_once("mailCredentials.php");
-    include_once("connectDB.php");
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
@@ -12,24 +11,6 @@
 
     $email = json_decode(file_get_contents('php://input'), true);
     
-    //Consultar si ese usuario existe
-    $stmt = mysqli_prepare($con, "SELECT email FROM User WHERE email = ?");
-
-    mysqli_stmt_bind_param($stmt, "s", $email);
-
-    if(mysqli_stmt_execute($stmt)){
-        
-        mysqli_stmt_store_result($stmt);
-
-        if(mysqli_stmt_affected_rows($stmt) != 1){
-            http_response_code(404); //Email no encontrado
-            cerrarConexiones($con, $stmt);
-            exit; 
-        }
-    }
-
-    cerrarConexiones($con, $stmt);
-
     $code = randomVerificationCode(10);
 
     enviarEmail($email['emailJSON'], $code, $localHost, $localUsername, $localPassword, $localSMTPSecure, $localPort);
