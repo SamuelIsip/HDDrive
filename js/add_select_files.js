@@ -53,6 +53,9 @@ function load_events_add_select() {
   document.getElementById("select_files").addEventListener("click", () => {
     //Mostrar todas las opciones de check
     toggleCheckOptions();
+    document.getElementById(
+      "select_files"
+    ).parentElement.style.backgroundColor = "#fff";
   });
 
   function toggleCheckOptions() {
