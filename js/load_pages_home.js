@@ -13,10 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!window.innerDocClick) {
       //Your own in-page mechanism triggered the hash change
       $("#container_docs").css("display", "flex");
-      $("#container_calendar, #container_favourites, #container_tasks").css(
-        "display",
-        "none"
-      );
+      $(
+        "#container_calendar, #container_images, #container_favourites, #container_tasks"
+      ).css("display", "none");
 
       // Remove the table, to reload files of index
       deleteFileRecursive();
