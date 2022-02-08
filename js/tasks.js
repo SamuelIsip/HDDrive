@@ -15,23 +15,27 @@ document.addEventListener("DOMContentLoaded", () => {
         var i = 0;
         JSON.parse(this.responseText).tasks.forEach((t) => {
           //Creamos los elementos de los tasks
+          let hr = document.createElement("hr");
+
           let row = document.createElement("div");
           row.classList.add("row");
           let title = document.createElement("div");
           title.classList.add("col-12");
-          let h3 = document.createElement("h3");
+          let h3 = document.createElement("h4");
           h3.innerHTML = t.title == "" ? "Title" : t.title;
           title.appendChild(h3);
-          let date = document.createElement("div");
-          date.classList.add("col-12");
-          let h5 = document.createElement("h5");
-          h5.innerHTML = t.date == "undefined/undefined/" ? "Date" : t.date;
-          date.appendChild(h5);
+          title.appendChild(hr);
           let text = document.createElement("div");
           text.classList.add("col-12");
           let p = document.createElement("p");
           p.innerHTML = t.text == "" ? "Text" : t.text;
           text.appendChild(p);
+          let date = document.createElement("div");
+          date.classList.add("col-12");
+          let h5 = document.createElement("h6");
+          h5.innerHTML = t.date == "undefined/undefined/" ? "Date" : t.date;
+          date.appendChild(h5);
+          date.appendChild(hr);
 
           let div_buttons = document.createElement("div");
           div_buttons.classList.add("col-12");
@@ -63,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
           //Añadimos al task los elementos de la BD
           row.appendChild(title);
-          row.appendChild(date);
           row.appendChild(text);
+          row.appendChild(date);
           row.appendChild(div_buttons);
           list_tasks.appendChild(row);
           i++;

@@ -17,6 +17,11 @@ body {
   );
 }
 
+hr {
+  padding: 0px;
+  margin: 0px;
+}
+
 #form-group-primary {
   display: flex;
   flex-direction: row;
@@ -27,8 +32,9 @@ body {
   padding: 20px 20px 0px;
 }
 
-#add_tasks > div > div > div {
-  padding: 20px;
+#form-group-secondary {
+  display: flex;
+  justify-content: center;
 }
 
 #list_tasks {
