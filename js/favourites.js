@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         border: none;
       `;
 
-      input_name.value = t.ruta;
+      input_name.value = t.ruta.substring(1, t.ruta.size());
       input_name.setAttribute("readonly", "");
       input_name.classList.add("name_file_dir");
       td1.appendChild(input_name);
