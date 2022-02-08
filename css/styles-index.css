@@ -570,8 +570,19 @@ header .contact_logo_img {
 }
 
 @media screen and (max-width: 768px) {
-  .contact_information {
+  .container_contact_info {
+    display: flex;
     flex-direction: column;
+  }
+  .container_contact_info .contact_logo {
+    align-self: center;
+  }
+  .container_contact_info .contact_information {
+    flex-direction: column;
+  }
+  .container_contact_info .contact_information ul {
+    padding: 0px;
+    margin: 0px;
   }
 }
 #container_cookie {

@@ -63,7 +63,20 @@
 }
 
 @media screen and (max-width: 768px) {
-  .contact_information {
+  .container_contact_info {
+    display: flex;
     flex-direction: column;
+
+    & .contact_logo {
+      align-self: center;
+    }
+
+    & .contact_information {
+      flex-direction: column;
+      & ul {
+        padding: 0px;
+        margin: 0px;
+      }
+    }
   }
 }
