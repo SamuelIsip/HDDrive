@@ -15,16 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
         var i = 0;
         JSON.parse(this.responseText).tasks.forEach((t) => {
           //Creamos los elementos de los tasks
-          let hr = document.createElement("hr");
-
           let row = document.createElement("div");
           row.classList.add("row");
           let title = document.createElement("div");
           title.classList.add("col-12");
-          let h3 = document.createElement("h4");
-          h3.innerHTML = t.title == "" ? "Title" : t.title;
-          title.appendChild(h3);
-          title.appendChild(hr);
+          let h4 = document.createElement("h4");
+          h4.innerHTML = t.title == "" ? "Title" : t.title;
+          title.appendChild(h4);
           let text = document.createElement("div");
           text.classList.add("col-12");
           let p = document.createElement("p");
@@ -32,9 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
           text.appendChild(p);
           let date = document.createElement("div");
           date.classList.add("col-12");
-          let h5 = document.createElement("h6");
-          h5.innerHTML = t.date == "undefined/undefined/" ? "Date" : t.date;
-          date.appendChild(h5);
+          let h6 = document.createElement("h6");
+          h6.innerHTML = t.date == "undefined/undefined/" ? "Date" : t.date;
+          h6.style.textAlign = "right";
+          date.appendChild(h6);
+          let hr = document.createElement("hr");
           date.appendChild(hr);
 
           let div_buttons = document.createElement("div");

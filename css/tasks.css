@@ -17,11 +17,6 @@ body {
   );
 }
 
-hr {
-  padding: 0px;
-  margin: 0px;
-}
-
 #form-group-primary {
   display: flex;
   flex-direction: row;
@@ -82,7 +77,7 @@ p {
   font-weight: 700;
 }
 #save_task {
-  width: 100%;
+  width: 50%;
   background-color: #29323f;
   color: #fff;
   border: none;
