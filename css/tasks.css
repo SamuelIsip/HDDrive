@@ -21,6 +21,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 #form-group-primary div:last-child {
@@ -64,7 +65,6 @@ p {
   width: fit-content;
   border-radius: 5px;
   color: white;
-  text-shadow: 1px 1px black;
 }
 
 .container-buttons {

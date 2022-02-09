@@ -402,6 +402,7 @@ ul li {
   border: 1px solid #303030;
 }
 .docs_main table {
+  font-family: sans-serif;
   width: 90%;
   margin: auto;
   margin-bottom: 20px;
