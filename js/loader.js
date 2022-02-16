@@ -7,6 +7,7 @@ function loaderDialog() {
 }
 
 function toggleLoader() {
+  setTimeout(dummyFunction, 2000);
   var x = document.getElementsByClassName("spinner")[0];
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -14,3 +15,5 @@ function toggleLoader() {
     x.style.display = "none";
   }
 }
+
+function dummyFunction() {}
