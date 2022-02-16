@@ -81,7 +81,9 @@ function createList(doc, div_list) {
         addLinkHead(nameDoc);
 
         ruta += nameDoc.name + "/";
+        toggleLoader();
         isDir(getPath() + "/");
+        toggleLoader();
       });
     } else if (nameDoc.isDirFile === "file") {
       td1.addEventListener("click", () => {
