@@ -164,24 +164,13 @@ $(function () {
 
 // build key actions
 $(document).on("keydown", function (e) {
-  console.log(e.key);
   switch (e.key) {
     case "ArrowLeft": // left
-      if (
-        (modalId.data("bs.modal") || {})._isShown &&
-        $("#show-previous-image").is(":visible")
-      ) {
-        document.getElementById("show-previous-image").click();
-      }
+      document.getElementById("show-previous-image").click();
       break;
 
     case "ArrowRight": // right
-      if (
-        (modalId.data("bs.modal") || {})._isShown &&
-        $("#show-next-image").is(":visible")
-      ) {
-        document.getElementById("show-next-image").click();
-      }
+      document.getElementById("show-next-image").click();
       break;
 
     default:
