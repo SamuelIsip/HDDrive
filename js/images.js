@@ -173,7 +173,7 @@ $(document).on("keydown", function (e) {
       current_image = $sel.data("image-id");
       $("#image-gallery-title").text($sel.data("title"));
       $("#image-gallery-image").attr("src", $sel.data("image"));
-      disableButtons(counter, $sel.data("image-id"));
+      // disableButtons(counter, $sel.data("image-id"));
 
       break;
 
@@ -184,7 +184,7 @@ $(document).on("keydown", function (e) {
       current_image = $sel2.data("image-id");
       $("#image-gallery-title").text($sel2.data("title"));
       $("#image-gallery-image").attr("src", $sel2.data("image"));
-      disableButtons(counter, $sel2.data("image-id"));
+      //disableButtons(counter, $sel2.data("image-id"));
 
       break;
 
