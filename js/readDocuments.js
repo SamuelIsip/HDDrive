@@ -81,7 +81,6 @@ function createList(doc, div_list) {
         addLinkHead(nameDoc);
 
         ruta += nameDoc.name + "/";
-        toggleLoader();
         isDir(getPath() + "/");
         toggleLoader();
       });
