@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HDDrive</title>
     <link rel="stylesheet" href="../css/styles-home.css" />
+    <link rel="stylesheet" href="../css/styles-loader.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
@@ -20,7 +21,6 @@
     <script src="../js/add_select_files.js"></script>
     <script src="../js/favourites_load_db.js"></script>
     <script src="../js/task_load_db.js"></script>
-   
   </head>
   <body>
     <div id="container">
@@ -51,7 +51,10 @@
             <i class="fas fa-sign-out-alt"></i>
           </div>
           <div class="user_profile">
-            <img src="https://avatars.dicebear.com/api/initials/:seed.svg" alt="No User">
+            <img
+              src="https://avatars.dicebear.com/api/initials/:seed.svg"
+              alt="No User"
+            />
           </div>
         </div>
       </header>
@@ -66,17 +69,40 @@
           </ul>
           <div id="menu_footer">
             <div id="menu_total_storage">
-              <div id="storage_bar_container"><div id="storage_bar">
-                <div id="storage_bar_fill"></div>
-              </div></div>
-              <div id="storage_info"><p id="storage_number"></p> used of 5GB</div>
+              <div id="storage_bar_container">
+                <div id="storage_bar">
+                  <div id="storage_bar_fill"></div>
+                </div>
+              </div>
+              <div id="storage_info">
+                <p id="storage_number"></p>
+                used of 5GB
+              </div>
             </div>
             <div id="menu_logo">
-            <div id="menu_logo_img"></div>  
-            <p>HDDrive</p></div>
+              <div id="menu_logo_img"></div>
+              <p>HDDrive</p>
+            </div>
           </div>
         </div>
         <div id="container_docs">
+          <svg
+            class="spinner"
+            width="65px"
+            height="65px"
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              class="path"
+              fill="none"
+              stroke-width="6"
+              stroke-linecap="round"
+              cx="33"
+              cy="33"
+              r="30"
+            ></circle>
+          </svg>
           <div class="docs_header">
             <ul>
               <li>
@@ -103,41 +129,69 @@
                       hidden
                     />
                     <label for="add_file"
-                      ><i id="add_file" class="fas fa-file"> Add File</i
-                    ></label>
+                      ><i id="add_file" class="fas fa-file"> Add File</i></label
+                    >
                   </li>
                   <li>
                     <i id="add_folder" class="fas fa-folder"> Add Folder</i>
                   </li>
                   <li>
-                    <i id="select_files" class="fas fa-check-square"> Select Files</i>
+                    <i id="select_files" class="fas fa-check-square">
+                      Select Files</i
+                    >
                   </li>
                   <li>
-                    <i id="download_files_selected" class="fas fa-download"> Download</i>
+                    <i id="download_files_selected" class="fas fa-download">
+                      Download</i
+                    >
                   </li>
                   <li>
-                    <i id="favourite_files_selected" class="fas fa-star"> Favorite</i>
+                    <i id="favourite_files_selected" class="fas fa-star">
+                      Favorite</i
+                    >
                   </li>
                   <li>
-                    <i id="delete_files_selected" class="fas fa-trash"> Delete</i>
+                    <i id="delete_files_selected" class="fas fa-trash">
+                      Delete</i
+                    >
                   </li>
                 </ul>
               </div>
-              <table class="table_files"><thead><tr><th>Name</th><th>File Size</th><th>Date</th></tr></thead></table>
+              <table class="table_files">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>File Size</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+              </table>
             </div>
           </div>
         </div>
         <div id="container_calendar">
-          <div><iframe id="calendar" src="./calendar.php" frameborder="0"></iframe></div>
+          <div>
+            <iframe id="calendar" src="./calendar.php" frameborder="0"></iframe>
+          </div>
         </div>
         <div id="container_images">
-          <div><iframe id="image" src="./images.html" frameborder="0"></iframe></div>
+          <div>
+            <iframe id="image" src="./images.html" frameborder="0"></iframe>
+          </div>
         </div>
         <div id="container_favourites">
-          <div><iframe id="favourites" src="./favourites.html" frameborder="0"></iframe></div>
+          <div>
+            <iframe
+              id="favourites"
+              src="./favourites.html"
+              frameborder="0"
+            ></iframe>
+          </div>
         </div>
         <div id="container_tasks">
-          <div><iframe id="tasks" src="./tasks.html" frameborder="0"></iframe></div>
+          <div>
+            <iframe id="tasks" src="./tasks.html" frameborder="0"></iframe>
+          </div>
         </div>
       </main>
     </div>
