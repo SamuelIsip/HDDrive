@@ -164,28 +164,24 @@ $(function () {
 
 // build key actions
 $(document).on("keydown", function (e) {
-  let selector, current_image;
+  console.log(e.key);
   switch (e.key) {
     case "ArrowLeft": // left
-      current_image++;
-      selector = $('[data-image-id="' + current_image + '"]');
-      let $sel = selector;
-      current_image = $sel.data("image-id");
-      $("#image-gallery-title").text($sel.data("title"));
-      $("#image-gallery-image").attr("src", $sel.data("image"));
-      // disableButtons(counter, $sel.data("image-id"));
-
+      if (
+        (modalId.data("bs.modal") || {})._isShown &&
+        $("#show-previous-image").is(":visible")
+      ) {
+        document.getElementById("show-previous-image").click();
+      }
       break;
 
     case "ArrowRight": // right
-      current_image--;
-      selector = $('[data-image-id="' + current_image + '"]');
-      let $sel2 = selector;
-      current_image = $sel2.data("image-id");
-      $("#image-gallery-title").text($sel2.data("title"));
-      $("#image-gallery-image").attr("src", $sel2.data("image"));
-      //disableButtons(counter, $sel2.data("image-id"));
-
+      if (
+        (modalId.data("bs.modal") || {})._isShown &&
+        $("#show-next-image").is(":visible")
+      ) {
+        document.getElementById("show-next-image").click();
+      }
       break;
 
     default:
