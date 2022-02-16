@@ -30,7 +30,6 @@ function readDocuments() {
 }
 
 function createList(doc, div_list) {
-  toggleLoader();
   calculateTotalStorage();
   var count = 0;
 
@@ -82,8 +81,9 @@ function createList(doc, div_list) {
         addLinkHead(nameDoc);
 
         ruta += nameDoc.name + "/";
-
+        toggleLoader();
         isDir(getPath() + "/");
+        toggleLoader();
       });
     } else if (nameDoc.isDirFile === "file") {
       td1.addEventListener("click", () => {
@@ -131,7 +131,6 @@ function createList(doc, div_list) {
   div_list.appendChild(tbody);
 
   menu_options_file(ruta);
-  toggleLoader();
 }
 
 function isDir(nameDoc) {
