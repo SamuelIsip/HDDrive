@@ -164,14 +164,15 @@ $(function () {
 
 // build key actions
 $(document).on("keydown", function (e) {
-  console.log(e.key);
   switch (e.key) {
     case "ArrowLeft": // left
       if (
         (modalId.data("bs.modal") || {})._isShown &&
         $("#show-previous-image").is(":visible")
       ) {
-        $("#show-previous-image").trigger("click");
+        current_image++;
+        selector = $('[data-image-id="' + current_image + '"]');
+        updateGallery(selector);
       }
       break;
 
@@ -180,7 +181,9 @@ $(document).on("keydown", function (e) {
         (modalId.data("bs.modal") || {})._isShown &&
         $("#show-next-image").is(":visible")
       ) {
-        $("#show-next-image").trigger("click");
+        current_image--;
+        selector = $('[data-image-id="' + current_image + '"]');
+        updateGallery(selector);
       }
       break;
 
