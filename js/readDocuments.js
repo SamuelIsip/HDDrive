@@ -178,6 +178,9 @@ function addLinkHead(nameDoc) {
   var a = document.createElement("a");
   a.setAttribute("href", "#");
   a.appendChild(document.createTextNode(nameDoc.name));
+  a.addEventListener("click", () => {
+    isDir(nameDoc.name + "/");
+  });
   li.appendChild(a);
   docs_header.childNodes[1].appendChild(li);
 }
