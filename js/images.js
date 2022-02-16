@@ -166,11 +166,13 @@ $(function () {
 $(document).on("keydown", function (e) {
   switch (e.key) {
     case "ArrowLeft": // left
-      document.getElementById("show-previous-image").click();
+      if ($("#show-previous-image").is(":visible"))
+        document.getElementById("show-previous-image").click();
       break;
 
     case "ArrowRight": // right
-      document.getElementById("show-next-image").click();
+      if ($("#show-next-image").is(":visible"))
+        document.getElementById("show-next-image").click();
       break;
 
     default:
