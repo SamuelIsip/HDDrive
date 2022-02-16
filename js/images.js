@@ -166,7 +166,7 @@ $(function () {
 $(document).on("keydown", function (e) {
   console.log(e.key);
   switch (e.key) {
-    case 37: // left
+    case "ArrowLeft": // left
       if (
         (modalId.data("bs.modal") || {})._isShown &&
         $("#show-previous-image").is(":visible")
@@ -175,7 +175,7 @@ $(document).on("keydown", function (e) {
       }
       break;
 
-    case 39: // right
+    case "ArrowRight": // right
       if (
         (modalId.data("bs.modal") || {})._isShown &&
         $("#show-next-image").is(":visible")
