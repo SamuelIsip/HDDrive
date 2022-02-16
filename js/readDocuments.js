@@ -29,6 +29,8 @@ function readDocuments() {
   });
 }
 
+eventLinkHeadHome();
+
 function createList(doc, div_list) {
   calculateTotalStorage();
   var count = 0;
@@ -130,8 +132,6 @@ function createList(doc, div_list) {
   div_list.appendChild(tbody);
 
   menu_options_file(ruta);
-
-  eventLinkHeadHome();
 }
 
 function isDir(nameDoc) {
