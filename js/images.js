@@ -162,8 +162,9 @@ $(function () {
   }
 });
 
-/* // build key actions
+// build key actions
 $(document).on("keydown", function (e) {
+  console.log(e.key);
   switch (e.key) {
     case 37: // left
       if (
@@ -187,4 +188,4 @@ $(document).on("keydown", function (e) {
       return; // exit this handler for other keys
   }
   e.preventDefault(); // prevent the default action (scroll / move caret)
-}); */
+});

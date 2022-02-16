@@ -116,7 +116,7 @@
                     <i id="download_files_selected" class="fas fa-download"> Download</i>
                   </li>
                   <li>
-                    <i id="favourite_files_selected" class="fas fa-star"> Favourite</i>
+                    <i id="favourite_files_selected" class="fas fa-star"> Favorite</i>
                   </li>
                   <li>
                     <i id="delete_files_selected" class="fas fa-trash"> Delete</i>
