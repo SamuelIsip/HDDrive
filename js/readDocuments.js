@@ -180,6 +180,7 @@ function addLinkHead(nameDoc) {
   a.appendChild(document.createTextNode(nameDoc.name));
   a.addEventListener("click", () => {
     isDir(nameDoc.name + "/");
+    updateLinkHead(nameDoc.name);
   });
   li.appendChild(a);
   docs_header.childNodes[1].appendChild(li);
@@ -191,6 +192,16 @@ function resetLinkHead() {
     document.getElementsByClassName("docs_header")[0].firstElementChild;
   var lis = docs_header.children;
   for (let i = lis.length - 1; i > 1; i--) docs_header.children[i].remove();
+}
+
+function updateLinkHead(nameDir) {
+  var docs_header =
+    document.getElementsByClassName("docs_header")[0].firstElementChild;
+  var lis = docs_header.children;
+  for (let i = lis.length - 1; i > 1; i--) {
+    if (docs_header.children[i].firstElementChild.text == nameDir) break;
+    docs_header.children[i].remove();
+  }
 }
 
 function deleteFileRecursive() {
