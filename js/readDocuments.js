@@ -30,6 +30,7 @@ function readDocuments() {
 }
 
 function createList(doc, div_list) {
+  toggleLoader();
   calculateTotalStorage();
   var count = 0;
 
@@ -130,10 +131,10 @@ function createList(doc, div_list) {
   div_list.appendChild(tbody);
 
   menu_options_file(ruta);
+  toggleLoader();
 }
 
 function isDir(nameDoc) {
-  toggleLoader();
   var div_list = document.getElementsByClassName("table_files")[0];
   deleteFileRecursive();
   $.ajax({
@@ -150,7 +151,6 @@ function isDir(nameDoc) {
       createList(doc, div_list);
     },
   });
-  toggleLoader();
 }
 
 function isFile(nameFile) {
