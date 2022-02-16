@@ -29,8 +29,6 @@ function readDocuments() {
   });
 }
 
-eventLinkHeadHome();
-
 function createList(doc, div_list) {
   calculateTotalStorage();
   var count = 0;
