@@ -130,6 +130,8 @@ function createList(doc, div_list) {
   div_list.appendChild(tbody);
 
   menu_options_file(ruta);
+
+  eventLinkHeadHome();
 }
 
 function isDir(nameDoc) {
@@ -202,6 +204,17 @@ function updateLinkHead(nameDir) {
     if (docs_header.children[i].firstElementChild.text == nameDir) break;
     docs_header.children[i].remove();
   }
+}
+
+function eventLinkHeadHome() {
+  var docs_header =
+    document.getElementsByClassName("docs_header")[0].firstElementChild;
+  docs_header.children[0].addEventListener("click", () => {
+    isDir("/");
+  });
+  docs_header.children[1].addEventListener("click", () => {
+    isDir("/");
+  });
 }
 
 function deleteFileRecursive() {
