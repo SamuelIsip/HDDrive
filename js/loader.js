@@ -6,8 +6,8 @@ function loaderDialog() {
   };
 }
 
-function toggleLoader() {
-  setTimeout(dummyFunction, 2000);
+async function toggleLoader() {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   var x = document.getElementsByClassName("spinner")[0];
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -15,5 +15,3 @@ function toggleLoader() {
     x.style.display = "none";
   }
 }
-
-function dummyFunction() {}
