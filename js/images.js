@@ -1,8 +1,11 @@
 let modalId = $("#image-gallery");
 
 $(function () {
+  toggleLoader();
   // Carga de imágenes
   loadImagesFromDB();
+
+  toggleLoader();
 
   // Descarga y borrado
   dropAndDownloadListener();
