@@ -168,14 +168,22 @@ $(document).on("keydown", function (e) {
     case "ArrowLeft": // left
       current_image++;
       selector = $('[data-image-id="' + current_image + '"]');
-      updateGallery(selector);
+      let $sel = selector;
+      current_image = $sel.data("image-id");
+      $("#image-gallery-title").text($sel.data("title"));
+      $("#image-gallery-image").attr("src", $sel.data("image"));
+      disableButtons(counter, $sel.data("image-id"));
 
       break;
 
     case "ArrowRight": // right
       current_image--;
       selector = $('[data-image-id="' + current_image + '"]');
-      updateGallery(selector);
+      let $sel = selector;
+      current_image = $sel.data("image-id");
+      $("#image-gallery-title").text($sel.data("title"));
+      $("#image-gallery-image").attr("src", $sel.data("image"));
+      disableButtons(counter, $sel.data("image-id"));
 
       break;
 
