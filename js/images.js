@@ -166,25 +166,17 @@ $(function () {
 $(document).on("keydown", function (e) {
   switch (e.key) {
     case "ArrowLeft": // left
-      if (
-        (modalId.data("bs.modal") || {})._isShown &&
-        $("#show-previous-image").is(":visible")
-      ) {
-        current_image++;
-        selector = $('[data-image-id="' + current_image + '"]');
-        updateGallery(selector);
-      }
+      current_image++;
+      selector = $('[data-image-id="' + current_image + '"]');
+      updateGallery(selector);
+
       break;
 
     case "ArrowRight": // right
-      if (
-        (modalId.data("bs.modal") || {})._isShown &&
-        $("#show-next-image").is(":visible")
-      ) {
-        current_image--;
-        selector = $('[data-image-id="' + current_image + '"]');
-        updateGallery(selector);
-      }
+      current_image--;
+      selector = $('[data-image-id="' + current_image + '"]');
+      updateGallery(selector);
+
       break;
 
     default:
