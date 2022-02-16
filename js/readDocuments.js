@@ -211,9 +211,11 @@ function eventLinkHeadHome() {
     document.getElementsByClassName("docs_header")[0].firstElementChild;
   docs_header.children[0].addEventListener("click", () => {
     isDir("/");
+    resetLinkHead();
   });
   docs_header.children[1].addEventListener("click", () => {
     isDir("/");
+    resetLinkHead();
   });
 }
 
