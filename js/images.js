@@ -1,11 +1,8 @@
 let modalId = $("#image-gallery");
 
 $(function () {
-  toggleLoader();
   // Carga de imágenes
   loadImagesFromDB();
-
-  toggleLoader();
 
   // Descarga y borrado
   dropAndDownloadListener();
@@ -160,8 +157,10 @@ $(function () {
     // Borrar elementos antes de cargar nuevos
     var div_list = document.getElementById("images_container");
     while (div_list.hasChildNodes()) div_list.removeChild(div_list.lastChild);
+    toggleLoader();
     //Cargar imagenes de neuvo
     loadImagesFromDB();
+    toggleLoader();
   }
 });
 
