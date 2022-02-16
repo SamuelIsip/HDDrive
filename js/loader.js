@@ -7,7 +7,7 @@ function loaderDialog() {
 }
 
 async function toggleLoader() {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  console.log("Pasoo");
   var x = document.getElementsByClassName("spinner")[0];
   if (x.style.display === "none") {
     x.style.display = "block";
