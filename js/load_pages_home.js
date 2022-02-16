@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  loaderDialog();
   eventLinkHeadHome();
   document.onmouseover = function () {
     //User's mouse is inside the page.
@@ -29,4 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
   readDocuments();
   load_events_pages_menu();
   load_events_add_select();
+
+  function loaderDialog() {
+    document.onreadystatechange = () => {
+      if (document.readyState === "complete") {
+        document.getElementsByClassName("spinner")[0].style.display = "none";
+      }
+    };
+  }
 });
