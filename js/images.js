@@ -171,7 +171,7 @@ $(document).on("keydown", function (e) {
         (modalId.data("bs.modal") || {})._isShown &&
         $("#show-previous-image").is(":visible")
       ) {
-        $("#show-previous-image").click();
+        $("#show-previous-image").trigger("click");
       }
       break;
 
@@ -180,7 +180,7 @@ $(document).on("keydown", function (e) {
         (modalId.data("bs.modal") || {})._isShown &&
         $("#show-next-image").is(":visible")
       ) {
-        $("#show-next-image").click();
+        $("#show-next-image").trigger("click");
       }
       break;
 
