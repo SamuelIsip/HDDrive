@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  loaderDialog();
   eventLinkHeadHome();
   document.onmouseover = function () {
     //User's mouse is inside the page.
