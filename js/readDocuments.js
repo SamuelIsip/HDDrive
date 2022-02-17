@@ -139,7 +139,7 @@ function isDir(nameDoc) {
   var div_list = document.getElementsByClassName("table_files")[0];
   deleteFileRecursive();
   $.ajax({
-    url: "./../api/readDocs.php",
+    url: "./../api/readDocs2.php",
     type: "GET",
     dataType: "json",
     data: {
