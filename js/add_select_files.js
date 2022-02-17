@@ -52,11 +52,15 @@ function load_events_add_select() {
 
   document.getElementById("select_files").addEventListener("click", () => {
     //Mostrar todas las opciones de check
+    toggleCheckOptionsAndBackgroundColor();
+  });
+
+  function toggleCheckOptionsAndBackgroundColor() {
     toggleCheckOptions();
     document
       .getElementById("select_files")
       .parentElement.classList.toggle("check_select_color");
-  });
+  }
 
   function toggleCheckOptions() {
     var check_list = document.getElementsByClassName("check_file");
@@ -103,7 +107,7 @@ function load_events_add_select() {
           "&nameFolder=" +
           getPath()
       );
-      toggleCheckOptions();
+      toggleCheckOptionsAndBackgroundColor();
     });
 
   // ADD SELECTED FILES TO FAVOURITE
@@ -130,7 +134,7 @@ function load_events_add_select() {
       var json_arr = JSON.stringify(arrFiles);
 
       addToFavouriteFiles(json_arr);
-      toggleCheckOptions();
+      toggleCheckOptionsAndBackgroundColor();
     });
 
   async function addToFavouriteFiles(json_arr) {
@@ -168,7 +172,7 @@ function load_events_add_select() {
       };
 
       deleteSelectFile(files_data);
-      toggleCheckOptions();
+      toggleCheckOptionsAndBackgroundColor();
     });
 
   async function deleteSelectFile(files_data) {
