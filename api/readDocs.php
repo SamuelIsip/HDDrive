@@ -57,9 +57,7 @@
             "size"=>is_dir($value) ? get_size($value) : convert_size(filesize($value)),
             "modific"=>date ("d/m/Y H:i", filemtime($value)),
             "isDirFile"=>is_dir($value) ? "dir" : "file",
-            "isFavorite"=> $isFavorite,
-            "ruta2" => $ruta2,
-            "ruta" => $ruta
+            "isFavorite"=> $isFavorite
         );
 
         array_push($arr1["docs"], $arr2);
