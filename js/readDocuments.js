@@ -94,6 +94,7 @@ function createList(doc, div_list) {
     input_name.classList.add("name_file_dir");
 
     //Favorite icon
+    console.log(nameDoc.isFavorite);
     if (nameDoc.isDirFile === "file" && nameDoc.isFavorite === 1) {
       let i = document.createElement("i");
       i.classList.add("fas");
