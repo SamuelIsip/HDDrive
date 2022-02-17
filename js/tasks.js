@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   window.add_tasks = function () {
+    toggleLoader();
     var list_tasks = document.getElementById("list_tasks");
     var xhr;
 
@@ -76,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     xhr.open("POST", "./../api/loadTasks.php", false);
     xhr.send();
+    toggleLoader();
   };
 
   //Datos necesarios para update
