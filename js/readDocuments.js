@@ -132,6 +132,7 @@ function createList(doc, div_list) {
 }
 
 function isDir(nameDoc) {
+  console.log(nameDoc + "----" + userName);
   toggleLoader();
   var div_list = document.getElementsByClassName("table_files")[0];
   deleteFileRecursive();
@@ -209,11 +210,15 @@ function eventLinkHeadHome() {
   var docs_header =
     document.getElementsByClassName("docs_header")[0].firstElementChild;
   docs_header.children[0].addEventListener("click", () => {
-    isDir("/");
+    // Remove the table, to reload files of index
+    deleteFileRecursive();
+    readDocuments();
     resetLinkHead();
   });
   docs_header.children[1].addEventListener("click", () => {
-    isDir("/");
+    // Remove the table, to reload files of index
+    deleteFileRecursive();
+    readDocuments();
     resetLinkHead();
   });
 }
