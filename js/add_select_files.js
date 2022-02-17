@@ -193,7 +193,7 @@ function load_events_add_select() {
         .getElementsByClassName("docs_header")[0]
         .firstElementChild.lastElementChild.remove();
 
-      isDir(getPath());
+      isDir(getPath() + "/");
     }
   });
 }
