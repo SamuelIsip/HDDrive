@@ -135,7 +135,7 @@ function createList(doc, div_list) {
 function isDir(nameDoc) {
   toggleLoader();
   nameDoc = nameDoc.substring(0, nameDoc.length - 1);
-  console.log(nameDoc + "----" + userName);
+  console.log(nameDoc + "----" + userName + "----" + userID);
   var div_list = document.getElementsByClassName("table_files")[0];
   deleteFileRecursive();
   $.ajax({
@@ -149,7 +149,8 @@ function isDir(nameDoc) {
     },
     async: true,
     success: (doc) => {
-      createList(doc, div_list);
+      console.log(doc);
+      //createList(doc, div_list);
     },
   });
   toggleLoader();

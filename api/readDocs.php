@@ -33,6 +33,7 @@
 
         // Comprobar si es favorito
         $ruta2 = $ruta.$value;
+        echo json_encode($ruta2);
         $stmt = mysqli_prepare($con, "SELECT id_fav FROM favorites WHERE id_user=? AND ruta=?");
         $usrID = $_SESSION["userID"];
 
@@ -67,7 +68,7 @@
 
     http_response_code(200);
 
-    echo json_encode($arr1);
+    //echo json_encode($arr1);
 
 
     
