@@ -6,7 +6,7 @@ function loaderDialog() {
   };
 }
 
-async function toggleLoader() {
+function toggleLoader() {
   console.log("pasoo");
   var x = document.getElementsByClassName("spinner")[0];
   if (x.style.display === "none") {

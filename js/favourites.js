@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   window.load_favourites = function () {
+    toggleLoader();
     var list_fav = document.getElementsByClassName("table_favs")[0];
     var xhr;
 
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     xhr.open("POST", "./../api/readFavourites.php", false);
     xhr.send();
+    toggleLoader();
   };
 
   function createFavList(tbody, responseText) {
@@ -84,9 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        toggleLoader();
         window.load_favourites();
-        toggleLoader();
       }
     };
     xhr.open("POST", "./../api/removeFavourite.php", true);
