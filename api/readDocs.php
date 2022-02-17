@@ -37,8 +37,8 @@
         else
             $ruta2 = $ruta.$value;
 
-        if($ruta == "///")
-            $ruta = "/".$value;
+        if($ruta === "///")
+            $ruta2 = "/".$value;
 
         $stmt = mysqli_prepare($con, "SELECT id_fav FROM favorites WHERE id_user=? AND ruta=?");
         $usrID = $_SESSION["userID"];
