@@ -137,7 +137,7 @@ function isDir(nameDoc) {
   var div_list = document.getElementsByClassName("table_files")[0];
   deleteFileRecursive();
   $.ajax({
-    url: "./../api/readDocs2.php",
+    url: "./../api/readDocs.php",
     type: "GET",
     dataType: "json",
     data: {
@@ -148,7 +148,7 @@ function isDir(nameDoc) {
     async: true,
     success: (doc) => {
       console.log(doc);
-      //createList(doc, div_list);
+      createList(doc, div_list);
     },
   });
   toggleLoader();
