@@ -58,7 +58,8 @@
             "modific"=>date ("d/m/Y H:i", filemtime($value)),
             "isDirFile"=>is_dir($value) ? "dir" : "file",
             "isFavorite"=> $isFavorite,
-            "ruta2" => $ruta2
+            "ruta2" => $ruta2,
+            "ruta" => $ruta
         );
 
         array_push($arr1["docs"], $arr2);
