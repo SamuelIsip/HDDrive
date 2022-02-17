@@ -84,7 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+        toggleLoader();
         window.load_favourites();
+        toggleLoader();
       }
     };
     xhr.open("POST", "./../api/removeFavourite.php", true);
