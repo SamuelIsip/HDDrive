@@ -147,7 +147,6 @@ function isDir(nameDoc) {
     },
     async: true,
     success: (doc) => {
-      console.log(doc);
       createList(doc, div_list);
     },
   });
