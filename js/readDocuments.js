@@ -147,7 +147,8 @@ function isDir(nameDoc) {
     },
     async: true,
     success: (doc) => {
-      createList(doc, div_list);
+      console.log(doc);
+      //createList(doc, div_list);
     },
   });
   toggleLoader();
