@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         list_fav.appendChild(tbody);
       }
     };
-    xhr.open("POST", "./../api/readFavourites.php", false);
+    xhr.open("POST", "./../api/readFavourites.php", true);
     xhr.send();
     toggleLoader();
   };
