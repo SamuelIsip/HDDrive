@@ -29,9 +29,9 @@
             $mail->Host       = $localHost;                     
             /* $mail->SMTPAuth   = true;                                   
             $mail->Username   = $localUsername;                     
-            $mail->Password   = $localPassword;                              
-            $mail->SMTPSecure = $localSMTPSecure;   */           
-            $mail->Port       = $localPort;           
+            $mail->Password   = $localPassword;      */                          
+            $mail->SMTPSecure = $localSMTPSecure;            
+            $mail->Port       = 25;           
             
             //Recipients
             $mail->setFrom($localUsername, 'HDDriveSupport');
