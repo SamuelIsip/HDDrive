@@ -29,8 +29,8 @@
             $mail->Host       = 'localhost';                     
             /* $mail->SMTPAuth   = true;                                   
             $mail->Username   = $localUsername;                     
-            $mail->Password   = $localPassword;      */                          
-            $mail->SMTPSecure = $localSMTPSecure;            
+            $mail->Password   = $localPassword;                               
+            $mail->SMTPSecure = $localSMTPSecure;   */          
             $mail->Port       = 25;           
             
             //Recipients
