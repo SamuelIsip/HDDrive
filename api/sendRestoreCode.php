@@ -26,7 +26,7 @@
             //Server settings
             $mail->SMTPDebug = 0;                      
             $mail->isSMTP();                                            
-            $mail->Host       = 'localhost';                     
+            $mail->Host       = 'hddrive.ddns.net';                     
             /* $mail->SMTPAuth   = true;                                   
             $mail->Username   = $localUsername;                     
             $mail->Password   = $localPassword;                               
