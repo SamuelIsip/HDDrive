@@ -26,7 +26,7 @@
             //Server settings
             $mail->SMTPDebug = 0;                      
             $mail->isSMTP();                                            
-            $mail->Host       = $localHost;                     
+            $mail->Host       = 'localhost';                     
             /* $mail->SMTPAuth   = true;                                   
             $mail->Username   = $localUsername;                     
             $mail->Password   = $localPassword;      */                          
