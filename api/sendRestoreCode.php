@@ -27,10 +27,10 @@
             $mail->SMTPDebug = 0;                      
             $mail->isSMTP();                                            
             $mail->Host       = $localHost;                     
-            $mail->SMTPAuth   = true;                                   
+            /* $mail->SMTPAuth   = true;                                   
             $mail->Username   = $localUsername;                     
-            $mail->Password   = $localPassword;                               
-            $mail->SMTPSecure = $localSMTPSecure;            
+            $mail->Password   = $localPassword;                              
+            $mail->SMTPSecure = $localSMTPSecure;   */           
             $mail->Port       = $localPort;           
             
             //Recipients
