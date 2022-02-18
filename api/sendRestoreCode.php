@@ -34,7 +34,7 @@
             $mail->Port       = 25;           
             
             //Recipients
-            $mail->setFrom('rasspberry@rasspberry-pi', 'HDDriveSupport');
+            $mail->setFrom('hddrive.ddns.net', 'HDDriveSupport');
             $mail->addAddress($email, 'HDDriveUser');     //mail que recibira el correo
 
             //Content
