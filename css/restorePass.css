@@ -17,21 +17,21 @@ body {
   margin-left: 5px;
 }
 
-#container__restore:first-child {
+#container__restore div:first-child {
   display: flex;
   flex-direction: row;
 }
 
-#container__restore:first-child > div {
+#container__restore div:first-child > div {
   width: 50%;
 }
 
 @media screen and (min-width: 768px) {
-  #container__restore:first-child {
+  #container__restore div:first-child {
     flex-direction: column;
   }
 
-  #container__restore:first-child > div {
+  #container__restore div:first-child > div {
     width: 100%;
   }
 }
