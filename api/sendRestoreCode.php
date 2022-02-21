@@ -26,12 +26,12 @@
             //Server settings
             $mail->SMTPDebug = 0;                      
             $mail->isSMTP();                                            
-            $mail->Host       = 'hddrive.ddns.net:85';                     
+            //$mail->Host       = 'localhost';                     
             /* $mail->SMTPAuth   = true;                                   
             $mail->Username   = $localUsername;                     
             $mail->Password   = $localPassword;                               
             $mail->SMTPSecure = $localSMTPSecure;   */          
-            $mail->Port       = 25;           
+            //$mail->Port       = 25;           
             
             //Recipients
             $mail->setFrom('rasspberry@rasspberry-pi.com', 'HDDriveSupport');
