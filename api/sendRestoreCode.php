@@ -20,46 +20,23 @@
     // Función para enviar el mail con el código de confirmación
     function enviarEmail($email, $verificationCode, $localHost, $localUsername, $localPassword, $localSMTPSecure, $localPort){
 
+        $titulo    = 'Password change code';
+        $mensaje   = '<p>You are about to change your password.</p>
+        <p>Your <b>verification code</b> is: <b>'.$verificationCode.'</b></p>
+        <p>Please, insert this code in the password recovery page.</p>';
+        $cabeceras = 'From: hddrive@hddrive.com' . "\r\n" .
+            'Reply-To: hddrive@hddrive.com' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        mail($email, $titulo, $mensaje, $cabeceras);
+
         $mail = new PHPMailer(true);
 
-        try {
-            //Server settings
-            $mail->SMTPDebug = 0;                      
-            $mail->isSMTP();                                            
-            //$mail->Host       = 'localhost';                     
-            /* $mail->SMTPAuth   = true;                                   
-            $mail->Username   = $localUsername;                     
-            $mail->Password   = $localPassword;                               
-            $mail->SMTPSecure = $localSMTPSecure;   */          
-            //$mail->Port       = 25;           
-            
-            //Recipients
-            $mail->setFrom('rasspberry@rasspberry-pi.com', 'HDDriveSupport');
-            $mail->addAddress($email, 'HDDriveUser');     //mail que recibira el correo
-
-            //Content
-            $mail->isHTML(true);                                  
-            $mail->Subject = 'Password change code';
-            $mail->Body    = '<p>You are about to change your password.</p>
-            <p>Your <b>verification code</b> is: <b>'.$verificationCode.'</b></p>
-            <p>Please, insert this code in the password recovery page.</p>';
-            $mail->AltBody = 'You are about to change your password. Your *verification code* is: > '.$verificationCode.' < Please, insert this code in the password recovery page.';
-
-            $mail->send();
-            
-        } catch (Exception $e) {                  
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        }
     }
 
     //Función que genera el código random de verificación
     function randomVerificationCode($stringLength) {
         return substr(sha1(time()), 0, $stringLength);
-    }
-
-    function cerrarConexiones($con, $stmt){
-        mysqli_stmt_close($stmt);
-        mysqli_close($con);
     }
 
 ?>
