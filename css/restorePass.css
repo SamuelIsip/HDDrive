@@ -17,12 +17,12 @@ body {
   margin-left: 5px;
 }
 
-#container__restore {
+#container__restore:first-child {
   display: flex;
   flex-direction: row;
 }
 
-#container__restore > div > div {
+#container__restore:first-child > div {
   width: 50%;
 }
 
@@ -31,7 +31,7 @@ body {
     flex-direction: column;
   }
 
-  #container__restore > div > div {
+  #container__restore:first-child > div {
     width: 100%;
   }
 }
