@@ -1,0 +1,37 @@
+body {
+  background-image: url(../img/portada.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#success-password {
+  visibility: hidden;
+  background-color: #f7f7f7;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+  padding: 10px;
+}
+
+#btn-pass-success {
+  margin-left: 5px;
+}
+
+#container__restore {
+  display: flex;
+  flex-direction: row;
+}
+
+#container__restore > div > div {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  #container__restore:first-child {
+    flex-direction: column;
+  }
+
+  #container__restore > div > div {
+    width: 100%;
+  }
+}
