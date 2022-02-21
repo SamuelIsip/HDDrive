@@ -26,7 +26,7 @@ body {
   width: 50%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   #container__restore:first-child {
     flex-direction: column;
   }
