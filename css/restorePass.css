@@ -17,7 +17,7 @@ body {
   margin-left: 5px;
 }
 
-#container__restore div:first-child {
+#container__restore > div:first-child {
   display: flex;
   flex-direction: row;
 }
