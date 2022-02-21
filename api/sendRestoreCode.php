@@ -6,12 +6,12 @@
     
     $code = randomVerificationCode(10);
 
-    enviarEmail($email['emailJSON'], $code, $localHost, $localUsername, $localPassword, $localSMTPSecure, $localPort);
+    enviarEmail($email['emailJSON'], $code, $localHost);
 
     echo $code;
 
     // Función para enviar el mail con el código de confirmación
-    function enviarEmail($email, $verificationCode, $localHost, $localUsername, $localPassword, $localSMTPSecure, $localPort){
+    function enviarEmail($email, $verificationCode, $localSender){
 
         $titulo    = 'Password change code';
         $mensaje   = '<p>You are about to change your password.</p>
