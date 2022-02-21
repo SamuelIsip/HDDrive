@@ -6,7 +6,7 @@
     
     $code = randomVerificationCode(10);
 
-    enviarEmail($email['emailJSON'], $code, $localHost);
+    enviarEmail($email['emailJSON'], $code, $localSender);
 
     echo $code;
 
