@@ -19,10 +19,10 @@
         <p>Please, insert this code in the password recovery page.</p>';
         $cabeceras = 'From: hddrive@hddrive.com' . "\r\n" .
             'Reply-To: hddrive@hddrive.com' . "\r\n" .
+            'MIME-Version: 1.0' . "\r\n" .
+            'Content-type: text/html; charset=iso-8859-1' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
-        $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
-        $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
+    
         mail($email, $titulo, $mensaje, $cabeceras);
 
     }
