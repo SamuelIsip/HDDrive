@@ -17,8 +17,8 @@
         $mensaje   = '<p>You are about to change your password.</p>
         <p>Your <b>verification code</b> is: <b>'.$verificationCode.'</b></p>
         <p>Please, insert this code in the password recovery page.</p>';
-        $cabeceras = 'From: hddrive@hddrive.com' . "\r\n" .
-            'Reply-To: hddrive@hddrive.com' . "\r\n" .
+        $cabeceras = 'From: '.$localSender . "\r\n" .
+            'Reply-To: '.$localSender . "\r\n" .
             'MIME-Version: 1.0' . "\r\n" .
             'Content-type: text/html; charset=iso-8859-1' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
