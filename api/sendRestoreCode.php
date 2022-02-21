@@ -2,13 +2,6 @@
 
     include_once("mailCredentials.php");
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-
-    require 'phpmailer/phpmailer/src/Exception.php';
-    require 'phpmailer/phpmailer/src/PHPMailer.php';
-    require 'phpmailer/phpmailer/src/SMTP.php';
-
     $email = json_decode(file_get_contents('php://input'), true);
     
     $code = randomVerificationCode(10);
@@ -27,10 +20,10 @@
         $cabeceras = 'From: hddrive@hddrive.com' . "\r\n" .
             'Reply-To: hddrive@hddrive.com' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
+        $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+        $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
         mail($email, $titulo, $mensaje, $cabeceras);
-
-        $mail = new PHPMailer(true);
 
     }
 
