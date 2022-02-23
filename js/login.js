@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("userID", dataUsr.id_user);
       //Cookies
       setCookie(dataUsr);
-      window.location = encodeURI("./../HDDrive/pages/home.html");
+      window.location = encodeURI("./../HDDrive/pages/home");
     } else {
       document.getElementById("login_email").style.border = "1px solid #ff0000";
       document.getElementById("login_pass").style.border = "1px solid #ff0000";

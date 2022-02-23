@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("userName", dataUsr.nom_usr);
       //Cookies
       setCookie(dataUsr);
-      window.location = encodeURI("./../HDDrive/pages/home.html");
+      window.location = encodeURI("./../HDDrive/pages/home");
     } else if (response.status == 409) {
       document.getElementById("logon_error_info").innerHTML =
         "User already exist!";
