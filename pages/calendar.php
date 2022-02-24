@@ -58,7 +58,7 @@
 
   ?>
   <div id="calendar_container_main">
-    <form action="calendar.php" method="GET">
+    <form action="calendar" method="GET">
       <div id="calendar_container_main_select_day">
         <div>
           <select name="mes" id="mes">
