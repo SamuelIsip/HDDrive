@@ -25,10 +25,10 @@
         mysqli_select_db($con, $dbName);
 
         //Creamos tablas
-        include_once("createTables.php");
+        require_once("createTables.php");
 
         //Modificamos tablas       
-        include_once("alterTables.php");
+        require_once("alterTables.php");
     }
 
     //Liberamos recurso
