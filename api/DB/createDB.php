@@ -22,7 +22,7 @@
         
         mysqli_query($con, "CREATE DATABASE hddrivedb2");
         
-        mysqli_select_db($con, "hddrivedb2");
+        mysqli_select_db($con, $dbName);
 
         // Creamos Tablas
         //FAVORITOS
