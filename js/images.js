@@ -11,6 +11,7 @@ $(function () {
   document
     .getElementById("add_image")
     .parentElement.addEventListener("change", () => {
+      toggleLoader();
       var form_data = new FormData();
       var ins = document.getElementById("add_image").files.length;
       for (var x = 0; x < ins; x++) {
@@ -32,6 +33,7 @@ $(function () {
           updateImagesAfterModification();
         },
       });
+      toggleLoader();
     });
 
   function loadImagesFromDB() {

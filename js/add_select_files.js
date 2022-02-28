@@ -23,9 +23,9 @@ function load_events_add_select() {
         async: true,
         success: function () {
           isDir(getPath());
-          toggleLoader();
         },
       });
+      toggleLoader();
     });
 
   document.getElementById("add_folder").addEventListener("click", () => {
