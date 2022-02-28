@@ -6,7 +6,7 @@
     FROM INFORMATION_SCHEMA.SCHEMATA
     WHERE SCHEMA_NAME = ?");
 
-    $dbName ="hddrivedb";
+    $dbName ="hddrivedb2";
     
     mysqli_stmt_bind_param($stmt,"s",$dbName);
 
