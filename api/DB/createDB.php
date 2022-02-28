@@ -18,7 +18,7 @@
 
     if($nameDB === $dbName){
         echo "La Base de Datos ya existe!";
-    else{
+    }else{
         
         mysqli_query($con, "CREATE DATABASE hddrivedb2");
         
