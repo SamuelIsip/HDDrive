@@ -2,6 +2,7 @@ function load_events_add_select() {
   document
     .getElementById("add_file")
     .parentElement.addEventListener("change", () => {
+      toggleLoader();
       var form_data = new FormData();
       form_data.append("rutaDir", getPath());
       var ins = document.getElementById("add_file").files.length;
@@ -22,6 +23,7 @@ function load_events_add_select() {
         async: true,
         success: function () {
           isDir(getPath());
+          toggleLoader();
         },
       });
     });
