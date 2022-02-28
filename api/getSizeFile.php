@@ -7,10 +7,23 @@ function get_size($directory){
         if(is_file($path))
             $size += filesize($path);
         if(is_dir($path))
-          $size += get_size($path);
+          $size += get_sizeDir($path);
 
     }
     return convert_size($size);
+} 
+
+function get_sizeDir($directory){
+    $size = 0;
+    $files = glob($directory.'/*');
+    foreach($files as $path){
+        if(is_file($path))
+            $size += filesize($path);
+        if(is_dir($path))
+          $size += get_sizeDir($path);
+
+    }
+    return $size;
 } 
 
 function convert_size($size){
