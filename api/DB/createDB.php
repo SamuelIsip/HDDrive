@@ -28,7 +28,7 @@
         include_once("createTables.php");
 
         //Modificamos tablas       
-        include_once("alterTables.php")
+        include_once("alterTables.php");
     }
 
     //Liberamos recurso
