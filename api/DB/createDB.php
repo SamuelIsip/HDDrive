@@ -29,6 +29,12 @@
 
         //Modificamos tablas       
         require_once("alterTables.php");
+
+        //Insertar usuario admin
+        require_once("insertAdmin.php");
+
+        //Crear carpetas para usuario admin
+        require_once("createAdminFolders.php");
     }
 
     //Liberamos recurso
