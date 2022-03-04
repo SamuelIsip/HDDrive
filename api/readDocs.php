@@ -1,7 +1,7 @@
 <?php
 
+    require_once("connectDB.php");
     include_once("getSizeFile.php");
-    include_once("connectDB.php");
 
     if(isset($_GET['userNameSession']) && $_GET['userIDSession']){
         session_abort();

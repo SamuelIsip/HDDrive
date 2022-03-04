@@ -1,6 +1,6 @@
 <?php
 
-    include_once("connectDB.php");
+    require_once("connectDB.php");
     include_once("getSizeFile.php");
 
     session_name("userSession");

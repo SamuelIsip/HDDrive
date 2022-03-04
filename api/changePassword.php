@@ -1,6 +1,6 @@
 <?php
 
-    include_once("connectDB.php");
+    require_once("connectDB.php");
 
     $user_data = json_decode(file_get_contents('php://input'),true);
 

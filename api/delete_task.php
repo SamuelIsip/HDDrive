@@ -1,6 +1,6 @@
 <?php
 
-    include_once("connectDB.php");
+    require_once("connectDB.php");
 
     //Borramos dato de la BD
     $stmt=mysqli_prepare($con, "DELETE FROM tasks WHERE title=? AND date=?");

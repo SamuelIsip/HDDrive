@@ -13,7 +13,7 @@
 
         $value = $_FILES['file']['name'][$i];
 
-        include_once("connectDB.php");
+        require_once("connectDB.php");
         include_once("getSizeFile.php");
 
       

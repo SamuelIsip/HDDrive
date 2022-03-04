@@ -1,6 +1,6 @@
 <?php
 
-    include_once("connectDB.php");
+    require_once("connectDB.php");
 
     $stmt=mysqli_prepare($con, "SELECT SCHEMA_NAME
     FROM INFORMATION_SCHEMA.SCHEMATA

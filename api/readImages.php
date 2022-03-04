@@ -1,5 +1,5 @@
 <?php
-    include_once("connectDB.php");
+    require_once("connectDB.php");
 
     session_name("userSession");
     session_start();
