@@ -97,8 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function toggleWarningAdvice(message) {
-    let warningAdive = document.getElementById("warning-advice");
-    warningAdive.style.visibility = "visible";
-    warningAdive.children[0] = "¡Warning! " + message;
+    let warningAdvice = document.getElementById("warning-advice");
+    warningAdvice.style.visibility = "visible";
+    warningAdvice.children[0].innerText = "¡Warning! " + message;
   }
 });

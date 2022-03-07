@@ -16,7 +16,7 @@
         exit;
     }
 
-    liberarRecursos($con, $stmt);
+    liberarRecursos($con, $result);
     
     $code = randomVerificationCode(10);
 
