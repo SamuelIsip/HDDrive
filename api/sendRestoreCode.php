@@ -9,9 +9,10 @@
     mysqli_stmt_bind_param($result, "s", $email);
     mysqli_stmt_execute($result);
     if(mysqli_num_rows($result) != 1){
-        http_response_code(409);
+        //http_response_code(409);
         liberarRecursos($con, $result);
-        exit;
+        //exit;
+        echo mysqli_num_rows($result);
     }
 
     liberarRecursos($con, $stmt);

@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     if (response.ok) {
       var code = await response.text();
+      console.log(code);
       document.getElementById("restoreCode").disabled = false;
       document.getElementById("restoreNewPassword").disabled = false;
       document.getElementById(
@@ -98,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function toggleWarningAdvice(message) {
     let warningAdive = document.getElementById("warning-advice");
     warningAdive.style.visibility = "visible";
-    warningAdive.firstChild.innerText = "";
-    warningAdive.firstChild.innerText = "¡Warning! " + message;
+    warningAdive.firstChild.children[0] = "¡Warning! " + message;
   }
 });
