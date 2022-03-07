@@ -25,14 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "1px solid #ff0000";
       document.getElementById("restoreNewPasswordConfirmation").style.border =
         "1px solid #ff0000";
-      alert("Passwords dont match!");
+      toggleWarningAdvice("Passwords dont match!");
       return;
     }
 
     //Comprobar si codigos son iguales
     if (restorePassCodeByUser != restorePassCode) {
       document.getElementById("restoreCode").style.border = "1px solid #ff0000";
-      alert("The code is invalid!");
+      toggleWarningAdvice("The code is invalid!");
       return;
     }
 
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("btnChangePass").disabled = false;
       return code;
     } else {
-      alert("This email does not exist!");
+      toggleWarningAdvice("This email does not exist!");
       return 0;
     }
   }
@@ -79,7 +79,14 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("restoreEmail").value = "";
       document.getElementById("success-password").style.visibility = "visible";
     } else {
-      alert("The password could not be changed");
+      toggleWarningAdvice("¡Warning! The password could not be changed");
     }
+  }
+
+  function toggleWarningAdvice(message) {
+    let warningAdive = document.getElementById("warning-advice");
+    warningAdive.style.visibility = "visible";
+    warningAdive.firstChild.text = "";
+    warningAdive.firstChild.text = message;
   }
 });
