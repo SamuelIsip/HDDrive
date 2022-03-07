@@ -10,14 +10,13 @@
     mysqli_stmt_execute($result);
     mysqli_stmt_store_result($result);
 
-    echo mysqli_stmt_num_rows($result);
-    /* if(mysqli_stmt_num_rows($result) != 1){
+    if(mysqli_stmt_num_rows($result) != 1){
         http_response_code(409);
         liberarRecursos($con, $result);
         exit;
-    } */
+    }
 
-    /* liberarRecursos($con, $stmt);
+    liberarRecursos($con, $stmt);
     
     $code = randomVerificationCode(10);
 
@@ -45,7 +44,7 @@
     //Función que genera el código random de verificación
     function randomVerificationCode($stringLength) {
         return substr(sha1(time()), 0, $stringLength);
-    } */
+    }
 
     function liberarRecursos($con, $result){
         //Liberamos recurso
