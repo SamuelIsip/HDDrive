@@ -9,7 +9,7 @@
 
     if(mysqli_num_rows($result) != 1){
         http_response_code(409);
-        liberarRecursos($con, $stmt);
+        liberarRecursos($con, $result);
         exit;
     }
 

@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function toggleWarningAdvice(message) {
     let warningAdive = document.getElementById("warning-advice");
     warningAdive.style.visibility = "visible";
-    warningAdive.firstChild.text = "";
-    warningAdive.firstChild.text = message;
+    warningAdive.firstChild.innerText = "";
+    warningAdive.firstChild.innerText = message;
   }
 });
