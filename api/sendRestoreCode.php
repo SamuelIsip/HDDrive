@@ -8,11 +8,13 @@
     $result = mysqli_prepare($con, "SELECT email FROM User WHERE email = ?");
     mysqli_stmt_bind_param($result, "s", $email);
     mysqli_stmt_execute($result);
-    if(mysqli_num_rows($result) != 1){
+    mysqli_stmt_store_result($result);
+    echo mysqli_stmt_num_rows($result);
+    if(mysqli_stmt_num_rows($result) != 1){
         //http_response_code(409);
         liberarRecursos($con, $result);
         //exit;
-        echo mysqli_num_rows($result);
+        echo mysqli_stmt_num_rows($result);
     }
 
     liberarRecursos($con, $stmt);
