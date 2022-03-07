@@ -6,7 +6,7 @@ body {
 }
 
 #success-password {
-  visibility: hidden;
+  display: none;
   background-color: #f7f7f7;
   text-align: center;
   border-radius: 0 0 5px 5px;
@@ -14,7 +14,7 @@ body {
 }
 
 #warning-advice {
-  visibility: hidden;
+  display: none;
   background-color: #f7f7f7;
   text-align: center;
   border-radius: 0 0 5px 5px;

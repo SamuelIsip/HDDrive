@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("restoreNewPasswordConfirmation").value = "";
       document.getElementById("restoreCode").value = "";
       document.getElementById("restoreEmail").value = "";
-      document.getElementById("success-password").style.visibility = "visible";
+      document.getElementById("success-password").style.display = "block";
     } else {
       toggleWarningAdvice("The password could not be changed");
     }
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleWarningAdvice(message) {
     let warningAdvice = document.getElementById("warning-advice");
-    warningAdvice.style.visibility = "visible";
+    warningAdvice.style.display = "block";
     warningAdvice.children[0].innerText = "¡Warning! " + message;
   }
 });
