@@ -5,9 +5,8 @@
     $email = json_decode(file_get_contents('php://input'), true);
 
     //Consultar si ese usuario existe
-    echo $email;
     $result = mysqli_prepare($con, "SELECT email FROM User WHERE email = ?");
-    mysqli_stmt_bind_param($result, "s", $email);
+    mysqli_stmt_bind_param($result, "s", $email['emailJSON']);
     mysqli_stmt_execute($result);
     mysqli_stmt_store_result($result);
 
