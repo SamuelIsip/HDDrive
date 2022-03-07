@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   for (let i = 0; i < dias_semana.length; i++) {
     if (dias_semana[i].hasAttribute("id")) {
       dias_semana[i].addEventListener("click", () => {
-        this.style.backgroundColor = "#3cb371";
+        dias_semana[i].style.backgroundColor = "#3cb371";
         document.getElementById("calendar__task__container").className =
           "calendar_task_styles";
         cargar_funcioanlidades_task(dias_semana[i].innerHTML);
