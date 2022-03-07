@@ -21,12 +21,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Comprobaciones password
     if (newPass == "") {
+      document.getElementById("restoreNewPassword").style.border =
+        "1px solid #ff0000";
+      document.getElementById("restoreNewPasswordConfirmation").style.border =
+        "1px solid #ff0000";
+      toggleWarningAdvice("Passwords dont match!");
       toggleWarningAdvice("You must enter a password!");
       return;
     }
 
     var regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/;
     if (!regexPass.test(newPass)) {
+      document.getElementById("restoreNewPassword").style.border =
+        "1px solid #ff0000";
+      document.getElementById("restoreNewPasswordConfirmation").style.border =
+        "1px solid #ff0000";
+      toggleWarningAdvice("Passwords dont match!");
       toggleWarningAdvice("Wrong Format of Password, try again.");
       return;
     }
@@ -60,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     if (response.ok) {
       var code = await response.text();
-      console.log(code);
       document.getElementById("restoreCode").disabled = false;
       document.getElementById("restoreNewPassword").disabled = false;
       document.getElementById(
@@ -91,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("restoreCode").value = "";
       document.getElementById("restoreEmail").value = "";
       document.getElementById("success-password").style.display = "block";
+      document.getElementById("warning-advice").style.display = "none";
     } else {
       toggleWarningAdvice("The password could not be changed");
     }
