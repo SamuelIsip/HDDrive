@@ -99,6 +99,10 @@
   @include log_in_on_header;
 }
 
+label {
+  display: none;
+}
+
 .img_account {
   width: 150px;
   height: 150px;

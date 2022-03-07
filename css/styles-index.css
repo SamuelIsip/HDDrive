@@ -272,6 +272,10 @@ header .contact_logo_img {
   text-align: center;
 }
 
+label {
+  display: none;
+}
+
 .img_account {
   width: 150px;
   height: 150px;
