@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("login_error_info").className =
         "login_error_info_on";
       document.getElementById("login_error_info").innerHTML =
-        "Wrong Password, try again.";
+        "Wrong Format of Password, try again.";
       return false;
     }
   }

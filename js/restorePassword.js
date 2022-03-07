@@ -19,6 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
     ).value;
     var restorePassCodeByUser = document.getElementById("restoreCode").value;
 
+    // Comprobaciones password
+    if (newPass == "") {
+      toggleWarningAdvice("You must enter a password!");
+      return;
+    }
+
+    var regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/;
+    if (!regexPass.test(newPass)) {
+      toggleWarningAdvice("Wrong Format of Password, try again.");
+      return;
+    }
+
     //Comprobamos si pass son iguales
     if (newPass != newConfirmationPass) {
       document.getElementById("restoreNewPassword").style.border =
@@ -79,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("restoreEmail").value = "";
       document.getElementById("success-password").style.visibility = "visible";
     } else {
-      toggleWarningAdvice("¡Warning! The password could not be changed");
+      toggleWarningAdvice("The password could not be changed");
     }
   }
 
@@ -87,6 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let warningAdive = document.getElementById("warning-advice");
     warningAdive.style.visibility = "visible";
     warningAdive.firstChild.innerText = "";
-    warningAdive.firstChild.innerText = message;
+    warningAdive.firstChild.innerText = "¡Warning! " + message;
   }
 });

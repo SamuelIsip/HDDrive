@@ -4,9 +4,10 @@
 
     $email = json_decode(file_get_contents('php://input'), true);
 
-     //Consultar si ese usuario existe
-     $result = mysqli_query($con, "SELECT email FROM User WHERE email = '$email';");
-
+    //Consultar si ese usuario existe
+    $result = mysqli_prepare($con, "SELECT email FROM User WHERE email = ?");
+    mysqli_stmt_bind_param($result, "s", $email);
+    mysqli_stmt_execute($result);
     if(mysqli_num_rows($result) != 1){
         http_response_code(409);
         liberarRecursos($con, $result);
