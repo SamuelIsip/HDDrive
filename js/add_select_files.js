@@ -184,7 +184,8 @@ function load_events_add_select() {
       body: JSON.stringify(files_data),
     });
     if (response.ok) {
-      console.log(response.text);
+      const dataUsr = await response.text();
+      console.log(dataUsr);
       //isDir(getPath());
     } else {
       alert("Files cannot be deleted");
