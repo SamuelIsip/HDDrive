@@ -22,6 +22,8 @@
         /* fetch values */
         mysqli_stmt_fetch($stmt);
 
+        echo $id_folder;
+
         //2. Borramos dato de FAVORITOS
         $stmt=mysqli_prepare($con, "DELETE FROM favorites WHERE id_user=? AND id_folder=?");
 
