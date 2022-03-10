@@ -1,6 +1,6 @@
 <?php
 
-    require_once("connectDB.php");
+    require_once("connectDBFirstTime.php");
 
     $stmt=mysqli_prepare($con, "SELECT SCHEMA_NAME
     FROM INFORMATION_SCHEMA.SCHEMATA
@@ -18,7 +18,7 @@
         echo "La Base de Datos ya existe!";
     }else{
         
-        mysqli_query($con, "CREATE DATABASE hddrivedb2");
+        mysqli_query($con, "CREATE DATABASE hddrivedb");
         
         mysqli_select_db($con, $dbName);
 
