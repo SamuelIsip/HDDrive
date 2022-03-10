@@ -176,6 +176,7 @@ function load_events_add_select() {
     });
 
   async function deleteSelectFile(files_data) {
+    console.log(JSON.stringify(files_data));
     const response = await fetch("./../api/deletefile.php", {
       method: "POST",
       cache: "no-cache",
@@ -183,7 +184,8 @@ function load_events_add_select() {
       body: JSON.stringify(files_data),
     });
     if (response.ok) {
-      isDir(getPath());
+      console.log(response.text);
+      //isDir(getPath());
     } else {
       alert("Files cannot be deleted");
     }

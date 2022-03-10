@@ -21,6 +21,8 @@
       dropFilesAndDirectory($filename);
     } 
 
+    echo $filename;
+
     function dropFilesAndDirectory($filename){
 
       if(is_dir($filename)){
@@ -44,7 +46,8 @@
               rrmdir($dir. DIRECTORY_SEPARATOR .$object);
             }else{
               unlink($dir. DIRECTORY_SEPARATOR .$object); 
-              dropFilesFromDB($object);
+              echo $object;
+              //dropFilesFromDB($object);
             }
           } 
         }

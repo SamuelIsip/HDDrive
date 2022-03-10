@@ -114,8 +114,9 @@ function add_event_options(options) {
       data: JSON.stringify(fileData),
       dataType: "text",
       async: true,
-      success: function () {
-        isDir(getPath());
+      success: function (text) {
+        console.log(text);
+        //isDir(getPath());
       },
     });
   });
