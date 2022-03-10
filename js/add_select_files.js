@@ -184,7 +184,7 @@ function load_events_add_select() {
       body: JSON.stringify(files_data),
     });
     if (response.ok) {
-      const dataUsr = await response.text();
+      const dataUsr = await response.json();
       console.log(dataUsr);
       //isDir(getPath());
     } else {
