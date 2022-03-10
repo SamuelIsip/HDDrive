@@ -1,5 +1,6 @@
 <?php
 
+    require_once("connectDB.php");  
     session_name("userSession");
     session_start();
 
@@ -15,36 +16,37 @@
     if(isset($files_data['files'])){
       $arr_files = $files_data['files'];
       foreach ($arr_files as $file) { 
-        dropFilesAndDirectory($file);
+        dropFilesAndDirectory($con, $file);
       }
     }else{
-      dropFilesAndDirectory($filename);
+      dropFilesAndDirectory($con, $filename);
     } 
 
-    function dropFilesAndDirectory($filename){
+    function dropFilesAndDirectory($con, $filename){
 
       if(is_dir($filename)){
-        rrmdir($filename);
+        rrmdir($con, $filename);
       }
 
       if(is_file($filename)){
         if(file_exists($filename)){
             unlink($filename);
+            dropFilesFromDB($con, basename($filename));
         }
       } 
 
     }
     
-    function rrmdir($dir) { 
+    function rrmdir($con, $dir) { 
       if (is_dir($dir)) { 
         $objects = scandir($dir);
         foreach ($objects as $object) { 
           if ($object != "." && $object != "..") { 
             if (is_dir($dir. DIRECTORY_SEPARATOR .$object) && !is_link($dir."/".$object)){
-              rrmdir($dir. DIRECTORY_SEPARATOR .$object);
+              rrmdir($con, $dir. DIRECTORY_SEPARATOR .$object);
             }else{
               unlink($dir. DIRECTORY_SEPARATOR .$object); 
-              dropFilesFromDB($object);
+              dropFilesFromDB($con, $object);
             }
           } 
         }
@@ -52,7 +54,7 @@
       } 
     }
 
-    function dropFilesFromDB($file){
+    function dropFilesFromDB($con, $file){
 
         //1. Buscamos id_folder
         $stmt=mysqli_prepare($con, "SELECT id_folder FROM folders WHERE id_user=? AND name=?");
