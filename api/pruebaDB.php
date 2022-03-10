@@ -2,6 +2,9 @@
 
     require_once("connectDB.php");
 
+    session_name("userSession");
+    session_start();
+
     $file = "en-CV-ROSARIOSCARLATA.pdf";
     dropFilesFromDB($con, $file);
 
