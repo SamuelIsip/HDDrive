@@ -71,6 +71,10 @@
         /* fetch values */
         mysqli_stmt_fetch($stmt);
 
+        //Liberamos recurso
+        mysqli_stmt_close($stmt);
+
+
         //2. Borramos dato de FAVORITOS
         $stmt=mysqli_prepare($con, "DELETE FROM favorites WHERE id_user=? AND id_folder=?");
 
@@ -79,6 +83,9 @@
 
         //Ejecutamos la consulta
         mysqli_stmt_execute($stmt);
+        
+        //Liberamos recurso
+        mysqli_stmt_close($stmt);
 
 
         //3. Borramos dato de FOLDERS
