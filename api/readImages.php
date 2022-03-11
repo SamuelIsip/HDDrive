@@ -6,7 +6,7 @@
 
     $usrID = $_SESSION["userID"];
 
-    if($usrID == 32){
+    if($usrID == 1){
         //Seleccionamos datos de la BD
         $result = mysqli_prepare($con, "SELECT id_photo, name, path, size, date FROM photos");
 
