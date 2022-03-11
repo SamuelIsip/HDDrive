@@ -4,26 +4,32 @@
     ADD PRIMARY KEY (id_fav),
     ADD UNIQUE KEY uq_favorites (id_folder,ruta),
     ADD KEY id_user (id_user),
-    ADD KEY id_folder (id_folder) USING BTREE;");
+    ADD KEY id_folder (id_folder) USING BTREE,
+    MODIFY `id_fav` int(11) NOT NULL AUTO_INCREMENT;");
 
     mysqli_query($con, "ALTER TABLE `file`
     ADD PRIMARY KEY (id_file),
-    ADD KEY id_folder (id_folder);");
+    ADD KEY id_folder (id_folder),
+    MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT;");
 
     mysqli_query($con, "ALTER TABLE folders
     ADD PRIMARY KEY (id_folder),
-    ADD KEY id_user (id_user);");
+    ADD KEY id_user (id_user),
+    MODIFY `id_folder` int(11) NOT NULL AUTO_INCREMENT;");
 
     mysqli_query($con, "ALTER TABLE photos
     ADD PRIMARY KEY (id_photo),
-    ADD KEY id_user (id_user);");
+    ADD KEY id_user (id_user),
+    MODIFY `id_photo` int(11) NOT NULL AUTO_INCREMENT;");
 
     mysqli_query($con, "ALTER TABLE tasks
     ADD PRIMARY KEY (id_task),
-    ADD KEY id_user (id_user);");
+    ADD KEY id_user (id_user),
+    MODIFY `id_task` int(11) NOT NULL AUTO_INCREMENT;");
 
     mysqli_query($con, "ALTER TABLE `User`
-    ADD PRIMARY KEY (id_user);");
+    ADD PRIMARY KEY (id_user),
+    MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;");
 
     mysqli_query($con, "ALTER TABLE favorites
     ADD CONSTRAINT favorites_ibfk_1 FOREIGN KEY (id_user) REFERENCES `User` (id_user) ON DELETE RESTRICT ON UPDATE RESTRICT,
