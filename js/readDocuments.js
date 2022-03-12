@@ -249,10 +249,11 @@ function calculateTotalStorage() {
           number_size += number;
         }
       });
+      localStorage.setItem("totalStorage", number_size);
       document.getElementById("storage_number").innerText =
         number_size.toFixed(2) + " MB";
       document.getElementById("storage_bar_fill").style.width =
-        (number_size * 100) / 5000 + "%";
+        (number_size * 100) / 20000 + "%";
     },
   });
 }
