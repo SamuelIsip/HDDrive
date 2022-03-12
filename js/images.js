@@ -26,6 +26,7 @@ $(function () {
         alert(
           "You have exceeded the maximum storage capacity! Please, increase it!"
         );
+        toggleLoader();
         return;
       }
 
