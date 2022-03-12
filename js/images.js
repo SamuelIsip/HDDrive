@@ -20,6 +20,15 @@ $(function () {
           document.getElementById("add_image").files[x]
         );
       }
+
+      var totalSize = localStorage.getItem("totalStorage");
+      if (totalSize >= 20000) {
+        alert(
+          "You have exceeded the maximum storage capacity! Please, increase it!"
+        );
+        return;
+      }
+
       $.ajax({
         url: "./../api/uploadImage.php",
         type: "POST",
