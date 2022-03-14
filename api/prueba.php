@@ -10,8 +10,6 @@
 
     $email = "samuel.isip62@gmail.com";
 
-    liberarRecursos($con, $result);
-    
     $code = randomVerificationCode(10);
 
     enviarEmail($email['emailJSON'], $code, $localSender);
