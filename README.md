@@ -1,4 +1,4 @@
-All project documentation: https://drive.google.com/file/d/1GkFUCSImHo_k9AaD609cTUQ8DyCPfhtd/view?usp=sharing
+All project documentation in Spanish: https://drive.google.com/file/d/1GkFUCSImHo_k9AaD609cTUQ8DyCPfhtd/view?usp=sharing
 
 # HDDrive
 
