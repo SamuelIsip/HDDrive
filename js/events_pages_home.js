@@ -53,7 +53,8 @@ function load_events_pages_menu() {
         $("#container_favourites").css("display", "flex");
         $("#container_images, #container_calendar, #container_docs, #container_tasks").css("display", "none");
         // Remove the table, to reload files of index
-        document.getElementById("favourites").contentWindow.load_favourites();
+        document.getElementById("favourites")
+            .contentWindow.load_favourites();
     });
     $("#tasks_menu").on("click", () => {
         // Notifications after task has been saved
@@ -66,8 +67,5 @@ function load_events_pages_menu() {
     const regex = /initials.+/;
     const userName = localStorage.getItem("userName");
     // Foto de perfil
-    document.getElementsByClassName("user_profile")[0].firstElementChild.src =
-        document
-            .getElementsByClassName("user_profile")[0]
-            .firstElementChild.src.replace(regex, "initials/" + userName + ".svg");
+    (document.getElementsByClassName("user_profile")[0].firstElementChild).src = (document.getElementsByClassName("user_profile")[0].firstElementChild).src.replace(regex, "initials/" + userName + ".svg");
 }

@@ -1,5 +1,5 @@
 "use strict";
-function menu_options_file(ruta) {
+function menu_options_file() {
     var options_file = document.getElementsByClassName("options_file");
     for (let i = 0; i < options_file.length; i++) {
         options_file[i].addEventListener("click", () => {
