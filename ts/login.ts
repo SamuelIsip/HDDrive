@@ -2,14 +2,14 @@ import { setCookie, getCookie } from "./cookies";
 import { IUser } from "./Interfaces/IUser";
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("login_pass").addEventListener("keyup", (event) => {
+  document.getElementById("login_pass")!.addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      document.getElementById("login_button").click();
+      document.getElementById("login_button")!.click();
     }
   });
   document
-    .getElementById("login_button")
+    .getElementById("login_button")!
     .addEventListener("click", function () {
       loginHome();
     });
@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     if (
-      document.getElementById("login_error_info").className ==
+      document.getElementById("login_error_info")!.className ==
       "login_error_info_on"
     ) {
-      document.getElementById("login_error_info").className =
+      document.getElementById("login_error_info")!.className =
         "login_error_info_off";
       removeErrorColor();
     }
@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Send data to server
     fetchLogIn(user_data);
+
+    return true;
   }
 
   async function fetchLogIn(user_data: IUser): Promise<void> {
@@ -49,17 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (response.ok) {
       const dataUsr: IUser = (await response.json()) as IUser;
       //Cache
-      localStorage.setItem("userName", dataUsr.nom_usr);
-      localStorage.setItem("userID", dataUsr.id_user.toString());
+      localStorage.setItem("userName", dataUsr.nom_usr!);
+      localStorage.setItem("userID", dataUsr.id_user!.toString());
       //Cookies
       setCookie(dataUsr);
       window.location.href = encodeURI("./../HDDrive/pages/home");
     } else {
-      document.getElementById("login_email").style.border = "1px solid #ff0000";
-      document.getElementById("login_pass").style.border = "1px solid #ff0000";
-      document.getElementById("login_error_info").className =
+      document.getElementById("login_email")!.style.border =
+        "1px solid #ff0000";
+      document.getElementById("login_pass")!.style.border = "1px solid #ff0000";
+      document.getElementById("login_error_info")!.className =
         "login_error_info_on";
-      document.getElementById("login_error_info").innerHTML =
+      document.getElementById("login_error_info")!.innerHTML =
         "Email/Password are incorrect!";
     }
   }
@@ -68,39 +71,41 @@ document.addEventListener("DOMContentLoaded", () => {
   function validateLogIn(user_data: IUser): boolean {
     // Email
     if (user_data.email == "") {
-      document.getElementById("login_email").style.border = "1px solid #ff0000";
-      document.getElementById("login_error_info").className =
+      document.getElementById("login_email")!.style.border =
+        "1px solid #ff0000";
+      document.getElementById("login_error_info")!.className =
         "login_error_info_on";
-      document.getElementById("login_error_info").innerHTML =
+      document.getElementById("login_error_info")!.innerHTML =
         "You must enter an email!";
       return false;
     }
 
     var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regexEmail.test(user_data.email)) {
-      document.getElementById("login_email").style.border = "1px solid #ff0000";
-      document.getElementById("login_error_info").className =
+      document.getElementById("login_email")!.style.border =
+        "1px solid #ff0000";
+      document.getElementById("login_error_info")!.className =
         "login_error_info_on";
-      document.getElementById("login_error_info").innerHTML =
+      document.getElementById("login_error_info")!.innerHTML =
         "Wrong format for email!";
       return false;
     }
 
     // Password
     if (user_data.password == "") {
-      document.getElementById("login_pass").style.border = "1px solid #ff0000";
-      document.getElementById("login_error_info").className =
+      document.getElementById("login_pass")!.style.border = "1px solid #ff0000";
+      document.getElementById("login_error_info")!.className =
         "login_error_info_on";
-      document.getElementById("login_error_info").innerHTML =
+      document.getElementById("login_error_info")!.innerHTML =
         "You must enter a password!";
       return false;
     }
     var regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/;
     if (!regexPass.test(user_data.password)) {
-      document.getElementById("login_pass").style.border = "1px solid #ff0000";
-      document.getElementById("login_error_info").className =
+      document.getElementById("login_pass")!.style.border = "1px solid #ff0000";
+      document.getElementById("login_error_info")!.className =
         "login_error_info_on";
-      document.getElementById("login_error_info").innerHTML =
+      document.getElementById("login_error_info")!.innerHTML =
         "Wrong Format of Password, try again.";
       return false;
     }
@@ -110,11 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function removeErrorColor(): void {
     var logInInputsList =
-      document.querySelectorAll<HTMLElement>(".login_data")!;
-    logInInputsList.forEach((logInInputsList) => {
-      if (logInInputsList.style.border == "1px solid rgb(255, 0, 0)")
-        logInInputsList.style.border = "";
-    });
+      document.querySelectorAll<HTMLElement>(".login_data")![0].children;
+
+    for (let index = 0; index < logInInputsList.length; index++) {
+      if (
+        (<HTMLElement>logInInputsList[index]).style.border ==
+        "1px solid rgb(255, 0, 0)"
+      )
+        (<HTMLElement>logInInputsList[index]).style.border = "";
+    }
   }
 
   // DISPLAY COOKIE ADVICE
@@ -122,12 +131,12 @@ document.addEventListener("DOMContentLoaded", () => {
   acceptCookie();
 
   function acceptCookie(): void {
-    document.getElementById("button_cookie").addEventListener("click", () => {
+    document.getElementById("button_cookie")!.addEventListener("click", () => {
       const d = new Date();
       d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
       let expires = "expires=" + d.toUTCString();
       document.cookie = "cookieEnabled=true;" + expires + "; Path=/;";
-      document.getElementById("container_cookie").style.display = "none";
+      document.getElementById("container_cookie")!.style.display = "none";
     });
   }
 
@@ -135,12 +144,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (getCookie("cookieEnabled") === null) {
       document.getElementById(
         "container_cookie"
-      ).style.cssText = `display: flex; 
+      )!.style.cssText = `display: flex; 
             flex-direction: row; 
             justify-content: center; 
             align-item:center;`;
     } else {
-      document.getElementById("container_cookie").style.display = "none";
+      document.getElementById("container_cookie")!.style.display = "none";
     }
   }
 });
