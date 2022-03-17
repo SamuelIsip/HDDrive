@@ -1,3 +1,6 @@
+import { setCookie, getCookie } from "./cookies";
+import { IUser } from "./Interfaces/IUser";
+
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("login_pass").addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
@@ -11,11 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
       loginHome();
     });
 
-  function loginHome() {
+  function loginHome(): boolean {
     //Data of user
-    const user_data = {
-      email: document.getElementById("login_email").value,
-      password: document.getElementById("login_pass").value,
+    const user_data: IUser = {
+      email: (<HTMLInputElement>document.getElementById("login_email")).value,
+      password: (<HTMLInputElement>document.getElementById("login_pass")).value,
     };
 
     if (
@@ -36,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchLogIn(user_data);
   }
 
-  async function fetchLogIn(user_data) {
+  async function fetchLogIn(user_data: IUser): Promise<void> {
     const response = await fetch("./../HDDrive/api/logInUser.php", {
       method: "POST",
       cache: "no-cache",
@@ -44,13 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify(user_data),
     });
     if (response.ok) {
-      const dataUsr = await response.json();
+      const dataUsr: IUser = (await response.json()) as IUser;
       //Cache
       localStorage.setItem("userName", dataUsr.nom_usr);
-      localStorage.setItem("userID", dataUsr.id_user);
+      localStorage.setItem("userID", dataUsr.id_user.toString());
       //Cookies
       setCookie(dataUsr);
-      window.location = encodeURI("./../HDDrive/pages/home");
+      window.location.href = encodeURI("./../HDDrive/pages/home");
     } else {
       document.getElementById("login_email").style.border = "1px solid #ff0000";
       document.getElementById("login_pass").style.border = "1px solid #ff0000";
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* Validación del Email y Password */
-  function validateLogIn(user_data) {
+  function validateLogIn(user_data: IUser): boolean {
     // Email
     if (user_data.email == "") {
       document.getElementById("login_email").style.border = "1px solid #ff0000";
@@ -101,21 +104,24 @@ document.addEventListener("DOMContentLoaded", () => {
         "Wrong Format of Password, try again.";
       return false;
     }
+
+    return true;
   }
-  function removeErrorColor() {
+
+  function removeErrorColor(): void {
     var logInInputsList =
-      document.getElementsByClassName("login_data")[0].children;
-    for (let i = 0; i < logInInputsList.length; i++) {
-      if (logInInputsList[i].style.border == "1px solid rgb(255, 0, 0)")
-        logInInputsList[i].style.border = "";
-    }
+      document.querySelectorAll<HTMLElement>(".login_data")!;
+    logInInputsList.forEach((logInInputsList) => {
+      if (logInInputsList.style.border == "1px solid rgb(255, 0, 0)")
+        logInInputsList.style.border = "";
+    });
   }
 
   // DISPLAY COOKIE ADVICE
   loadCookie();
   acceptCookie();
 
-  function acceptCookie() {
+  function acceptCookie(): void {
     document.getElementById("button_cookie").addEventListener("click", () => {
       const d = new Date();
       d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
@@ -125,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function loadCookie() {
+  function loadCookie(): void {
     if (getCookie("cookieEnabled") === null) {
       document.getElementById(
         "container_cookie"

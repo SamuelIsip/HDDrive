@@ -1,4 +1,6 @@
-function setCookie(dataUsr) {
+import { IUser } from "./Interfaces/IUser";
+
+export function setCookie(dataUsr: IUser) {
   if (getCookie("cookieEnabled") !== null) {
     const d = new Date();
     d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);
@@ -9,7 +11,7 @@ function setCookie(dataUsr) {
   }
 }
 
-function getCookie(name) {
+export function getCookie(name: string) {
   var match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
   return match ? match[2] : null;
 }
