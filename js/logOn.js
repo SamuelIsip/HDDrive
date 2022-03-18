@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,15 +7,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { setCookie } from "./modules/cookies";
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("logon_button").addEventListener("click", () => {
+    document
+        .getElementById("logon_button")
+        .addEventListener("click", () => {
         //Data of user
         const user_data = {
             name: document.getElementById("name").value,
-            name_user: document.getElementById("name_user").value.trim(),
+            name_user: (document.getElementById("name_user")).value.trim(),
             phone: document.getElementById("tlf").value,
             email: document.getElementById("logon_email").value,
-            password: document.getElementById("logon_pass").value,
+            password: document.getElementById("logon_pass")
+                .value,
         };
         if (document.getElementById("logon_error_info").className ==
             "logon_error_info_on") {
@@ -26,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         if (validateLogOn(user_data) == false) {
             //Validate de data of LogOn
-            return false;
+            return;
         }
         //Send data to server
         fetchLogOn(user_data);
@@ -40,13 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(user_data),
             });
             if (response.ok) {
-                const dataUsr = yield response.json();
+                const dataUsr = (yield response.json());
                 //Cache
-                localStorage.setItem("userID", dataUsr.id_user);
-                localStorage.setItem("userName", dataUsr.nom_usr);
+                localStorage.setItem("userID", dataUsr.id_user.toString());
+                localStorage.setItem("userName", dataUsr.name_user);
                 //Cookies
-                setCookie(dataUsr);
-                window.location = encodeURI("./../HDDrive/pages/home");
+                setCookie({
+                    id_user: dataUsr.id_user,
+                    nom_usr: dataUsr.name_user,
+                    email: "",
+                    password: "",
+                });
+                window.location.href = encodeURI("./../HDDrive/pages/home");
             }
             else if (response.status == 409) {
                 document.getElementById("logon_error_info").innerHTML =
@@ -140,11 +148,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Your Password must have at least 1 lowercase, uppercase and number character.";
             return false;
         }
+        return true;
     }
     function removeErrorColor() {
         var logOnInputsList = document.getElementsByClassName("logon_data")[0].children;
         for (let i = 0; i < logOnInputsList.length; i++) {
-            if (logOnInputsList[i].style.border == "1px solid rgb(255, 0, 0)")
+            if (logOnInputsList[i].style.border ==
+                "1px solid rgb(255, 0, 0)")
                 logOnInputsList[i].style.border = "";
         }
     }

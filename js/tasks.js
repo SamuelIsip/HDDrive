@@ -1,4 +1,3 @@
-"use strict";
 document.addEventListener("DOMContentLoaded", () => {
     window.add_tasks = function () {
         toggleLoader();
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleLoader();
     };
     //Datos necesarios para update
-    var old_task = [];
+    var old_task = new Map();
     var update = false;
     function edit_task(title, task_date, task_text) {
         document.getElementById("title").value = title;
@@ -88,9 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("date-input").style.border = "2px dotted black";
         document.getElementById("note").style.border = "2px dotted black";
         update = true;
-        old_task["title"] = title;
-        old_task["date"] = task_date;
-        old_task["text"] = task_text;
+        old_task.set("title", title);
+        old_task.set("date", task_date);
+        old_task.set("text", task_text);
         document.getElementById("save_task").innerHTML = "Update";
     }
     function delete_task(title, task_date) {
@@ -110,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     document.getElementById("save_task").addEventListener("click", () => {
         let title = document.getElementById("title").value;
-        let date = document.getElementById("date-input").value.split("-");
+        let date = (document.getElementById("date-input")).value.split("-");
         let text = document.getElementById("note").value;
         //Tokenizar date
         let task_day = date[2];
@@ -141,11 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 "&task_year=" +
                 task_year +
                 "&old_title=" +
-                old_task["title"] +
+                old_task.get("title") +
                 "&old_date=" +
-                old_task["date"] +
+                old_task.get("date") +
                 "&old_text=" +
-                old_task["text"]);
+                old_task.get("text"));
             update = false;
             document.getElementById("title").style.border = "1px solid #ced4da";
             document.getElementById("date-input").style.border = "1px solid #ced4da";
@@ -172,3 +171,4 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("note").value = "";
     });
 });
+export {};

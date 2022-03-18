@@ -1,5 +1,5 @@
-import { setCookie, getCookie } from "./cookies";
-import { IUser } from "./Interfaces/IUser";
+import { setCookie, getCookie } from "./modules/cookies";
+import { IUserLogIN } from "./Interfaces/IUser";
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("login_pass")!.addEventListener("keyup", (event) => {
@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
       loginHome();
     });
 
-  function loginHome(): boolean {
+  function loginHome(): void {
     //Data of user
-    const user_data: IUser = {
+    const user_data: IUserLogIN = {
       email: (<HTMLInputElement>document.getElementById("login_email")).value,
       password: (<HTMLInputElement>document.getElementById("login_pass")).value,
     };
@@ -32,16 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Validate data of LogIn
     if (validateLogIn(user_data) == false) {
-      return false;
+      return;
     }
 
     //Send data to server
     fetchLogIn(user_data);
-
-    return true;
   }
 
-  async function fetchLogIn(user_data: IUser): Promise<void> {
+  async function fetchLogIn(user_data: IUserLogIN): Promise<void> {
     const response = await fetch("./../HDDrive/api/logInUser.php", {
       method: "POST",
       cache: "no-cache",
@@ -49,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify(user_data),
     });
     if (response.ok) {
-      const dataUsr: IUser = (await response.json()) as IUser;
+      const dataUsr: IUserLogIN = (await response.json()) as IUserLogIN;
       //Cache
       localStorage.setItem("userName", dataUsr.nom_usr!);
       localStorage.setItem("userID", dataUsr.id_user!.toString());
@@ -68,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* Validación del Email y Password */
-  function validateLogIn(user_data: IUser): boolean {
+  function validateLogIn(user_data: IUserLogIN): boolean {
     // Email
     if (user_data.email == "") {
       document.getElementById("login_email")!.style.border =

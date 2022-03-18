@@ -1,6 +1,6 @@
-import { IUser } from "./Interfaces/IUser";
+import { IUserLogIN } from "../Interfaces/IUser";
 
-export function setCookie(dataUsr: IUser) {
+export function setCookie(dataUsr: IUserLogIN) {
   if (getCookie("cookieEnabled") !== null) {
     const d = new Date();
     d.setTime(d.getTime() + 2 * 24 * 60 * 60 * 1000);

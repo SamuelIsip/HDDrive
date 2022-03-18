@@ -1,4 +1,3 @@
-"use strict";
 document.addEventListener("DOMContentLoaded", () => {
     window.load_favourites = function () {
         toggleLoader();
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function createFavList(tbody, responseText) {
         JSON.parse(responseText).favs.forEach((t) => {
             let tr = document.createElement("tr");
-            tr.classList.add(t.idFolder);
+            tr.classList.add(t.idFolder.toString());
             let star = document.createElement("td");
             let td1 = document.createElement("td");
             let td2 = document.createElement("td");
@@ -52,7 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
             td3.appendChild(document.createTextNode(t.date));
             td3.classList.add("date_file");
             td1.addEventListener("click", () => {
-                window.location = encodeURI("./../api/downloadFile.php?nameFile=" + td1.firstElementChild.value);
+                window.location.href = encodeURI("./../api/downloadFile.php?nameFile=" +
+                    td1.firstElementChild.value);
             });
             tr.appendChild(star);
             tr.appendChild(td1);
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             div_list.removeChild(div_list.lastChild);
     }
     function removeFavourite(star) {
-        let id_folder = star.parentElement.className;
+        let id_folder = parseInt(star.parentElement.className);
         var xhr;
         if (window.ActiveXObject)
             xhr = new ActiveXObject("Microsoft.XMLHTTP");
@@ -83,3 +83,4 @@ document.addEventListener("DOMContentLoaded", () => {
         xhr.send("id_folder=" + id_folder);
     }
 });
+export {};

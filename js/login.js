@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { setCookie, getCookie } from "./cookies";
+import { setCookie, getCookie } from "./modules/cookies";
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("login_pass").addEventListener("keyup", (event) => {
         if (event.key === "Enter") {
@@ -34,11 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         //Validate data of LogIn
         if (validateLogIn(user_data) == false) {
-            return false;
+            return;
         }
         //Send data to server
         fetchLogIn(user_data);
-        return true;
     }
     function fetchLogIn(user_data) {
         return __awaiter(this, void 0, void 0, function* () {

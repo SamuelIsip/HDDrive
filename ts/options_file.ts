@@ -1,4 +1,12 @@
-function menu_options_file() {
+import {
+  isDir,
+  getPath,
+  deleteFileRecursive,
+  readDocuments,
+  resetLinkHead,
+} from "./readDocuments";
+
+export function menu_options_file() {
   var options_file = document.getElementsByClassName("options_file");
 
   for (let i = 0; i < options_file.length; i++) {
@@ -47,32 +55,35 @@ function menu_options_file() {
 
   addLogOutEvent();
 }
-function add_event_options(options) {
+function add_event_options(options: HTMLUListElement) {
   var op_download = options.children[0],
     op_favorite = options.children[1],
     op_delete = options.children[2];
 
   //Fila seleccionada
-  var name_file_doc =
+  var name_file_doc = (<HTMLInputElement>(
     op_download.parentElement.parentElement.parentElement.querySelector(
       ".name_file_dir"
-    ).value;
+    )
+  )).value;
 
   op_download.addEventListener("click", () => {
-    window.location = encodeURI(
+    window.location.href = encodeURI(
       "./../api/downloadFile.php?nameFile=" + getPath() + name_file_doc
     );
   });
 
   op_favorite.addEventListener("click", () => {
-    var size_file =
+    var size_file = (<HTMLInputElement>(
       op_favorite.parentElement.parentElement.parentElement.querySelector(
         ".size_file"
-      ).innerText;
-    var date_file =
+      )
+    )).innerText;
+    var date_file = (<HTMLInputElement>(
       op_favorite.parentElement.parentElement.parentElement.querySelector(
         ".date_file"
-      ).innerText;
+      )
+    )).innerText;
 
     var userData = {
       name: name_file_doc,
@@ -130,10 +141,10 @@ function addLogOutEvent() {
       delete_cookie("userName");
       delete_cookie("userID");
       delete_cookie("cookieEnabled");
-      window.location = encodeURI("./../");
+      window.location.href = encodeURI("./../");
     });
 }
 
-function delete_cookie(name) {
+function delete_cookie(name: string) {
   document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }

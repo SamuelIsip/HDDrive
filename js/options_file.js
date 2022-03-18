@@ -1,5 +1,5 @@
-"use strict";
-function menu_options_file() {
+import { isDir, getPath, deleteFileRecursive, readDocuments, resetLinkHead, } from "./readDocuments";
+export function menu_options_file() {
     var options_file = document.getElementsByClassName("options_file");
     for (let i = 0; i < options_file.length; i++) {
         options_file[i].addEventListener("click", () => {
@@ -42,13 +42,13 @@ function menu_options_file() {
 function add_event_options(options) {
     var op_download = options.children[0], op_favorite = options.children[1], op_delete = options.children[2];
     //Fila seleccionada
-    var name_file_doc = op_download.parentElement.parentElement.parentElement.querySelector(".name_file_dir").value;
+    var name_file_doc = (op_download.parentElement.parentElement.parentElement.querySelector(".name_file_dir")).value;
     op_download.addEventListener("click", () => {
-        window.location = encodeURI("./../api/downloadFile.php?nameFile=" + getPath() + name_file_doc);
+        window.location.href = encodeURI("./../api/downloadFile.php?nameFile=" + getPath() + name_file_doc);
     });
     op_favorite.addEventListener("click", () => {
-        var size_file = op_favorite.parentElement.parentElement.parentElement.querySelector(".size_file").innerText;
-        var date_file = op_favorite.parentElement.parentElement.parentElement.querySelector(".date_file").innerText;
+        var size_file = (op_favorite.parentElement.parentElement.parentElement.querySelector(".size_file")).innerText;
+        var date_file = (op_favorite.parentElement.parentElement.parentElement.querySelector(".date_file")).innerText;
         var userData = {
             name: name_file_doc,
             ruta: getPath() + name_file_doc,
@@ -100,7 +100,7 @@ function addLogOutEvent() {
         delete_cookie("userName");
         delete_cookie("userID");
         delete_cookie("cookieEnabled");
-        window.location = encodeURI("./../");
+        window.location.href = encodeURI("./../");
     });
 }
 function delete_cookie(name) {

@@ -1,23 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-  var restorePassCode = 0;
+  var restorePassCode: number = 0;
   var email = "";
 
   document.getElementById("btn-pass-success").addEventListener("click", () => {
-    window.location = encodeURI("./../");
+    window.location.href = encodeURI("./../");
   });
 
   document.getElementById("btnSendCode").addEventListener("click", async () => {
-    email = document.getElementById("restoreEmail").value;
+    email = (<HTMLInputElement>document.getElementById("restoreEmail")).value;
     const emailJson = { emailJSON: email };
-    restorePassCode = await sendCode(emailJson);
+    restorePassCode = await sendCode(JSON.stringify(emailJson));
   });
 
   document.getElementById("btnChangePass").addEventListener("click", () => {
-    var newPass = document.getElementById("restoreNewPassword").value;
-    var newConfirmationPass = document.getElementById(
-      "restoreNewPasswordConfirmation"
-    ).value;
-    var restorePassCodeByUser = document.getElementById("restoreCode").value;
+    var newPass = (<HTMLInputElement>(
+      document.getElementById("restoreNewPassword")
+    )).value;
+    var newConfirmationPass = (<HTMLInputElement>(
+      document.getElementById("restoreNewPasswordConfirmation")
+    )).value;
+    var restorePassCodeByUser: number = parseInt(
+      (<HTMLInputElement>document.getElementById("restoreCode")).value
+    );
 
     // Comprobaciones password
     if (newPass == "") {
@@ -61,21 +65,25 @@ document.addEventListener("DOMContentLoaded", () => {
     sendDataToCheckAndRestorePass(newPass, email);
   });
 
-  async function sendCode(emailJson) {
+  async function sendCode(emailJson: string): Promise<number> {
     const response = await fetch("./../api/sendRestoreCode.php", {
       method: "POST",
       cache: "no-cache",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(emailJson),
+      body: emailJson,
     });
     if (response.ok) {
-      var code = await response.text();
-      document.getElementById("restoreCode").disabled = false;
-      document.getElementById("restoreNewPassword").disabled = false;
-      document.getElementById(
-        "restoreNewPasswordConfirmation"
-      ).disabled = false;
-      document.getElementById("btnChangePass").disabled = false;
+      var code: number = parseInt(await response.text());
+      (<HTMLInputElement>document.getElementById("restoreCode")).disabled =
+        false;
+      (<HTMLInputElement>(
+        document.getElementById("restoreNewPassword")
+      )).disabled = false;
+      (<HTMLInputElement>(
+        document.getElementById("restoreNewPasswordConfirmation")
+      )).disabled = false;
+      (<HTMLInputElement>document.getElementById("btnChangePass")).disabled =
+        false;
       return code;
     } else {
       toggleWarningAdvice("This email does not exist!");
@@ -83,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  async function sendDataToCheckAndRestorePass(newPass, email) {
+  async function sendDataToCheckAndRestorePass(newPass: string, email: string) {
     const dataUser = {
       newPass: newPass,
       email: email,
@@ -95,10 +103,13 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify(dataUser),
     });
     if (response.ok) {
-      document.getElementById("restoreNewPassword").value = "";
-      document.getElementById("restoreNewPasswordConfirmation").value = "";
-      document.getElementById("restoreCode").value = "";
-      document.getElementById("restoreEmail").value = "";
+      (<HTMLInputElement>document.getElementById("restoreNewPassword")).value =
+        "";
+      (<HTMLInputElement>(
+        document.getElementById("restoreNewPasswordConfirmation")
+      )).value = "";
+      (<HTMLInputElement>document.getElementById("restoreCode")).value = "";
+      (<HTMLInputElement>document.getElementById("restoreEmail")).value = "";
       document.getElementById("success-password").style.display = "block";
       document.getElementById("warning-advice").style.display = "none";
     } else {
@@ -106,9 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function toggleWarningAdvice(message) {
+  function toggleWarningAdvice(message: string) {
     let warningAdvice = document.getElementById("warning-advice");
     warningAdvice.style.display = "block";
-    warningAdvice.children[0].innerText = "¡Warning! " + message;
+    (<HTMLInputElement>warningAdvice.children[0]).innerText =
+      "¡Warning! " + message;
   }
 });

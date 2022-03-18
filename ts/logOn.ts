@@ -1,33 +1,41 @@
+import { setCookie } from "./modules/cookies";
+import { IUserLogON } from "./Interfaces/IUser";
+
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("logon_button").addEventListener("click", () => {
-    //Data of user
-    const user_data = {
-      name: document.getElementById("name").value,
-      name_user: document.getElementById("name_user").value.trim(),
-      phone: document.getElementById("tlf").value,
-      email: document.getElementById("logon_email").value,
-      password: document.getElementById("logon_pass").value,
-    };
+  document
+    .getElementById("logon_button")
+    .addEventListener("click", (): void => {
+      //Data of user
+      const user_data: IUserLogON = {
+        name: (<HTMLInputElement>document.getElementById("name")).value,
+        name_user: (<HTMLInputElement>(
+          document.getElementById("name_user")
+        )).value.trim(),
+        phone: (<HTMLInputElement>document.getElementById("tlf")).value,
+        email: (<HTMLInputElement>document.getElementById("logon_email")).value,
+        password: (<HTMLInputElement>document.getElementById("logon_pass"))
+          .value,
+      };
 
-    if (
-      document.getElementById("logon_error_info").className ==
-      "logon_error_info_on"
-    ) {
-      document.getElementById("logon_error_info").className =
-        "logon_error_info_off";
-      removeErrorColor();
-    }
+      if (
+        document.getElementById("logon_error_info").className ==
+        "logon_error_info_on"
+      ) {
+        document.getElementById("logon_error_info").className =
+          "logon_error_info_off";
+        removeErrorColor();
+      }
 
-    if (validateLogOn(user_data) == false) {
-      //Validate de data of LogOn
-      return false;
-    }
+      if (validateLogOn(user_data) == false) {
+        //Validate de data of LogOn
+        return;
+      }
 
-    //Send data to server
-    fetchLogOn(user_data);
-  });
+      //Send data to server
+      fetchLogOn(user_data);
+    });
 
-  async function fetchLogOn(user_data) {
+  async function fetchLogOn(user_data: IUserLogON) {
     const response = await fetch("./../HDDrive/api/logOnUser.php", {
       method: "POST",
       cache: "no-cache",
@@ -35,13 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify(user_data),
     });
     if (response.ok) {
-      const dataUsr = await response.json();
+      const dataUsr: IUserLogON = (await response.json()) as IUserLogON;
       //Cache
-      localStorage.setItem("userID", dataUsr.id_user);
-      localStorage.setItem("userName", dataUsr.nom_usr);
+      localStorage.setItem("userID", dataUsr.id_user.toString());
+      localStorage.setItem("userName", dataUsr.name_user);
       //Cookies
-      setCookie(dataUsr);
-      window.location = encodeURI("./../HDDrive/pages/home");
+      setCookie({
+        id_user: dataUsr.id_user,
+        nom_usr: dataUsr.name_user,
+        email: "",
+        password: "",
+      });
+      window.location.href = encodeURI("./../HDDrive/pages/home");
     } else if (response.status == 409) {
       document.getElementById("logon_error_info").innerHTML =
         "User already exist!";
@@ -52,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* Validación datos de creación de cuenta */
-  function validateLogOn(user_data) {
+  function validateLogOn(user_data: IUserLogON): boolean {
     // Name
     if (user_data.name == "") {
       document.getElementById("name").style.border = "1px solid #ff0000";
@@ -140,14 +153,19 @@ document.addEventListener("DOMContentLoaded", () => {
         "Your Password must have at least 1 lowercase, uppercase and number character.";
       return false;
     }
+
+    return true;
   }
 
   function removeErrorColor() {
     var logOnInputsList =
       document.getElementsByClassName("logon_data")[0].children;
     for (let i = 0; i < logOnInputsList.length; i++) {
-      if (logOnInputsList[i].style.border == "1px solid rgb(255, 0, 0)")
-        logOnInputsList[i].style.border = "";
+      if (
+        (<HTMLElement>logOnInputsList[i]).style.border ==
+        "1px solid rgb(255, 0, 0)"
+      )
+        (<HTMLElement>logOnInputsList[i]).style.border = "";
     }
   }
 });

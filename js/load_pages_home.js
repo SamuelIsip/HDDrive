@@ -1,4 +1,6 @@
-"use strict";
+import { deleteFileRecursive, readDocuments, resetLinkHead, eventLinkHeadHome, } from "./readDocuments";
+import { load_events_add_select } from "./add_select_files";
+import { load_events_pages_menu } from "./events_pages_home";
 document.addEventListener("DOMContentLoaded", () => {
     eventLinkHeadHome();
     document.onmouseover = function () {

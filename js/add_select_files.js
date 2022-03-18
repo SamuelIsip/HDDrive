@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,17 +7,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function load_events_add_select() {
+import { isDir, getPath, deleteFileRecursive, readDocuments, resetLinkHead, } from "./readDocuments";
+export function load_events_add_select() {
     document
         .getElementById("add_file")
         .parentElement.addEventListener("change", () => {
         var form_data = new FormData();
         form_data.append("rutaDir", getPath());
-        var ins = document.getElementById("add_file").files.length;
+        var ins = document.getElementById("add_file").files
+            .length;
         for (var x = 0; x < ins; x++) {
             form_data.append("file[]", document.getElementById("add_file").files[x]);
         }
-        var totalSize = localStorage.getItem("totalStorage");
+        var totalSize = parseInt(localStorage.getItem("totalStorage"));
         if (totalSize >= 20000) {
             alert("You have exceeded the maximum storage capacity! Please, increase it!");
             return;
@@ -43,6 +44,7 @@ function load_events_add_select() {
             rutaDir: getPath(),
             nameFolder: nameFolder,
         };
+        let xhr;
         if (window.ActiveXObject)
             xhr = new ActiveXObject("Microsoft.XMLHTTP");
         else
@@ -93,11 +95,11 @@ function load_events_add_select() {
         var check1 = $("input[name=check_file]:checked");
         var arr = [];
         $.each(check1, function () {
-            arr.push($(this).next().find(".name_file_dir").val());
+            arr.push($(this).next().find(".name_file_dir").val().toString());
         });
         var json_arr = JSON.stringify(arr);
         //Formar JSON con rutas de todos los ficheros seleccionados
-        window.location = encodeURI("./../api/download_selected.php?files=" +
+        window.location.href = encodeURI("./../api/download_selected.php?files=" +
             json_arr +
             "&nameFolder=" +
             getPath());
@@ -153,13 +155,13 @@ function load_events_add_select() {
         var check1 = $("input[name=check_file]:checked");
         var arr = [];
         $.each(check1, function () {
-            arr.push($(this).next().find(".name_file_dir").val());
+            arr.push($(this).next().find(".name_file_dir").val().toString());
         });
         const files_data = {
             files: arr,
             nameFile: getPath(),
         };
-        deleteSelectFile(files_data);
+        deleteSelectFile(JSON.stringify(files_data));
         toggleCheckOptionsAndBackgroundColor();
     });
     function deleteSelectFile(files_data) {
@@ -168,7 +170,7 @@ function load_events_add_select() {
                 method: "POST",
                 cache: "no-cache",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(files_data),
+                body: files_data,
             });
             if (response.ok) {
                 isDir(getPath());

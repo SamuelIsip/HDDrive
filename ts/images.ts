@@ -1,4 +1,4 @@
-let modalId = $("#image-gallery");
+import { IImages } from "./Interfaces/IImages";
 
 $(function () {
   // Carga de imágenes
@@ -13,15 +13,16 @@ $(function () {
     .parentElement.addEventListener("change", () => {
       toggleLoader();
       var form_data = new FormData();
-      var ins = document.getElementById("add_image").files.length;
+      var ins = (<HTMLInputElement>document.getElementById("add_image")).files
+        .length;
       for (var x = 0; x < ins; x++) {
         form_data.append(
           "file[]",
-          document.getElementById("add_image").files[x]
+          (<HTMLInputElement>document.getElementById("add_image")).files[x]
         );
       }
 
-      var totalSize = localStorage.getItem("totalStorage");
+      var totalSize = parseInt(localStorage.getItem("totalStorage"));
       if (totalSize >= 20000) {
         alert(
           "You have exceeded the maximum storage capacity! Please, increase it!"
@@ -60,8 +61,8 @@ $(function () {
   }
 
   //Crear elementos en el DOM
-  function createGalleryDOMelements(images) {
-    images.images.forEach((image) => {
+  function createGalleryDOMelements(images: any) {
+    images.images.forEach((image: IImages) => {
       var $div = $("<div>", { class: "col-lg-3 col-md-4 col-xs-6 thumb" });
       var $a = $("<a>", {
         href: "#",
@@ -90,7 +91,7 @@ $(function () {
   }
 
   //Desactivar botones cuando es necesario
-  function disableButtons(counter_max, counter_current) {
+  function disableButtons(counter_max: number, counter_current: number) {
     $("#show-previous-image, #show-next-image").show();
     if (counter_max === counter_current) {
       $("#show-next-image").hide();
@@ -104,10 +105,10 @@ $(function () {
    * @param setIDs        Settear los id de las imagenes
    * @param setClickAttr  Settear los atributos del click handler
    */
-  function loadGallery(setIDs, setClickAttr) {
-    let current_image,
+  function loadGallery(setIDs: boolean, setClickAttr: string) {
+    let current_image: number,
       selector,
-      counter = 0;
+      counter: number = 0;
 
     $("#show-next-image, #show-previous-image").on("click", function () {
       if ($(this).attr("id") === "show-previous-image") {
@@ -120,12 +121,12 @@ $(function () {
       updateGallery(selector);
     });
 
-    function updateGallery(selector) {
+    function updateGallery(selector: any) {
       let $sel = selector;
       current_image = $sel.data("image-id");
       $("#image-gallery-title").text($sel.data("title"));
       $("#image-gallery-image").attr("src", $sel.data("image"));
-      disableButtons(counter, $sel.data("image-id"));
+      disableButtons(counter, parseInt($sel.data("image-id")));
     }
 
     if (setIDs == true) {
@@ -159,7 +160,7 @@ $(function () {
     $("#download-actual-image").on("click", function () {
       let nameFile = $("#image-gallery-title").text();
 
-      window.location = encodeURI(
+      window.location.href = encodeURI(
         "./../api/downloadFile.php?nameFile=" + nameFile + "&isImage=true"
       );
     });

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-  document.querySelectorAll(".container_list li").forEach((link, index) => {
+  document.querySelectorAll(".container_list li").forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 768) {
         document.getElementById("header").classList.toggle("nav_responsive");
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       menuOpen = false;
     }
   });
-  document.querySelectorAll(".container_list li").forEach((link, index) => {
+  document.querySelectorAll(".container_list li").forEach((link) => {
     link.addEventListener("click", () => {
       if (!menuOpen) {
         burgerBtn.classList.add("open");

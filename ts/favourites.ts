@@ -1,5 +1,7 @@
+import { IFavorite } from "./Interfaces/IFavorite";
+
 document.addEventListener("DOMContentLoaded", () => {
-  window.load_favourites = function () {
+  (window as any).load_favourites = function () {
     toggleLoader();
     var list_fav = document.getElementsByClassName("table_favs")[0];
     var xhr;
@@ -20,10 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleLoader();
   };
 
-  function createFavList(tbody, responseText) {
-    JSON.parse(responseText).favs.forEach((t) => {
+  function createFavList(tbody: HTMLTableSectionElement, responseText: string) {
+    JSON.parse(responseText).favs.forEach((t: IFavorite) => {
       let tr = document.createElement("tr");
-      tr.classList.add(t.idFolder);
+      tr.classList.add(t.idFolder.toString());
       let star = document.createElement("td");
       let td1 = document.createElement("td");
       let td2 = document.createElement("td");
@@ -57,8 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
       td3.classList.add("date_file");
 
       td1.addEventListener("click", () => {
-        window.location = encodeURI(
-          "./../api/downloadFile.php?nameFile=" + td1.firstElementChild.value
+        window.location.href = encodeURI(
+          "./../api/downloadFile.php?nameFile=" +
+            (<HTMLInputElement>td1.firstElementChild).value
         );
       });
 
@@ -77,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
       div_list.removeChild(div_list.lastChild);
   }
 
-  function removeFavourite(star) {
-    let id_folder = star.parentElement.className;
+  function removeFavourite(star: HTMLTableCellElement) {
+    let id_folder: number = parseInt(star.parentElement.className);
     var xhr;
 
     if (window.ActiveXObject) xhr = new ActiveXObject("Microsoft.XMLHTTP");
@@ -86,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        window.load_favourites();
+        (window as any).load_favourites();
       }
     };
     xhr.open("POST", "./../api/removeFavourite.php", true);

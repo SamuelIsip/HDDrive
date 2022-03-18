@@ -1,4 +1,10 @@
-function load_events_pages_menu() {
+import {
+  deleteFileRecursive,
+  readDocuments,
+  resetLinkHead,
+} from "./readDocuments";
+
+export function load_events_pages_menu() {
   $("#documents").on("click", () => {
     $("#container_docs").css("display", "flex");
     $(

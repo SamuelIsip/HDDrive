@@ -1,5 +1,3 @@
-"use strict";
-let modalId = $("#image-gallery");
 $(function () {
     // Carga de imágenes
     loadImagesFromDB();
@@ -11,11 +9,12 @@ $(function () {
         .parentElement.addEventListener("change", () => {
         toggleLoader();
         var form_data = new FormData();
-        var ins = document.getElementById("add_image").files.length;
+        var ins = document.getElementById("add_image").files
+            .length;
         for (var x = 0; x < ins; x++) {
             form_data.append("file[]", document.getElementById("add_image").files[x]);
         }
-        var totalSize = localStorage.getItem("totalStorage");
+        var totalSize = parseInt(localStorage.getItem("totalStorage"));
         if (totalSize >= 20000) {
             alert("You have exceeded the maximum storage capacity! Please, increase it!");
             toggleLoader();
@@ -107,7 +106,7 @@ $(function () {
             current_image = $sel.data("image-id");
             $("#image-gallery-title").text($sel.data("title"));
             $("#image-gallery-image").attr("src", $sel.data("image"));
-            disableButtons(counter, $sel.data("image-id"));
+            disableButtons(counter, parseInt($sel.data("image-id")));
         }
         if (setIDs == true) {
             $("[data-image-id]").each(function () {
@@ -137,7 +136,7 @@ $(function () {
         });
         $("#download-actual-image").on("click", function () {
             let nameFile = $("#image-gallery-title").text();
-            window.location = encodeURI("./../api/downloadFile.php?nameFile=" + nameFile + "&isImage=true");
+            window.location.href = encodeURI("./../api/downloadFile.php?nameFile=" + nameFile + "&isImage=true");
         });
     }
     function updateImagesAfterModification() {
@@ -167,3 +166,4 @@ $(document).on("keydown", function (e) {
     }
     e.preventDefault(); // prevent the default action (scroll / move caret)
 });
+export {};

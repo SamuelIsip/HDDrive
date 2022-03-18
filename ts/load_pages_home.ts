@@ -1,17 +1,28 @@
+import {
+  deleteFileRecursive,
+  readDocuments,
+  resetLinkHead,
+  eventLinkHeadHome,
+} from "./readDocuments";
+
+import { load_events_add_select } from "./add_select_files";
+
+import { load_events_pages_menu } from "./events_pages_home";
+
 document.addEventListener("DOMContentLoaded", () => {
   eventLinkHeadHome();
   document.onmouseover = function () {
     //User's mouse is inside the page.
-    window.innerDocClick = true;
+    (window as any).innerDocClick = true;
   };
 
   document.onmouseleave = function () {
     //User's mouse has left the page.
-    window.innerDocClick = false;
+    (window as any).innerDocClick = false;
   };
 
   window.onhashchange = function () {
-    if (!window.innerDocClick) {
+    if (!(window as any).innerDocClick) {
       //Your own in-page mechanism triggered the hash change
       $("#container_docs").css("display", "flex");
       $(

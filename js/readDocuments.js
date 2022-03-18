@@ -1,5 +1,5 @@
-import { getCookie } from "./cookies";
-var ruta = "";
+import { getCookie } from "./modules/cookies";
+import { menu_options_file } from "./options_file";
 var userName = localStorage.getItem("userName");
 var userID = localStorage.getItem("userID");
 if (userName === null || userID === null) {
@@ -13,7 +13,7 @@ if (userName === null || userID === null) {
 if (userName === null || userID === null) {
     window.location.href = encodeURI("./../");
 }
-function readDocuments() {
+export function readDocuments() {
     var div_list = document.getElementsByClassName("table_files")[0];
     $.ajax({
         url: "./../api/readDocs.php",
@@ -68,7 +68,6 @@ function createList(doc, div_list) {
             td1.addEventListener("click", () => {
                 //Añadir ruta a la linea superior
                 addLinkHead(nameDoc);
-                ruta += nameDoc.name + "/";
                 isDir(getPath() + "/");
             });
         }
@@ -110,7 +109,7 @@ function createList(doc, div_list) {
     div_list.appendChild(tbody);
     menu_options_file();
 }
-function isDir(nameDoc) {
+export function isDir(nameDoc) {
     toggleLoader();
     var div_list = document.getElementsByClassName("table_files")[0];
     deleteFileRecursive();
@@ -130,10 +129,10 @@ function isDir(nameDoc) {
     });
     toggleLoader();
 }
-function isFile(nameFile) {
+export function isFile(nameFile) {
     window.location.href = encodeURI("./../api/downloadFile.php?nameFile=" + nameFile);
 }
-function getPath() {
+export function getPath() {
     var docs_header = document.getElementsByClassName("docs_header")[0];
     var ul = docs_header.children[0];
     var li_list = ul.children;
@@ -145,7 +144,7 @@ function getPath() {
     //ruta = rutaHeader;
     return rutaHeader;
 }
-function addLinkHead(nameDoc) {
+export function addLinkHead(nameDoc) {
     var docs_header = document.getElementsByClassName("docs_header")[0];
     var li = document.createElement("li");
     var a = document.createElement("a");
@@ -158,14 +157,13 @@ function addLinkHead(nameDoc) {
     li.appendChild(a);
     docs_header.childNodes[1].appendChild(li);
 }
-function resetLinkHead() {
-    ruta = "";
+export function resetLinkHead() {
     var docs_header = document.getElementsByClassName("docs_header")[0].firstElementChild;
     var lis = docs_header.children;
     for (let i = lis.length - 1; i > 1; i--)
         docs_header.children[i].remove();
 }
-function updateLinkHead(nameDir) {
+export function updateLinkHead(nameDir) {
     var docs_header = document.getElementsByClassName("docs_header")[0].firstElementChild;
     var lis = docs_header.children;
     for (let i = lis.length - 1; i > 1; i--) {
@@ -175,7 +173,7 @@ function updateLinkHead(nameDir) {
         docs_header.children[i].remove();
     }
 }
-function eventLinkHeadHome() {
+export function eventLinkHeadHome() {
     var docs_header = document.getElementsByClassName("docs_header")[0].firstElementChild;
     docs_header.children[0].addEventListener("click", () => {
         // Remove the table, to reload files of index
@@ -190,12 +188,12 @@ function eventLinkHeadHome() {
         resetLinkHead();
     });
 }
-function deleteFileRecursive() {
+export function deleteFileRecursive() {
     var div_list = document.getElementsByClassName("table_files")[0];
     if (div_list.hasChildNodes() && div_list.childElementCount > 1)
         div_list.removeChild(div_list.lastChild);
 }
-function calculateTotalStorage() {
+export function calculateTotalStorage() {
     $.ajax({
         url: "./../api/getAllStorage.php",
         type: "GET",

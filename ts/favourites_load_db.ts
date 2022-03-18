@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("fav").addEventListener("click", () => {
-    document.getElementById("favourites").contentWindow.load_favourites();
+    (
+      (<HTMLIFrameElement>document.getElementById("favourites"))
+        .contentWindow! as any
+    ).load_favourites();
   });
 });

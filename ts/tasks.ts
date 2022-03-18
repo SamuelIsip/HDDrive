@@ -1,5 +1,7 @@
+import { ITask } from "./Interfaces/ITasks";
+
 document.addEventListener("DOMContentLoaded", () => {
-  window.add_tasks = function () {
+  (window as any).add_tasks = function () {
     toggleLoader();
     var list_tasks = document.getElementById("list_tasks");
     var xhr;
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
           list_tasks.removeChild(list_tasks.lastChild);
         }
         var i = 0;
-        JSON.parse(this.responseText).tasks.forEach((t) => {
+        JSON.parse(this.responseText).tasks.forEach((t: ITask) => {
           //Creamos los elementos de los tasks
           let row = document.createElement("div");
           row.classList.add("row");
@@ -81,29 +83,30 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   //Datos necesarios para update
-  var old_task = [];
-  var update = false;
-  function edit_task(title, task_date, task_text) {
-    document.getElementById("title").value = title;
+  var old_task: Map<string, string> = new Map<string, string>();
+  var update: boolean = false;
+
+  function edit_task(title: string, task_date: string, task_text: string) {
+    (<HTMLInputElement>document.getElementById("title")).value = title;
     //Tokenizar Date
     let date = task_date.split("/");
-    document.getElementById("date-input").value =
+    (<HTMLInputElement>document.getElementById("date-input")).value =
       date[2] + "-" + date[1] + "-" + date[0];
-    document.getElementById("note").value = task_text;
+    (<HTMLInputElement>document.getElementById("note")).value = task_text;
 
     document.getElementById("title").style.border = "2px dotted black";
     document.getElementById("date-input").style.border = "2px dotted black";
     document.getElementById("note").style.border = "2px dotted black";
 
     update = true;
-    old_task["title"] = title;
-    old_task["date"] = task_date;
-    old_task["text"] = task_text;
+    old_task.set("title", title);
+    old_task.set("date", task_date);
+    old_task.set("text", task_text);
 
     document.getElementById("save_task").innerHTML = "Update";
   }
 
-  function delete_task(title, task_date) {
+  function delete_task(title: string, task_date: string) {
     var xhr;
 
     if (window.ActiveXObject) xhr = new ActiveXObject("Microsoft.XMLHTTP");
@@ -111,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        window.add_tasks();
+        (window as any).add_tasks();
       }
     };
     xhr.open("POST", "./../api/delete_task.php", true);
@@ -120,9 +123,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.getElementById("save_task").addEventListener("click", () => {
-    let title = document.getElementById("title").value;
-    let date = document.getElementById("date-input").value.split("-");
-    let text = document.getElementById("note").value;
+    let title = (<HTMLInputElement>document.getElementById("title")).value;
+    let date = (<HTMLInputElement>(
+      document.getElementById("date-input")
+    )).value.split("-");
+    let text = (<HTMLInputElement>document.getElementById("note")).value;
 
     //Tokenizar date
     let task_day = date[2];
@@ -136,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        window.add_tasks();
+        (window as any).add_tasks();
       }
     };
     if (update) {
@@ -155,11 +160,11 @@ document.addEventListener("DOMContentLoaded", () => {
           "&task_year=" +
           task_year +
           "&old_title=" +
-          old_task["title"] +
+          old_task.get("title") +
           "&old_date=" +
-          old_task["date"] +
+          old_task.get("date") +
           "&old_text=" +
-          old_task["text"]
+          old_task.get("text")
       );
       update = false;
       document.getElementById("title").style.border = "1px solid #ced4da";
@@ -183,8 +188,8 @@ document.addEventListener("DOMContentLoaded", () => {
           task_year
       );
     }
-    document.getElementById("title").value = "";
-    document.getElementById("date-input").value = "";
-    document.getElementById("note").value = "";
+    (<HTMLInputElement>document.getElementById("title")).value = "";
+    (<HTMLInputElement>document.getElementById("date-input")).value = "";
+    (<HTMLInputElement>document.getElementById("note")).value = "";
   });
 });
