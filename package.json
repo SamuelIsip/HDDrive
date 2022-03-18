@@ -4,9 +4,11 @@
   "description": "File management system\r Web page like Dropbox, Drive or OneDrive",
   "main": "index.js",
   "dependencies": {
+    "@types/lodash": "^4.14.180",
     "jquery": "^3.6.0"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.14",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
     "sass": "^1.43.4"
