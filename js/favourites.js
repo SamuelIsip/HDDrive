@@ -13,10 +13,10 @@ window.load_favourites = function () {
             createFavList(tbody, this.responseText);
             list_fav.appendChild(tbody);
         }
-        toggleLoader();
     };
     xhr.open("POST", "./../api/readFavourites.php", true);
     xhr.send();
+    toggleLoader();
 };
 function createFavList(tbody, responseText) {
     JSON.parse(responseText).favs.forEach((t) => {
