@@ -46,10 +46,8 @@ function loadImagesFromDB() {
             createGalleryDOMelements(images);
             loadGallery(true, "a.thumbnail");
         },
-        complete: () => {
-            toggleLoader();
-        },
     });
+    toggleLoader();
 }
 //Crear elementos en el DOM
 function createGalleryDOMelements(images) {
