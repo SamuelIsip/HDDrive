@@ -67,10 +67,10 @@ window.add_tasks = function () {
                 i++;
             });
         }
-        toggleLoader();
     };
     xhr.open("POST", "./../api/loadTasks.php", true);
     xhr.send();
+    toggleLoader();
 };
 //Datos necesarios para update
 var old_task = new Map();
