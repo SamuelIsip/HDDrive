@@ -111,7 +111,6 @@ function createList(doc, div_list) {
 }
 export function isDir(nameDoc) {
     toggleLoader();
-    console.log("---1---");
     var div_list = document.getElementsByClassName("table_files")[0];
     deleteFileRecursive();
     $.ajax({
@@ -125,12 +124,12 @@ export function isDir(nameDoc) {
         },
         async: true,
         success: (doc) => {
-            console.log("---3---");
             createList(doc, div_list);
         },
+        complete: () => {
+            toggleLoader();
+        },
     });
-    console.log("---2---");
-    toggleLoader();
 }
 export function isFile(nameFile) {
     window.location.href = encodeURI("./../api/downloadFile.php?nameFile=" + nameFile);
