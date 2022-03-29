@@ -75,10 +75,10 @@ import { ITask } from "./Interfaces/ITasks";
         i++;
       });
     }
-    toggleLoader();
   };
   xhr.open("POST", "./../api/loadTasks.php", true);
   xhr.send();
+  toggleLoader();
 };
 
 //Datos necesarios para update
