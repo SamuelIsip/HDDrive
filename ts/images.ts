@@ -49,6 +49,7 @@ document
   });
 
 function loadImagesFromDB() {
+  toggleLoader();
   $.ajax({
     url: "./../api/readImages.php",
     type: "GET",
