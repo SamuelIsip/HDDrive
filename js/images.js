@@ -31,8 +31,10 @@ document
         success: function () {
             updateImagesAfterModification();
         },
+        complete: function () {
+            toggleLoader();
+        },
     });
-    toggleLoader();
 });
 function loadImagesFromDB() {
     $.ajax({
@@ -43,6 +45,9 @@ function loadImagesFromDB() {
         success: (images) => {
             createGalleryDOMelements(images);
             loadGallery(true, "a.thumbnail");
+        },
+        complete: () => {
+            toggleLoader();
         },
     });
 }
@@ -146,7 +151,6 @@ function updateImagesAfterModification() {
     toggleLoader();
     //Cargar imagenes de neuvo
     loadImagesFromDB();
-    toggleLoader();
 }
 // build key actions
 $(document).on("keydown", function (e) {

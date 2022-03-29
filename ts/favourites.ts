@@ -15,10 +15,10 @@ import { IFavorite } from "./Interfaces/IFavorite";
       createFavList(tbody, this.responseText);
       list_fav.appendChild(tbody);
     }
+    toggleLoader();
   };
   xhr.open("POST", "./../api/readFavourites.php", true);
   xhr.send();
-  toggleLoader();
 };
 
 function createFavList(tbody: HTMLTableSectionElement, responseText: string) {
